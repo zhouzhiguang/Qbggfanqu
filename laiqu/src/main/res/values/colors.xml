@@ -33,5 +33,6 @@
     <color name="dislike_color">#666666</color>
     <color name="inner_party_details_line_color">#E9E9E9</color>
     <color name="signed_up_person_nicename_color">#A5A5A5</color>
+    <color name="dinner_party_details_edit_hint_color">#BBBBBB</color>
 
 </resources>

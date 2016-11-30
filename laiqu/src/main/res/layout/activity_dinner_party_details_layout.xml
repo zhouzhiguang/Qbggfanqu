@@ -120,6 +120,7 @@
                                 android:layout_marginTop="@dimen/dimen_10px"
                                 android:contentDescription="个性签名"
                                 android:ellipsize="end"
+                                android:maxLength="12"
                                 android:text="懂生活的人就是我"
                                 android:textColor="@color/textGrayLight"
                                 android:textSize="@dimen/dimen_50px" />
@@ -303,6 +304,7 @@
                         android:textSize="@dimen/dimen_50px" />
 
                     <TextView
+                        android:id="@+id/dinner_party_details_like"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/dinner_party_details_dislike"
@@ -423,16 +425,18 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/dinner_party_details_eave_words_recylerview"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_600px"
+                    android:layout_height="wrap_content"
                     android:layout_alignLeft="@id/dinner_party_details_has_signed_up"
                     android:layout_below="@+id/dinner_party_details_line_5"
                     android:contentDescription="留言RecylerView"></android.support.v7.widget.RecyclerView>
 
                 <LinearLayout
+                    android:id="@+id/dinner_party_details_eave_words_add_more_lineralayout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_100px"
                     android:layout_below="@id/dinner_party_details_eave_words_recylerview"
-                    android:background="@color/red"
+                    android:layout_marginBottom="@dimen/dimen_20px"
+                    android:layout_marginTop="@dimen/dimen_20px"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
@@ -441,13 +445,72 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@drawable/fragment_person_mine_dinner_select"
+                        android:clickable="true"
                         android:contentDescription="点击加载更多评论"
                         android:drawablePadding="@dimen/dimen_10px"
                         android:drawableRight="@mipmap/ic_add_more"
                         android:gravity="center"
+                        android:padding="@dimen/dimen_20px"
                         android:text="@string/click_add_more"
                         android:textSize="@dimen/dimen_40px" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dinner_party_details_edit_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dinner_party_details_eave_words_add_more_lineralayout"
+                    android:background="@color/edit_publis_line_color"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/dinner_party_details_edit_eave_words"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_30px"
+                        android:layout_marginLeft="@dimen/dimen_60px"
+                        android:layout_marginRight="@dimen/dimen_20px"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:layout_weight="1"
+                        android:background="@drawable/dinner_party_details_edit_shape"
+                        android:contentDescription="发表评论"
+                        android:gravity="left|center_vertical"
+                        android:hint="@string/want_understand_more"
+                        android:minHeight="@dimen/dimen_120px"
+                        android:paddingLeft="@dimen/dimen_10px"
+                        android:textColor="@color/textGrayDeep"
+                        android:textColorHint="@color/dinner_party_details_edit_hint_color"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/dinner_party_details_release_edit_eave_words"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimen_40px"
+                        android:layout_weight="0"
+                        android:background="@drawable/release_edit_eave_words_select"
+                        android:clickable="true"
+                        android:padding="@dimen/dimen_20px"
+                        android:text="@string/release"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_50px" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/dinner_party_details_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_150px"
+                    android:layout_below="@id/dinner_party_details_edit_layout"
+                    android:background="@drawable/publish_add_nextstep_selector"
+                    android:clickable="true"
+                    android:contentDescription="我要报名"
+                    android:gravity="center"
+                    android:text="@string/want_sign_up"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_50px" />
             </RelativeLayout>
 
         </com.scu.miomin.shswiperefresh.view.ShareScrollView>

@@ -89,4 +89,8 @@
     <string name="location">地址: </string>
     <string name="dinner_party_details_location_test">东莞市南城区莞太路创意园2栋3A</string>
     <string name="click_add_more">点击加载更多评论</string>
+    <string name="revert">回复</string>
+    <string name="want_understand_more">我想了解更多...</string>
+    <string name="release">发表</string>
+    <string name="want_sign_up">我要报名</string>
 </resources>
