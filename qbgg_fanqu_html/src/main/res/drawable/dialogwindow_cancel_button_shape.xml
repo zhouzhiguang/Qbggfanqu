@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="#bebebe" />
+
+            <corners android:radius="@dimen/dimen_8dp" />
+        </shape>
+        
+        </item>
+    <item android:state_pressed="true"><shape>
+            <solid android:color="@color/notebool_calendar_color_selector" />
+
+            <corners android:radius="@dimen/dimen_8dp" />
+        </shape></item>
+    <item><shape>
+            <corners android:radius="@dimen/dimen_8dp" />
+
+            <solid android:color="#f0f0f0" />
+        </shape></item>
+
+</selector>

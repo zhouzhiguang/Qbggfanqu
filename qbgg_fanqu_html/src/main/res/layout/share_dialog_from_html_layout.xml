@@ -1,0 +1,189 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:id="@+id/note_taking_bottomdialog_linearlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="200px"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/note_taking_bottomdialog__back_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textColor="#323232"
+                android:textSize="18px" />
+
+            <TextView
+                android:id="@+id/share_from_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/share_from_html_title"
+                android:textColor="#323232"
+                android:textSize="@dimen/dimen_50px" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center|right" >
+
+                <Button
+                    android:visibility="invisible"
+                    android:layout_width="200px"
+                    android:layout_height="120px"
+
+                    android:layout_gravity="center"
+                    android:layout_marginRight="40px"
+                    android:background="@drawable/dialogwindow_cancel_button_shape"
+                    android:text="@string/share_from_html_cancel_text"
+                    android:textColor="#323232"
+                    android:textSize="60px" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1px"
+            android:background="@color/note_taking_dialogWindow_line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/share_ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_taking_bottomdialog_linearlayout"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingBottom="20px"
+        android:paddingTop="20px" >
+
+        <TextView
+            android:id="@+id/note_taking_dialogwindow_share_weixing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="30px"
+            android:drawableTop="@drawable/share_from_html_weixing"
+            android:gravity="center"
+            android:paddingLeft="12px"
+            android:paddingRight="12px"
+            android:text="@string/share_from_html_weixing"
+            android:textColor="@color/dialog_share_text_color"
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/note_taking_dialogwindow_share_moments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="30px"
+            android:drawableTop="@drawable/share_from_html_moments"
+            android:gravity="center"
+            android:paddingLeft="12px"
+            android:paddingRight="12px"
+            android:text="@string/share_from_html_moments"
+            android:textColor="@color/dialog_share_text_color"
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/note_taking_dialogwindow_share_qq_friends"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="30px"
+            android:drawableTop="@drawable/share_from_html_qq_friends"
+            android:gravity="center"
+            android:paddingLeft="12px"
+            android:paddingRight="12px"
+            android:text="@string/share_from_html_qq_friends"
+            android:textColor="@color/dialog_share_text_color"
+            android:textSize="@dimen/dimen_45px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/share_ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/share_ll1"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/dimen_13px"
+        android:paddingTop="@dimen/dimen_40px" >
+
+        <TextView
+            android:id="@+id/note_taking_dialogwindow_share_zone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="30px"
+            android:drawableTop="@drawable/share_from_html_zone"
+            android:gravity="center"
+            android:paddingLeft="12px"
+            android:paddingRight="12px"
+            android:text="@string/share_from_html_zone"
+            android:textColor="@color/dialog_share_text_color"
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/note_taking_dialogwindow_share_sina"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="30px"
+            android:drawableTop="@drawable/share_from_html_sina"
+            android:gravity="center"
+            android:paddingLeft="12px"
+            android:paddingRight="12px"
+            android:text="@string/share_from_html_sina"
+            android:textColor="@color/dialog_share_text_color"
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/note_taking_dialogwindow_shar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="30px"
+            android:drawableTop="@drawable/share_from_html_qq_friends"
+            android:gravity="center"
+            android:paddingLeft="12px"
+            android:paddingRight="12px"
+            android:text="@string/share_from_html_qq_friends"
+            android:textColor="@color/dialog_share_text_color"
+            android:textSize="@dimen/dimen_40px"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <Button
+       android:id="@+id/note_taking_sharedialog_cancel_button"
+        android:layout_width="800px"
+        android:layout_height="@dimen/dimen_150px"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dimen_80px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/dialogwindow_cancel_button_shape"
+        android:text="@string/share_from_html_cancel_text"
+        android:textColor="#323232"
+        android:textSize="@dimen/dimen_50px" />
+
+</RelativeLayout>

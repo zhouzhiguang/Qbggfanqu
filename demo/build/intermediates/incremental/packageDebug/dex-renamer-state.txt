@@ -1,0 +1,7 @@
+#Fri Nov 18 16:30:30 CST 2016
+base.0=D\:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_098cad5095555e59749cd918fd2173796ebb1da2
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_b56a4695c5fe0952016ef272e77e14022a639b7f\\classes.dex
+base.1=D\:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_b56a4695c5fe0952016ef272e77e14022a639b7f
+file.0=D\:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_098cad5095555e59749cd918fd2173796ebb1da2\\classes.dex

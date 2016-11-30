@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">蹭范趣</string>
+    <string name="finish">完成</string>
+    <string name="skip">跳过</string>
+    <string name="tip_exist_application">在按一次退出应用</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="app_tip">提示</string>
+    <string name="getting_prepayid">正在打开微信支付...</string>
+    <string name="weixin_pay_cancel">支付取消</string>
+    <string name="weixin_pay_succeed">支付成功</string>
+    <string name="has_no_connection">网络不可用请检查网络设置</string>
+    <string name="share_from_html_title">选择分享</string>
+    <string name="share_from_html_cancel_text">取消</string>
+    <string name="share_from_html_weixing">微信</string>
+    <string name="share_from_html_moments">朋友圈</string>
+    <string name="share_from_html_qq_friends">QQ</string>
+    <string name="edit_note_no_internet">当前网络不可用</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_from_html_sina">新浪</string>
+    <string name="alipay_result">支付结果确认中</string>
+    <string name="alipay_pay_order_failure">订单支付失败</string>
+    <string name="weixin_pay_nonsupport">微信支付不支持</string>
+    <string name="weixin_app_notinstall">微信客户端没有安装安装后重试</string>
+    <string name="share_from_html_zone">QQ空间</string>
+
+</resources>

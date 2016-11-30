@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_bg_halo.9.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_bg_halo.9.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_weixin_pressed.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_weixin_pressed.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_address_pressed.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_address_pressed.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_unread_bg.9.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_unread_bg.9.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_settings_normal.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_settings_normal.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_settings_pressed.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_settings_pressed.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_weixin_normal.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_weixin_normal.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\mmfooter_bg.9.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\mmfooter_bg.9.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_find_frd_normal.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_find_frd_normal.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\mm_trans.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\mm_trans.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_find_frd_pressed.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_find_frd_pressed.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tab_address_normal.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\tab_demo\\src\\main\\res\\drawable-mdpi\\tab_address_normal.png"
+    }
+]

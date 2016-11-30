@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //<color name="colorPrimary">#3F51B5</color>
+    //<color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--云信im -->
+    <color name="color_network_bar_bg_ee4b62">#ee4b62</color>
+    <color name="color_yellow_fcf3cd">#fcf3cd</color>
+    <color name="color_red_f04c62">#f04c62</color>
+    <color name="action_bar_tittle_color_555555">#555555</color>
+    <color name="grey_white_has_alpha">#66FAFAFA</color>
+    <color name="grey_white">#F7F7F7</color>
+    <color name="help_color">#ff999999</color>
+    <color name="textGrayDeep">#333333</color>
+    <color name="borderDeep">#cccccc</color>
+    <color name="textGrayLight">#999999</color>
+    <color name="btn_pressed_default_color">#1f000000</color>
+    <color name="color_grey_888888" >#888888</color>
+    <color name="g_child_page_bg_color">#FFFFFF</color>
+</resources>

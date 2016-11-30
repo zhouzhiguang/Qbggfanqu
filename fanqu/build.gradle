@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+
+android {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    signingConfigs {
+        config {
+            keyAlias 'android.keystore'
+            keyPassword '999999'
+            storeFile file('D:/本地开发源码备份/android.keystore')
+            storePassword '999999'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        applicationId "com.fanqu"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+        release {
+            signingConfig signingConfigs.config
+
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = ['src/main/jni']
+        }
+    }
+}
+afterEvaluate {
+    tasks.matching {
+        it.name.startsWith('dex')
+    }.each { dx ->
+        if (dx.additionalParameters == null) {
+            dx.additionalParameters = ['--multi-dex']
+        } else {
+            dx.additionalParameters += '--multi-dex'
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.kymjs.rxvolley:rxvolley:1.1.0'
+    // If use okhttp function
+    compile 'com.kymjs.rxvolley:okhttp:1.1.0'
+    // If use image-loader function
+    compile 'com.kymjs.rxvolley:bitmapcore:1.1.0'
+    compile 'cn.hugeterry.updatefun:updatefun:1.8.6'
+    compile 'com.android.support:design:24.2.1'
+    compile project(':library')
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    compile 'me.iwf.photopicker:PhotoPicker:0.8.11@aar'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'top.zibin:Luban:1.0.8'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'homhomlin.lib:sldinglayout:0.9.0'
+    compile files('libs/alipaySdk-20160825.jar')
+    compile files('libs/libammsdk.jar')
+    compile project(':fanqulogin_share_utill')
+}

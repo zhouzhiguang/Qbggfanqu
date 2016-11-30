@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'android.keystore'
+            keyPassword '999999'
+            storeFile file('D:/本地开发源码备份/android.keystore')
+            storePassword '999999'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.qbgg.cenglaicengqu"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            // 移除无用的resource文件
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+    lintOptions {
+        abortOnError false
+    }
+    /
+*
+* 里面默认是fasjson 解析jason
+* /
+    dependencies {
+        compile fileTree(include: ['*.jar'], dir: 'libs')
+        androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+        //    compile 'com.android.support:appcompat-v7:24.2.1'
+        //    compile 'com.netease.nimlib:basesdk:3.0.0'
+        //    // 音视频需要
+        //    compile 'com.netease.nimlib:avchat:3.0.0'
+        //    // 聊天室需要
+        //    compile 'com.netease.nimlib:chatroom:3.0.0'
+        //    compile 'com.android.support:design:24.2.1'
+        compile project(':uikit')
+        compile 'com.android.support:appcompat-v7:25.0.0'
+        compile 'com.android.support:multidex:1.0.0'
+        compile 'com.android.support:support-v4:25.0.0'
+        testCompile 'junit:junit:4.12'
+    }
+}

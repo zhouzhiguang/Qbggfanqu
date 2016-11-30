@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\holder.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\src\\main\\res\\drawable-hdpi\\holder.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\point_focused.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\src\\main\\res\\drawable-hdpi\\point_focused.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\point_unfocused.png",
+        "source": "D:\\android\\studioforworkspace\\Qbggfanqu\\demo\\src\\main\\res\\drawable-hdpi\\point_unfocused.png"
+    }
+]

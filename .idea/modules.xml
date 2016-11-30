@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Qbggfanqu.iml" filepath="$PROJECT_DIR$/Qbggfanqu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cenglaicengqu/cenglaicengqu.iml" filepath="$PROJECT_DIR$/cenglaicengqu/cenglaicengqu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fanqu/fanqu.iml" filepath="$PROJECT_DIR$/fanqu/fanqu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fanqulogin_share_utill/fanqulogin_share_utill.iml" filepath="$PROJECT_DIR$/fanqulogin_share_utill/fanqulogin_share_utill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kJPush/kJPush.iml" filepath="$PROJECT_DIR$/kJPush/kJPush.iml" />
+      <module fileurl="file://$PROJECT_DIR$/laiqu/laiqu.iml" filepath="$PROJECT_DIR$/laiqu/laiqu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qbgg_fanqu_html/qbgg_fanqu_html.iml" filepath="$PROJECT_DIR$/qbgg_fanqu_html/qbgg_fanqu_html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qbggnetworkrequest/qbggnetworkrequest.iml" filepath="$PROJECT_DIR$/qbggnetworkrequest/qbggnetworkrequest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tab_demo/tab_demo.iml" filepath="$PROJECT_DIR$/tab_demo/tab_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uikit/uikit.iml" filepath="$PROJECT_DIR$/uikit/uikit.iml" />
+    </modules>
+  </component>
+</project>

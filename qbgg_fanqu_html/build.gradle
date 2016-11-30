@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    signingConfigs {
+        config {
+            keyAlias 'android.keystore'
+            keyPassword '999999'
+            storeFile file('D:/本地开发源码备份/android.keystore')
+            storePassword '999999'
+        }
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.fanqu"
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+        release {
+            signingConfig signingConfigs.config
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'cn.hugeterry.updatefun:updatefun:1.8.6'
+    testCompile 'junit:junit:4.12'
+    compile project(':kJPush')
+    compile files('libs/libammsdk.jar')
+    compile 'com.google.code.gson:gson:2.7'
+
+}
