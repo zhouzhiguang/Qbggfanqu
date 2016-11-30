@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    //关闭cruncher检查(禁止png图片格式验证)
+    aaptOptions.cruncherEnabled = false
+    //关闭cruncher版本检查
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        applicationId "com.qbgg.cenglaicengqu"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            // 移除无用的resource文件
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':fanqulogin_share_utill')
+    compile project(':uikit')
+    compile project(':qbggnetworkrequest')
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:support-v4:25.0.1'
+    compile 'com.trello:rxlifecycle:0.4.0'
+    compile 'com.trello:rxlifecycle-components:0.4.0'
+    testCompile 'junit:junit:4.12'
+    //圆形头像
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //属性动画兼容包
+    compile 'com.nineoldandroids:library:2.4.0'
+    //广告轮播
+    compile 'cn.bingoogolapple:bga-banner:2.0.9'
+    //沉浸式状态栏的实现，超级简单
+    // compile 'com.jaeger.statusbaruitl:library:1.0.0'
+    compile 'com.miomin:shswiperefreshlayout:1.2.0'
+    //Android 万能的Adapter for ListView,RecyclerView,GridView等，支持多种Item类型的情况。
+    compile 'com.zhy:base-rvadapter:3.0.3'
+}

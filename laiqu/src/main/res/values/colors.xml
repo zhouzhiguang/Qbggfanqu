@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="red">#f16666</color>
+    <color name="tab_text_normal">#212121</color>
+    <color name="comui_tab_text_color">#ff333333</color>
+    <color name="bgColor">#f7f7f7</color>
+    <color name="borderDeep">#cccccc</color>
+    <color name="textGrayDeep">#333333</color>
+    <color name="textGrayLight">#999999</color>
+    <color name="textGrayMiddle">#666666</color>
+    <color name="color_ebedf1">#ebedf1</color>
+    <color name="red_bg">#D81D24</color>
+    <color name="layout_title">#323232</color>
+    <color name="fragment_person_bg">#F4F6F8</color>
+    <color name="fragment_person_color">#6B6B6B</color>
+    <color name="accounts_balance_color">#D92329</color>
+
+    <color name="accounts_balance_tip_color">#6E6E6E</color>
+    <color name="fragment_home_bg">#F1F5F7</color>
+    <color name="fragment_home_search_hint_color">#C1C1C1</color>
+    <color name="coffee_content_color">#41443F</color>
+    <color name="dinner_recyclerview_nickname">#777777</color>
+    <color name="dinner_introduce_color">#4D4D4D</color>
+    <color name="dinner_recyclerview_attention_color">#6A6A6A</color>
+    <color name="publish_line_color">#F3F3F3</color>
+    <color name="switch_button_color">#E3262D</color>
+    <color name="switch_button_close_color">#BFBFBF</color>
+    <color name="edit_publis_line_color">#ECECEC</color>
+    <color name="dinner_party_details_line_color">#EEEEEE</color>
+    <color name="dislike_color">#666666</color>
+    <color name="inner_party_details_line_color">#E9E9E9</color>
+    <color name="signed_up_person_nicename_color">#A5A5A5</color>
+
+</resources>
