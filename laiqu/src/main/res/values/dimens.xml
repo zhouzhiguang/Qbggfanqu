@@ -160,5 +160,7 @@
     <dimen name="dimen_1600px">1600px</dimen>
     <dimen name="dimen_1800px">1800px</dimen>
     <dimen name="dimen_3000px">3000px</dimen>
+    <dimen name="dimen_128px">128px</dimen>
+    <dimen name="dimen_650px">650px</dimen>
 
 </resources>

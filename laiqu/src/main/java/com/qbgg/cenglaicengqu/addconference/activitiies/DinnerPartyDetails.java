@@ -152,6 +152,7 @@ public class DinnerPartyDetails extends BaseActivity implements View.OnClickList
         dinner_party_details_eave_words_recylerview.setLayoutManager(manager);
         dinner_party_details_eave_words_recylerview.setAdapter(eaveWordsAdapter);
 
+
     }
 
     /**

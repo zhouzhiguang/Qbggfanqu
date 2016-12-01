@@ -93,4 +93,10 @@
     <string name="want_understand_more">我想了解更多...</string>
     <string name="release">发表</string>
     <string name="want_sign_up">我要报名</string>
+    <string name="wait_pay_dinner_party">待支付饭局</string>
+    <string name="wait_for_pay_time_tips">订单超过10分钟未支付将自动取消</string>
+    <string name="dinner_party_serial_number">饭局编号：</string>
+    <string name="dinner_party_order_number">订单编码：</string>
+    <string name="open_seats_time">开席时间：</string>
+    <string name="navigation_destination">导航去厨神家</string>
 </resources>

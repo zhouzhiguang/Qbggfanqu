@@ -74,7 +74,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:background="@color/white"
-                android:paddingBottom="@dimen/dimen_40px">
+                android:paddingBottom="0dp">
 
                 <RelativeLayout
                     android:id="@+id/dinner_party_details_accounts_layout"
@@ -499,18 +499,19 @@
                         android:textSize="@dimen/dimen_50px" />
                 </LinearLayout>
 
+
                 <TextView
                     android:id="@+id/dinner_party_details_sign_up"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_150px"
+                    android:layout_height="@dimen/dimen_128px"
                     android:layout_below="@id/dinner_party_details_edit_layout"
                     android:background="@drawable/publish_add_nextstep_selector"
                     android:clickable="true"
-                    android:contentDescription="我要报名"
                     android:gravity="center"
                     android:text="@string/want_sign_up"
                     android:textColor="@color/white"
                     android:textSize="@dimen/dimen_50px" />
+
             </RelativeLayout>
 
         </com.scu.miomin.shswiperefresh.view.ShareScrollView>

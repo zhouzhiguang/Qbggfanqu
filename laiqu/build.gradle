@@ -54,4 +54,5 @@ dependencies {
     compile 'com.miomin:shswiperefreshlayout:1.2.0'
     //Android 万能的Adapter for ListView,RecyclerView,GridView等，支持多种Item类型的情况。
     compile 'com.zhy:base-rvadapter:3.0.3'
+
 }
