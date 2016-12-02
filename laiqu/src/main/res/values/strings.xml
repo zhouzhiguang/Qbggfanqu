@@ -99,4 +99,20 @@
     <string name="dinner_party_order_number">订单编码：</string>
     <string name="open_seats_time">开席时间：</string>
     <string name="navigation_destination">导航去厨神家</string>
+    <string name="order_nformation">订单信息</string>
+    <string name="pay_way">支付方式：</string>
+    <string name="place_order_time">下单时间：</string>
+    <string name="place_order_phone_number">下单手机号：</string>
+    <string name="pay_for_ammout_sheets">付款张数：</string>
+    <string name="purchase_notes">购买须知</string>
+    <string name="purchase_notes_tips_1">1.预订后，无法退款或改期；</string>
+    <string name="purchase_notes_tips_2">2.参与人数无法新增，不得临时加人；</string>
+    <string name="total_how_much">（共 %1$s 位）</string>
+    <string name="total">合计：</string>
+    <string name="total_how_many_pieces">%1$s张饭票</string>
+    <string name="pay_now">立即支付</string>
+    <string name="cancelled_dinner_party">已取消饭局</string>
+    <string name="order_cancelled">订单已取消</string>.
+    <string name="trading_closed">交易关闭</string>
+    <string name="canceled">已取消</string>
 </resources>
