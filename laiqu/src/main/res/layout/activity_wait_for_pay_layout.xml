@@ -52,56 +52,56 @@
                     android:layout_height="@dimen/dimen_300px">
 
                     <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/ic_alarm_clock"
+                    android:drawablePadding="@dimen/dimen_10px"
+                    android:gravity="center"
+                    android:text="@string/wait_for_pay_time_tips"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_55px" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen_40px"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/dimen_160px"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/textGrayLight"></View>
+
+                    <com.qbgg.cenglaicengqu.main.widget.TimeViewComm
+                        android:id="@+id/wait_for_pay_timeview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dimen_60px"
+                        android:layout_marginRight="@dimen/dimen_60px"
+                        app:tvc_backgroundColor="@color/red_bg"
+                        app:tvc_radius="0dp"
+                        app:tvc_textPaddingHorizantal="@dimen/dimen_20px"
+                        app:tvc_textPaddingVertical="@dimen/dimen_20px"
+                        app:tvc_textSize="@dimen/dimen_60px" />
 
-                        android:orientation="vertical">
+                    <View
+                        android:layout_width="@dimen/dimen_160px"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/textGrayLight"></View>
+                </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@mipmap/ic_alarm_clock"
-                            android:drawablePadding="@dimen/dimen_10px"
-                            android:gravity="center"
-                            android:text="@string/wait_for_pay_time_tips"
-                            android:textColor="@color/textGrayDeep"
-                            android:textSize="@dimen/dimen_55px" />
+            </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/dimen_40px"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <View
-                                android:layout_width="@dimen/dimen_160px"
-                                android:layout_height="@dimen/dimen_3px"
-                                android:background="@color/textGrayLight"></View>
-
-                            <com.qbgg.cenglaicengqu.main.widget.TimeViewComm
-                                android:id="@+id/wait_for_pay_timeview"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dimen_60px"
-                                android:layout_marginRight="@dimen/dimen_60px"
-                                app:tvc_backgroundColor="@color/red_bg"
-                                app:tvc_radius="0dp"
-                                app:tvc_textPaddingHorizantal="@dimen/dimen_20px"
-                                app:tvc_textPaddingVertical="@dimen/dimen_20px"
-                                app:tvc_textSize="@dimen/dimen_60px" />
-
-                            <View
-                                android:layout_width="@dimen/dimen_160px"
-                                android:layout_height="@dimen/dimen_3px"
-                                android:background="@color/textGrayLight"></View>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
+            </RelativeLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -281,7 +281,6 @@
                                     android:layout_marginTop="@dimen/dimen_10px"
                                     android:contentDescription="饭局地址"
                                     android:ellipsize="end"
-                                    android:maxLength="12"
                                     android:text="东莞市莞城区莞太路创意产业园2栋3A"
                                     android:textColor="@color/textGrayLight"
                                     android:textSize="@dimen/dimen_55px" />

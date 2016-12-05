@@ -102,6 +102,11 @@ public class WaitForPayActivity extends BaseActivity implements View.OnClickList
             }
 
             @Override
+            public void onTimePointDay(String day, String hour, String minute, String second) {
+
+            }
+
+            @Override
             public void onTimeout() {
                 ToastUtils.showCenterToast(WaitForPayActivity.this, "超时了没有了");
             }

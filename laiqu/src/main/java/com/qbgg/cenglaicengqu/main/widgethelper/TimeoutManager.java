@@ -12,24 +12,25 @@ public class TimeoutManager {
     private int MSG_GO = 1;
     private Thread mThread;
 
-    public TimeoutManager(int hour, int minute, int second, OnTimeRunListener listener){
+    public TimeoutManager(int day, int hour, int minute, int second, OnTimeRunListener listener) {
         mListener = listener;
-        mTimeout = new Timeout(hour, minute, second);
+        mTimeout = new Timeout(day, hour, minute, second);
         mLastTime = System.currentTimeMillis();
-
         new Thread(new TimeRun()).start();
     }
 
-    public void resetTime(int hour, int minute, int second) {
-        mTimeout.resetTime(hour, minute, second);
+
+
+    public void resetTime(int day, int hour, int minute, int second) {
+        mTimeout.resetTime(day, hour, minute, second);
     }
 
-    Handler mHandler = new Handler(){
+    Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == MSG_GO && null != mListener) {
                 Bundle bundle = msg.getData();
-                mListener.onTimeRun(bundle.getInt("hour"), bundle.getInt("minute"), bundle.getInt("second"));
+                mListener.onTimeRun(bundle.getInt("day"), bundle.getInt("hour"), bundle.getInt("minute"), bundle.getInt("second"));
             }
         }
     };
@@ -43,7 +44,7 @@ public class TimeoutManager {
         }
     }
 
-    private class TimeRun implements Runnable{
+    private class TimeRun implements Runnable {
 
         @Override
         public void run() {
@@ -59,16 +60,15 @@ public class TimeoutManager {
     }
 
 
-    private class Timeout{
+    private class Timeout {
+        private int day;
         private int hour;
         private int minute;
         private int second;
 
-        public Timeout(int hour, int minute, int second) {
-            resetTime(hour, minute, second);
-        }
+        public Timeout(int day, int hour, int minute, int second) {
 
-        public void resetTime(int hour, int minute, int second) {
+            this.day = day;
             this.hour = hour;
             this.minute = minute;
             this.second = second;
@@ -78,20 +78,25 @@ public class TimeoutManager {
             if (isFinish() || null == mListener) {
                 return;
             }
-            second --;
+            second--;
 
             if (second < 0) {
                 second += 60;
                 minute -= 1;
             }
 
-            if (minute <0) {
+            if (minute < 0) {
                 minute += 60;
                 hour -= 1;
+            }
+            if (hour < 0) {
+                hour += 60;
+                day -= 1;
             }
             Message message = new Message();
             message.what = MSG_GO;
             Bundle bundle = new Bundle();
+            bundle.putInt("day", day);
             bundle.putInt("hour", hour);
             bundle.putInt("minute", minute);
             bundle.putInt("second", second);
@@ -101,12 +106,19 @@ public class TimeoutManager {
         }
 
         public boolean isFinish() {
-            return hour ==  0 && minute == 0 && second == 0;
+            return day == 0 && hour == 0 && minute == 0 && second == 0;
+        }
+
+        public void resetTime(int day, int hour, int minute, int second) {
+            this.day = day;
+            this.hour = hour;
+            this.minute = minute;
+            this.second = second;
         }
     }
 
-    public interface OnTimeRunListener{
-        void onTimeRun(int hour, int minute, int second);
+    public interface OnTimeRunListener {
+        void onTimeRun(int day, int hour, int minute, int second);
     }
 
 }

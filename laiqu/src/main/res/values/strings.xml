@@ -115,4 +115,18 @@
     <string name="order_cancelled">订单已取消</string>.
     <string name="trading_closed">交易关闭</string>
     <string name="canceled">已取消</string>
+    <string name="wait_open_seats">待开席饭局</string>
+    <string name="day">天</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="second">秒</string>
+    <string name="wait_open_seats_time_tips">待开席倒计时</string>
+    <string name="wait_open_seats_order_auth_code">订单验证码：</string>
+    <string name="wait_open_seats_order_auth_code_tips_text">到店后请主动出示验证码进行消费</string>
+    <string name="wait_open_seats_text">待开席</string>
+    <string name="wait_open_seats_total_pay">付款金额：</string>
+    <string name="completed_dinner_party">已完成饭局</string>
+    <string name="completed_order">订单已完成</string>
+    <string name="wait_assess">待评价</string>
+    <string name="immediately_assessment">立即评价</string>
 </resources>
