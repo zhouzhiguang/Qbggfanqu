@@ -35,5 +35,12 @@
     <color name="signed_up_person_nicename_color">#A5A5A5</color>
     <color name="dinner_party_details_edit_hint_color">#BBBBBB</color>
     <color name="wait_for_pay_line_color">#F2F2F2</color>
+    <color name="text_color_GrayLight_more">#5E6066</color>
+    <color name="text_color_GrayLight_more1">#ABABAB</color>
+    <color name="search_background_color">#F2F2F2</color>
+    <color name="green_51BF89">#51BF89</color>
+    <color name="color_494949">#494949</color>
+    <color name="color_7B7B7B">#7B7B7B</color>
+    <color name="color_F5F5F5">#F5F5F5</color>
 
 </resources>

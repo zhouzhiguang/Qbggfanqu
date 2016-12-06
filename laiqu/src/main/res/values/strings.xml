@@ -129,4 +129,12 @@
     <string name="completed_order">订单已完成</string>
     <string name="wait_assess">待评价</string>
     <string name="immediately_assessment">立即评价</string>
+    <string name="switchover_city">切换城市</string>
+    <string name="location_city">GPS定位城市</string>
+    <string name="opened_city">已开通城市服务</string>
+    <string name="city_open_more">更多城市正在快马加鞭开启中，敬请期待</string>
+    <string name="search_dinner_party_hint">搜索厨房，饭局</string>
+    <string name="search_nearby">搜索附近</string>
+    <string name="hot_label">热门标签</string>
+    <string name="pattern">格局</string>
 </resources>

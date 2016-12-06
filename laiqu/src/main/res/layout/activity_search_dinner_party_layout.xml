@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_dinner_party_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_140px"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimen_100px"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_30px">
+
+
+        <com.qbgg.cenglaicengqu.main.widget.SearchBarLayout
+            android:id="@+id/search_dinner_party_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:hint="@string/search_dinner_party_hint"
+            android:textColor="@color/textGrayDeep"
+            android:textColorHint="@color/fragment_home_search_hint_color"
+            android:textSize="@dimen/dimen_50px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="0"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:padding="@dimen/dimen_30px"
+            android:text="@string/cancel"
+            android:textColor="@color/green_51BF89"
+            android:textSize="@dimen/dimen_50px" />
+    </LinearLayout>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_3px"
+        android:background="@color/fragment_person_bg"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200px"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/search_dinner_party_search_nearby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:drawableLeft="@mipmap/ic_search_nearby"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_30px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_30px"
+            android:text="@string/search_nearby"
+            android:textColor="@color/color_494949"
+            android:textSize="@dimen/dimen_55px" />
+    </LinearLayout>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50px"
+        android:background="@color/fragment_person_bg">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_450px"
+        android:layout_marginLeft="@dimen/dimen_40px"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:text="@string/hot_label"
+            android:textColor="@color/color_7B7B7B"
+            android:textSize="@dimen/dimen_55px" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/dimen_30px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/search_dinner_party_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="文化艺术"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_label_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="文化艺术"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_label_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="文化艺术"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_label_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/search_dinner_party_label"
+                android:layout_below="@id/search_dinner_party_label"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="金碧辉煌"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_label_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/search_dinner_party_label_2"
+                android:layout_below="@id/search_dinner_party_label_2"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="金碧辉煌"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_label_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/search_dinner_party_label_3"
+                android:layout_below="@id/search_dinner_party_label_3"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="金碧辉煌"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50px"
+        android:background="@color/fragment_person_bg"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_450px"
+        android:layout_marginLeft="@dimen/dimen_40px"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:text="@string/pattern"
+            android:textColor="@color/color_7B7B7B"
+            android:textSize="@dimen/dimen_55px" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/dimen_30px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/search_dinner_party_pattern_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="月色间"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_pattern_label_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="空中花园"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_pattern_label_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="文化艺术"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_pattern_label_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/search_dinner_party_pattern_label"
+                android:layout_below="@id/search_dinner_party_pattern_label"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="金碧辉煌"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_pattern_label_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/search_dinner_party_pattern_label_2"
+                android:layout_below="@id/search_dinner_party_pattern_label_2"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@drawable/search_dinner_party_label_shape"
+                android:padding="@dimen/dimen_30px"
+                android:paddingLeft="@dimen/dimen_80px"
+                android:paddingRight="@dimen/dimen_80px"
+                android:text="金碧辉煌"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/search_dinner_party_pattern_label_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/search_dinner_party_pattern_label_3"
+                android:layout_below="@id/search_dinner_party_pattern_label_3"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@drawable/search_dinner_party_label_shape"></TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

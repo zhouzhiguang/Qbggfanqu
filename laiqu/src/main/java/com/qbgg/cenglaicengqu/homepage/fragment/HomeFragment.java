@@ -1,5 +1,7 @@
 package com.qbgg.cenglaicengqu.homepage.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,12 +13,15 @@ import android.widget.Toast;
 
 import com.netease.nim.uikit.common.ui.imageview.CircleImageView;
 import com.qbgg.cenglaicengqu.R;
+import com.qbgg.cenglaicengqu.homepage.activities.SearchDinnerParty;
+import com.qbgg.cenglaicengqu.homepage.activities.SwitchoverCityActivity;
 import com.qbgg.cenglaicengqu.homepage.adapter.RecommendedDinnerAdapter;
 import com.qbgg.cenglaicengqu.homepage.adapter.SelectionShareAdapter;
 import com.qbgg.cenglaicengqu.homepage.model.RecommendedDinnerBean;
 import com.qbgg.cenglaicengqu.homepage.model.SelectShareBean;
 import com.qbgg.cenglaicengqu.main.acitvities.MainActivity;
 import com.qbgg.cenglaicengqu.main.fragment.BaseFragment;
+import com.qbgg.cenglaicengqu.main.util.LogUtil;
 import com.qbgg.cenglaicengqu.main.widget.SearchBarLayout;
 import com.qbgg.network.request.nohttp.NohttpConfig;
 import com.qbgg.network.request.nohttp.protocol.BeanRequestProtocol;
@@ -40,19 +45,16 @@ import static com.qbgg.cenglaicengqu.R.id.fragment_home_city;
 /**
 
  */
-public class HomeFragment extends BaseFragment implements View.OnClickListener{
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private MainActivity activity;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
     // 标志位，标志已经初始化完成。
     private boolean isPrepared;
     private View view;
     private TextView textView;
     private BGABanner banner_main_default;
     private SHSwipeRefreshLayout fragment_home_shswipeRefreshLayout;
-    private RecyclerView fragment_person_recommended_dinner_recyclerView,fragment_person_selection_share_recyclerView;
+    private RecyclerView fragment_person_recommended_dinner_recyclerView, fragment_person_selection_share_recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private SelectionShareAdapter selectionShareAdapter;//精选分享
 
@@ -71,7 +73,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     private TextView fragmentHomeEvaluatingAmbassadorTile;////餐厅评测大使广告标题
     private TextView fragmentHomeEvaluatingAmbassadorContent;//餐厅评测大使内容
     private CircleImageView fragmentHomeMajorSuitLowPriceImage;//大牌低价广告
-   private TextView fragmentHomeMajorSuitLowPriceTile;//大牌低价广告标题
+    private TextView fragmentHomeMajorSuitLowPriceTile;//大牌低价广告标题
     private TextView fragmentHomeMajorSuitLowPriceContent;//大牌低价广n内容
     private CircleImageView fragmentHomeInvitePolitenessImage;//邀请有礼广告图片
     private TextView fragmentHomeInvitePolitenessTile;/*邀请有礼广告标题*/
@@ -82,82 +84,93 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     private TextView fragment_home_title;//主页主题
 
 
-
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_home_layout);
         assignViews();
+        LogUtil.e("测试方法", "initView方法");
     }
 
     @Override
     protected void setListener() {
+
         initLitener();
+        LogUtil.e("测试方法", "setListener");
     }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-
+        LogUtil.e("测试方法", "processLogic");
     }
 
     @Override
     protected void onUserVisible() {
-
+        LogUtil.e("测试方法", "onUserVisible");
     }
+
+    @Override
+    public void onAttach(Activity activity) {
+
+        super.onAttach(activity);
+        this.activity = (MainActivity) activity;
+        LogUtil.e("测试方法", "onAttach");
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+//        activity = (MainActivity) getActivity();
+        linearLayoutManager = new LinearLayoutManager(activity);
+        banner_main_default = findView(R.id.banner_main_default);
+        fragment_person_recommended_dinner_recyclerView = findView(R.id.fragment_person_recommended_dinner_recyclerView);
+        fragment_person_selection_share_recyclerView = findView(R.id.fragment_person_selection_share_recyclerView);
+        fragment_home_shswipeRefreshLayout = findView(R.id.fragment_home_shswipeRefreshLayout);
+        //关闭下拉刷新这里是主Refresh 布局
+        fragment_home_shswipeRefreshLayout.setLoadmoreEnable(false);
+        fragment_home_shswipeRefreshLayout.setRefreshEnable(false);
+        initLoadView();
+        initDate();
+        LogUtil.e("测试方法", "onActivityCreated");
+    }
+
+
     /**
      * 初始化监听事件
      */
     private void initLitener() {
         fragmentHomeMessage.setOnClickListener(this);
         fragmentHomeCity.setOnClickListener(this);
+        fragmentHomeSearch.setOnClickListener(this);
     }
 
     private void assignViews() {
         fragment_home_title = findView(R.id.fragment_home_title);
-        fragmentHomeMessage =  findView(R.id.fragment_home_message);
-         fragmentHomeCity =  findView(fragment_home_city);
-        fragmentHomeSearch =  findView(R.id.fragment_home_search);
-        fragmentHomeNearbyKitchen =  findView(R.id.fragment_home_nearby_kitchen);
-        fragmentHomeQuickSearchKitchen =  findView(R.id.fragment_home_quick_search_kitchen);
-        fragmentHomeLaiqu =  findView(R.id.fragment_home_laiqu);
+        fragmentHomeMessage = findView(R.id.fragment_home_message);
+        fragmentHomeCity = findView(fragment_home_city);
+        fragmentHomeSearch = findView(R.id.fragment_home_search);
+        fragmentHomeNearbyKitchen = findView(R.id.fragment_home_nearby_kitchen);
+        fragmentHomeQuickSearchKitchen = findView(R.id.fragment_home_quick_search_kitchen);
+        fragmentHomeLaiqu = findView(R.id.fragment_home_laiqu);
         fragmentHomeRecruitKitchener = findView(R.id.fragment_home_recruit_kitchener);
-        fragmentHomeSentimentCoffeeImage =  findView(R.id.fragment_home_sentiment_coffee_image);
-        fragmentHomeSentimentCoffeeTile =  findView(R.id.fragment_home_sentiment_coffee_tile);
-        fragmentHomeSentimentCoffeeContent =  findView(R.id.fragment_home_sentiment_coffee_content);
-        fragmentHomeEvaluatingAmbassadorImage =  findView(R.id.fragment_home_evaluating_ambassador_image);
-        fragmentHomeEvaluatingAmbassadorTile =  findView(R.id.fragment_home_evaluating_ambassador_tile);
-        fragmentHomeEvaluatingAmbassadorContent =  findView(R.id.fragment_home_evaluating_ambassador_content);
-        fragmentHomeMajorSuitLowPriceImage =  findView(R.id.fragment_home_major_suit_low_price_image);
-        fragmentHomeMajorSuitLowPriceTile =  findView(R.id.fragment_home_major_suit_low_price_tile);
-        fragmentHomeMajorSuitLowPriceContent =  findView(R.id.fragment_home_major_suit_low_price_content);
-        fragmentHomeInvitePolitenessImage =  findView(R.id.fragment_home_invite_politeness_image);
-        fragmentHomeInvitePolitenessTile =  findView(R.id.fragment_home_invite_politeness_tile);
-        fragmentHomeInvitePolitenessContent =  findView(R.id.fragment_home_invite_politeness_content);
-        fragmentPersonRecommendedDinner =  findView(R.id.fragment_person_recommended_dinner);
-        fragmentPersonSelectionShare =  findView(R.id.fragment_person_selection_share);
+        fragmentHomeSentimentCoffeeImage = findView(R.id.fragment_home_sentiment_coffee_image);
+        fragmentHomeSentimentCoffeeTile = findView(R.id.fragment_home_sentiment_coffee_tile);
+        fragmentHomeSentimentCoffeeContent = findView(R.id.fragment_home_sentiment_coffee_content);
+        fragmentHomeEvaluatingAmbassadorImage = findView(R.id.fragment_home_evaluating_ambassador_image);
+        fragmentHomeEvaluatingAmbassadorTile = findView(R.id.fragment_home_evaluating_ambassador_tile);
+        fragmentHomeEvaluatingAmbassadorContent = findView(R.id.fragment_home_evaluating_ambassador_content);
+        fragmentHomeMajorSuitLowPriceImage = findView(R.id.fragment_home_major_suit_low_price_image);
+        fragmentHomeMajorSuitLowPriceTile = findView(R.id.fragment_home_major_suit_low_price_tile);
+        fragmentHomeMajorSuitLowPriceContent = findView(R.id.fragment_home_major_suit_low_price_content);
+        fragmentHomeInvitePolitenessImage = findView(R.id.fragment_home_invite_politeness_image);
+        fragmentHomeInvitePolitenessTile = findView(R.id.fragment_home_invite_politeness_tile);
+        fragmentHomeInvitePolitenessContent = findView(R.id.fragment_home_invite_politeness_content);
+        fragmentPersonRecommendedDinner = findView(R.id.fragment_person_recommended_dinner);
+        fragmentPersonSelectionShare = findView(R.id.fragment_person_selection_share);
     }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        activity = (MainActivity) getActivity();
-        linearLayoutManager = new LinearLayoutManager(activity);
-        banner_main_default = findView(R.id.banner_main_default);
-        fragment_person_recommended_dinner_recyclerView = findView(R.id.fragment_person_recommended_dinner_recyclerView);
-        fragment_person_selection_share_recyclerView=findView(R.id.fragment_person_selection_share_recyclerView);
-        fragment_home_shswipeRefreshLayout = findView(R.id.fragment_home_shswipeRefreshLayout);
-        //关闭下拉刷新
-        fragment_home_shswipeRefreshLayout.setLoadmoreEnable(false);
-        fragment_home_shswipeRefreshLayout.setRefreshEnable(false);
-
-        initLoadView();
-
-        initDate();
-    }
-
-
 
 
     protected void get() {
+
         //textView = findView(R.id.testid);
 
         BeanRequestProtocol baseStringProtocol = new BeanRequestProtocol();
@@ -241,31 +254,31 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 
     protected void initDate() {
 
-       final   List<SelectShareBean>dates=new ArrayList<SelectShareBean>();
-        for(int i=0;i<6;i++){
-            SelectShareBean bean=new SelectShareBean();
+        final List<SelectShareBean> dates = new ArrayList<SelectShareBean>();
+        for (int i = 0; i < 6; i++) {
+            SelectShareBean bean = new SelectShareBean();
             bean.setSharetiltl("身体被掏空？你需要一锅让身体被填满的小龙虾");
             bean.setSharecontent("快扶朕起来!朕要吃小龙虾");
             dates.add(bean);
         }
-        selectionShareAdapter = new SelectionShareAdapter(activity, R.layout.home_selectionshare_recyclview_item_layout,dates);
+        selectionShareAdapter = new SelectionShareAdapter(activity, R.layout.home_selectionshare_recyclview_item_layout, dates);
         HeaderAndFooterWrapper mHeaderAndFooterWrapper = new HeaderAndFooterWrapper(selectionShareAdapter);
-      final   LoadMoreWrapper mLoadMoreWrapper = new LoadMoreWrapper(mHeaderAndFooterWrapper);
+        final LoadMoreWrapper mLoadMoreWrapper = new LoadMoreWrapper(mHeaderAndFooterWrapper);
         mLoadMoreWrapper.setLoadMoreView(R.layout.selectionshare_recyclview_loading_layout);
         mLoadMoreWrapper.setOnLoadMoreListener(new LoadMoreWrapper.OnLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
-                Handler handler=new Handler();
+                Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        SelectShareBean bean=new SelectShareBean();
+                        SelectShareBean bean = new SelectShareBean();
                         bean.setSharetiltl("身体被掏空？你需要一锅让身体被填满的小龙虾");
                         bean.setSharecontent("快扶朕起来!朕要吃小龙虾后面添加的");
                         dates.add(bean);
                         mLoadMoreWrapper.notifyDataSetChanged();
                     }
-                },2000);
+                }, 2000);
                 //下拉请求
 
             }
@@ -299,24 +312,25 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
             }
         });
 
-    List<RecommendedDinnerBean> dates=new ArrayList<RecommendedDinnerBean>();
-    for (int i=0;i<6;i++){
-        RecommendedDinnerBean bean=new RecommendedDinnerBean();
-        bean.setRecommendedinnerbeantitle("神秘空中花园");
-        bean.setRecommendedinnerbeancontent("炎热的夏天，一碗爽口炸酱面就是你的救星");
-        bean.setRecommendedinnerbeanicon(null);
-        dates.add(bean);
-    }
-    RecommendedDinnerAdapter adapter=new RecommendedDinnerAdapter(activity,R.layout.home_recommended_dinner_recyclerview_item_layouy,dates);linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        List<RecommendedDinnerBean> dates = new ArrayList<RecommendedDinnerBean>();
+        for (int i = 0; i < 6; i++) {
+            RecommendedDinnerBean bean = new RecommendedDinnerBean();
+            bean.setRecommendedinnerbeantitle("神秘空中花园");
+            bean.setRecommendedinnerbeancontent("炎热的夏天，一碗爽口炸酱面就是你的救星");
+            bean.setRecommendedinnerbeanicon(null);
+            dates.add(bean);
+        }
+        RecommendedDinnerAdapter adapter = new RecommendedDinnerAdapter(activity, R.layout.home_recommended_dinner_recyclerview_item_layouy, dates);
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-    fragment_person_recommended_dinner_recyclerView.setLayoutManager(linearLayoutManager);
-    //fragment_person_recommended_dinner_recyclerView.setLayoutManager(new GridLayoutManager(activity, 2));
-    fragment_person_recommended_dinner_recyclerView.setAdapter(adapter);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        fragment_person_recommended_dinner_recyclerView.setLayoutManager(linearLayoutManager);
+        //fragment_person_recommended_dinner_recyclerView.setLayoutManager(new GridLayoutManager(activity, 2));
+        fragment_person_recommended_dinner_recyclerView.setAdapter(adapter);
 
 
-        List<SelectShareBean>beans=new ArrayList<SelectShareBean>();
-        selectionShareAdapter = new SelectionShareAdapter(activity, R.layout.home_selectionshare_recyclview_item_layout,beans);
-        LinearLayoutManager  manager= new LinearLayoutManager(activity);
+        List<SelectShareBean> beans = new ArrayList<SelectShareBean>();
+        selectionShareAdapter = new SelectionShareAdapter(activity, R.layout.home_selectionshare_recyclview_item_layout, beans);
+        LinearLayoutManager manager = new LinearLayoutManager(activity);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         fragment_person_selection_share_recyclerView.setLayoutManager(manager);
         fragment_person_selection_share_recyclerView.setAdapter(selectionShareAdapter);
@@ -325,18 +339,34 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+            Intent intent;
+        switch (view.getId()) {
+
             case R.id.fragment_home_city:
                 //切换城市
+                LogUtil.e("测试方法", "切换城市");
                 Toast.makeText(activity, "+++", Toast.LENGTH_SHORT).show();
+                intent = new Intent(activity, SwitchoverCityActivity.class);
+                JumpActivity(intent);
                 break;
             case R.id.fragment_home_message:
                 //销售
-            break;
+                break;
+            case R.id.fragment_home_search:
+                intent =new Intent(activity,SearchDinnerParty.class);
+                 JumpActivity(intent);
+                break;
+
             default:
                 break;
         }
 
     }
 
+    private void JumpActivity(Intent intent) {
+        if (intent != null) {
+            startActivity(intent);
+            activity.overridePendingTransition(R.anim.activity_out, R.anim.activity_out);
+        }
+    }
 }

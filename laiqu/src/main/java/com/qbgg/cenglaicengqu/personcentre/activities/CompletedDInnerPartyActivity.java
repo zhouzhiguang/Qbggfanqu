@@ -55,7 +55,12 @@ public class CompletedDInnerPartyActivity extends BaseActivity implements View.O
         setToolBar(R.id.toolbar, options);
         Toolbar toolbar = getToolBar();
 
-        toolbar.setNavigationOnClickListener(this);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showCenterToast(CompletedDInnerPartyActivity.this, "点击返回了哦");
+            }
+        });
         initView();
         initDate();
         initListener();
@@ -103,7 +108,7 @@ public class CompletedDInnerPartyActivity extends BaseActivity implements View.O
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.toolbar:
-                ToastUtils.showCenterToast(this, "点击返回了哦");
+
                 break;
             default:
                 break;

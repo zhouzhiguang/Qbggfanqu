@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.netease.nim.uikit.common.fragment.TabFragment;
 import com.qbgg.cenglaicengqu.LaiquApplication;
 import com.qbgg.cenglaicengqu.main.acitvities.BaseActivity;
+import com.qbgg.cenglaicengqu.main.autolayout.AutoUtils;
 import com.qbgg.cenglaicengqu.main.util.ToastUtils;
 import com.trello.rxlifecycle.FragmentEvent;
 import com.trello.rxlifecycle.FragmentLifecycleProvider;
@@ -77,6 +78,7 @@ public abstract  class  BaseFragment extends TabFragment implements FragmentLife
 
     protected void setContentView(@LayoutRes int layoutResID) {
         mContentView =mActivity.getLayoutInflater().inflate(layoutResID, null);
+        AutoUtils.auto(mContentView);
     }
 
     /**

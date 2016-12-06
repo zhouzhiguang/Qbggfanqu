@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_switchover_city_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red_bg">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_50px"
+        android:background="@color/red_bg"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/switchover_city"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:background="@color/GreyWhite"
+            android:paddingBottom="@dimen/dimen_40px"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:paddingTop="@dimen/dimen_40px"
+            android:text="@string/location_city"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_50px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_180px"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="定位当前的城市"
+                android:padding="@dimen/dimen_30px"
+                android:text="东莞"
+                android:textColor="@color/text_color_GrayLight_more"
+                android:textSize="@dimen/dimen_60px" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:background="@color/GreyWhite"
+            android:paddingBottom="@dimen/dimen_40px"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:paddingTop="@dimen/dimen_40px"
+            android:text="@string/opened_city"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_50px" />
+
+        <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+            android:id="@+id/fragment_home_shswipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:loadmore_enable="false"
+            app:pull_refresh_enable="false">
+
+            <com.scu.miomin.shswiperefresh.view.ShareScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/switchover_city_opened_city_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:background="@color/GreyWhite"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_300px"
+                        android:layout_below="@id/switchover_city_opened_city_recyclerview"
+                        android:background="@color/GreyWhite">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/city_open_more"
+                            android:textColor="@color/text_color_GrayLight_more1"
+                            android:textSize="@dimen/dimen_50px" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </com.scu.miomin.shswiperefresh.view.ShareScrollView>
+        </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+    </LinearLayout>
+
+</RelativeLayout>

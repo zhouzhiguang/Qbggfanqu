@@ -46,6 +46,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     /*沉浸颜色*/
     private TextView textView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,7 +116,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
         });
         //默认第一个首页显示
-        mNavigateTabBar.showTabFragment(2);
+        mNavigateTabBar.showTabFragment(0);
 
     }
 
