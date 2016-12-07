@@ -151,16 +151,21 @@
             android:label="切换城市"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".homepage.activities.SearchDinnerPartyActivity"
+            android:label="搜索饭局"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
-            android:name=".homepage.activities.SearchDinnerParty"
-            android:label="搜索饭局"
+            android:name=".homepage.activities.QuickSearchKitchenActivity"
+            android:label="快捷查找厨房"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
             </intent-filter>

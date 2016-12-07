@@ -80,7 +80,7 @@
                                 android:layout_height="wrap_content"
                                 android:drawablePadding="@dimen/dimen_10px"
                                 android:clickable="true"
-                                android:drawableRight="@mipmap/ic_down_arrows"
+                                android:drawableRight="@mipmap/ic_down_arrows_open"
                                 android:gravity="center"
                                 android:padding="@dimen/dimen_10px"
                                 android:paddingLeft="@dimen/dimen_20px"

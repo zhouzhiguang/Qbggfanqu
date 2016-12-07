@@ -25,7 +25,7 @@
             android:clickable="true"
             android:contentDescription="城市"
             android:drawablePadding="@dimen/dimen_40px"
-            android:drawableRight="@mipmap/ic_down_arrows"
+            android:drawableRight="@mipmap/ic_down_arrows_open"
             android:gravity="center"
             android:padding="@dimen/dimen_40px"
             android:text="东莞"

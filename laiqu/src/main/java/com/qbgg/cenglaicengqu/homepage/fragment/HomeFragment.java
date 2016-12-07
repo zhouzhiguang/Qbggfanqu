@@ -13,7 +13,8 @@ import android.widget.Toast;
 
 import com.netease.nim.uikit.common.ui.imageview.CircleImageView;
 import com.qbgg.cenglaicengqu.R;
-import com.qbgg.cenglaicengqu.homepage.activities.SearchDinnerParty;
+import com.qbgg.cenglaicengqu.homepage.activities.QuickSearchKitchenActivity;
+import com.qbgg.cenglaicengqu.homepage.activities.SearchDinnerPartyActivity;
 import com.qbgg.cenglaicengqu.homepage.activities.SwitchoverCityActivity;
 import com.qbgg.cenglaicengqu.homepage.adapter.RecommendedDinnerAdapter;
 import com.qbgg.cenglaicengqu.homepage.adapter.SelectionShareAdapter;
@@ -141,6 +142,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         fragmentHomeMessage.setOnClickListener(this);
         fragmentHomeCity.setOnClickListener(this);
         fragmentHomeSearch.setOnClickListener(this);
+        fragmentHomeQuickSearchKitchen.setOnClickListener(this);
     }
 
     private void assignViews() {
@@ -339,7 +341,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-            Intent intent;
+        Intent intent;
         switch (view.getId()) {
 
             case R.id.fragment_home_city:
@@ -353,10 +355,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 //销售
                 break;
             case R.id.fragment_home_search:
-                intent =new Intent(activity,SearchDinnerParty.class);
-                 JumpActivity(intent);
+                intent = new Intent(activity, SearchDinnerPartyActivity.class);
+                JumpActivity(intent);
                 break;
-
+            case R.id.fragment_home_quick_search_kitchen:
+                intent = new Intent(activity, QuickSearchKitchenActivity.class);
+                JumpActivity(intent);
+                break;
             default:
                 break;
         }

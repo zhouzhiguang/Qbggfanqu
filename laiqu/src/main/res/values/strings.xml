@@ -137,4 +137,14 @@
     <string name="search_nearby">搜索附近</string>
     <string name="hot_label">热门标签</string>
     <string name="pattern">格局</string>
+    <string name="style_dish">菜式</string>
+    <string name="cantonese_cuisine">粤菜</string>
+    <string name="hunan_cuisine">湘菜</string>
+    <string name="sichuan_cuisine">川菜</string>
+    <string name="anhui_cuisine">徽菜</string>
+    <string name="shandong_cuisine">鲁菜</string>
+    <string name="jiangsu_cuisine">苏菜</string>
+    <string name="fujian_cuisine">闽菜</string>
+    <string name="zhejiang_cuisine">浙菜</string>
+    <string name="dinner_party_number_people">饭局人数</string>
 </resources>

@@ -12,7 +12,7 @@ import com.qbgg.cenglaicengqu.main.widget.SearchBarLayout;
 /**
  * 搜索附近的厨房饭局
  */
-public class SearchDinnerParty extends BaseActivity {
+public class SearchDinnerPartyActivity extends BaseActivity {
 
     private SearchBarLayout search_dinner_party_search_layout;
 
