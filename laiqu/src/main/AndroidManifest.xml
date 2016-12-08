@@ -84,7 +84,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
-
         </activity>
         <activity
             android:name=".main.acitvities.login.LoginActivity"
@@ -157,10 +156,16 @@
             android:label="搜索饭局"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".homepage.activities.QuickSearchKitchenActivity"
             android:label="快捷查找厨房"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".homepage.activities.NearbyKitchenActivity"
+            android:label="附近的厨房"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">

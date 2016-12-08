@@ -154,6 +154,7 @@
     <dimen name="dimen_390px">390px</dimen>
     <dimen name="dimen_460px">460px</dimen>
     <dimen name="dimen_700px">700px</dimen>
+    <dimen name="dimen_750px">750px</dimen>
     <dimen name="dimen_550px">550px</dimen>
     <dimen name="dimen_1500px">1500px</dimen>
     <dimen name="dimen_1200px">1200px</dimen>

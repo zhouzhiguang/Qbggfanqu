@@ -147,4 +147,6 @@
     <string name="fujian_cuisine">闽菜</string>
     <string name="zhejiang_cuisine">浙菜</string>
     <string name="dinner_party_number_people">饭局人数</string>
+    <string name="price">价格</string>
+    <string name="house_type">房型</string>
 </resources>

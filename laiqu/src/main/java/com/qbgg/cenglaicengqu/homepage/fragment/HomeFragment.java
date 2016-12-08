@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.netease.nim.uikit.common.ui.imageview.CircleImageView;
 import com.qbgg.cenglaicengqu.R;
+import com.qbgg.cenglaicengqu.homepage.activities.NearbyKitchenActivity;
 import com.qbgg.cenglaicengqu.homepage.activities.QuickSearchKitchenActivity;
 import com.qbgg.cenglaicengqu.homepage.activities.SearchDinnerPartyActivity;
 import com.qbgg.cenglaicengqu.homepage.activities.SwitchoverCityActivity;
@@ -143,6 +144,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         fragmentHomeCity.setOnClickListener(this);
         fragmentHomeSearch.setOnClickListener(this);
         fragmentHomeQuickSearchKitchen.setOnClickListener(this);
+        fragmentHomeNearbyKitchen.setOnClickListener(this);
     }
 
     private void assignViews() {
@@ -362,6 +364,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 intent = new Intent(activity, QuickSearchKitchenActivity.class);
                 JumpActivity(intent);
                 break;
+            case R.id.fragment_home_nearby_kitchen:
+                //附近的厨房
+                intent = new Intent(activity, NearbyKitchenActivity.class);
+                JumpActivity(intent);
+                break;
             default:
                 break;
         }
@@ -371,7 +378,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private void JumpActivity(Intent intent) {
         if (intent != null) {
             startActivity(intent);
-            activity.overridePendingTransition(R.anim.activity_out, R.anim.activity_out);
+            activity.overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
         }
     }
 }

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_1000px"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/fragment_person_bg"
+            android:padding="@dimen/dimen_30px"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_cheaper_meal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+             android:alpha="0.3"
+            android:layout_marginTop="@dimen/dimen_60px"
+            android:layout_marginRight="@dimen/dimen_80px"
+            android:src="@mipmap/ic_collect" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/kitchen_recyclerview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/dimen_30px"
+        android:layout_marginTop="@dimen/dimen_40px"
+        android:layout_weight="0"
+        android:text="雅致小包厢欢乐满堂红空中花园"
+        android:textColor="@color/color_black_4D4D4D"
+        android:textSize="@dimen/dimen_55px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_100px"
+        android:layout_weight="0"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/kitchen_recyclerview_kitchenerlocation"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_60px"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:contentDescription="饭局地址"
+            android:drawableLeft="@mipmap/ic_dinner_release_location"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:gravity="bottom"
+            android:text="南城区鸿福路口"
+            android:textColor="@color/color_black_B8B8B8"
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/kitchen_recyclerview_number_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/kitchen_recyclerview_title"
+            android:layout_below="@id/kitchen_recyclerview_title"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="人数 3-10人"
+            android:textColor="@color/color_black_B8B8B8"
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/kitchen_recyclerview_kitchenerdistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dimen_30px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:layout_weight="1"
+            android:contentDescription="饭局距离"
+            android:gravity="right"
+            android:text="距离：500m"
+            android:textColor="@color/red_bg"
+            android:textSize="@dimen/dimen_45px" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_30px"
+        android:layout_marginLeft="@dimen/dimen_30px"
+        android:layout_marginTop="@dimen/dimen_30px"
+        android:layout_weight="0"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/kitchen_recyclerview_dinnertime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/search_dinner_party_label_shape"
+            android:contentDescription="饭局时间"
+            android:padding="@dimen/dimen_20px"
+            android:text="晚餐"
+            android:textColor="@color/color_black_B8B8B8"
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/kitchen_recyclerview_kitchenstlye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:background="@drawable/search_dinner_party_label_shape"
+            android:contentDescription="饭局特色"
+            android:padding="@dimen/dimen_20px"
+            android:text="特色小吃"
+            android:textColor="@color/color_black_B8B8B8"
+            android:textSize="@dimen/dimen_45px" />
+
+    </LinearLayout>
+</LinearLayout>
