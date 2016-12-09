@@ -1,10 +1,13 @@
 package com.qbgg.cenglaicengqu.homepage.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.netease.nim.uikit.model.ToolBarOptions;
 import com.qbgg.cenglaicengqu.R;
@@ -14,12 +17,16 @@ import com.qbgg.cenglaicengqu.main.acitvities.BaseActivity;
 import com.qbgg.cenglaicengqu.main.autolayout.AutoUtils;
 import com.qbgg.cenglaicengqu.main.util.ThemUtils;
 import com.qbgg.cenglaicengqu.main.util.ToastUtils;
+import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NearbyKitchenActivity extends BaseActivity {
+public class NearbyKitchenActivity extends BaseActivity implements View.OnClickListener {
     private RecyclerView nearby_kitchen_recyclerview;
+    private NearbyKitchenAdapter adapter;
+    private ImageView nearby_kitchen_location;
+    private LinearLayout nearby_kitchen_condition_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +55,8 @@ public class NearbyKitchenActivity extends BaseActivity {
 
     private void initView() {
         nearby_kitchen_recyclerview = findView(R.id.nearby_kitchen_recyclerview);
+        nearby_kitchen_condition_layout=findView(R.id.nearby_kitchen_condition_layout);
+        nearby_kitchen_location=findView(R.id.nearby_kitchen_location);
     }
 
     private void initDate() {
@@ -62,16 +71,62 @@ public class NearbyKitchenActivity extends BaseActivity {
             }
             beas.add(kitchenBean);
         }
-        NearbyKitchenAdapter adapter = new NearbyKitchenAdapter(this, R.layout.kitchen_recyclerview_item, beas);
+        adapter = new NearbyKitchenAdapter(this, R.layout.kitchen_recyclerview_item, beas);
         nearby_kitchen_recyclerview.setAdapter(adapter);
     }
 
     private void initListener() {
+        //item 点击事件
+        adapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+
+                ToastUtils.showCenterToast(getApplicationContext(),"位置"+position);
+                //点击进入饭局详情页面
+                 Intent intent =new Intent(NearbyKitchenActivity.this,KitchenDetailsActivity.class);
+                 startActivity(intent);
+                 //finish();
+                 overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+
+            }
+
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
+            }
+        });
+        for(int i=0;i<nearby_kitchen_condition_layout.getChildCount();i++){
+            nearby_kitchen_condition_layout.getChildAt(i).setOnClickListener(this);
+        }
+        nearby_kitchen_location.setOnClickListener(this);
     }
 
 
     @Override
     protected int getLayoutId() {
         return 0;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.nearby_kitchen_area:
+            ToastUtils.showCenterToast(this,"nearby_kitchen_area");
+            break;
+            case R.id.nearby_kitchen_price:
+                ToastUtils.showCenterToast(this,"nearby_kitchen_price");
+                break;
+            case R.id.nearby_kitchen_house_type:
+                ToastUtils.showCenterToast(this,"nearby_kitchen_house_type");
+                break;
+            case R.id.nearby_kitchen_style_dish:
+                ToastUtils.showCenterToast(this,"nearby_kitchen_style_dish");
+                break;
+            case R.id.nearby_kitchen_location:
+                ToastUtils.showCenterToast(this,"nearby_kitchen_location");
+                break;
+            default:
+                break;
+        }
     }
 }

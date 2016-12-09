@@ -149,4 +149,6 @@
     <string name="dinner_party_number_people">饭局人数</string>
     <string name="price">价格</string>
     <string name="house_type">房型</string>
+    <string name="can_ordering_meal_date">可订餐日期</string>
+    <string name="recommend_reason">推荐理由</string>
 </resources>
