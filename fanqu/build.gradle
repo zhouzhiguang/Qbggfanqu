@@ -14,8 +14,8 @@ android {
             storePassword '999999'
         }
     }
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "com.fanqu"
         minSdkVersion 15
@@ -63,7 +63,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
     compile 'com.kymjs.rxvolley:rxvolley:1.1.0'
     // If use okhttp function
@@ -71,7 +71,7 @@ dependencies {
     // If use image-loader function
     compile 'com.kymjs.rxvolley:bitmapcore:1.1.0'
     compile 'cn.hugeterry.updatefun:updatefun:1.8.6'
-    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:design:25.0.1'
     compile project(':library')
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.github.chrisbanes.photoview:library:1.2.4'
