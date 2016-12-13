@@ -71,4 +71,8 @@
         <attr name="tvc_textPaddingHorizantal" format="dimension" />
         <attr name="tvc_textPaddingVertical" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="ClearEditText">
+        <!-- 清除按钮的图标 -->
+        <attr name="iconClear" format="reference"/>
+    </declare-styleable>
 </resources>

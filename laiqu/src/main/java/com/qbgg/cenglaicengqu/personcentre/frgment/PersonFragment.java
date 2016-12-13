@@ -1,6 +1,8 @@
 package com.qbgg.cenglaicengqu.personcentre.frgment;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
@@ -10,14 +12,15 @@ import android.widget.TextView;
 
 import com.qbgg.cenglaicengqu.R;
 import com.qbgg.cenglaicengqu.main.fragment.BaseFragment;
+import com.qbgg.cenglaicengqu.personcentre.activities.SetingActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PersonFragment extends BaseFragment implements View.OnClickListener{
-
+public class PersonFragment extends BaseFragment implements View.OnClickListener {
+    private Activity activity;
     private View view;
     private FrameLayout fragmentPersonLoggedHeadLayout;
     private FrameLayout fragmentPersonNotloggedHeadLayout;
@@ -38,7 +41,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     private TextView fragment_person_name;//帐号名字
     private TextView fragment_person_vip_targ;//身份标识
     private TextView fragment_person_account_management;//帐号管理
-    private  TextView fragment_person_login_register;//还没有登录登录转登录注册
+    private TextView fragment_person_login_register;//还没有登录登录转登录注册
 
     /**
      * 初始化view
@@ -61,11 +64,11 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         aboutUs = (TextView) findView(R.id.about_us);
         fragment_person_seting = findView(R.id.fragment_person_seting);
         head_image = findView(R.id.profile_image);
-        fragment_person_name=findView(R.id.fragment_person_name);
+        fragment_person_name = findView(R.id.fragment_person_name);
         //setCompoundDrawables  设置drawableRight  drawableLeft等属性
-        fragment_person_vip_targ=findView(R.id.fragment_person_vip_targ);
-        fragment_person_account_management=findView(R.id.fragment_person_account_management);
-        fragment_person_login_register=findView(R.id.fragment_person_login_register);
+        fragment_person_vip_targ = findView(R.id.fragment_person_vip_targ);
+        fragment_person_account_management = findView(R.id.fragment_person_account_management);
+        fragment_person_login_register = findView(R.id.fragment_person_login_register);
     }
 
 
@@ -77,6 +80,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_person_layout);
+        activity = getActivity();
         assignViews();
 
     }
@@ -106,16 +110,26 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
      * 初始化点击事件
      */
     private void initListener() {
+        fragment_person_seting.setOnClickListener(this);
     }
-
 
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
+            case R.id.fragment_person_seting:
+                jumpactivity(SetingActivity.class);
+
+                break;
             default:
                 break;
         }
 
+    }
+
+    private void jumpactivity(Class clazz) {
+        Intent intent = new Intent(activity, clazz);
+        PersonFragment.this.startActivity(intent);
+        activity.overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
     }
 }

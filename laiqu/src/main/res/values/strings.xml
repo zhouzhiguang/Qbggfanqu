@@ -151,4 +151,25 @@
     <string name="house_type">房型</string>
     <string name="can_ordering_meal_date">可订餐日期</string>
     <string name="recommend_reason">推荐理由</string>
+    <string name="kitchen_set_meal_a">A套餐(%1$s元/位)</string>
+    <string name="setting">设置</string>
+    <string name="person_data">个人资料</string>
+    <string name="exit_login">退出登录</string>
+    <string name="account_safe">账户与安全</string>
+    <string name="meal_privacy">饭友隐私</string>
+    <string name="new_notifications">新消息提醒</string>
+    <string name="clean_cache">清除缓存</string>
+    <string name="about_app">关于蹭范趣</string>
+    <string name="personal_data">个人资料</string>
+    <string name="head_portrait">头像</string>
+    <string name="nick_name">昵称</string>
+    <string name="sex">性别</string>
+    <string name="birthday">生日</string>
+    <string name="data_area">地区</string>
+    <string name="QRCode_identity">二维码名片</string>
+    <string name="upload_picture">上传头像</string>
+    <string name="take_picture_update">拍照上传</string>
+    <string name="photo_album">相册选取</string>
+    <string name="personal_data_nicename">修改昵称</string>
+    <string name="date_nickname_tips">2-8个字符，可由中英，数字组成</string>
 </resources>

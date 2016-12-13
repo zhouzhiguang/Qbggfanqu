@@ -326,7 +326,7 @@
                     android:contentDescription="饭局推荐理由"
                     android:gravity="center"
                     android:text="创意工作室甜蜜少女心爆棚"
-                    android:textColor="@color/color_black_4D4D4D"
+                    android:textColor="@color/selectionshare_content_color"
                     android:textSize="@dimen/dimen_50px" />
 
                 <TextView
@@ -337,7 +337,7 @@
                     android:contentDescription="饭局推荐理由"
                     android:gravity="center"
                     android:text="创意工作室甜蜜少女心爆棚"
-                    android:textColor="@color/color_black_4D4D4D"
+                    android:textColor="@color/selectionshare_content_color"
                     android:textSize="@dimen/dimen_50px" />
 
                 <TextView
@@ -349,7 +349,7 @@
                     android:contentDescription="饭局推荐理由"
                     android:gravity="center"
                     android:text="内设超大烘培室 见证精美甜点的诞生"
-                    android:textColor="@color/color_black_4D4D4D"
+                    android:textColor="@color/selectionshare_content_color"
                     android:textSize="@dimen/dimen_50px" />
 
             </LinearLayout>
@@ -359,6 +359,42 @@
                 android:layout_height="@dimen/dimen_30px"
                 android:background="@color/bgColor"></View>
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_500px"
+                android:paddingBottom="@dimen/dimen_40px">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_450px"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dimen_60px"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_invite_politeness_image" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:src="@mipmap/ic_set_meal" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_800px"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="A套餐"
+                    android:text="@string/kitchen_set_meal_a"
+                    android:textSize="@dimen/dimen_60px"
+                    android:textColor="@color/color_E2666A"
+                    android:id="@+id/kitchen_details_a_set_meal"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

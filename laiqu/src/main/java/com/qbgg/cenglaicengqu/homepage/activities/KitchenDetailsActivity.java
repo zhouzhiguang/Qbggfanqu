@@ -5,6 +5,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.netease.nim.uikit.model.ToolBarOptions;
 import com.qbgg.cenglaicengqu.R;
@@ -18,6 +19,7 @@ public class KitchenDetailsActivity extends BaseActivity implements View.OnClick
     private AppBarLayout kitchen_details_app_bar_layout;
     private ImageView kitchen_details_share_image, kitchen_details_like,kitchen_details_share;
     private ToolBarOptions options;
+    private TextView kitchen_details_a_set_meal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +48,14 @@ public class KitchenDetailsActivity extends BaseActivity implements View.OnClick
         kitchen_details_app_bar_layout = findView(R.id.kitchen_details_app_bar_layout);
         kitchen_details_like = findView(R.id.kitchen_details_like);
         kitchen_details_share=findView(R.id.kitchen_details_share);
+        kitchen_details_a_set_meal=findView(R.id.kitchen_details_a_set_meal);
 
     }
 
     private void initDate() {
+            String meal_a= getResources().getString(R.string.kitchen_set_meal_a);
+            kitchen_details_a_set_meal.setText(String.format(meal_a,"30"));
+
 //        kitchen_details_swiperefreshLayout.setRefreshEnable(false);
 //        kitchen_details_swiperefreshLayout.setLoadmoreEnable(false);
         kitchen_details_app_bar_layout.addOnOffsetChangedListener(new AppBarStateChangeListener() {
