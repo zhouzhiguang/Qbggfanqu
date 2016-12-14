@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <!--lineColor	divider line color 分割线颜色
+        lineHeight	divider line height 分割线高度
+        itemNumber	wheelview show item count 此wheelView显示item的个数
+        maskHeight	mask height 蒙版高度（normalText的位置）
+        noEmpty	if set true select area can't be null(empty),or could be empty 设置true则选中不能为空，否则可以是空
+        normalTextColor	unSelected Text color 未选中文本颜色
+        normalTextSize	unSelected Text size 未选中文本字体大小
+        selectedTextColor	selected Text color 选中文本颜色
+        selectedTextSize	selected Text size 选中文本字体大小
+        unitHeight	item unit height 每个item单元的高度-->
+
+
+        <com.qbgg.cenglaicengqu.main.widget.WheelView
+            android:id="@+id/province_wv"
+            android:layout_width="@dimen/dimen_400px"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            app:itemNumber="5"
+            app:lineColor="@android:color/white"
+            app:lineHeight="@dimen/dimen_3px"
+            app:maskHeight="@dimen/dimen_50px"
+            app:noEmpty="true"
+            app:normalTextColor="@color/dinner_party_details_edit_hint_color"
+            app:normalTextSize="@dimen/dimen_50px"
+            app:selectedTextColor="@color/textGrayMiddle"
+            app:selectedTextSize="@dimen/dimen_60px"
+            app:unitHeight="@dimen/dimen_100px" />
+
+        <com.qbgg.cenglaicengqu.main.widget.WheelView
+            android:id="@+id/city_wv"
+            android:layout_width="@dimen/dimen_400px"
+            android:layout_height="wrap_content"
+            app:itemNumber="5"
+            app:lineColor="@android:color/white"
+            app:lineHeight="@dimen/dimen_3px"
+            app:maskHeight="@dimen/dimen_50px"
+            app:noEmpty="true"
+            app:normalTextColor="@color/dinner_party_details_edit_hint_color"
+            app:normalTextSize="@dimen/dimen_50px"
+            app:selectedTextColor="@color/textGrayMiddle"
+            app:selectedTextSize="@dimen/dimen_60px"
+            app:unitHeight="@dimen/dimen_100px" />
+    </LinearLayout>
+
+
+</LinearLayout>

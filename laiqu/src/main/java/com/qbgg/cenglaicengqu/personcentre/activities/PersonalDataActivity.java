@@ -13,6 +13,9 @@ import com.qbgg.cenglaicengqu.main.acitvities.BaseActivity;
 import com.qbgg.cenglaicengqu.main.autolayout.AutoUtils;
 import com.qbgg.cenglaicengqu.main.util.ThemUtils;
 import com.qbgg.cenglaicengqu.main.util.ToastUtils;
+import com.qbgg.cenglaicengqu.personcentre.dialog.BirthDayPickerDialog;
+import com.qbgg.cenglaicengqu.personcentre.dialog.CityPickerDialog;
+import com.qbgg.cenglaicengqu.personcentre.dialog.SexPickerDialog;
 import com.qbgg.cenglaicengqu.personcentre.dialog.UploadPictureDialog;
 
 /**
@@ -20,7 +23,8 @@ import com.qbgg.cenglaicengqu.personcentre.dialog.UploadPictureDialog;
  */
 public class PersonalDataActivity extends BaseActivity implements View.OnClickListener {
     private CircleImageView personal_data_head_image;
-    private TextView personal_data_head_portrait, personal_data_nickname;
+    private TextView personal_data_head_portrait, personal_data_nickname, personal_data_area_text, personal_data_area, personal_data_sex_text;
+    private TextView personal_data_birthday_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +55,10 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
         personal_data_head_image = findView(R.id.personal_data_head_image);
         personal_data_head_portrait = findView(R.id.personal_data_head_portrait);
         personal_data_nickname = findView(R.id.personal_data_nickname);
-
+        personal_data_area_text = findView(R.id.personal_data_area_text);
+        personal_data_area = findView(R.id.personal_data_area);
+        personal_data_sex_text = findView(R.id.personal_data_sex_text);
+        personal_data_birthday_text = findView(R.id.personal_data_birthday_text);
     }
 
     private void initDate() {
@@ -59,9 +66,11 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void initListener() {
-
         personal_data_head_portrait.setOnClickListener(this);
         personal_data_nickname.setOnClickListener(this);
+        personal_data_area_text.setOnClickListener(this);
+        personal_data_sex_text.setOnClickListener(this);
+        personal_data_birthday_text.setOnClickListener(this);
     }
 
     @Override
@@ -79,9 +88,21 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
                 break;
             case R.id.personal_data_nickname:
                 //设置昵称
-                Intent intent =new Intent(this,DateNicknameActivity.class);
+                Intent intent = new Intent(this, DateNicknameActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                break;
+            case R.id.personal_data_area_text:
+                CityPickerDialog cityPickerDialog = new CityPickerDialog(this, R.style.CustomcityPickerDialog);
+                cityPickerDialog.show();
+                break;
+            case R.id.personal_data_sex_text:
+                SexPickerDialog sexPickerDialog = new SexPickerDialog(this, R.style.CustomcityPickerDialog);
+                sexPickerDialog.show();
+                break;
+            case R.id.personal_data_birthday_text:
+                BirthDayPickerDialog birthDayPickerDialog = new BirthDayPickerDialog(this, R.style.CustomcityPickerDialog);
+                birthDayPickerDialog.show();
                 break;
             default:
                 break;
