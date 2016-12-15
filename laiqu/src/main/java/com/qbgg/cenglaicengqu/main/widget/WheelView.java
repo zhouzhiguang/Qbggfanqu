@@ -19,7 +19,7 @@ import android.view.View;
 import com.qbgg.cenglaicengqu.R;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 /**
@@ -47,7 +47,7 @@ public class WheelView extends View {
     /**
      * 设置数据
      */
-    private ArrayList<String> dataList = new ArrayList<>();
+    private List<String> dataList = new ArrayList<>();
     /**
      * 按下的坐标
      */
@@ -496,7 +496,7 @@ public class WheelView extends View {
      *
      * @param data
      */
-    public void setData(ArrayList<String> data) {
+    public void setData(List<String> data) {
         this.dataList = data;
         initData();
     }
@@ -506,7 +506,7 @@ public class WheelView extends View {
      *
      * @param data
      */
-    public void refreshData(ArrayList<String> data) {
+    public void refreshData(List<String> data) {
         setData(data);
         invalidate();
     }

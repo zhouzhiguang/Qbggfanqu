@@ -1,6 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    signingConfigs {
+        config {
+            keyAlias 'android.keystore'
+            keyPassword '999999'
+            storeFile file('D:/本地开发源码备份/android.keystore')
+            storePassword '999999'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     //关闭cruncher检查(禁止png图片格式验证)
@@ -18,7 +27,11 @@ android {
 
     }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
         release {
+            signingConfig signingConfigs.config
 
             // 不显示Log
             buildConfigField "boolean", "LOG_DEBUG", "false"
@@ -54,5 +67,4 @@ dependencies {
     compile 'com.miomin:shswiperefreshlayout:1.2.0'
     //Android 万能的Adapter for ListView,RecyclerView,GridView等，支持多种Item类型的情况。
     compile 'com.zhy:base-rvadapter:3.0.3'
-
 }

@@ -9,15 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.qbgg.cenglaicengqu.R;
 import com.qbgg.cenglaicengqu.main.autolayout.AutoUtils;
+import com.qbgg.cenglaicengqu.main.util.ToastUtils;
+import com.qbgg.cenglaicengqu.main.util.ViewHolder;
+import com.qbgg.cenglaicengqu.main.widget.TimePickerLayout;
 
 /**
  * Created by Administrator on 2016/12/14.
  */
 
-public class BirthDayPickerDialog extends Dialog {
+public class BirthDayPickerDialog extends Dialog implements View.OnClickListener {
+
+    private TimePickerLayout time_picker_text;
+
     public BirthDayPickerDialog(Context context) {
         super(context);
     }
@@ -50,5 +57,27 @@ public class BirthDayPickerDialog extends Dialog {
         setCanceledOnTouchOutside(true);
         AutoUtils.auto(view);
         setContentView(view);
+        time_picker_text = ViewHolder.get(view, R.id.time_picker_text);
+        TextView time_picker_cancel = ViewHolder.get(view, R.id.time_picker_cancel);
+        TextView time_picker_sure = ViewHolder.get(view, R.id.time_picker_sure);
+        time_picker_cancel.setOnClickListener(this);
+        time_picker_sure.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.time_picker_cancel:
+                dismiss();
+                break;
+            case R.id.time_picker_sure:
+                String year = time_picker_text.getYear();
+                String month = time_picker_text.getMonth();
+                String day = time_picker_text.getDay();
+                ToastUtils.showCenterToast(getContext(), year + "年" + month + "月" + day + "日");
+                break;
+            default:
+                break;
+        }
     }
 }
