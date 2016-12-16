@@ -25,5 +25,10 @@
     <string name="weixin_pay_nonsupport">微信支付不支持</string>
     <string name="weixin_app_notinstall">微信客户端没有安装安装后重试</string>
     <string name="share_from_html_zone">QQ空间</string>
+    <string name="select_navigation_title">选择导航</string>
+    <string name="map_baidu">百度地图</string>
+    <string name="map_amap">高德地图</string>
+    <string name="map_tencent">腾讯地图</string>
+    <string name="string_map_not_install_notice">您还没有安转该地图，系统帮你跳转浏览器导航</string>
 
 </resources>

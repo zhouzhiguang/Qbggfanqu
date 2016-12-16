@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
+import com.amap.api.navi.AMapNavi;
+
 public class CustomApplication extends Application {
 	/** 屏幕分辨率：屏幕宽度 */
 	public static int SCREEN_WIDTH = 0;
@@ -42,6 +44,7 @@ public class CustomApplication extends Application {
 		// TODO Auto-generated method stub
 		super.onCreate();
 		init();
+		AMapNavi.setApiKey(this, "f5bf910cb1934d7b6e93bc252952b63c");
 		LogUtil.isDebug=true;
 	}
 

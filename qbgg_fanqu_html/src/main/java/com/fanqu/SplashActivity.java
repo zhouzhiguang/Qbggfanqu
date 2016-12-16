@@ -12,7 +12,6 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.fanqu.R;
 import com.fanqu.qbgg.fanqu.framework.utills.NetworkUtils;
 import com.fanqu.qbgg.fanqu.framework.utills.ToastUtils;
 
