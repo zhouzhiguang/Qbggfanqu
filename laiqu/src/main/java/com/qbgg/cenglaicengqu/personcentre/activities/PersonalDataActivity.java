@@ -13,9 +13,9 @@ import com.qbgg.cenglaicengqu.main.acitvities.BaseActivity;
 import com.qbgg.cenglaicengqu.main.autolayout.AutoUtils;
 import com.qbgg.cenglaicengqu.main.util.ThemUtils;
 import com.qbgg.cenglaicengqu.main.util.ToastUtils;
+import com.qbgg.cenglaicengqu.main.widget.ActionSheetDialog;
 import com.qbgg.cenglaicengqu.personcentre.dialog.BirthDayPickerDialog;
 import com.qbgg.cenglaicengqu.personcentre.dialog.CityPickerDialog;
-import com.qbgg.cenglaicengqu.personcentre.dialog.SexPickerDialog;
 import com.qbgg.cenglaicengqu.personcentre.dialog.UploadPictureDialog;
 
 /**
@@ -24,7 +24,7 @@ import com.qbgg.cenglaicengqu.personcentre.dialog.UploadPictureDialog;
 public class PersonalDataActivity extends BaseActivity implements View.OnClickListener {
     private CircleImageView personal_data_head_image;
     private TextView personal_data_head_portrait, personal_data_nickname, personal_data_area_text, personal_data_area, personal_data_sex_text;
-    private TextView personal_data_birthday_text;
+    private TextView personal_data_birthday_text, personal_data_personalized_signature, personal_data_QRCode_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,9 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
         personal_data_area = findView(R.id.personal_data_area);
         personal_data_sex_text = findView(R.id.personal_data_sex_text);
         personal_data_birthday_text = findView(R.id.personal_data_birthday_text);
+        personal_data_personalized_signature = findView(R.id.personal_data_personalized_signature);
+        personal_data_QRCode_text = findView(R.id.personal_data_QRCode_text);
+
     }
 
     private void initDate() {
@@ -71,6 +74,8 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
         personal_data_area_text.setOnClickListener(this);
         personal_data_sex_text.setOnClickListener(this);
         personal_data_birthday_text.setOnClickListener(this);
+        personal_data_personalized_signature.setOnClickListener(this);
+        personal_data_QRCode_text.setOnClickListener(this);
     }
 
     @Override
@@ -80,6 +85,7 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
+        Intent intent;
         switch (view.getId()) {
             case R.id.personal_data_head_portrait:
                 UploadPictureDialog dialog = new UploadPictureDialog(PersonalDataActivity.this, R.style.CustomDatePickerDialog);
@@ -88,7 +94,7 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
                 break;
             case R.id.personal_data_nickname:
                 //设置昵称
-                Intent intent = new Intent(this, DateNicknameActivity.class);
+                intent = new Intent(this, DateNicknameActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                 break;
@@ -97,12 +103,44 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
                 cityPickerDialog.show();
                 break;
             case R.id.personal_data_sex_text:
-                SexPickerDialog sexPickerDialog = new SexPickerDialog(this, R.style.CustomcityPickerDialog);
-                sexPickerDialog.show();
+//                SexPickerDialog sexPickerDialog = new SexPickerDialog(this, R.style.CustomcityPickerDialog);
+//                sexPickerDialog.show();
+                new ActionSheetDialog(this)
+                        .builder()
+                        .setCancelable(true)
+                        .setCanceledOnTouchOutside(true)
+                        .addSheetItem(getString(R.string.male), ActionSheetDialog.SheetItemColor.Blue,
+                                new ActionSheetDialog.OnSheetItemClickListener() {
+                                    @Override
+                                    public void onClick(int which) {
+                                        //男点击
+                                        ToastUtils.showCenterToast(PersonalDataActivity.this, which + "第几条");
+                                    }
+                                })
+                        .addSheetItem(getString(R.string.female), ActionSheetDialog.SheetItemColor.Blue,
+                                new ActionSheetDialog.OnSheetItemClickListener() {
+                                    @Override
+                                    public void onClick(int which) {
+                                        //女的点击
+                                        ToastUtils.showCenterToast(PersonalDataActivity.this, which + "女");
+                                    }
+                                })
+
+                        .show();
                 break;
             case R.id.personal_data_birthday_text:
                 BirthDayPickerDialog birthDayPickerDialog = new BirthDayPickerDialog(this, R.style.CustomcityPickerDialog);
                 birthDayPickerDialog.show();
+                break;
+            case R.id.personal_data_personalized_signature:
+                //个性签名
+                intent = new Intent(this, PersonalizedSignature.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                break;
+            case R.id.personal_data_QRCode_text:
+                //二维码名片
+
                 break;
             default:
                 break;

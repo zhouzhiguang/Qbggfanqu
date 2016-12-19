@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_150px"
             android:layout_gravity="center_horizontal"
-            android:background="@color/text_color_GrayLight_more1"
+            android:background="@color/color_F8F8F8"
             android:orientation="horizontal">
 
             <TextView
@@ -27,41 +27,72 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/dimen_40px"
-                android:layout_marginRight="@dimen/dimen_130px"
-                android:layout_weight="1"
                 android:clickable="true"
                 android:drawablePadding="@dimen/dimen_40px"
                 android:gravity="left"
                 android:padding="@dimen/dimen_20px"
                 android:text="@string/cancel"
-                android:textColor="@color/white"
+                android:textColor="@color/color_4499FF"
                 android:textSize="@dimen/dimen_55px" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/select_birth_date"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_55px"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/time_picker_sure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|right"
-                android:layout_marginLeft="@dimen/dimen_130px"
                 android:layout_marginRight="@dimen/dimen_40px"
                 android:clickable="true"
                 android:drawablePadding="@dimen/dimen_40px"
                 android:gravity="center"
                 android:padding="@dimen/dimen_20px"
                 android:text="@string/ok"
-                android:textColor="@color/white"
+                android:textColor="@color/color_4499FF"
                 android:textSize="@dimen/dimen_55px" />
 
         </LinearLayout>
 
-        <com.qbgg.cenglaicengqu.main.widget.TimePickerLayout
-            android:id="@+id/time_picker_text"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center" />
+            android:layout_height="wrap_content">
 
+            <com.qbgg.cenglaicengqu.main.widget.TimePickerLayout
+                android:id="@+id/time_picker_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.qbgg.cenglaicengqu.main.widget.TimePickerLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:layout_marginBottom="@dimen/dimen_50px"
+                    android:background="@color/color_CFCFCF"></View>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:layout_marginTop="@dimen/dimen_50px"
+                    android:background="@color/color_EBEBEB"></View>
+            </LinearLayout>
+
+        </RelativeLayout>
     </LinearLayout>
 
 

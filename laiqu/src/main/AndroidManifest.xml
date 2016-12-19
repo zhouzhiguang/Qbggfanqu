@@ -179,7 +179,7 @@
             android:label="个人中心设置"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".personcentre.activities.PersonalDataActivity"
             android:label="个人资料"
@@ -198,7 +198,8 @@
             android:label="个人昵称"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".personcentre.activities.PersonalizedSignature"></activity>
     </application>
 
 </manifest>

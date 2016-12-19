@@ -43,7 +43,6 @@ public class BirthDayPickerDialog extends Dialog implements View.OnClickListener
         LayoutInflater inflater = LayoutInflater.from(getContext());
         Window dialogWindow = this.getWindow();
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         dialogWindow.getDecorView().setPadding(0, 0, 0, 0);// 这个很重要
         dialogWindow.setGravity(Gravity.BOTTOM);
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
@@ -74,6 +73,7 @@ public class BirthDayPickerDialog extends Dialog implements View.OnClickListener
                 String year = time_picker_text.getYear();
                 String month = time_picker_text.getMonth();
                 String day = time_picker_text.getDay();
+                dismiss();
                 ToastUtils.showCenterToast(getContext(), year + "年" + month + "月" + day + "日");
                 break;
             default:

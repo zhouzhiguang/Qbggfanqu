@@ -7,8 +7,8 @@ import java.util.List;
  * 时间数据提供工具类
  */
 public class TimeDateUtils {
-    public static  int MIN_YEAR = 1970;
-    public static  int MAX_YEAR = 2099;
+    public static int MIN_YEAR = 1970;
+    public static int MAX_YEAR = 2099;
 
     /**
      * Wheel TYPE Year
@@ -59,8 +59,8 @@ public class TimeDateUtils {
 
     private static List<String> createdYear() {
         List<String> wheelString = new ArrayList<>();
-        for (int i = MAX_YEAR; i >=MIN_YEAR; i--) {
-            wheelString.add(Integer.toString(i));
+        for (int i = MIN_YEAR; i <= MAX_YEAR; i++) {
+            wheelString.add(Integer.toString(i) + "年");
         }
         return wheelString;
     }
@@ -73,7 +73,7 @@ public class TimeDateUtils {
     private static List<String> createdMonth() {
         List<String> wheelString = new ArrayList<>();
         for (int i = 1; i <= 12; i++) {
-            wheelString.add(String.format("%02d", i));
+            wheelString.add(String.format("%02d", i) + "月");
         }
         return wheelString;
     }
@@ -87,7 +87,7 @@ public class TimeDateUtils {
     private static List<String> createdDay() {
         List<String> wheelString = new ArrayList<>();
         for (int i = 1; i <= 31; i++) {
-            wheelString.add(String.format("%02d", i));
+            wheelString.add(String.format("%02d", i) + "日");
         }
         return wheelString;
     }
@@ -113,7 +113,7 @@ public class TimeDateUtils {
         }
 
         for (int i = 1; i <= size; i++) {
-            wheelString.add(String.format("%02d", i));
+            wheelString.add(String.format("%02d", i) + "日");
         }
         return wheelString;
     }

@@ -49,7 +49,9 @@ public class TimePickerLayout extends LinearLayout {
         year = mCalendar.get(Calendar.YEAR);
         utils = new TimeDateUtils();
         utils.MAX_YEAR = year;
-        mWheelYear.setData(getYearData());
+        List<String>yeas=getYearData();
+        mWheelYear.setData(yeas);
+        mWheelYear.setDefault(yeas.size()-30);
 //        mWheelYear.setOnSelectListener(new WheelView.OnSelectListener() {
 //            @Override
 //            public void endSelect(int id, final String text) {
@@ -82,7 +84,8 @@ public class TimePickerLayout extends LinearLayout {
         mWheelYear.setOnSelectListener(new WheelView.OnSelectListener() {
             @Override
             public void endSelect(int id, String text) {
-                curryear = Integer.parseInt(text);
+                String ye = text.substring(0, text.length() - 1);
+                curryear = Integer.parseInt(ye);
                 LogUtil.e("当前年份", text + "************年");
                 if (mCurryear != id) {
                     mCurryear = id;
@@ -103,7 +106,8 @@ public class TimePickerLayout extends LinearLayout {
         mWheelMonth.setOnSelectListener(new WheelView.OnSelectListener() {
             @Override
             public void endSelect(int id, String text) {
-                List<String> daies = utils.createdDay(curryear, Integer.parseInt(text));
+                String day=text.substring(0,text.length()-1);
+                List<String> daies = utils.createdDay(curryear, Integer.parseInt(day));
                 mWheelDay.setData(daies);
                 if (daies.size() > 1) {
                     //if city is more than one,show start index == 1
