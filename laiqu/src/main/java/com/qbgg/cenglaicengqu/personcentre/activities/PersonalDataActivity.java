@@ -25,6 +25,7 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
     private CircleImageView personal_data_head_image;
     private TextView personal_data_head_portrait, personal_data_nickname, personal_data_area_text, personal_data_area, personal_data_sex_text;
     private TextView personal_data_birthday_text, personal_data_personalized_signature, personal_data_QRCode_text;
+    private TextView personal_data_taste_preference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
         personal_data_birthday_text = findView(R.id.personal_data_birthday_text);
         personal_data_personalized_signature = findView(R.id.personal_data_personalized_signature);
         personal_data_QRCode_text = findView(R.id.personal_data_QRCode_text);
+        personal_data_taste_preference=findView(R.id.personal_data_taste_preference);
 
     }
 
@@ -76,6 +78,7 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
         personal_data_birthday_text.setOnClickListener(this);
         personal_data_personalized_signature.setOnClickListener(this);
         personal_data_QRCode_text.setOnClickListener(this);
+        personal_data_taste_preference.setOnClickListener(this);
     }
 
     @Override
@@ -134,14 +137,22 @@ public class PersonalDataActivity extends BaseActivity implements View.OnClickLi
                 break;
             case R.id.personal_data_personalized_signature:
                 //个性签名
-                intent = new Intent(this, PersonalizedSignature.class);
+                intent = new Intent(this, PersonalizedSignatureActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                 break;
             case R.id.personal_data_QRCode_text:
                 //二维码名片
-
+                intent=new Intent(this,PersonalQRcodeBusinessActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
                 break;
+            case R.id.personal_data_taste_preference:
+                //口味偏好
+                 intent=new Intent(this,TastePreferenceActivity.class);
+                 startActivity(intent);
+                overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+            break;
             default:
                 break;
         }

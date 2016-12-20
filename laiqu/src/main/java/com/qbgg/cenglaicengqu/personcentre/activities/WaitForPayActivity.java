@@ -45,7 +45,7 @@ public class WaitForPayActivity extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
         setContentView(R.layout.activity_wait_for_pay_layout);
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+       // AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();
         options.isNeedNavigate = true;

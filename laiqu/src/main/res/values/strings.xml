@@ -189,4 +189,23 @@
     <string name="personalized_signature">个性签名</string>
     <string name="taste_preference">口味偏好</string>
     <string name="select_birth_date">选择出生日期</string>
+    <string name="personal_qrcode_business">我的二维码名片</string>
+    <string name="personal_qrcode_business_tips_1">可通过扫一扫上面的二维码图案,</string>
+    <string name="personal_qrcode_business_tips_2">接受我的邀请</string>
+    <string name="submit">提交</string>
+    <string name="fragment_person_edit_signature_tips">用一段话介绍自己</string>
+    <string name="select_taste_preference">选择你的口味与偏好</string>
+    <!--口味偏好默认的stringarray集合-->
+    <string-array name="taste_preference_string_array">
+        <item>清淡</item>
+        <item>无辣不欢</item>
+        <item>咸鲜</item>
+        <item>酸甜</item>
+        <item>苦辣</item>
+        <item>素食主义</item>
+        <item>海鲜过敏</item>
+        <item>果味</item>
+        <item>不吃辣</item>
+
+    </string-array>
 </resources>

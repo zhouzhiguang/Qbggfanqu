@@ -69,4 +69,70 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
+
+    <!--https://github.com/jackuhan/FlowlayoutTags-->
+    <style name="MultiLineChooseLayoutTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="item_textColor">#49C120</item>
+        <item name="item_backgroundColor">#FFFFFF</item>
+        <item name="item_selectedTextColor">#FFFFFF</item>
+        <item name="item_selectedBackgroundColor">#49C120</item>
+        <item name="item_textSize">13sp</item>
+        <item name="item_horizontalSpacing">5dp</item>
+        <item name="item_verticalSpacing">5dp</item>
+        <item name="item_horizontalPadding">12dp</item>
+        <item name="item_verticalPadding">3dp</item>
+        <item name="item_radius">5dp</item>
+        <item name="item_selectedStrokeColor">#49C120</item>
+        <item name="item_strokeWidth">1px</item>
+        <item name="item_multiChooseable">true</item>
+        <item name="item_singleLine">true</item>
+        <item name="item_width">wrap_content</item>
+        <item name="item_height">wrap_content</item>
+    </style>
+    <!--口味偏好多选属性配置
+
+    -->
+    <style name="MultiLineChooseLayoutTags.MultiChoose" parent="MultiLineChooseLayoutTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+         <!--//选项item文字默认值-->
+        <!--<item name="item_textColor">#f16666</item>-->
+        <!--//选项item背景色-->
+        <!--<item name="item_backgroundColor">@color/fragment_person_bg</item>-->
+        <!--//选中后选项item的文字颜色-->
+        <!--<item name="item_selectedTextColor">#D81D24</item>-->
+        <item name="item_textColor">#f16666</item>
+        <item name="item_backgroundColor">#FFFFFF</item>
+        <item name="item_selectedTextColor">#FFFFFF</item>
+        <item name="item_selectedBackgroundColor">#49C120</item>
+        <item name="item_textSize">@dimen/dimen_50px</item>
+        <!--//选中后选项item的背景颜色-->
+        <!--<item name="item_selectedBackgroundColor">@color/fragment_person_bg</item>-->
+        //选项item的圆角大小
+        <item name="item_radius">@dimen/dimen_20px</item>
+        //选项item的边缘颜色
+        <item name="item_strokeColor">@color/textGrayLight</item>
+        //选项item选中后边缘颜色
+        <item name="item_selectedStrokeColor">@color/textGrayDeep</item>
+        //选项item边缘的大小
+        <item name="item_strokeWidth">@dimen/dimen_3px</item>
+        //水平方向，选项item的间距
+        <item name="item_horizontalSpacing">@dimen/dimen_50px</item>
+        <!--这里设置固定大小,padding为0-->
+        //选项item内部padding
+        <item name="item_horizontalPadding">@dimen/dimen_40px</item>
+        //竖直方向，选项item的间距
+        <item name="item_verticalPadding">@dimen/dimen_50px</item>
+        //选项item的大小，如果设置wrap_content则包裹它的内容，可设置固定值如80，单位dp
+        //如果要设置多选，请在style中设置item_multiChooseable=true 如果要设置流式布局，则将item的宽和高都设置为wrap_content
+        <item name="item_width">wrap_content</item>
+        <item name="item_height">80</item>
+        //限制item文字显示长度
+        <item name="item_maxEms">4</item>
+        //是否可以多选
+        <item name="item_multiChooseable">true</item>
+        <item name="item_singleLine">true</item>
+    </style>
 </resources>
