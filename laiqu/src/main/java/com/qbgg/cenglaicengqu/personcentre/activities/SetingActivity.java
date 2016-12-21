@@ -66,7 +66,9 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void initListener() {
+        //个人资料
         setingPersonData.setOnClickListener(this);
+        setingPersonAccountSafe.setOnClickListener(this);
     }
 
     @Override
@@ -81,6 +83,10 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
                 //个人中心
                 jumpActivity(PersonalDataActivity.class);
                 break;
+            case R.id.seting_person_account_safe:
+                //帐户与安全
+               jumpActivity(PersonalAccountSafeActivity.class);
+            break;
             default:
                 break;
         }

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_personal_account_safe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/personal_account_safe"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_50px"
+            android:text="@string/password_safety"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_50px" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/personal_account_safe_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_170px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="密码"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/password"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_55px" />
+
+            <TextView
+                android:id="@+id/personal_data_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/personal_account_safe_password"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/dimen_30px"
+                android:layout_marginRight="@dimen/dimen_120px"
+                android:text="@string/modification"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_45px" />
+
+            <View
+                android:id="@+id/personal_data_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_below="@id/personal_account_safe_password"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:background="@color/wait_for_pay_line_color"></View>
+
+            <TextView
+                android:id="@+id/personal_account_safe_bound_mobile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_170px"
+                android:layout_below="@id/personal_data_line"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="绑定手机号"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/bound_mobile_phone"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_55px" />
+
+            <TextView
+                android:id="@+id/personal_account_safe_bound_mobile_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/personal_account_safe_bound_mobile_phone"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/dimen_30px"
+                android:layout_marginRight="@dimen/dimen_120px"
+                android:text="18100000000"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_45px" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_50px"
+            android:text="@string/social_contact_accounts_bound"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_50px" />
+
+    </LinearLayout>
+</RelativeLayout>

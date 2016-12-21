@@ -69,6 +69,6 @@ dependencies {
     compile 'com.miomin:shswiperefreshlayout:1.2.0'
     //Android 万能的Adapter for ListView,RecyclerView,GridView等，支持多种Item类型的情况。
     compile 'com.zhy:base-rvadapter:3.0.3'
-    //Android流式布局实现多行Checkbox功能
-    compile 'liji.library.dev:multilinechooselib:1.4.0'
+    //流市布局
+    compile 'com.zhy:flowlayout-lib:1.0.3'
 }

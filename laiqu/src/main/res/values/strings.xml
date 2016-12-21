@@ -195,6 +195,14 @@
     <string name="submit">提交</string>
     <string name="fragment_person_edit_signature_tips">用一段话介绍自己</string>
     <string name="select_taste_preference">选择你的口味与偏好</string>
+    <string name="custom">自定义</string>
+    <string name="mine_taste_preference">我的口味偏好:</string>
+    <string name="personal_account_safe">账户与安全</string>
+    <string name="password_safety">密码与安全</string>
+    <string name="password">密码</string>
+    <string name="modification">修改</string>
+    <string name="bound_mobile_phone">绑定手机号</string>
+    <string name="social_contact_accounts_bound">社交帐号绑定</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

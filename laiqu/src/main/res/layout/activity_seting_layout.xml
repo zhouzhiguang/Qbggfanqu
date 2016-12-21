@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/setting"
-            android:textColor="@color/color_423A59"
+            android:textColor="@color/textGrayDeep"
             android:textSize="@dimen/dimen_60px" />
     </android.support.v7.widget.Toolbar>
 
@@ -56,6 +56,7 @@
             android:paddingRight="@dimen/dimen_20px"
             android:paddingTop="@dimen/dimen_20px"
             android:text="@string/person_data"
+            android:textColor="@color/textGrayDeep"
             android:textSize="@dimen/dimen_50px" />
 
         <View
@@ -78,6 +79,7 @@
             android:clickable="true"
             android:contentDescription="账户安全"
             android:drawablePadding="@dimen/dimen_20px"
+            android:textColor="@color/textGrayDeep"
             android:drawableRight="@mipmap/ic_right_large_arrows"
             android:gravity="center_vertical"
             android:paddingBottom="@dimen/dimen_20px"
