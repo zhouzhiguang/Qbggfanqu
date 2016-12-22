@@ -181,15 +181,13 @@
             android:label="个人中心设置"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".personcentre.activities.PersonalDataActivity"
             android:label="个人资料"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".personcentre.activities.DateNicknameActivity"
             android:label="个人昵称"
@@ -214,6 +212,18 @@
             android:label="账户安全"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".personcentre.activities.ChangePasswordActivity"
+            android:label="修改密码"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.BoundMobilePoneActivity"
+            android:label="绑定手机号码"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -222,6 +232,7 @@
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".personcentre.activities.BoundPoneNumberActivity"></activity>
     </application>
 
 </manifest>

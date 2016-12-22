@@ -203,6 +203,17 @@
     <string name="modification">修改</string>
     <string name="bound_mobile_phone">绑定手机号</string>
     <string name="social_contact_accounts_bound">社交帐号绑定</string>
+    <string name="wechat">微信</string>
+    <string name="is_binding">已绑定</string>
+    <string name="binding">绑  定</string>
+    <string name="change_password">修改密码</string>
+    <string name="current_password">当前密码：</string>
+    <string name="new_password">新密码：</string>
+    <string name="change_phone_number">更换手机号</string>
+    <string name="bound_mobile_pone_number">当前绑定的手机号：</string>
+    <string name="please_enter_security_code">请输入验证码</string>
+    <string name="send_security_code">发送验证码</string>
+    <string name="bound_new_pone_number">输入新手机号</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>
