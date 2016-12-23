@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/change_phone_number"
+            android:text="@string/bound_new_pone_number"
             android:textColor="@color/textGrayDeep"
             android:textSize="@dimen/dimen_60px" />
     </android.support.v7.widget.Toolbar>
@@ -38,74 +38,75 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_60px"
             android:background="@color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/bound_mobile_phone_current_number"
-                android:layout_width="wrap_content"
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dimen_60px"
-                android:layout_marginLeft="@dimen/dimen_50px"
-                android:layout_marginTop="@dimen/dimen_60px"
-                android:text="@string/bound_mobile_pone_number"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:background="@null"
+                android:hint="@string/please_import_new_phone_number"
+                android:inputType="number"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/dimen_60px"
+                android:paddingTop="@dimen/dimen_60px"
                 android:textColor="@color/textGrayDeep"
-                android:textSize="@dimen/dimen_55px" />
+                android:textColorHint="@color/textGrayLight"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="@dimen/dimen_50px" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_3px"
                 android:layout_marginLeft="@dimen/dimen_40px"
                 android:layout_marginRight="@dimen/dimen_40px"
-                android:background="@color/edit_publis_line_color"></View>
+                android:background="@color/color_EDEDED"></View>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_180px"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="@dimen/dimen_180px">
 
-                <EditText
-                    android:id="@+id/bound_mobile_phone_security_code"
-                    android:layout_width="@dimen/dimen_500px"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/send_code_user_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_60px"
                     android:background="@null"
-                    android:hint="@string/please_enter_security_code"
+                    android:hint="@string/input_send_code_password"
+                    android:imeOptions="actionDone"
                     android:inputType="number"
                     android:maxLength="6"
                     android:maxLines="1"
+                    android:paddingRight="@dimen/dimen_23px"
                     android:textColor="@color/textGrayDeep"
                     android:textColorHint="@color/textGrayLight"
-                    android:textSize="@dimen/dimen_55px" />
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/dimen_50px" />
 
-                <View
-                    android:layout_width="@dimen/dimen_3px"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/dimen_20px"
-                    android:layout_marginLeft="@dimen/dimen_60px"
-                    android:layout_marginRight="@dimen/dimen_60px"
-                    android:layout_marginTop="@dimen/dimen_20px"
-                    android:background="@color/edit_publis_line_color"></View>
 
                 <TextView
-                    android:id="@+id/bound_mobile_phone_send_security_code"
+                    android:id="@+id/send_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dimen_40px"
                     android:clickable="true"
-                    android:padding="@dimen/dimen_40px"
-                    android:paddingBottom="@dimen/dimen_80px"
-                    android:paddingTop="@dimen/dimen_80px"
-                    android:text="@string/send_security_code"
-                    android:textColor="@color/red_bg"
-                    android:textSize="@dimen/dimen_55px" />
-            </LinearLayout>
+                    android:drawableLeft="@mipmap/ic_vertical_wire"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_8px"
+                    android:text="@string/send_code"
+                    android:textColor="@drawable/selector_login_text"
+                    android:textSize="@dimen/dimen_50px" />
+            </RelativeLayout>
         </LinearLayout>
 
         <TextView
-            android:id="@+id/bound_mobile_phone_nextstep"
+            android:id="@+id/bound_phone_confirm_new_number"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_150px"
             android:layout_marginLeft="@dimen/dimen_40px"
@@ -114,7 +115,7 @@
             android:background="@drawable/taste_preference_confirm_select"
             android:clickable="true"
             android:gravity="center"
-            android:text="@string/nextstep"
+            android:text="@string/ok"
             android:textColor="@color/white"
             android:textSize="@dimen/dimen_60px" />
     </LinearLayout>

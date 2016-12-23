@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_person_bg"
+    android:orientation="vertical">
+
+    <com.qbgg.cenglaicengqu.main.widget.ExpendStepView
+        android:id="@+id/certification_stepview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_360px"
+        app:StepCurrFlag="0"
+        app:StepMaxFlag="3"
+        app:StepNormalBackground="@mipmap/ic_stepview_unfinished"
+        app:StepSelectedBackground="@mipmap/ic_stepview_finish"
+        app:StepTextNormalColor="@color/textGrayLight"
+        app:StepTextTransferColor="@color/color_FF7117"
+        app:StepTitleArray="填写审核信息|审核中|认证成功" />
+</LinearLayout>

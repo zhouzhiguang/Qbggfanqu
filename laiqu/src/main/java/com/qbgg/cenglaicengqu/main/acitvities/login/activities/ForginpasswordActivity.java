@@ -83,6 +83,7 @@ public class ForginpasswordActivity extends BaseActivity implements View.OnClick
     private void getauthcode() {
         CountDownTimerUtils countDownTimerUtils = new CountDownTimerUtils(sendCode, 30000, 1000);
         countDownTimerUtils .start();
+
     }
 
 

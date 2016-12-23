@@ -13,7 +13,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dou361.update.UpdateHelper;
 import com.dou361.update.type.UpdateType;
@@ -99,11 +98,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     // StatusBarUtil.setColor(MainActivity.this, Color.BLACK);
                     //initStatusbar(MainActivity.this,R.color.red_bg);
                     initthem(R.color.red_bg);
-                   // initStatusbar(MainActivity.this, R.color.red_bg);
+                    // initStatusbar(MainActivity.this, R.color.red_bg);
                 } else if (tabIndex == 0) {
                     //透明的状态栏了
                     //  initthem(R.color.black);
-                   // initStatusbar(MainActivity.this, R.color.transparent);
+                    // initStatusbar(MainActivity.this, R.color.transparent);
                     initthem(R.color.black);
 
                     // StatusBarUtil.setTransparent(MainActivity.this);
@@ -124,7 +123,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tab_post_icon:
-                Toast.makeText(this, "改显示添加发布饭局了", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this, "改显示添加发布饭局了", Toast.LENGTH_SHORT).show();
                 mNavigateTabBar.showTabFragment(2);
                 break;
             default:
@@ -141,7 +140,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     /**
      * 沉浸模式状态栏初始化
      *
-     * @param context       上下文
+     * @param context 上下文
      * @param
      * @return沉浸颜色
      */

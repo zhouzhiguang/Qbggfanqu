@@ -21,18 +21,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/bound_new_pone_number"
+            android:text="@string/real_name_authentication"
             android:textColor="@color/textGrayDeep"
             android:textSize="@dimen/dimen_60px" />
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/real_name_authentication_fragment_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:background="@color/fragment_person_bg"
         android:orientation="vertical">
 
-    </LinearLayout>
+    </FrameLayout>
 
 </RelativeLayout>

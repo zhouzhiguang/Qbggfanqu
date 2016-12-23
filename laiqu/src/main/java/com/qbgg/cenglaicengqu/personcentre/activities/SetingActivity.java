@@ -18,7 +18,7 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
     private LinearLayout activitySetingLayout;
     private TextView setingPersonData;
     private TextView setingPersonAccountSafe;
-    private TextView setingPersonMealPrivacy;
+    private TextView seting_person_real_name_authentication;
     private TextView setingPersonNewNotifications;
     private TextView setingPersonCleanCache;
     private TextView setingPersonAboutApp;
@@ -29,7 +29,7 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
-       // AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+        // AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         setContentView(R.layout.activity_seting_layout);
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();
@@ -54,7 +54,7 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
         activitySetingLayout = (LinearLayout) findViewById(R.id.activity_seting_layout);
         setingPersonData = (TextView) findViewById(R.id.seting_person_data);
         setingPersonAccountSafe = (TextView) findViewById(R.id.seting_person_account_safe);
-        setingPersonMealPrivacy = (TextView) findViewById(R.id.seting_person_meal_privacy);
+        seting_person_real_name_authentication = (TextView) findViewById(R.id.seting_person_real_name_authentication);
         setingPersonNewNotifications = (TextView) findViewById(R.id.seting_person_new_notifications);
         setingPersonCleanCache = (TextView) findViewById(R.id.seting_person_clean_cache);
         setingPersonAboutApp = (TextView) findViewById(R.id.seting_person_about_app);
@@ -69,6 +69,8 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
         //个人资料
         setingPersonData.setOnClickListener(this);
         setingPersonAccountSafe.setOnClickListener(this);
+        //实名制认证
+        seting_person_real_name_authentication.setOnClickListener(this);
     }
 
     @Override
@@ -85,13 +87,20 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.seting_person_account_safe:
                 //帐户与安全
-               jumpActivity(PersonalAccountSafeActivity.class);
-            break;
+                jumpActivity(PersonalAccountSafeActivity.class);
+                break;
+            case R.id.seting_person_real_name_authentication:
+                //实名制认证
+               jumpActivity(RealNameAuthenticationActivity.class);
+                break;
             default:
                 break;
         }
     }
 
+    /**
+     * @param clazz 跳转
+     */
     private void jumpActivity(Class clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);

@@ -156,7 +156,6 @@
     <string name="person_data">个人资料</string>
     <string name="exit_login">退出登录</string>
     <string name="account_safe">账户与安全</string>
-    <string name="meal_privacy">饭友隐私</string>
     <string name="new_notifications">新消息提醒</string>
     <string name="clean_cache">清除缓存</string>
     <string name="about_app">关于蹭范趣</string>
@@ -214,6 +213,25 @@
     <string name="please_enter_security_code">请输入验证码</string>
     <string name="send_security_code">发送验证码</string>
     <string name="bound_new_pone_number">输入新手机号</string>
+    <string name="please_import_new_phone_number">请输入新的手机号码</string>
+    <string name="real_name_authentication">实名认证</string>
+    <!--云信部分-->
+    <string name="delete_tip">删除提示</string>
+    <string name="delete_system_message">删除该条系统消息？</string>
+    <string name="delete_success">删除成功</string>
+    <string name="agree">同意</string>
+    <string name="reject">拒绝</string>
+    <string name="location_navigate">导航</string>
+    <string name="format_mylocation">我的位置：%s</string>
+    <string name="location_address_unkown">该位置信息暂无</string>
+    <string name="location_loading">正在定位</string>
+    <string name="location_map">正在定位</string>
+    <string name="location_address_fail">获取位置信息失败</string>
+    <string name="tools_selected">选择工具</string>
+    <string name="friends_map_navigation_web">在网页中打开</string>
+    <string name="location_open_map_error">打开地图出错</string>
+    <string name="my_location">我的位置</string>
+    <string name="chat_room">个人</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>
