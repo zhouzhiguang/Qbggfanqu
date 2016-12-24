@@ -17,9 +17,10 @@ import com.qbgg.cenglaicengqu.main.util.ToastUtils;
 //厨房详情页面
 public class KitchenDetailsActivity extends BaseActivity implements View.OnClickListener {
     private AppBarLayout kitchen_details_app_bar_layout;
-    private ImageView kitchen_details_share_image, kitchen_details_like,kitchen_details_share;
+    private ImageView kitchen_details_share_image, kitchen_details_like, kitchen_details_share;
     private ToolBarOptions options;
     private TextView kitchen_details_a_set_meal;
+    private TextView kitchen_details_information;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +48,15 @@ public class KitchenDetailsActivity extends BaseActivity implements View.OnClick
         // kitchen_details_swiperefreshLayout = findView(R.id.kitchen_details_swiperefreshLayout);
         kitchen_details_app_bar_layout = findView(R.id.kitchen_details_app_bar_layout);
         kitchen_details_like = findView(R.id.kitchen_details_like);
-        kitchen_details_share=findView(R.id.kitchen_details_share);
-        kitchen_details_a_set_meal=findView(R.id.kitchen_details_a_set_meal);
+        kitchen_details_share = findView(R.id.kitchen_details_share);
+        kitchen_details_a_set_meal = findView(R.id.kitchen_details_a_set_meal);
+        kitchen_details_information = findView(R.id.kitchen_details_information);
 
     }
 
     private void initDate() {
-            String meal_a= getResources().getString(R.string.kitchen_set_meal_a);
-            kitchen_details_a_set_meal.setText(String.format(meal_a,"30"));
+        String meal_a = getResources().getString(R.string.kitchen_set_meal_a);
+        kitchen_details_a_set_meal.setText(String.format(meal_a, "30"));
 
 //        kitchen_details_swiperefreshLayout.setRefreshEnable(false);
 //        kitchen_details_swiperefreshLayout.setLoadmoreEnable(false);
@@ -88,6 +90,8 @@ public class KitchenDetailsActivity extends BaseActivity implements View.OnClick
     }
 
     private void initListener() {
+        //
+        kitchen_details_information.setOnClickListener(this);
 
     }
 
@@ -99,18 +103,25 @@ public class KitchenDetailsActivity extends BaseActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.kitchen_details_information:
+                //咨询聊天界面了
+
+                break;
+            default:
+                break;
 
         }
     }
 
 
-    private  class  NavigationOnClickListener implements View.OnClickListener{
+    private class NavigationOnClickListener implements View.OnClickListener {
 
         @Override
         public void onClick(View view) {
             ToastUtils.showCenterToast(KitchenDetailsActivity.this, "点击返回了哦");
         }
     }
+
     public abstract class AppBarStateChangeListener implements AppBarLayout.OnOffsetChangedListener {
 
 

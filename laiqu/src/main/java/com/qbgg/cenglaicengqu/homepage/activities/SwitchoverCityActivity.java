@@ -26,7 +26,7 @@ public class SwitchoverCityActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.red_bg);
         setContentView(R.layout.activity_switchover_city_layout);
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+        // AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();
         options.isNeedNavigate = true;

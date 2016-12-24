@@ -232,6 +232,9 @@
     <string name="location_open_map_error">打开地图出错</string>
     <string name="my_location">我的位置</string>
     <string name="chat_room">个人</string>
+    <string name="attention">关注</string>
+    <string name="information">咨询</string>
+    <string name="immediately_reserve">立即预订</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:text="@string/real_name_authentication"
             android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_60px" />
+            android:textSize="12sp" />
     </android.support.v7.widget.Toolbar>
 
     <FrameLayout

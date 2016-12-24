@@ -1,8 +1,6 @@
 package com.qbgg.cenglaicengqu.personcentre.activities;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -50,11 +48,13 @@ public class RealNameAuthenticationActivity extends BaseActivity {
     private void initDate() {
         //根据不同状态加载不同fragment
         //1 还在认证中
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        NoCertificationFragment fragment = new NoCertificationFragment();
-        transaction.replace(R.id.real_name_authentication_fragment_content, fragment);
-        transaction.commit();
+//        FragmentManager manager = getSupportFragmentManager();
+//        FragmentTransaction transaction = manager.beginTransaction();
+       NoCertificationFragment fragment = new NoCertificationFragment();
+        fragment.setContainerId(R.id.real_name_authentication_fragment_content);
+//        transaction.replace(R.id.real_name_authentication_fragment_content, fragment);
+//        transaction.commit();
+        switchContent(fragment);
     }
 
     private void initListener() {

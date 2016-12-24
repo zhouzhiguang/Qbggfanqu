@@ -179,19 +179,19 @@ public class ExpendStepView extends View {
      *
      * @param annotation, 注释文字,通常为启动时间
      */
-    public void startProgress(String annotation) {
-        if (!TextUtils.isEmpty(annotation)) {
-            getStepViewAtPosition(0).setAnnotation(annotation);
-        }
-        setCurrentStep(0);
-    }
+//    public void startProgress(String annotation) {
+//        if (!TextUtils.isEmpty(annotation)) {
+//            getStepViewAtPosition(0).setAnnotation(annotation);
+//        }
+//        setCurrentStep(0);
+//    }
 
     /**
      * 启动进程
      */
-    public void startProgress() {
-        startProgress(null);
-    }
+//    public void startProgress() {
+//        startProgress(null);
+//    }
 
     /**
      * 开始下一步
@@ -211,7 +211,7 @@ public class ExpendStepView extends View {
             return;
         }
         if (!TextUtils.isEmpty(annotation)) {
-            stepList.get(step + 1).setAnnotation(annotation);
+          //  stepList.get(step + 1).setAnnotation(annotation);
         }
         setCurrentStep(step + 1);
     }
@@ -230,7 +230,7 @@ public class ExpendStepView extends View {
         stepCurrFlag = 0;
         for (int i = 0; i < stepMaxFlag; i++) {
             stepList.get(i).setStepStatus(1);
-            stepList.get(i).clearAnnotation();
+            //stepList.get(i).clearAnnotation();
         }
         invalidate();
     }
@@ -251,7 +251,7 @@ public class ExpendStepView extends View {
      */
     public void setStepTime(int step, String time) {
         if (step >= 0 && step < stepMaxFlag) {
-            stepList.get(step).setAnnotation(time);
+           // stepList.get(step).setAnnotation(time);
             invalidate();
         }
     }
@@ -296,11 +296,11 @@ public class ExpendStepView extends View {
         float positionTimeX; //注释的位置
         float positionTimeY; //注释的位置
         String title;
-        String time;
+        //String time;
         Paint circlePaint;
         Paint linePaint;
         Paint titlePaint;
-        Paint timePaint;
+        // Paint timePaint;
         Context context;
         private float normalRadius; //圆的半径
         private float selectedRadius; //选中时,圆的半径
@@ -361,10 +361,10 @@ public class ExpendStepView extends View {
             positionTitleX = index * parentWidth / totalSteps + (parentWidth / totalSteps - getStringWidth(titlePaint, title)) / 2;
             positionTitleY = parentHeight / 2 + computeStringHeight(titlePaint, title);
 
-            this.time = "02-03 14:32"; //样例时间格式,用于计算位置
-            positionTimeX = index * parentWidth / totalSteps + (parentWidth / totalSteps - getStringWidth(timePaint, time)) / 2;
-            positionTimeY = parentHeight * 2 / 3 + computeStringHeight(timePaint, time) + dip2px(context, 3);
-            this.time = ""; //清空样例时间,初始化时不能绘制时间
+            // this.time = "02-03 14:32"; //样例时间格式,用于计算位置
+//            positionTimeX = index * parentWidth / totalSteps + (parentWidth / totalSteps - getStringWidth(timePaint, time)) / 2;
+//            positionTimeY = parentHeight * 2 / 3 + computeStringHeight(timePaint, time) + dip2px(context, 3);
+            //  this.time = ""; //清空样例时间,初始化时不能绘制时间
 
             normalRadius = Math.min(parentHeight / 8, dip2px(context, 7));
             selectedRadius = Math.min(parentHeight / 6, dip2px(context, 13));
@@ -376,7 +376,7 @@ public class ExpendStepView extends View {
             drawLines(canvas);
             drawStepPoint(canvas);
             drawTitle(canvas);
-            drawTime(canvas);
+            //drawTime(canvas);
         }
 
         private void drawTitle(Canvas canvas) {
@@ -389,11 +389,11 @@ public class ExpendStepView extends View {
 
         }
 
-        private void drawTime(Canvas canvas) {
-            if (!TextUtils.isEmpty(time)) {
-                canvas.drawText(time, positionTimeX, positionTimeY, timePaint);
-            }
-        }
+//        private void drawTime(Canvas canvas) {
+//            if (!TextUtils.isEmpty(time)) {
+//                canvas.drawText(time, positionTimeX, positionTimeY, timePaint);
+//            }
+//        }
 
         private void drawStepPoint(Canvas canvas) {
             if (isSelected()) {
@@ -500,16 +500,16 @@ public class ExpendStepView extends View {
          *
          * @param time,注释,通常为时间
          */
-        public void setAnnotation(String time) {
-            this.time = time;
-        }
+        //public void setAnnotation(String time) {
+//            this.time = time;
+//        }
 
         /**
          * 清除此步的注释
          */
-        public void clearAnnotation() {
-            this.time = null;
-        }
+       // public void clearAnnotation() {
+//            this.time = null;
+//        }
 
         /**
          * 计算需要绘制的字符串的中的单个字符所需的最大宽度.

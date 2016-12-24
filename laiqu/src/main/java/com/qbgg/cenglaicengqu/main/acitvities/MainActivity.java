@@ -20,6 +20,7 @@ import com.qbgg.cenglaicengqu.R;
 import com.qbgg.cenglaicengqu.addconference.fragment.PublishFragment;
 import com.qbgg.cenglaicengqu.dinner.fragment.DinnerFragment;
 import com.qbgg.cenglaicengqu.homepage.fragment.HomeFragment;
+import com.qbgg.cenglaicengqu.main.autolayout.AutoUtils;
 import com.qbgg.cenglaicengqu.main.managestatus.SystemBarTintManager;
 import com.qbgg.cenglaicengqu.main.widget.MainNavigateTabBar;
 import com.qbgg.cenglaicengqu.message.fragment.InformationFragment;
@@ -51,6 +52,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main_layout);
+        AutoUtils.auto(this);
         // StatusBarUtil.setColorNoTranslucent(MainActivity.this,R.color.red_bg);
         mNavigateTabBar = (MainNavigateTabBar) findViewById(R.id.main_navigate_TabBar);
         adddinner = (ImageView) findViewById(R.id.tab_post_icon);
