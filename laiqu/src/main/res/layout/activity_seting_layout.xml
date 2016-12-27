@@ -57,7 +57,7 @@
             android:paddingTop="@dimen/dimen_20px"
             android:text="@string/person_data"
             android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_50px" />
+            android:textSize="@dimen/dimen_54px" />
 
         <View
             android:layout_width="match_parent"
@@ -87,7 +87,7 @@
             android:paddingTop="@dimen/dimen_20px"
             android:text="@string/account_safe"
             android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_50px" />
+            android:textSize="@dimen/dimen_54px" />
 
         <View
             android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                 android:paddingTop="@dimen/dimen_20px"
                 android:text="@string/real_name_authentication"
                 android:textColor="@color/textGrayDeep"
-                android:textSize="@dimen/dimen_50px" />
+                android:textSize="@dimen/dimen_54px" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
             android:paddingRight="@dimen/dimen_20px"
             android:paddingTop="@dimen/dimen_20px"
             android:text="@string/new_notifications"
-            android:textSize="@dimen/dimen_50px" />
+            android:textSize="@dimen/dimen_54px" />
 
 
         <View
@@ -193,7 +193,7 @@
             android:paddingRight="@dimen/dimen_20px"
             android:paddingTop="@dimen/dimen_20px"
             android:text="@string/clean_cache"
-            android:textSize="@dimen/dimen_50px" />
+            android:textSize="@dimen/dimen_54px" />
 
 
         <View
@@ -225,7 +225,7 @@
             android:paddingRight="@dimen/dimen_20px"
             android:paddingTop="@dimen/dimen_20px"
             android:text="@string/about_app"
-            android:textSize="@dimen/dimen_50px" />
+            android:textSize="@dimen/dimen_54px" />
 
 
     </LinearLayout>

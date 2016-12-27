@@ -129,12 +129,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/SplashEntranceActionBarTheme"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.mob.tools.MobUIShell"
@@ -262,7 +257,9 @@
             android:label="个人中心设置"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
         <activity
             android:name=".personcentre.activities.PersonalDataActivity"
             android:label="个人资料"
@@ -321,16 +318,22 @@
             android:name=".personcentre.activities.RealNameAuthenticationActivity"
             android:label="实名认证"
             android:screenOrientation="portrait"
+            android:largeHeap="false"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".netease.location.activity.LocationAmapActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" />
-        \
+
     </application>
 
 </manifest>

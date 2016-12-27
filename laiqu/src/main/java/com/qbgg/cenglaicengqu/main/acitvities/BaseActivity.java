@@ -41,7 +41,7 @@ public abstract class BaseActivity extends UI {
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         ToastUtils.showCenterToast(this,"设置这里的基础宽高");
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+       // AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         if (getLayoutId() != 0) {
             setContentView(getLayoutId());
             Initwidget();

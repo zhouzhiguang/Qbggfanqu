@@ -27,7 +27,7 @@ public class KitchenDetailsActivity extends BaseActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
         setContentView(R.layout.activity_kitchen_details_layout);
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+        //AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         AutoUtils.auto(this);
         options = new ToolBarOptions();
         options.titleString = "";

@@ -41,7 +41,7 @@ public class DinnerReleaseSuccessActivity extends BaseActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+       // AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         initthem(R.color.white);
         setContentView(R.layout.activity_dinner_release_success_layout);
         AutoUtils.auto(this);

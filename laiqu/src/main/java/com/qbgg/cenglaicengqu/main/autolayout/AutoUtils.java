@@ -40,7 +40,6 @@ public class AutoUtils {
 		
 		AutoUtils.displayWidth=width;
 		AutoUtils.displayHeight=height;
-		
 		AutoUtils.designWidth=designWidth;
 		AutoUtils.designHeight=designHeight;
 		

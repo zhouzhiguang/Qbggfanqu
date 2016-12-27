@@ -235,6 +235,9 @@
     <string name="attention">关注</string>
     <string name="information">咨询</string>
     <string name="immediately_reserve">立即预订</string>
+    <string name="no_certification_tips">请填写您的真实信息，一经通过无法修改</string>
+    <string name="real_name">真实姓名</string>
+    <string name="identity_card">身份证号码</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

@@ -3,7 +3,10 @@ package com.qbgg.cenglaicengqu.main.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.graphics.Paint;
+import android.graphics.PathEffect;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
@@ -61,6 +64,7 @@ public class ExpendStepView extends View {
         stepTextTransferColor = typedArray.getColor(R.styleable.ExpendStepView_StepTextTransferColor, context.getResources().getColor(R.color.colorPrimaryDark));
         //文字
         stepTitleArray = typedArray.getString(R.styleable.ExpendStepView_StepTitleArray);
+
         typedArray.recycle();
     }
 
@@ -83,7 +87,6 @@ public class ExpendStepView extends View {
             height = dip2px(context, 80); //80dp
         }
         setMeasuredDimension(width, height);
-
         stepList = new ArrayList<SingleStepView>();
         titles = stepTitleArray.split("\\|");
         for (int i = 0; i < stepMaxFlag; i++) {
@@ -129,14 +132,21 @@ public class ExpendStepView extends View {
         return this.stepMaxFlag;
     }
 
+    /**
+     * 完成步骤总管
+     * 这里不管位置只和是开头结尾有关
+     */
     private void initStatus() {
         if (getCurrentStep() < getTotalStep() && getCurrentStep() >= 0) {
             for (int i = 0; i < stepMaxFlag; i++) {
                 if (i < stepCurrFlag) {
-                    stepList.get(i).setStepStatus(-1);
+                    //完成的
+                    //stepList.get(i).setStepStatus(-1);
                 } else if (i == stepCurrFlag) {
-                    stepList.get(i).setStepStatus(0);
+                    //选中的
+                    stepList.get(i).setStepStatus(-1);
                 } else {
+                    //正常的
                     stepList.get(i).setStepStatus(1);
                 }
             }
@@ -152,13 +162,26 @@ public class ExpendStepView extends View {
         if (currentStep < stepMaxFlag && currentStep >= 0) {
             this.stepCurrFlag = currentStep;
             for (int i = 0; i < stepMaxFlag; i++) {
-                if (i < stepCurrFlag) {
-                    stepList.get(i).setStepStatus(-1);
-                } else if (i == stepCurrFlag) {
-                    stepList.get(i).setStepStatus(0);
+                //这里只要判断在开头还是结尾就可以了
+                //@return -1,头
+//                * 0,中间
+//                        * 1,尾
+                int index = checkPosition(stepCurrFlag);
+                if (index == 0) {
+                    stepList.get(currentStep).setStepStatus(-1);
+                } else if (index == -1) {
+                    stepList.get(currentStep).setStepStatus(1);
                 } else {
-                    stepList.get(i).setStepStatus(1);
+                    stepList.get(currentStep).setStepStatus(-1);
                 }
+//                if (i < stepCurrFlag) {
+//                    stepList.get(i).setStepStatus(-1);
+//                } else if (i == stepCurrFlag) {
+//                    //0 是选中状态
+//                    stepList.get(i).setStepStatus(0);
+//                } else {
+//                    stepList.get(i).setStepStatus(1);
+//                }
             }
             invalidate();
         }
@@ -197,6 +220,7 @@ public class ExpendStepView extends View {
      * 开始下一步
      */
     public void nextStep() {
+
         nextStep(null);
     }
 
@@ -211,7 +235,7 @@ public class ExpendStepView extends View {
             return;
         }
         if (!TextUtils.isEmpty(annotation)) {
-          //  stepList.get(step + 1).setAnnotation(annotation);
+            //  stepList.get(step + 1).setAnnotation(annotation);
         }
         setCurrentStep(step + 1);
     }
@@ -251,7 +275,7 @@ public class ExpendStepView extends View {
      */
     public void setStepTime(int step, String time) {
         if (step >= 0 && step < stepMaxFlag) {
-           // stepList.get(step).setAnnotation(time);
+            // stepList.get(step).setAnnotation(time);
             invalidate();
         }
     }
@@ -296,16 +320,20 @@ public class ExpendStepView extends View {
         float positionTimeX; //注释的位置
         float positionTimeY; //注释的位置
         String title;
+
         //String time;
         Paint circlePaint;
         Paint linePaint;
         Paint titlePaint;
-        // Paint timePaint;
+        Paint stepPaint;
+        int stepTextSize;
         Context context;
+        int margin;
+        int padding;
         private float normalRadius; //圆的半径
         private float selectedRadius; //选中时,圆的半径
         Rect rect; //绘图时的矩阵
-        int stepStatus = 1; //-1,代表完成;0,代表选中;1,代表正常;
+        int stepStatus = 1; //-1,代表完成;1,代表未完成;
 
 
         public SingleStepView(int index, int totalSteps, int parentWidth, int parentHeight, String title, Context context) {
@@ -315,7 +343,11 @@ public class ExpendStepView extends View {
             this.parentHeight = parentHeight;
             this.context = context;
             this.title = title;
-
+            stepTextSize = getResources().getDimensionPixelSize(R.dimen.dimen_53px);
+            //左右两边的距离
+            margin = (int) getResources().getDimension(R.dimen.dimen_40px);
+            //标题和指示的间隔
+            padding = (int) getResources().getDimension(R.dimen.dimen_20px);
             initPaint();
             caculatePostion();
         }
@@ -329,7 +361,7 @@ public class ExpendStepView extends View {
             circlePaint.setAntiAlias(true);
             circlePaint.setStrokeWidth(1);
             circlePaint.setStyle(Paint.Style.FILL);
-            //划线的比
+            //划线的笔
             linePaint = new Paint();
             linePaint.reset();
             linePaint.setAntiAlias(true);
@@ -344,7 +376,13 @@ public class ExpendStepView extends View {
             //设置标题的大小
             int tile = (int) getResources().getDimension(R.dimen.dimen_50px);
             titlePaint.setTextSize(tile); //字体大小要做转换 sp——>px
-
+            stepPaint = new Paint();
+            stepPaint.reset();
+            stepPaint.setAntiAlias(true);
+            stepPaint.setColor(Color.WHITE);
+            stepPaint.setStrokeWidth(1 * strokewWidth);
+            stepPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+            stepPaint.setTextSize(stepTextSize);
 
 //            timePaint = new Paint();
 //            timePaint.setAntiAlias(true);
@@ -359,16 +397,19 @@ public class ExpendStepView extends View {
             centerY = parentHeight / 3 - dip2px(context, 2);
 
             positionTitleX = index * parentWidth / totalSteps + (parentWidth / totalSteps - getStringWidth(titlePaint, title)) / 2;
-            positionTitleY = parentHeight / 2 + computeStringHeight(titlePaint, title);
+            positionTitleY = parentHeight / 2 + computeStringHeight(titlePaint, title) + padding;
 
             // this.time = "02-03 14:32"; //样例时间格式,用于计算位置
 //            positionTimeX = index * parentWidth / totalSteps + (parentWidth / totalSteps - getStringWidth(timePaint, time)) / 2;
 //            positionTimeY = parentHeight * 2 / 3 + computeStringHeight(timePaint, time) + dip2px(context, 3);
             //  this.time = ""; //清空样例时间,初始化时不能绘制时间
 
-            normalRadius = Math.min(parentHeight / 8, dip2px(context, 7));
-            selectedRadius = Math.min(parentHeight / 6, dip2px(context, 13));
+//            normalRadius = Math.min(parentHeight / 8, dip2px(context, 7));
+//            selectedRadius = Math.min(parentHeight / 6, dip2px(context, 13));
+            // normalRadius = Math.min(parentHeight / 4, dip2px(context, 14));
+            selectedRadius = Math.min(parentHeight / 4, dip2px(context, 20));
 
+            //normalRadius=selectedRadius;
             rect = new Rect();
         }
 
@@ -395,13 +436,15 @@ public class ExpendStepView extends View {
 //            }
 //        }
 
+        //h画步骤点
         private void drawStepPoint(Canvas canvas) {
+            rect.set((int) (centerX - selectedRadius), (int) (centerY - selectedRadius), (int) (centerX + selectedRadius), (int) (centerY + selectedRadius));
             if (isSelected()) {
-                rect.set((int) (centerX - selectedRadius), (int) (centerY - selectedRadius), (int) (centerX + selectedRadius), (int) (centerY + selectedRadius));
                 stepSelectedBackground.setBounds(rect);
                 stepSelectedBackground.draw(canvas);
+                canvas.drawText(String.valueOf(index), centerX - (-stepPaint.ascent() - stepPaint.descent()) / 2 + 4, centerY + (-stepPaint.ascent() - stepPaint.descent()) / 2, stepPaint);
             } else {
-                rect.set((int) (centerX - normalRadius), (int) (centerY - normalRadius), (int) (centerX + normalRadius), (int) (centerY + normalRadius));
+                //rect.set((int) (centerX - normalRadius), (int) (centerY - normalRadius), (int) (centerX + normalRadius), (int) (centerY + normalRadius));
                 if (isCompleted()) {
                     stepCompleteBackground.setBounds(rect);
                     stepCompleteBackground.draw(canvas);
@@ -409,34 +452,119 @@ public class ExpendStepView extends View {
                     stepNormalBackground.setBounds(rect);
                     stepNormalBackground.draw(canvas);
                 }
+                canvas.drawText(String.valueOf(index), centerX - (-stepPaint.ascent() - stepPaint.descent()) / 2 + 4, centerY + (-stepPaint.ascent() - stepPaint.descent()) / 2, stepPaint);
+
             }
         }
 
         private void drawLines(Canvas canvas) {
-            if (isSelected() || isCompleted()) {
-                linePaint.setColor(stepTextTransferColor);
+            linePaint.setColor(stepTextNormalColor);
+            if (stepCurrFlag == 0) {
+
+                switch (checkPosition()) {
+                    case -1: //头
+                   /*(float startX, float startY, float stopX, float stopY, Paint paint)
+                    * */
+
+//                        Paint mLinePaint = new Paint();
+//                        mLinePaint.setColor(Color.BLUE);
+//                        mLinePaint.setStyle(Paint.Style.STROKE);
+//                        //绘制模式
+//                        PathEffect effects = new DashPathEffect(new float[]{4, 4, 4, 4}, 2);
+//                        mLinePaint.setAntiAlias(true);
+//                        mLinePaint.setStrokeWidth(3);
+//                        mLinePaint.setPathEffect(effects);
+                        linePaint.setColor(stepTextTransferColor);
+                        canvas.drawLine(centerX - parentWidth / (totalSteps * 2) + margin, centerY, centerX, centerY, linePaint);
+
+                        //canvas.drawLine(centerX, centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
+
+                        break;
+                    case 0: //中间
+
+                        //float startX, float startY, float stopX, float stopY               canvas.drawLine(centerX - parentWidth / (totalSteps * 2), centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
+                        canvas.drawLine(centerX - parentWidth / (totalSteps * 1) + selectedRadius, centerY, centerX + parentWidth / (totalSteps * 1), centerY, linePaint);
+                        break;
+                    case 1: //结尾
+                        //canvas.drawLine(centerX, centerY, centerX - parentWidth / (totalSteps * 2), centerY, linePaint);
+
+                        canvas.drawLine(centerX, centerY, centerX + parentWidth / (totalSteps * 2) - margin, centerY, linePaint);
+                        break;
+                }
+
+            } else if (stepCurrFlag == 1) {
+                switch (checkPosition()) {
+                    case -1: //头
+                   /*(float startX, float startY, float stopX, float stopY, Paint paint)
+                    * */
+
+//                        Paint mLinePaint = new Paint();
+//                        mLinePaint.setColor(Color.BLUE);
+//                        mLinePaint.setStyle(Paint.Style.STROKE);
+//                        //绘制模式
+//                        PathEffect effects = new DashPathEffect(new float[]{4, 4, 4, 4}, 2);
+//                        mLinePaint.setAntiAlias(true);
+//                        mLinePaint.setStrokeWidth(3);
+//                        mLinePaint.setPathEffect(effects);
+                        canvas.drawLine(centerX - parentWidth / (totalSteps * 2) + margin, centerY, centerX, centerY, linePaint);
+
+                        //canvas.drawLine(centerX, centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
+
+                        break;
+                    case 0: //中间
+                        linePaint.setColor(stepTextTransferColor);
+                        //float startX, float startY, float stopX, float stopY               canvas.drawLine(centerX - parentWidth / (totalSteps * 2), centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
+                        canvas.drawLine(centerX - parentWidth / (totalSteps * 1) + selectedRadius, centerY, centerX + parentWidth / (totalSteps * 1), centerY, linePaint);
+                        break;
+                    case 1: //结尾
+                        //canvas.drawLine(centerX, centerY, centerX - parentWidth / (totalSteps * 2), centerY, linePaint);
+                        PathEffect effectS = new DashPathEffect(new float[]{1, 2, 4, 8}, 1);
+                        linePaint.setPathEffect(effectS);
+                        canvas.drawLine(centerX, centerY, centerX + parentWidth / (totalSteps * 2) - margin, centerY, linePaint);
+                        break;
+                }
             } else {
-                linePaint.setColor(stepTextNormalColor);
-            }
-            switch (checkPosition()) {
-                case -1: //头
-                    canvas.drawLine(centerX, centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
-                    break;
-                case 0: //中间
-                    canvas.drawLine(centerX - parentWidth / (totalSteps * 2), centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
-                    break;
-                case 1: //结尾
-                    canvas.drawLine(centerX, centerY, centerX - parentWidth / (totalSteps * 2), centerY, linePaint);
-                    break;
+
+
+                switch (checkPosition()) {
+                    case -1: //头
+                   /*(float startX, float startY, float stopX, float stopY, Paint paint)
+                    * */
+
+//                        Paint mLinePaint = new Paint();
+//                        mLinePaint.setColor(Color.BLUE);
+//                        mLinePaint.setStyle(Paint.Style.STROKE);
+//                        //绘制模式
+//                        PathEffect effects = new DashPathEffect(new float[]{4, 4, 4, 4}, 2);
+//                        mLinePaint.setAntiAlias(true);
+//                        mLinePaint.setStrokeWidth(3);
+//                        mLinePaint.setPathEffect(effects);
+                        canvas.drawLine(centerX - parentWidth / (totalSteps * 2) + margin, centerY, centerX, centerY, linePaint);
+
+                        //canvas.drawLine(centerX, centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
+
+                        break;
+                    case 0: //中间
+
+                        //float startX, float startY, float stopX, float stopY               canvas.drawLine(centerX - parentWidth / (totalSteps * 2), centerY, centerX + parentWidth / (totalSteps * 2), centerY, linePaint);
+                        canvas.drawLine(centerX - parentWidth / (totalSteps * 1) + selectedRadius, centerY, centerX + parentWidth / (totalSteps * 1), centerY, linePaint);
+                        break;
+                    case 1: //结尾
+                        linePaint.setColor(stepTextTransferColor);
+                        canvas.drawLine(centerX, centerY, centerX + parentWidth / (totalSteps * 2) - margin, centerY, linePaint);
+                        break;
+                }
+
             }
         }
 
         /**
          * 设置当前步骤的状态
-         * -1,代表完成;0,代表选中;1,代表正常;
+         * -1,代表完成;;1,代表正常;
          *
          * @param status
          */
+
         public void setStepStatus(int status) {
             this.stepStatus = status;
         }
@@ -447,6 +575,7 @@ public class ExpendStepView extends View {
          * @return
          */
         private boolean isSelected() {
+
             return 0 == stepStatus;
         }
 
@@ -507,7 +636,7 @@ public class ExpendStepView extends View {
         /**
          * 清除此步的注释
          */
-       // public void clearAnnotation() {
+        // public void clearAnnotation() {
 //            this.time = null;
 //        }
 
@@ -586,5 +715,23 @@ public class ExpendStepView extends View {
             return rect.height();
         }
 
+    }
+
+    /**
+     * 检查当前view的位置
+     *
+     * @return -1,头
+     * 0,中间
+     * 1,尾
+     */
+
+    public int checkPosition(int index) {
+        if (0 == index) {
+            return -1;
+        } else if ((stepMaxFlag - 1) == index) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

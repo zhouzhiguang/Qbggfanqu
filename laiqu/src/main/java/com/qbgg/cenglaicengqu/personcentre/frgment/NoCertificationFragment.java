@@ -9,6 +9,7 @@ import com.qbgg.cenglaicengqu.main.util.LogUtil;
 import com.qbgg.cenglaicengqu.main.widget.ExpendStepView;
 
 /**
+ * 1.6875倍
  * 还未认证
  */
 
@@ -22,16 +23,20 @@ public class NoCertificationFragment extends BaseFragment {
         activity = getActivity();
         certification_stepview = findView(R.id.certification_stepview);
         LogUtil.e("测试方法", "initView");
+
     }
 
     @Override
     protected void setListener() {
+
+       // certification_stepview.setCurrentStep(1);
         LogUtil.e("测试方法", "setListener");
     }
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
         LogUtil.e("测试方法", "processLogic");
+
     }
 
     @Override

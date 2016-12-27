@@ -45,7 +45,7 @@ public class CompletedDInnerPartyActivity extends BaseActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+       // AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         setContentView(R.layout.activity_completed_dinner_party_layout);
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();

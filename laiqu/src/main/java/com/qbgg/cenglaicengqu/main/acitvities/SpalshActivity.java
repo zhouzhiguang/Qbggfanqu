@@ -26,7 +26,7 @@ public class SpalshActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+        AutoUtils.setSize(this, true, 1080, 1812);
         final boolean isLogined = UserManager.getInstance(this).isLogined();
         //事件总线登录非登录两种状态
         if (isLogined) {
