@@ -238,6 +238,35 @@
     <string name="no_certification_tips">请填写您的真实信息，一经通过无法修改</string>
     <string name="real_name">真实姓名</string>
     <string name="identity_card">身份证号码</string>
+    <string name="uploading_identity_card_tips">请上传本人身份证正反面照片</string>
+    <string name="identity_card_full_face_photo">身份证正面照片</string>
+    <string name="identity_card_reverse_side_photo">身份证反面照片</string>
+    <string name="please_take_identity_card">请拍摄身份证原件：</string>
+    <string name="check_take_picture_demand">查看拍照要求</string>
+    <string name="affirm_uploading">确认上传</string>
+    <string name="identity_card_take_picture_demand">身份证件拍照要求</string>
+    <string name="identity_card_take_picture_demand_text">1.请上传清晰彩色，完整的原件扫描件或照片。\n
+    2.身份证各项信息及头像清晰可见，容易识别。\n
+    3.证件必须真实拍摄，不能使用复印件。\n
+    4.建议横屏拍摄，以满足照片上传效果。\n
+    5.手持照需免冠、五官可见，完整露出手臂耳朵。
+
+    </string>
+    <string name="information_auditing">信息审核中</string>
+    <string name="information_auditing_tips">结果将在七个工作日内通知您</string>
+    <string name="finish">完成</string>
+    <string name="regrettably">很遗憾</string>
+    <string name="authentication_failure">身份认证失败</string>
+    <string name="again_authentication">重新认证</string>
+    <string name="fanqu">蹭范趣</string>
+    <string name="version_name">v</string>
+    <string name="feedback">意见反馈</string>
+    <string name="aosika_us">了解我们</string>
+    <string name="service_hotline">服务热线</string>
+    <string name="Give_us_encourage">给我们鼓励</string>
+    <string name="feed_back_notice_tips">感谢您使用蹭范趣！欢迎您向我们反馈使用中的任何意见和建议！</string>
+    <string name="hotline_tips">工作时间：每天9：00-22：00</string>
+    <string name="hotline">呼叫：400-000-1234</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

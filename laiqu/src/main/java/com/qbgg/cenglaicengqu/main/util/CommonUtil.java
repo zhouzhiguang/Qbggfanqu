@@ -1,12 +1,15 @@
 package com.qbgg.cenglaicengqu.main.util;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
 import com.qbgg.cenglaicengqu.LaiquApplication;
+import com.qbgg.cenglaicengqu.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -71,7 +74,7 @@ public class CommonUtil {
     /**
      * 手机号验证
      *
-     * @param  str
+     * @param str
      * @return 验证通过返回true
      */
     public static boolean isMobile(String str) {
@@ -93,31 +96,26 @@ public class CommonUtil {
         FileInputStream in = null;
         try {
             in = new FileInputStream(file);
-            for (int len = -1; (len = in.read(buffer)) != -1;) {
+            for (int len = -1; (len = in.read(buffer)) != -1; ) {
                 out.write(buffer, 0, len);
-                if (out.size() > MAX_STRING_LENGTH)
-                {
+                if (out.size() > MAX_STRING_LENGTH) {
                     Log.e("IoUtils", "File too large, maybe not a string. " + file.getAbsolutePath());
                     return null;
                 }
             }
             data = out.toString(charset);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             data = null;
-        }
-        finally {
+        } finally {
             if (in != null)
                 try {
                     in.close();
-                }
-                catch (IOException e) {
+                } catch (IOException e) {
                 }
             try {
                 out.close();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
             }
             in = null;
             out = null;
@@ -134,16 +132,13 @@ public class CommonUtil {
             out = new FileOutputStream(file);
             out.write(data.getBytes(charset));
             return true;
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if (out != null)
                 try {
                     out.close();
-                }
-                catch (IOException e) {
+                } catch (IOException e) {
                 }
         }
         return false;
@@ -162,18 +157,18 @@ public class CommonUtil {
         Date d1 = sd.parse(createTime, pos);
 
         long time = new Date().getTime() - d1.getTime();
-        if(time/1000 < 10) {
-            interval ="刚刚";
-        } else if(time/3600000 < 24 && time/3600000 > 0) {
-            int h = (int) (time/3600000);
+        if (time / 1000 < 10) {
+            interval = "刚刚";
+        } else if (time / 3600000 < 24 && time / 3600000 > 0) {
+            int h = (int) (time / 3600000);
             interval = h + "小时前";
-        } else if(time/60000 < 60 && time/60000 > 0) {
-            int m = (int) ((time%3600000)/60000);
+        } else if (time / 60000 < 60 && time / 60000 > 0) {
+            int m = (int) ((time % 3600000) / 60000);
             interval = m + "分钟前";
-        } else if(time/1000 < 60 && time/1000 > 0) {
-            int se = (int) ((time%60000)/1000);
+        } else if (time / 1000 < 60 && time / 1000 > 0) {
+            int se = (int) ((time % 60000) / 1000);
             interval = se + "秒前";
-        }else {
+        } else {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
             ParsePosition pos2 = new ParsePosition(0);
@@ -207,14 +202,31 @@ public class CommonUtil {
         double radLat2 = rad(lat2);
         double a = radLat1 - radLat2;
         double b = rad(lng1) - rad(lng2);
-        double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
-                Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+        double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) +
+                Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
         s = s * EARTH_RADIUS;
         s = Math.round(s * 10000) / 10000;
         if (s > 1000) {
-            return String.format("%skm", Math.round(s/1000*10)/10.f);
+            return String.format("%skm", Math.round(s / 1000 * 10) / 10.f);
         }
         return String.format("%sm", s);
+    }
+
+    /**
+     * 获取版本号
+     *
+     * @return 当前应用的版本号
+     */
+    public static String getVersion(Context context) {
+        try {
+            PackageManager manager = context.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
+            String version = info.versionName;
+            return context.getString(R.string.version_name) + version;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
 

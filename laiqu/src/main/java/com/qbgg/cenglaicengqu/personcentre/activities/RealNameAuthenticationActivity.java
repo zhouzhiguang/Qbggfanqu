@@ -17,7 +17,6 @@ import com.qbgg.cenglaicengqu.main.util.ToastUtils;
 import com.qbgg.cenglaicengqu.personcentre.frgment.NoCertificationFragment;
 
 /**
- * 1.6875倍
  * 实名制认证页面
  */
 public class RealNameAuthenticationActivity extends BaseActivity {
@@ -25,7 +24,7 @@ public class RealNameAuthenticationActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AutoUtils.setSize(this, true, 1080, 1812);// 没有状态栏,设计尺寸的宽高
+
         ThemUtils.initthem(this, R.color.white);
         setContentView(R.layout.activity_real_name_authentication_layout);
         AutoUtils.auto(this);
@@ -72,6 +71,9 @@ public class RealNameAuthenticationActivity extends BaseActivity {
 //        FragmentTransaction transaction = manager.beginTransaction();
         //1.6875倍
         NoCertificationFragment fragment = new NoCertificationFragment();
+        //AuthenticatingFragment fragment = new AuthenticatingFragment();
+        //  AuthenticationSuccessFragment fragment=new AuthenticationSuccessFragment();.
+        // AuthenticationFailureFragment fragment = new AuthenticationFailureFragment();
         fragment.setContainerId(R.id.real_name_authentication_fragment_content);
 //        transaction.replace(R.id.real_name_authentication_fragment_content, fragment);
 //        transaction.commit();

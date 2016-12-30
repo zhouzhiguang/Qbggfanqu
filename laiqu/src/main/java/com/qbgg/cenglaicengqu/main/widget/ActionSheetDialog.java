@@ -3,10 +3,12 @@ package com.qbgg.cenglaicengqu.main.widget;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -197,6 +199,26 @@ public class ActionSheetDialog {
         dialog.show();
     }
 
+    public ActionSheetDialog setTitleColor(int dinner_recyclerview_attention_color) {
+        if (txt_title != null) {
+            txt_title.setTextColor(ContextCompat.getColor(context, dinner_recyclerview_attention_color));
+
+        }
+        return this;
+    }
+
+    public ActionSheetDialog setTitleLayoutParams(float width, float height) {
+        //设置宽高
+        if (height != 0) {
+            if (txt_title != null) {
+                ViewGroup.LayoutParams params = txt_title.getLayoutParams();
+                params.height = (int) height;
+            }
+        }
+
+        return this;
+    }
+
     public interface OnSheetItemClickListener {
         void onClick(int which);
     }
@@ -215,7 +237,7 @@ public class ActionSheetDialog {
     }
 
     public enum SheetItemColor {
-        Blue("#007AFF"), Red("#FD4A2E");
+        Blue("#007AFF"), Red("#FD4A2E"), Black("#6A6A6A");
 
         private String name;
 

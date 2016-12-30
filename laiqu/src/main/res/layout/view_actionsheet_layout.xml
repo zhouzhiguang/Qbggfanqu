@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@mipmap/actionsheet_top_normal"
         android:gravity="center"
-        android:minHeight="@dimen/dimen_120px"
+        android:minHeight="@dimen/dimen_150px"
         android:paddingBottom="@dimen/dimen_25px"
         android:paddingLeft="@dimen/dimen_40px"
         android:paddingRight="@dimen/dimen_40px"

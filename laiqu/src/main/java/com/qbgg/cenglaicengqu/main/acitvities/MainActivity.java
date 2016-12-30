@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
         setContentView(R.layout.activity_main_layout);
         AutoUtils.auto(this);
         // StatusBarUtil.setColorNoTranslucent(MainActivity.this,R.color.red_bg);

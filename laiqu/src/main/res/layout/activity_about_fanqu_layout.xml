@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_seting_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/about_app"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_80px"
+            android:src="@mipmap/ic_fanqu_log" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:text="@string/fanqu"
+            android:textColor="@color/dinner_recyclerview_attention_color"
+            android:textSize="@dimen/dimen_60px" />
+
+        <TextView
+            android:id="@+id/fanqu_versions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:text="@string/fanqu"
+            android:textColor="@color/dinner_recyclerview_attention_color"
+            android:textSize="@dimen/dimen_53px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_10px"
+            android:paddingTop="@dimen/dimen_10px">
+
+            <TextView
+                android:id="@+id/about_fanqu_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="意见反馈"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/feedback"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_60px"
+                android:layout_marginRight="@dimen/dimen_60px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:background="@color/wait_for_pay_line_color"></View>
+
+            <TextView
+                android:id="@+id/About_Us"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="了解我们"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/aosika_us"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_60px"
+                android:layout_marginRight="@dimen/dimen_60px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:background="@color/wait_for_pay_line_color"></View>
+
+            <TextView
+                android:id="@+id/service_hotline"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="服务热线"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/service_hotline"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_60px"
+                android:layout_marginRight="@dimen/dimen_60px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:background="@color/wait_for_pay_line_color"></View>
+
+            <TextView
+                android:id="@+id/Give_us_encourage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="给我们鼓励"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/Give_us_encourage"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

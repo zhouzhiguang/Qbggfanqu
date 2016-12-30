@@ -407,7 +407,7 @@ public class ExpendStepView extends View {
 //            normalRadius = Math.min(parentHeight / 8, dip2px(context, 7));
 //            selectedRadius = Math.min(parentHeight / 6, dip2px(context, 13));
             // normalRadius = Math.min(parentHeight / 4, dip2px(context, 14));
-            selectedRadius = Math.min(parentHeight / 4, dip2px(context, 20));
+            selectedRadius = Math.min(parentHeight / 4, dip2px(context, 18));
 
             //normalRadius=selectedRadius;
             rect = new Rect();

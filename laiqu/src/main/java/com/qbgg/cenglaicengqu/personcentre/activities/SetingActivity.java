@@ -14,22 +14,24 @@ import com.qbgg.cenglaicengqu.main.autolayout.AutoUtils;
 import com.qbgg.cenglaicengqu.main.util.ThemUtils;
 import com.qbgg.cenglaicengqu.main.util.ToastUtils;
 
+
 public class SetingActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout activitySetingLayout;
     private TextView setingPersonData;
     private TextView setingPersonAccountSafe;
     private TextView seting_person_real_name_authentication;
-    private TextView setingPersonNewNotifications;
+    private com.qbgg.cenglaicengqu.main.widget.SwitchButton notifications_swithch;
     private TextView setingPersonCleanCache;
     private TextView setingPersonAboutApp;
     private TextView setingExitLogin;
+    private TextView seting_person_clean_cache_text;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
-       // AutoUtils.setSize(this, true, 1080, 1812);// 没有状态栏,设计尺寸的宽高
+        AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
         setContentView(R.layout.activity_seting_layout);
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();
@@ -51,14 +53,15 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void initView() {
-        activitySetingLayout = (LinearLayout) findViewById(R.id.activity_seting_layout);
-        setingPersonData = (TextView) findViewById(R.id.seting_person_data);
-        setingPersonAccountSafe = (TextView) findViewById(R.id.seting_person_account_safe);
-        seting_person_real_name_authentication = (TextView) findViewById(R.id.seting_person_real_name_authentication);
-        setingPersonNewNotifications = (TextView) findViewById(R.id.seting_person_new_notifications);
-        setingPersonCleanCache = (TextView) findViewById(R.id.seting_person_clean_cache);
-        setingPersonAboutApp = (TextView) findViewById(R.id.seting_person_about_app);
-        setingExitLogin = (TextView) findViewById(R.id.seting_exit_login);
+        activitySetingLayout = findView(R.id.activity_seting_layout);
+        setingPersonData = findView(R.id.seting_person_data);
+        setingPersonAccountSafe = findView(R.id.seting_person_account_safe);
+        seting_person_real_name_authentication = findView(R.id.seting_person_real_name_authentication);
+        seting_person_clean_cache_text=findView(R.id.seting_person_clean_cache_text);
+        notifications_swithch = findView(R.id.seting_person_new_notifications_swithch);
+        setingPersonCleanCache = findView(R.id.seting_person_clean_cache);
+        setingPersonAboutApp = findView(R.id.seting_person_about_app);
+        setingExitLogin = findView(R.id.seting_exit_login);
     }
 
     private void initDate() {
@@ -71,6 +74,8 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
         setingPersonAccountSafe.setOnClickListener(this);
         //实名制认证
         seting_person_real_name_authentication.setOnClickListener(this);
+        //关于蹭范趣
+        setingPersonAboutApp.setOnClickListener(this);
     }
 
     @Override
@@ -91,8 +96,11 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.seting_person_real_name_authentication:
                 //实名制认证
-               jumpActivity(RealNameAuthenticationActivity.class);
+                jumpActivity(RealNameAuthenticationActivity.class);
                 break;
+            case R.id.seting_person_about_app:
+                jumpActivity(AboutFanquActivity.class);
+            break;
             default:
                 break;
         }

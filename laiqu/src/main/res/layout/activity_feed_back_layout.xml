@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_personalized_signature_layout"
+    android:id="@+id/activity_seting_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -21,35 +21,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/personalized_signature"
-            android:textColor="@color/color_423A59"
+            android:text="@string/feedback"
+            android:textColor="@color/textGrayDeep"
             android:textSize="@dimen/dimen_60px" />
 
         <TextView
-            android:id="@+id/personalized_signature_submit"
+            android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="@dimen/dimen_20px"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/dimen_40px"
             android:background="@drawable/fragment_person_mine_dinner_select"
             android:clickable="true"
             android:padding="@dimen/dimen_20px"
             android:text="@string/submit"
-            android:textColor="@color/color_423A59"
-            android:textSize="@dimen/dimen_60px" />
-
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_53px" />
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@id/toolbar"
         android:background="@color/fragment_person_bg"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_400px"
+            android:layout_height="@dimen/dimen_600px"
             android:layout_marginTop="@dimen/dimen_80px"
             android:background="@color/white"
             android:focusable="true"
@@ -57,31 +56,33 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/fragment_person_edit_signature"
+                android:id="@+id/feed_back_notice"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dimen_40px"
                 android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_40px"
                 android:layout_weight="1"
+                android:background="@null"
                 android:gravity="left"
-                android:hint="@string/fragment_person_edit_signature_tips"
-                android:textColorHint="@color/textGrayLight"
+                android:hint="@string/feed_back_notice_tips"
+                android:maxLength="150"
                 android:textColor="@color/textGrayDeep"
-                android:layout_marginTop="@dimen/dimen_80px"
-                android:maxLength="15"
-                android:background="@null" />
+                android:textColorHint="@color/textGrayLight"
+                android:textSize="@dimen/dimen_45px" />
 
             <TextView
-                android:id="@+id/fragment_person_edit_signature_text"
+                android:id="@+id/feed_back_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginBottom="@dimen/dimen_40px"
                 android:layout_marginRight="@dimen/dimen_40px"
                 android:layout_weight="0"
-                android:text="0/15"
+                android:text="0/150"
                 android:textColor="@color/dinner_recyclerview_attention_color"
                 android:textSize="@dimen/dimen_50px" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

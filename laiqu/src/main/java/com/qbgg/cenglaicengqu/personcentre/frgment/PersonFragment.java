@@ -79,6 +79,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        //AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
         setContentView(R.layout.fragment_person_layout);
         activity = getActivity();
         assignViews();

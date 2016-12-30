@@ -3,85 +3,300 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@color/fragment_person_bg"
     android:orientation="vertical">
 
-    <LinearLayout
+
+    <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+        android:id="@+id/certification_shswipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:loadmore_enable="false"
+        app:pull_refresh_enable="false">
 
-        <com.qbgg.cenglaicengqu.main.widget.ExpendStepView
-            android:id="@+id/certification_stepview"
+        <com.scu.miomin.shswiperefresh.view.ShareScrollView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_360px"
-            app:StepCompletedBackground="@mipmap/ic_stepview_finish"
-            app:StepCurrFlag="0"
-            app:StepMaxFlag="3"
-            app:StepNormalBackground="@mipmap/ic_stepview_unfinished"
-            app:StepSelectedBackground="@mipmap/ic_stepview_finish"
-            app:StepTextNormalColor="@color/textGrayLight"
-            app:StepTextTransferColor="@color/color_FF7117"
-            app:StepTitleArray="填写审核信息|审核中|认证成功" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimen_40px"
-            android:text="@string/no_certification_tips"
-            android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_45px" />
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_400px"
-            android:layout_marginTop="@dimen/dimen_40px"
-            android:background="@color/white"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/certification_real_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/dimen_40px"
-                android:layout_weight="1"
-                android:background="@null"
-                android:hint="@string/real_name"
-                android:imeOptions="actionDone"
-                android:inputType="text"
-                android:maxLength="10"
-                android:maxLines="1"
-                android:paddingRight="@dimen/dimen_23px"
-                android:textColor="@color/textGrayDeep"
-                android:textColorHint="@color/textGrayLight"
-                android:textCursorDrawable="@drawable/color_cursor"
-                android:textSize="@dimen/dimen_54px" />
+                android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_3px"
-                android:background="@color/publish_line_color"></View>
+                <com.qbgg.cenglaicengqu.main.widget.ExpendStepView
+                    android:id="@+id/certification_stepview"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_360px"
+                    app:StepCompletedBackground="@mipmap/ic_stepview_finish"
+                    app:StepCurrFlag="0"
+                    app:StepMaxFlag="3"
+                    app:StepNormalBackground="@mipmap/ic_stepview_unfinished"
+                    app:StepSelectedBackground="@mipmap/ic_stepview_finish"
+                    app:StepTextNormalColor="@color/textGrayLight"
+                    app:StepTextTransferColor="@color/color_FF7117"
+                    app:StepTitleArray="填写审核信息|审核中|认证成功" />
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/certification_identity_card"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/dimen_40px"
-                android:layout_weight="1"
-                android:background="@null"
-                android:hint="@string/identity_card"
-                android:imeOptions="actionDone"
-                android:inputType="text"
-                android:maxLength="10"
-                android:maxLines="1"
-                android:paddingRight="@dimen/dimen_23px"
-                android:textColor="@color/textGrayDeep"
-                android:textColorHint="@color/textGrayLight"
-                android:textCursorDrawable="@drawable/color_cursor"
-                android:textSize="@dimen/dimen_54px" />
-        </LinearLayout>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:text="@string/no_certification_tips"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_45px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_400px"
+                    android:layout_marginTop="@dimen/dimen_40px"
+                    android:background="@color/white"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/certification_real_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/real_name"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingRight="@dimen/dimen_23px"
+                        android:textColor="@color/textGrayDeep"
+                        android:textColorHint="@color/textGrayLight"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/dimen_54px" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/publish_line_color"></View>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/certifcation_identity_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/identity_card"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingRight="@dimen/dimen_23px"
+                        android:textColor="@color/textGrayDeep"
+                        android:textColorHint="@color/textGrayLight"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/dimen_54px" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_60px"
+                    android:gravity="center"
+                    android:text="@string/uploading_identity_card_tips"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_50px" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dimen_800px"
+                    android:layout_height="@dimen/dimen_500px"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen_60px"
+                    android:background="@drawable/certification_border_stroke_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/dimen_450px"
+                        android:layout_height="@dimen/dimen_250px"
+                        android:layout_gravity="center">
+
+
+                        <FrameLayout
+                            android:id="@+id/certification_add_identity_card_full_face_photo_layout"
+                            android:layout_width="@dimen/dimen_420px"
+                            android:layout_height="@dimen/dimen_220px"
+                            android:layout_gravity="center"
+                            android:background="@color/edit_publis_line_color">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/ic_plus_lagers" />
+
+                        </FrameLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|left"
+                            android:src="@mipmap/ic_top_left_corner" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|right"
+                            android:src="@mipmap/ic_top_right_corner" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:src="@mipmap/ic_left_bottom" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:src="@mipmap/ic_bottom_right_corner" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:text="@string/identity_card_full_face_photo"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_45px" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/dimen_800px"
+                    android:layout_height="@dimen/dimen_500px"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen_60px"
+                    android:background="@drawable/certification_border_stroke_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/dimen_450px"
+                        android:layout_height="@dimen/dimen_250px"
+                        android:layout_gravity="center">
+
+
+                        <FrameLayout
+                            android:id="@+id/certification_add_identity_reverse_side_photo_layout"
+                            android:layout_width="@dimen/dimen_420px"
+                            android:layout_height="@dimen/dimen_220px"
+                            android:layout_gravity="center"
+                            android:background="@color/edit_publis_line_color">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/ic_plus_lagers" />
+
+                        </FrameLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|left"
+                            android:src="@mipmap/ic_top_left_corner" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|right"
+                            android:src="@mipmap/ic_top_right_corner" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:src="@mipmap/ic_left_bottom" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:src="@mipmap/ic_bottom_right_corner" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:text="@string/identity_card_reverse_side_photo"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_45px" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_40px"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/certification_please_take_identity_card_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginBottom="@dimen/dimen_60px"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_marginTop="@dimen/dimen_60px"
+                        android:text="@string/please_take_identity_card"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_53px" />
+
+                    <TextView
+                        android:id="@+id/certification_check_take_picture_demand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="@dimen/dimen_60px"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_marginRight="@dimen/dimen_40px"
+                        android:layout_marginTop="@dimen/dimen_60px"
+                        android:drawableLeft="@mipmap/ic_warning"
+                        android:drawablePadding="@dimen/dimen_10px"
+                        android:text="@string/check_take_picture_demand"
+                        android:textColor="@color/color_FF7117"
+                        android:textSize="@dimen/dimen_53px" />
+
+                    <View
+                        android:id="@+id/certification_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:layout_below="@id/certification_please_take_identity_card_tips"
+                        android:background="@color/edit_publis_line_color"></View>
+
+                    <TextView
+                        android:id="@+id/certification_affirm_uploading"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_150px"
+                        android:layout_below="@id/certification_line"
+                        android:layout_marginBottom="@dimen/dimen_80px"
+                        android:layout_marginLeft="@dimen/dimen_60px"
+                        android:layout_marginRight="@dimen/dimen_60px"
+                        android:layout_marginTop="@dimen/dimen_80px"
+                        android:background="@drawable/certification_affirm_uploading_select"
+                        android:clickable="true"
+                        android:contentDescription="确认上传"
+                        android:gravity="center"
+                        android:text="@string/affirm_uploading"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_50px" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.scu.miomin.shswiperefresh.view.ShareScrollView>
+    </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
 </LinearLayout>
