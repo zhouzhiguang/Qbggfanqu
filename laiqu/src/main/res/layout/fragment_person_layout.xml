@@ -8,14 +8,14 @@
 
     <!-- 头部包含布局 -->
     <include
-        android:visibility="visible"
         android:id="@+id/fragment_person_logged_head_layout"
-        layout="@layout/fragment_person_logged_header" />
+        layout="@layout/fragment_person_logged_header"
+        android:visibility="visible" />
     <!-- 头部包含还没有登录呢布局 -->
     <include
-        android:visibility="gone"
         android:id="@+id/fragment_person_notlogged_head_layout"
-        layout="@layout/fragment_person_not_logged_header" />
+        layout="@layout/fragment_person_not_logged_header"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                     android:gravity="center"
                     android:text="@string/mine_dinner"
                     android:textColor="@color/grey"
-                    android:textSize="@dimen/dimen_50px" />
+                    android:textSize="@dimen/dimen_54px" />
 
                 <android.support.v4.widget.Space
                     android:layout_width="0px"
@@ -63,12 +63,12 @@
                     android:layout_gravity="center|right"
                     android:layout_marginRight="@dimen/dimen_20px"
                     android:drawableEnd="@mipmap/ic_right_large_arrows"
-                    android:drawablePadding="@dimen/dimen_50px"
+                    android:drawablePadding="@dimen/dimen_30px"
                     android:drawableRight="@mipmap/ic_right_large_arrows"
                     android:gravity="center"
                     android:text="@string/check_all_dinner_party"
                     android:textColor="@color/color_grey_999999"
-                    android:textSize="@dimen/dimen_40px" />
+                    android:textSize="@dimen/dimen_44px" />
             </LinearLayout>
 
             <View
@@ -82,8 +82,8 @@
                 android:layout_height="0px"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:paddingBottom="@dimen/dimen_10px"
-                android:gravity="top">
+                android:gravity="top"
+                android:paddingBottom="@dimen/dimen_10px">
 
                 <TextView
                     android:id="@+id/fragment_person_wait_pay"
@@ -161,19 +161,47 @@
             android:contentDescription="我的资产"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/fragment_person_mine_property"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_gravity="left|center_vertical"
-                android:layout_marginLeft="@dimen/dimen_30px"
                 android:layout_weight="1"
-                android:drawableLeft="@mipmap/ic_mine_property"
-                android:drawablePadding="@dimen/dimen_20px"
-                android:gravity="center"
-                android:text="@string/mine_property"
-                android:textColor="@color/grey"
-                android:textSize="@dimen/dimen_50px" />
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_30px"
+                    android:drawableLeft="@mipmap/ic_tab_meal_selected"
+                    android:drawablePadding="@dimen/dimen_10px"
+                    android:drawableStart="@mipmap/ic_tab_meal_selected"
+                    android:gravity="center"
+                    android:text="@string/mine_property"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/dimen_54px" />
+
+
+                <android.support.v4.widget.Space
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="@dimen/dimen_20px"
+                    android:drawableEnd="@mipmap/ic_right_large_arrows"
+                    android:drawablePadding="@dimen/dimen_30px"
+                    android:drawableRight="@mipmap/ic_right_large_arrows"
+                    android:gravity="center"
+                    android:text="@string/mine_member"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_44px" />
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -196,8 +224,8 @@
                     android:background="@drawable/fragment_person_mine_dinner_select"
                     android:clickable="true"
                     android:gravity="center"
-                    android:padding="@dimen/dimen_20px"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_20px">
 
                     <TextView
                         android:id="@+id/accounts_balance"
@@ -207,29 +235,43 @@
                         android:contentDescription="账户余额"
                         android:text="10000"
                         android:textColor="@color/accounts_balance_color"
-                        android:textSize="@dimen/dimen_40px" />
+                        android:textSize="@dimen/dimen_54px" />
 
-                    <TextView
-
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/dimen_10px"
-                        android:text="@string/accounts_balance"
-                        android:textColor="@color/accounts_balance_tip_color"
-                        android:textSize="@dimen/dimen_40px" />
+                        android:orientation="horizontal">
 
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="@string/accounts_balance"
+                            android:textColor="@color/accounts_balance_tip_color"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="(元)"
+                            android:textColor="@color/accounts_balance_tip_color"
+                            android:textSize="@dimen/dimen_33px" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/dimen_20px"
                     android:layout_weight="1"
                     android:background="@drawable/fragment_person_mine_dinner_select"
                     android:clickable="true"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_20px">
 
                     <TextView
                         android:id="@+id/accounts_integral"
@@ -239,79 +281,77 @@
                         android:contentDescription="积分"
                         android:text="50"
                         android:textColor="@color/accounts_balance_color"
-                        android:textSize="@dimen/dimen_40px" />
+                        android:textSize="@dimen/dimen_54px" />
 
-                    <TextView
-
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/dimen_10px"
+                        android:orientation="horizontal">
 
-                        android:text="@string/accounts_integral"
-                        android:textColor="@color/accounts_balance_tip_color"
-                        android:textSize="@dimen/dimen_40px" />
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/accounts_integral"
+                            android:textColor="@color/accounts_balance_tip_color"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="(分)"
+                            android:textColor="@color/accounts_balance_tip_color"
+                            android:textSize="@dimen/dimen_33px" />
+                    </LinearLayout>
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/dimen_20px"
                     android:layout_weight="1"
                     android:background="@drawable/fragment_person_mine_dinner_select"
                     android:clickable="true"
                     android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/accounts_meal_ticket"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:contentDescription="饭票"
-                        android:text="2"
-                        android:textColor="@color/accounts_balance_color"
-                        android:textSize="@dimen/dimen_40px" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/dimen_10px"
-                        android:text="@string/accounts_meal_ticket"
-                        android:textColor="@color/accounts_balance_tip_color"
-                        android:textSize="@dimen/dimen_40px" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                   android:padding="@dimen/dimen_20px"
-                    android:layout_weight="1"
-                    android:background="@drawable/fragment_person_mine_dinner_select"
-                    android:clickable="true"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_20px">
 
                     <TextView
                         android:id="@+id/accounts_coupon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:contentDescription="优惠劵"
+                        android:contentDescription="积分"
                         android:text="0"
                         android:textColor="@color/accounts_balance_color"
-                        android:textSize="@dimen/dimen_40px" />
+                        android:textSize="@dimen/dimen_54px" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_marginTop="@dimen/dimen_10px"
-                        android:text="@string/accounts_coupon"
-                        android:textColor="@color/accounts_balance_tip_color"
-                        android:textSize="@dimen/dimen_40px" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/accounts_coupon"
+                            android:textColor="@color/accounts_balance_tip_color"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="(张)"
+                            android:textColor="@color/accounts_balance_tip_color"
+                            android:textSize="@dimen/dimen_33px" />
+                    </LinearLayout>
                 </LinearLayout>
 
 
@@ -330,10 +370,10 @@
                 android:id="@+id/mine_focus"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1"
                 android:layout_marginLeft="@dimen/dimen_40px"
                 android:layout_marginRight="@dimen/dimen_40px"
                 android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_weight="1"
                 android:background="@drawable/fragment_person_mine_dinner_select"
                 android:clickable="true"
                 android:contentDescription="我的关注"
@@ -343,7 +383,7 @@
                 android:gravity="center_vertical"
                 android:padding="@dimen/dimen_20px"
                 android:text="@string/mine_focus"
-                android:textSize="@dimen/dimen_50px" />
+                android:textSize="@dimen/dimen_54px" />
 
             <View
                 android:layout_width="match_parent"
@@ -352,24 +392,23 @@
                 android:background="@color/textGrayLight" />
 
             <TextView
-                android:id="@+id/invite_friend"
+                android:id="@+id/real_name_authentication"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1"
                 android:layout_marginLeft="@dimen/dimen_40px"
                 android:layout_marginRight="@dimen/dimen_40px"
-
+                android:layout_weight="1"
                 android:background="@drawable/fragment_person_mine_dinner_select"
                 android:clickable="true"
-                android:contentDescription="邀请好友"
-                android:drawableLeft="@mipmap/ic_invite_friend"
+                android:contentDescription="实名认证"
+                android:drawableLeft="@mipmap/ic_real_name_authentication"
                 android:drawablePadding="@dimen/dimen_20px"
                 android:drawableRight="@mipmap/ic_right_large_arrows"
                 android:gravity="center_vertical"
-                android:paddingBottom="@dimen/dimen_20px"
                 android:padding="@dimen/dimen_20px"
-                android:text="@string/invite_friend"
-                android:textSize="@dimen/dimen_50px" />
+                android:paddingBottom="@dimen/dimen_20px"
+                android:text="@string/real_name_authentication"
+                android:textSize="@dimen/dimen_54px" />
 
             <View
                 android:layout_width="match_parent"
@@ -378,25 +417,25 @@
                 android:background="@color/textGrayLight" />
 
             <TextView
-                android:id="@+id/about_us"
+                android:id="@+id/log_out"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1"
                 android:layout_marginLeft="@dimen/dimen_40px"
                 android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
                 android:background="@drawable/fragment_person_mine_dinner_select"
                 android:clickable="true"
-                android:contentDescription="关于我们"
-                android:drawableLeft="@mipmap/ic_about_us"
+                android:contentDescription="退出登录"
+                android:drawableLeft="@mipmap/ic_log_out"
                 android:drawablePadding="@dimen/dimen_20px"
                 android:drawableRight="@mipmap/ic_right_large_arrows"
                 android:gravity="center_vertical"
                 android:paddingBottom="@dimen/dimen_20px"
-                android:paddingTop="@dimen/dimen_20px"
-                android:paddingRight="@dimen/dimen_20px"
                 android:paddingLeft="@dimen/dimen_20px"
-                android:text="@string/about_us"
-                android:textSize="@dimen/dimen_50px" />
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/log_out"
+                android:textSize="@dimen/dimen_54px" />
 
         </LinearLayout>
 

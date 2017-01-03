@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.qbgg.cenglaicengqu.R;
@@ -28,20 +29,19 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     private TextView fragmentPersonWaitOpenSeats;//待开席
     private TextView fragmentPersonWaitEvaluate;//待评价
     private TextView fragmentPersonAfterSale;//退款售后
-    private TextView fragmentPersonMineProperty;//我的资产
+    private LinearLayout fragmentPersonMineProperty;//我的资产
     private TextView accountsBalance;//账户余额
     private TextView accountsIntegral;//积分
-    private TextView accountsMealTicket;//饭票
     private TextView accountsCoupon;//优惠劵
     private TextView mineFocus;//我的关注
-    private TextView inviteFriend;//邀请好友
-    private TextView aboutUs;//关于我们
+    private TextView log_out;//退出登录
     private ImageView fragment_person_seting;//设置
     private CircleImageView head_image;//头像
     private TextView fragment_person_name;//帐号名字
     private TextView fragment_person_vip_targ;//身份标识
     private TextView fragment_person_account_management;//帐号管理
     private TextView fragment_person_login_register;//还没有登录登录转登录注册
+    private TextView real_name_authentication;//实名认证
 
     /**
      * 初始化view
@@ -54,14 +54,13 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         fragmentPersonWaitOpenSeats = (TextView) findView(R.id.fragment_person_wait_open_seats);
         fragmentPersonWaitEvaluate = (TextView) findView(R.id.fragment_person_wait_evaluate);
         fragmentPersonAfterSale = (TextView) findView(R.id.fragment_person_after_sale);
-        fragmentPersonMineProperty = (TextView) findView(R.id.fragment_person_mine_property);
+        fragmentPersonMineProperty = findView(R.id.fragment_person_mine_property);
         accountsBalance = (TextView) findView(R.id.accounts_balance);
         accountsIntegral = (TextView) findView(R.id.accounts_integral);
-        accountsMealTicket = (TextView) findView(R.id.accounts_meal_ticket);
         accountsCoupon = (TextView) findView(R.id.accounts_coupon);
         mineFocus = (TextView) findView(R.id.mine_focus);
-        inviteFriend = (TextView) findView(R.id.invite_friend);
-        aboutUs = (TextView) findView(R.id.about_us);
+        real_name_authentication = findView(R.id.real_name_authentication);
+        log_out = (TextView) findView(R.id.log_out);
         fragment_person_seting = findView(R.id.fragment_person_seting);
         head_image = findView(R.id.profile_image);
         fragment_person_name = findView(R.id.fragment_person_name);

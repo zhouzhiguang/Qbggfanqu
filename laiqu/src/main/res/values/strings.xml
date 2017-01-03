@@ -27,7 +27,7 @@
     <string name="set_password">设置登录密码</string>
     <string name="account_management">帐号管理</string>
     <string name="mine_dinner">我的饭局</string>
-    <string name="check_all_dinner_party">查看所有饭局</string>
+    <string name="check_all_dinner_party">查看全部饭局</string>
     <string name="wait_pay">待支付</string>
     <string name="wait_open_seat">待开席</string>
     <string name="wait_evaluate">待评价</string>
@@ -267,6 +267,10 @@
     <string name="feed_back_notice_tips">感谢您使用蹭范趣！欢迎您向我们反馈使用中的任何意见和建议！</string>
     <string name="hotline_tips">工作时间：每天9：00-22：00</string>
     <string name="hotline">呼叫：400-000-1234</string>
+    <string name="partner">合伙人</string>
+    <string name="super_foodie">超级吃货</string>
+    <string name="mine_member">我的会员</string>
+    <string name="log_out">退出登录</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

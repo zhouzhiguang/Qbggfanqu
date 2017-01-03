@@ -14,13 +14,13 @@
     <com.qbgg.cenglaicengqu.main.widget.MainNavigateTabBar
         android:id="@+id/main_navigate_TabBar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_200px"
+        android:layout_height="@dimen/dimen_180px"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
         app:containerId="@+id/main_container"
         app:navigateTabSelectedTextColor="@color/activity_main_layout_bottom_text_select"
-        app:navigateTabTextSize="@dimen/dimen_35px"
-        app:navigateTabTextColor="@color/comui_tab_text_color" />
+        app:navigateTabTextColor="@color/comui_tab_text_color"
+        app:navigateTabTextSize="@dimen/dimen_37px" />
 
 
     <ImageView
@@ -31,11 +31,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_250px"
+        android:layout_height="@dimen/dimen_230px"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_20px"
         android:background="@android:color/transparent"
         android:gravity="center|top"
-        android:layout_marginBottom="@dimen/dimen_20px"
         android:orientation="vertical">
 
         <ImageView
@@ -43,7 +43,7 @@
             android:id="@+id/tab_post_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tag="添加饭局主界面"
-            android:src="@mipmap/comui_tab_post" />
+            android:src="@mipmap/comui_tab_post"
+            android:tag="添加饭局主界面" />
     </LinearLayout>
 </RelativeLayout>

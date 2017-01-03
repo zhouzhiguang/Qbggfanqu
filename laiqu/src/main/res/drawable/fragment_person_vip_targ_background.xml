@@ -7,9 +7,4 @@
         android:color="@color/red"
 
         />
-    <size
-
-        android:width="200dp"
-        android:height="60dp"
-        />
 </shape>
