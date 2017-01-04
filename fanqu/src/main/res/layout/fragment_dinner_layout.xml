@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_home_bg">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:id="@+id/dinner_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30px"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dinner_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="城市"
+            android:drawablePadding="@dimen/dimen_40px"
+            android:drawableRight="@mipmap/ic_down_arrows_open"
+            android:gravity="center"
+            android:padding="@dimen/dimen_40px"
+            android:text="东莞"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+        <TextView
+            android:id="@+id/dinner_release_party"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="发起饭局"
+            android:padding="@dimen/dimen_40px"
+            android:text="@string/release_party"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_below="@+id/dinner_release_party"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/textGrayLight" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_100px"
+            android:layout_below="@+id/dinner_release_party"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dimen_20px">
+
+            <TextView
+                android:id="@+id/dinner_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="推荐"
+                android:gravity="center"
+                android:text="@string/recommend"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <View
+                android:layout_width="@dimen/dimen_1px"
+                android:layout_height="match_parent"
+                android:background="@color/borderDeep" />
+
+            <TextView
+                android:id="@+id/dinner_area"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="区域"
+                android:gravity="center"
+                android:text="@string/area"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <View
+                android:layout_width="@dimen/dimen_1px"
+                android:layout_height="match_parent"
+                android:background="@color/borderDeep" />
+
+            <TextView
+                android:id="@+id/dinner_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="时间"
+                android:gravity="center"
+                android:text="@string/time"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <View
+                android:layout_width="@dimen/dimen_1px"
+                android:layout_height="match_parent"
+                android:background="@color/borderDeep" />
+
+            <TextView
+                android:id="@+id/dinner_state"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="状态"
+                android:gravity="center"
+                android:text="@string/state"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/dinner_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dinner_head_layout"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+</RelativeLayout>

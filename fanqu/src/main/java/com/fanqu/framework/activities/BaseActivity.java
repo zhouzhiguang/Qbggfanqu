@@ -3,41 +3,53 @@ package com.fanqu.framework.activities;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import com.fanqu.framework.SystemBarTintManager;
-import com.fanqu.framework.annotation.Injector;
-import com.fanqu.framework.autolayout.AutoUtils;
+import com.fanqu.framework.fragment.BaseFragment;
+import com.fanqu.framework.model.ToolBarOptions;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import cn.sharesdk.framework.ShareSDK;
 
 @SuppressLint("NewApi")
-public abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends RxAppCompatActivity {
 	public static final String KEY_UUID = "uuid";
 
 	private boolean mIsDestroyed = false;
+	private static Handler handler;
+
+	private Toolbar toolbar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		ShareSDK.initSDK(this);
-		AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+
+		// AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
 		initthem();
 		if (getLayoutId() != 0) {
 			setContentView(getLayoutId());
 		}
 	}
 
-	
+	protected <T extends View> T findView(int resId) {
+		return (T) (findViewById(resId));
+	}
 
 	/**
 	 * 初始化沉浸式狀態欄
@@ -66,7 +78,6 @@ public abstract class BaseActivity extends FragmentActivity {
 	@Override
 	public final void setContentView(int i) {
 		super.setContentView(i);
-		Injector.inject(this, this);
 	}
 
 	@Override
@@ -158,4 +169,117 @@ public abstract class BaseActivity extends FragmentActivity {
 		}
 	}
 
+	/**
+	 * 延时弹出键盘
+	 *
+	 * @param focus 键盘的焦点项
+	 */
+	protected void showKeyboardDelayed(View focus) {
+		final View viewToFocus = focus;
+		if (focus != null) {
+			focus.requestFocus();
+		}
+
+		getHandler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				if (viewToFocus == null || viewToFocus.isFocused()) {
+					showKeyboard(true);
+				}
+			}
+		}, 200);
+	}
+	protected final Handler getHandler() {
+		if (handler == null) {
+			handler = new Handler(getMainLooper());
+		}
+		return handler;
+	}
+	protected void showKeyboard(boolean isShow) {
+		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		if (isShow) {
+			if (getCurrentFocus() == null) {
+				imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+			} else {
+				imm.showSoftInput(getCurrentFocus(), 0);
+			}
+		} else {
+			if (getCurrentFocus() != null) {
+				imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+			}
+		}
+	}
+
+	public void setToolBar(int toolBarId, ToolBarOptions options) {
+		toolbar = (Toolbar) findViewById(toolBarId);
+		if (options.titleId != 0) {
+			toolbar.setTitle(options.titleId);
+		}
+		String title = options.titleString;
+		if (!TextUtils.isEmpty(title)) {
+			toolbar.setTitle(options.titleString);
+		} else {
+			toolbar.setTitle("");
+		}
+		//  if (options.logoId != 0) {
+		//toolbar.setLogo(options.logoId);
+		//}
+		setSupportActionBar(toolbar);
+
+		if (options.isNeedNavigate) {
+			toolbar.setNavigationIcon(options.navigateId);
+			toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					onNavigateUpClicked();
+				}
+			});
+		}
+	}
+
+	public void setToolBar(int toolbarId, int titleId, int logoId) {
+		toolbar = (Toolbar) findViewById(toolbarId);
+		toolbar.setTitle(titleId);
+		if (logoId != 0) {
+			toolbar.setLogo(logoId);
+		}
+		setSupportActionBar(toolbar);
+	}
+
+	public Toolbar getToolBar() {
+		return toolbar;
+	}
+
+	public int getToolBarHeight() {
+		if (toolbar != null) {
+			return toolbar.getHeight();
+		}
+
+		return 0;
+	}
+
+	public BaseFragment switchContent(BaseFragment fragment) {
+
+		return switchContent(fragment, false);
+	}
+
+	protected BaseFragment switchContent(BaseFragment fragment, boolean needAddToBackStack) {
+		FragmentManager fm = getSupportFragmentManager();
+		FragmentTransaction fragmentTransaction = fm.beginTransaction();
+		fragmentTransaction.replace(fragment.getContainerId(), fragment);
+		if (needAddToBackStack) {
+			fragmentTransaction.addToBackStack(null);
+		}
+		try {
+			fragmentTransaction.commitAllowingStateLoss();
+		} catch (Exception e) {
+
+		}
+
+		return fragment;
+	}
+
+	public void onNavigateUpClicked() {
+		onBackPressed();
+	}
 }

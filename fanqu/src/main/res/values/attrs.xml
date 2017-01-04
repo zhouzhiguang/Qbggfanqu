@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 分页标签 -->
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsCheckedTextColor" format="reference" />
+        <attr name="pstsUncheckedTextColor" format="reference" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+
+    <!-- 左右文本 -->
+    <declare-styleable name="TwoTextView">
+
+        <!-- 左边文本内容 -->
+        <attr name="ttLeftText" format="string|reference" />
+        <!-- 右边文本内容 -->
+        <attr name="ttRightText" format="string|reference" />
+        <!-- 左边文本字体大小 -->
+        <attr name="ttLeftTextSize" format="dimension" />
+        <!-- 右边文本字体大小 -->
+        <attr name="ttRightTextSize" format="dimension" />
+        <!-- 左边文本颜色 -->
+        <attr name="ttLeftTextColor" format="reference" />
+        <!-- 右边文本颜色 -->
+        <attr name="ttRightTextColor" format="reference" />
+    </declare-styleable>
+
+    <!--主界面下面的导航栏-->
+    <declare-styleable name="MainNavigateTabBar">
+        <attr name="navigateTabTextColor" format="color|reference" />
+        <attr name="navigateTabSelectedTextColor" format="color|reference" />
+        <attr name="containerId" format="integer|reference" />
+        <attr name="navigateTabTextSize" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="mask_color" format="color" />
+        <attr name="open_color" format="color" />
+        <attr name="close_color" format="color" />
+        <attr name="checked" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="NumberButton">
+        <attr name="editable" format="boolean" />
+        <attr name="buttonWidth" format="dimension" />
+        <attr name="textWidth" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PileLayout">
+        <attr name="PileLayout_vertivalSpace" format="dimension" />
+        <attr name="PileLayout_pileWidth" format="dimension" />
+    </declare-styleable>
+    <!--倒计时按钮属性-->
+    <declare-styleable name="TimeViewComm">
+        <attr name="tvc_backgroundColor" format="color" />
+        <attr name="tvc_textColor" format="color" />
+        <attr name="tvc_spaceColor" format="color" />
+        <attr name="tvc_textSize" format="dimension" />
+        <attr name="tvc_radius" format="dimension" />
+        <attr name="tvc_textPaddingHorizantal" format="dimension" />
+        <attr name="tvc_textPaddingVertical" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="ClearEditText">
+        <!-- 清除按钮的图标 -->
+        <attr name="iconClear" format="reference" />
+    </declare-styleable>
+    <!--轮播选择器-->
+    <declare-styleable name="WheelView">
+        <attr name="unitHeight" format="dimension" />
+        <attr name="itemNumber" format="integer" />
+
+        <attr name="normalTextColor" format="color" />
+        <attr name="normalTextSize" format="dimension" />
+        <attr name="selectedTextColor" format="color" />
+        <attr name="selectedTextSize" format="dimension" />
+
+        <attr name="lineColor" format="color" />
+        <attr name="lineHeight" format="dimension" />
+
+        <attr name="maskHeight" format="dimension" />
+        <attr name="noEmpty" format="boolean" />
+        <attr name="isEnable" format="boolean" />
+    </declare-styleable>
+    <!-- 自定义仿IOS的AlertDialog的样式 -->
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 自定义仿IOS的ActionSheet底部Dialog的样式 ，有模糊效果 -->
+    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
+    </style>
+
+    <!-- ActionSheet进出动画 -->
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
+    </style>
+
+    <!-- 步骤视图 -->
+    <declare-styleable name="ExpendStepView">
+        <attr name="StepMaxFlag" format="integer" />
+        <!-- 最大步骤 -->
+        <attr name="StepCurrFlag" format="integer" />
+        <!-- 当前步骤 -->
+        <attr name="StepSelectedBackground" format="reference" />
+        <!-- 步骤背景图 -->
+        <attr name="StepNormalBackground" format="reference" />
+        <!-- 步骤背景图 -->
+        <attr name="StepCompletedBackground" format="reference" />
+        <!-- 步骤背景图 -->
+        <attr name="StepFlagTextColor" format="color" />
+        <!-- 步骤标记数字的颜色 -->
+        <attr name="StepTextNormalColor" format="color" />
+        <!-- 步骤文字的正常颜色 -->
+        <attr name="StepTextTransferColor" format="color" />
+        <!-- 步骤文字的变化颜色 -->
+        <attr name="StepTitleArray" format="string" />
+        <!-- 步骤标题 -->
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension"/>
+        <attr name="civ_border_color" format="color"/>
+        <attr name="civ_border_overlay" format="boolean"/>
+        <attr name="civ_fill_color" format="color"/>
+    </declare-styleable>
+</resources>

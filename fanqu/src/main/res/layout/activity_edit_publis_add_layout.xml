@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit_publis_add_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_person_bg">
+
+    <RelativeLayout
+        android:id="@+id/publish_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_120px"
+        android:layout_marginTop="@dimen/dimen_50px"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/edit_publis_add_backtrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="@dimen/dimen_20px"
+            android:layout_weight="0"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:padding="@dimen/dimen_20px"
+            android:src="@mipmap/ic_left_arrows" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/release_dinner_party"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/dinner_party_liiner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_800px"
+        android:layout_below="@+id/publish_head_layout"
+        android:layout_marginTop="@dimen/dimen_30px"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_20px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:paddingRight="@dimen/dimen_40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="1"
+                android:text="@string/dinner_party_invite_number"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <com.qbgg.cenglaicengqu.main.widget.NumberButton
+                android:layout_width="@dimen/dimen_350px"
+                android:layout_height="@dimen/dimen_100px"
+                android:layout_gravity="right|center"
+                app:editable="true"
+                app:textColor="@color/textGrayDeep" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_2px"
+            android:background="@color/edit_publis_line_color"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:paddingRight="@dimen/dimen_40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="1"
+                android:text="@string/dinner_party_time"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/icon_right_arrows_gray"
+                android:gravity="center"
+                android:text="@string/please_select"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_50px" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_2px"
+            android:background="@color/edit_publis_line_color"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:paddingRight="@dimen/dimen_40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="1"
+                android:text="@string/dinner_party_location"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/icon_right_arrows_gray"
+                android:gravity="center"
+                android:text="@string/please_select"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_50px" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_2px"
+            android:background="@color/edit_publis_line_color"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="@color/fragment_person_bg"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:paddingRight="@dimen/dimen_40px">
+
+            <EditText
+                android:id="@+id/dinner_party_detailed_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/street_detailed_address"
+                android:textColor="@color/textGrayDeep"
+                android:textColorHint="@color/textGrayLight"
+                android:textSize="@dimen/dimen_50px" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/dinner_party_liiner_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dinner_party_release"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_130px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dimen_200px"
+            android:layout_marginLeft="@dimen/dimen_60px"
+            android:layout_marginRight="@dimen/dimen_60px"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:background="@drawable/publish_add_nextstep_selector"
+            android:clickable="true"
+            android:contentDescription="提交发布"
+            android:gravity="center"
+            android:text="@string/submit_posting"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_50px" />
+    </LinearLayout>
+</RelativeLayout>

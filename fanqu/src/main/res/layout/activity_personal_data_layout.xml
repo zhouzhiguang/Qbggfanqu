@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_personal_data_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/personal_data"
+            android:textColor="@color/color_423A59"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50px"
+        android:background="@color/wait_for_pay_line_color"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/personal_data_head_portrait"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="个人头像"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_20px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_20px"
+            android:text="@string/head_portrait"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+
+        <View
+            android:id="@+id/personal_data_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:layout_below="@id/personal_data_head_portrait"
+            android:layout_marginBottom="@dimen/dimen_10px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/personal_data_head_image"
+            android:layout_width="@dimen/dimen_160px"
+            android:layout_height="@dimen/dimen_160px"
+            android:layout_above="@+id/personal_data_line_1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen_100px"
+            android:src="@mipmap/ic_default_avatar" />
+
+        <TextView
+            android:id="@+id/personal_data_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_below="@id/personal_data_line_1"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="昵称"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_20px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_20px"
+            android:text="@string/nick_name"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+
+        <View
+            android:id="@+id/personal_data_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:layout_below="@id/personal_data_nickname"
+            android:layout_marginBottom="@dimen/dimen_10px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <TextView
+            android:id="@+id/personal_data_nickname_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/personal_data_line_2"
+            android:layout_alignBaseline="@id/personal_data_nickname"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dimen_30px"
+            android:layout_marginRight="@dimen/dimen_140px"
+            android:text="王大锤"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_45px" />
+
+
+        <TextView
+            android:id="@+id/personal_data_sex_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_below="@id/personal_data_line_2"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="性别"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_20px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_20px"
+            android:text="@string/sex"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+
+        <View
+            android:id="@+id/personal_data_line_3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:layout_below="@id/personal_data_sex_text"
+            android:layout_marginBottom="@dimen/dimen_10px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <TextView
+            android:id="@+id/personal_data_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/personal_data_line_3"
+            android:layout_alignBaseline="@id/personal_data_sex_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dimen_30px"
+            android:layout_marginRight="@dimen/dimen_140px"
+            android:text="男"
+            android:textColor="@color/textGrayDeep"
+
+            android:textSize="@dimen/dimen_45px" />
+
+        <TextView
+            android:id="@+id/personal_data_birthday_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_below="@id/personal_data_line_3"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="生日"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_20px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_20px"
+            android:text="@string/birthday"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+        <TextView
+            android:id="@+id/personal_data_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/personal_data_line_4"
+            android:layout_alignBaseline="@id/personal_data_birthday_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dimen_30px"
+            android:layout_marginRight="@dimen/dimen_140px"
+            android:text="1991-01-01"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_45px" />
+
+        <View
+            android:id="@+id/personal_data_line_4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:layout_below="@id/personal_data_birthday_text"
+            android:layout_marginBottom="@dimen/dimen_10px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <TextView
+            android:id="@+id/personal_data_area_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_below="@id/personal_data_line_4"
+            android:layout_marginBottom="@dimen/dimen_20px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="地区"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_20px"
+            android:text="@string/data_area"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+        <TextView
+            android:id="@+id/personal_data_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/personal_data_line_5"
+            android:layout_alignBaseline="@id/personal_data_area_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dimen_30px"
+            android:layout_marginRight="@dimen/dimen_140px"
+            android:text="广东 东莞"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_45px" />
+
+        <View
+            android:id="@+id/personal_data_line_5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:layout_below="@id/personal_data_area_text"
+            android:layout_marginBottom="@dimen/dimen_10px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+
+        <View
+            android:id="@+id/personal_data_line_6"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50px"
+            android:layout_below="@id/personal_data_area_text"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <TextView
+            android:id="@+id/personal_data_QRCode_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_below="@id/personal_data_line_6"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="二维码名片"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_20px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:text="@string/QRCode_identity"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+        <View
+            android:id="@+id/personal_data_line_7"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:layout_below="@id/personal_data_QRCode_text"
+            android:layout_marginBottom="@dimen/dimen_10px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <TextView
+            android:id="@+id/personal_data_personalized_signature"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_below="@id/personal_data_line_7"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="个性签名"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_20px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_20px"
+            android:text="@string/personalized_signature"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+        <View
+            android:id="@+id/personal_data_line_8"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:layout_below="@id/personal_data_personalized_signature"
+            android:layout_marginBottom="@dimen/dimen_10px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <TextView
+            android:id="@+id/personal_data_taste_preference"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170px"
+            android:layout_below="@id/personal_data_line_8"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:contentDescription="口味偏好"
+            android:drawablePadding="@dimen/dimen_20px"
+            android:drawableRight="@mipmap/ic_right_large_arrows"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_20px"
+            android:paddingLeft="@dimen/dimen_20px"
+            android:paddingRight="@dimen/dimen_20px"
+            android:paddingTop="@dimen/dimen_20px"
+            android:text="@string/taste_preference"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_20px"
+        android:background="@color/fragment_person_bg"></View>
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_personal_account_safe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/change_phone_number"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_60px"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bound_mobile_phone_current_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_60px"
+                android:layout_marginLeft="@dimen/dimen_60px"
+                android:layout_marginTop="@dimen/dimen_60px"
+                android:text="@string/bound_mobile_pone_number"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:background="@color/edit_publis_line_color"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_height="@dimen/dimen_180px">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/bound_mobile_phone_security_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_60px"
+                    android:background="@null"
+                    android:hint="@string/input_send_code_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:paddingRight="@dimen/dimen_23px"
+                    android:textColor="@color/textGrayDeep"
+                    android:textColorHint="@color/textGrayLight"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/dimen_50px" />
+
+
+                <TextView
+                    android:id="@+id/send_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:clickable="true"
+                    android:drawableLeft="@mipmap/ic_vertical_wire"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_8px"
+                    android:text="@string/send_code"
+                    android:textColor="@drawable/selector_login_text"
+                    android:textSize="@dimen/dimen_50px" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bound_mobile_phone_nextstep"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_200px"
+            android:background="@drawable/taste_preference_confirm_select"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/nextstep"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_60px" />
+    </LinearLayout>
+
+</RelativeLayout>

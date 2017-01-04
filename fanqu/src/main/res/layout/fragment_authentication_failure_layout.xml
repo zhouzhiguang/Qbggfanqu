@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_person_bg"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.qbgg.cenglaicengqu.main.widget.ExpendStepView
+            android:id="@+id/certification_stepview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_250px"
+            android:layout_marginTop="@dimen/dimen_80px"
+            app:StepCompletedBackground="@mipmap/ic_stepview_finish"
+            app:StepCurrFlag="2"
+            app:StepMaxFlag="3"
+            app:StepNormalBackground="@mipmap/ic_stepview_unfinished"
+            app:StepSelectedBackground="@mipmap/ic_stepview_finish"
+            app:StepTextNormalColor="@color/textGrayLight"
+            app:StepTextTransferColor="@color/color_FF7117"
+            app:StepTitleArray="填写审核信息|审核中|认证失败" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_authentication_failure" />.
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:text="@string/regrettably"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_53px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_10px"
+            android:text="@string/authentication_failure"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_53px" />
+        <TextView
+            android:id="@+id/authentication_failure_cause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dimen_60px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_60px"
+            android:drawableLeft="@mipmap/ic_warning"
+            android:drawablePadding="@dimen/dimen_10px"
+            android:text="失败原因：身份证照片模糊辨识不了"
+            android:textColor="@color/color_FF7117"
+            android:textSize="@dimen/dimen_45px"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_40px"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/real_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_80px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_80px"
+            android:text="@string/real_name"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_53px" />
+
+        <TextView
+            android:id="@+id/authenticating_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_80px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_80px"
+            android:layout_toRightOf="@id/real_name"
+            android:text="王大锤"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_53px" />
+
+        <View
+            android:id="@+id/certification_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_5px"
+            android:layout_below="@id/real_name"
+            android:background="@color/color_F0F0F0"></View>
+
+        <TextView
+            android:id="@+id/certification_identity_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/certification_line"
+            android:layout_marginBottom="@dimen/dimen_80px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_80px"
+            android:text="@string/identity_card"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_53px" />
+
+        <TextView
+            android:id="@+id/certification_identity_card_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/certification_line"
+            android:layout_marginBottom="@dimen/dimen_80px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_80px"
+            android:layout_toRightOf="@id/certification_identity_card"
+            android:maxLength="18"
+            android:text="43000000000000000000000"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_53px" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/certification_again_authentication"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:layout_below="@id/certification_line"
+            android:layout_marginBottom="@dimen/dimen_80px"
+            android:layout_marginLeft="@dimen/dimen_60px"
+            android:layout_marginRight="@dimen/dimen_60px"
+            android:layout_marginTop="@dimen/dimen_80px"
+            android:background="@drawable/taste_preference_confirm_select"
+            android:clickable="true"
+            android:contentDescription="重新认证"
+            android:gravity="center"
+            android:text="@string/again_authentication"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_50px" />
+    </LinearLayout>
+
+</LinearLayout>

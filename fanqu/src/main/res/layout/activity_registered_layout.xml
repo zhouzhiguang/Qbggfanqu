@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_registered_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:id="@+id/layout_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/quick_register_account"
+            android:textColor="@color/layout_title"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200px"
+        android:gravity="center">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/phone_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@drawable/edit_text_rect_border"
+            android:drawableLeft="@mipmap/ic_phone_username"
+            android:drawablePadding="@dimen/dimen_13px"
+            android:hint="@string/prompt_phone"
+            android:inputType="number"
+            android:maxLength="16"
+            android:paddingLeft="@dimen/dimen_13px"
+            android:singleLine="true"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+        />
+
+
+        <ImageView
+            android:id="@+id/clear_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimen_30px"
+            android:layout_toLeftOf="@id/phone_edit_text"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:padding="@dimen/dimen_8px"
+            android:src="@drawable/selector_clear_pass" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200px">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/send_code_user_pass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_rect_border"
+            android:drawableLeft="@mipmap/ic_send_code_user_pass"
+            android:drawablePadding="@dimen/dimen_13px"
+            android:hint="@string/input_send_code_password"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="12"
+            android:paddingLeft="@dimen/dimen_13px"
+            android:paddingRight="@dimen/dimen_23px"
+            android:password="true"
+            android:singleLine="true"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+
+        <TextView
+            android:id="@+id/send_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimen_22px"
+            android:clickable="true"
+            android:drawableLeft="@mipmap/ic_vertical_wire"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dimen_8px"
+            android:text="@string/send_code"
+            android:textColor="@drawable/selector_login_text"
+            android:textSize="@dimen/dimen_50px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200px">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/user_pass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_rect_border"
+            android:drawableLeft="@mipmap/ic_password"
+            android:drawablePadding="@dimen/dimen_13px"
+            android:hint="@string/set_password"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="12"
+            android:paddingLeft="@dimen/dimen_13px"
+            android:paddingRight="@dimen/dimen_23px"
+            android:password="true"
+            android:singleLine="true"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+        <ImageView
+            android:id="@+id/show_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dimen_22px"
+            android:layout_toLeftOf="@id/user_pass"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:src="@drawable/selector_show_pass" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/complete_btn"
+        android:layout_width="@dimen/dimen_1000px"
+        android:layout_height="@dimen/dimen_150px"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimen_50px"
+        android:background="@drawable/login_btn_bg"
+        android:gravity="center"
+        android:text="@string/register_account"
+        android:clickable="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_50px" />
+
+</LinearLayout>

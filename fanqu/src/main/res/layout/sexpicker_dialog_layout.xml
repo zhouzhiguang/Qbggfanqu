@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_600px"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/text_color_GrayLight_more1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sex_picker_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_130px"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:drawablePadding="@dimen/dimen_40px"
+                android:gravity="left"
+                android:padding="@dimen/dimen_20px"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_55px" />
+
+
+            <TextView
+                android:id="@+id/sex_picker_sure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginLeft="@dimen/dimen_130px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:clickable="true"
+                android:drawablePadding="@dimen/dimen_40px"
+                android:gravity="center"
+                android:padding="@dimen/dimen_20px"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_55px" />
+
+        </LinearLayout>
+
+        <com.qbgg.cenglaicengqu.main.widget.WheelView
+            android:id="@+id/sex_wheelView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            app:itemNumber="3"
+            app:lineColor="@android:color/white"
+            app:lineHeight="@dimen/dimen_3px"
+            app:maskHeight="@dimen/dimen_150px"
+            app:noEmpty="true"
+            app:normalTextColor="@color/dinner_party_details_edit_hint_color"
+            app:normalTextSize="@dimen/dimen_50px"
+            app:selectedTextColor="@color/textGrayMiddle"
+            app:selectedTextSize="@dimen/dimen_60px"
+            app:unitHeight="@dimen/dimen_100px" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_180px"
+    android:layout_marginBottom="@dimen/dimen_5px"
+    android:layout_marginTop="@dimen/dimen_5px"
+    android:orientation="horizontal">
+
+    <com.netease.nim.uikit.common.ui.imageview.CircleImageView
+        android:id="@+id/signed_up_person_headimage"
+        android:layout_width="@dimen/dimen_150px"
+        android:layout_height="@dimen/dimen_150px"
+        android:layout_gravity="left|center"
+        android:src="@mipmap/ic_default_avatar" />
+
+    <TextView
+        android:id="@+id/signed_up_person_nicename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:layout_marginLeft="@dimen/dimen_20px"
+        android:layout_weight="1"
+        android:text="CFanQu饭"
+        android:textColor="@color/signed_up_person_nicename_color"
+        android:textSize="@dimen/dimen_50px" />
+
+    <TextView
+        android:id="@+id/signed_up_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="@dimen/dimen_20px"
+        android:contentDescription="已经报名时间"
+        android:text="12-01 09:00"
+        android:textColor="@color/signed_up_person_nicename_color"
+        android:textSize="@dimen/dimen_50px" />
+
+    <TextView
+        android:id="@+id/signed_up_time_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center"
+        android:layout_marginRight="@dimen/dimen_20px"
+        android:text="报名"
+        android:textColor="@color/signed_up_person_nicename_color"
+        android:textSize="@dimen/dimen_50px" />
+</LinearLayout>

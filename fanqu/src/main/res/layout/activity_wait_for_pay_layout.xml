@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_50px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/wait_pay_dinner_party"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_3px"
+        android:background="@color/wait_for_pay_line_color"></View>
+
+
+    <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+        android:id="@+id/wait_for_pay_swiperefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dinner_party_details_line">
+
+        <com.scu.miomin.shswiperefresh.view.ShareScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_300px">
+
+                    <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/ic_alarm_clock"
+                    android:drawablePadding="@dimen/dimen_10px"
+                    android:gravity="center"
+                    android:text="@string/wait_for_pay_time_tips"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_55px" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen_40px"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/dimen_160px"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/textGrayLight"></View>
+
+                    <com.qbgg.cenglaicengqu.main.widget.TimeViewComm
+                        android:id="@+id/wait_for_pay_timeview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_60px"
+                        android:layout_marginRight="@dimen/dimen_60px"
+                        app:tvc_backgroundColor="@color/red_bg"
+                        app:tvc_radius="0dp"
+                        app:tvc_textPaddingHorizantal="@dimen/dimen_20px"
+                        app:tvc_textPaddingVertical="@dimen/dimen_20px"
+                        app:tvc_textSize="@dimen/dimen_60px" />
+
+                    <View
+                        android:layout_width="@dimen/dimen_160px"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/textGrayLight"></View>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_30px"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_300px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0px"
+                        android:layout_weight="1"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:text="@string/dinner_party_serial_number"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <TextView
+                            android:id="@+id/dinner_party_serial_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:text="109988233445"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_55px" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:layout_weight="0"
+                        android:background="@color/wait_for_pay_line_color"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0px"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center_vertical"
+                            android:text="@string/dinner_party_order_number"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <TextView
+                            android:id="@+id/dinner_party_order_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:layout_weight="1"
+                            android:text="109988233445"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <TextView
+                            android:id="@+id/wait_for_pay_order"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginRight="@dimen/dimen_10px"
+                            android:background="@drawable/fragment_person_mine_dinner_select"
+                            android:clickable="true"
+                            android:contentDescription="待支付"
+                            android:drawablePadding="@dimen/dimen_10px"
+                            android:drawableRight="@mipmap/icon_right_arrows_gray"
+                            android:padding="@dimen/dimen_20px"
+                            android:text="@string/wait_pay"
+                            android:textColor="@color/red_bg"
+                            android:textSize="@dimen/dimen_55px" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_30px"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_650px"
+
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0px"
+                        android:layout_marginBottom="@dimen/dimen_10px"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_marginTop="@dimen/dimen_10px"
+                        android:layout_weight="4"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/open_seats_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/open_seats_time"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <TextView
+                            android:id="@+id/wait_for_pay_open_seats_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/open_seats_time_text"
+                            android:layout_alignTop="@id/open_seats_time_text"
+                            android:layout_toRightOf="@id/open_seats_time_text"
+                            android:contentDescription="开席时间"
+                            android:text="2016-12-01 AM 12"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_55px" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:layout_weight="0"
+                        android:background="@color/wait_for_pay_line_color"></View>
+
+                    <RelativeLayout
+                        android:id="@+id/dinner_party_details_accounts_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_weight="6">
+
+                        <com.netease.nim.uikit.common.ui.imageview.CircleImageView
+                            android:id="@+id/wait_for_pay_headimage"
+                            android:layout_width="@dimen/dimen_180px"
+                            android:layout_height="@dimen/dimen_180px"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/ic_invite_politeness_image" />
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_toRightOf="@+id/wait_for_pay_headimage"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0px"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/wait_for_pay_accounts_nickname"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="昵称"
+                                    android:text="饭友之家"
+                                    android:textColor="@color/textGrayDeep"
+                                    android:textSize="@dimen/dimen_55px" />
+
+                                <TextView
+                                    android:id="@+id/wait_for_pay_accounts_location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dimen_10px"
+                                    android:contentDescription="饭局地址"
+                                    android:ellipsize="end"
+                                    android:text="东莞市莞城区莞太路创意产业园2栋3A"
+                                    android:textColor="@color/textGrayLight"
+                                    android:textSize="@dimen/dimen_55px" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:layout_weight="0"
+                        android:background="@color/wait_for_pay_line_color"></View>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0px"
+                        android:layout_marginBottom="@dimen/dimen_10px"
+                        android:layout_marginTop="@dimen/dimen_10px"
+                        android:layout_weight="4"
+                        android:background="@drawable/fragment_person_mine_dinner_select"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/wait_for_pay_navigation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_30px"
+                            android:layout_marginRight="@dimen/dimen_40px"
+                            android:layout_weight="1"
+                            android:contentDescription="导航去厨神家"
+                            android:drawablePadding="@dimen/dimen_20px"
+                            android:drawableRight="@mipmap/ic_location"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_20px"
+                            android:paddingRight="@dimen/dimen_20px"
+                            android:paddingTop="@dimen/dimen_20px"
+                            android:text="@string/navigation_destination"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|right"
+                            android:layout_marginRight="@dimen/dimen_30px"
+                            android:layout_weight="0"
+                            android:src="@mipmap/icon_right_arrows_gray" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_30px"
+                    android:layout_weight="0"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_360px"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/wait_for_pay_dinner_party_theme_image"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_55px"
+                            android:layout_marginRight="@dimen/dimen_60px"
+                            android:layout_weight="1"
+                            android:scaleType="center"
+                            android:src="@mipmap/ic_cheaper_meal" />
+
+                        <RelativeLayout
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/wait_for_pay_dinner_party_theme_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="不可错过的羽毛球爱好者聚会!"
+                                android:textColor="@color/textGrayDeep"
+                                android:textSize="@dimen/dimen_55px" />
+
+                            <TextView
+                                android:id="@+id/wait_for_pay_dinner_party_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@id/wait_for_pay_dinner_party_theme_title"
+                                android:layout_alignParentBottom="true"
+                                android:text="1张饭票/位  X"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_45px" />
+
+                            <TextView
+                                android:id="@+id/wait_for_pay_dinner_party_unit_size"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@id/wait_for_pay_dinner_party_unit"
+                                android:layout_toRightOf="@id/wait_for_pay_dinner_party_unit"
+                                android:text="10"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_55px" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:layout_marginTop="@dimen/dimen_30px"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_120px"
+                    android:layout_marginLeft="@dimen/dimen_50px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:text="@string/location"
+                        android:textColor="@color/dinner_recyclerview_attention_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dimen_20px"
+                        android:layout_weight="1"
+                        android:text="南城区"
+                        android:textColor="@color/dinner_recyclerview_attention_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="开席时间："
+
+                        android:textColor="@color/dinner_recyclerview_attention_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_open_seats_times"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/dimen_20px"
+                        android:contentDescription="开席时间"
+                        android:text="12-25 19:00"
+                        android:textColor="@color/dinner_recyclerview_attention_color"
+                        android:textSize="@dimen/dimen_55px" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_120px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:layout_marginLeft="@dimen/dimen_50px"
+                        android:text="@string/order_nformation"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_55px" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_350px"
+                    android:layout_marginBottom="@dimen/dimen_60px"
+                    android:layout_marginLeft="@dimen/dimen_50px"
+                    android:layout_marginTop="@dimen/dimen_60px">
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pay_way"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_meal_ticket"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/wait_for_pay_way"
+                        android:layout_alignTop="@id/wait_for_pay_way"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_toRightOf="@id/wait_for_pay_way"
+                        android:contentDescription="饭票券"
+                        android:text="饭票券"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_place_order_time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/wait_for_pay_way"
+                        android:layout_below="@id/wait_for_pay_way"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:text="@string/place_order_time"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_place_order_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/wait_for_pay_meal_ticket"
+                        android:layout_alignTop="@id/wait_for_pay_place_order_time_text"
+                        android:layout_below="@id/wait_for_pay_meal_ticket"
+                        android:text="2016-12-25 12:00"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_place_order_phone_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/wait_for_pay_way"
+                        android:layout_below="@id/wait_for_pay_place_order_time_text"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:text="@string/place_order_phone_number"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_place_order_phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/wait_for_pay_place_order_phone_number_text"
+                        android:layout_below="@+id/wait_for_pay_place_order_time"
+                        android:layout_toRightOf="@id/wait_for_pay_place_order_phone_number_text"
+                        android:text="135434008899"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_amount_sheets_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/wait_for_pay_way"
+                        android:layout_below="@id/wait_for_pay_place_order_phone_number_text"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:text="@string/pay_for_ammout_sheets"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_amount_sheets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/wait_for_pay_meal_ticket"
+                        android:layout_alignTop="@id/wait_for_pay_amount_sheets_text"
+                        android:layout_below="@+id/wait_for_pay_place_order_phone_number"
+                        android:layout_toRightOf="@id/wait_for_pay_amount_sheets_text"
+                        android:text="1张"
+                        android:textColor="@color/dislike_color"
+                        android:textSize="@dimen/dimen_55px" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50px"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_120px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:layout_marginLeft="@dimen/dimen_50px"
+                        android:text="@string/purchase_notes"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_55px" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_200px">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dimen_80px"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dimen_10px"
+                            android:text="@string/purchase_notes_tips_1"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10px"
+                            android:text="@string/purchase_notes_tips_2"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_55px" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_30px"
+                    android:background="@color/wait_for_pay_line_color"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_160px"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/wait_for_pay_total_how_much"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:text="@string/total_how_much"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_30px"
+                            android:text="@string/total"
+                            android:textColor="@color/dinner_recyclerview_attention_color"
+                            android:textSize="@dimen/dimen_55px" />
+
+                        <TextView
+                            android:id="@+id/wait_for_pay_total_meal_ticket"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total_how_many_pieces"
+                            android:textColor="@color/red_bg"
+                            android:textSize="@dimen/dimen_55px" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/wait_for_pay_now"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@drawable/publish_add_nextstep_selector"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:text="@string/pay_now"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_55px" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.scu.miomin.shswiperefresh.view.ShareScrollView>
+    </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+</LinearLayout>

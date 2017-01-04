@@ -1,3 +1,291 @@
 <resources>
     <string name="app_name">蹭范趣</string>
+    <string name="pagehome">首页</string>
+    <string name="dinner">饭局</string>
+    <string name="publish">发布</string>
+    <string name="message">消息</string>
+    <string name="person">我的</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">登录</string>
+    <string name="prompt_phone">手机号</string>
+    <string name="prompt_password">密码</string>
+    <string name="third_login">第三方登陆</string>
+    <string name="wechat_name">微信</string>
+    <string name="qq_name">QQ</string>
+    <string name="weibo_name">微博</string>
+    <string name="register_account">注册</string>
+    <string name="forgin_password">忘记密码 ?</string>
+    <string name="recovered_password">找回密码</string>
+    <string name="input_register_phone">请输入注册手机号码</string>
+    <string name="input_send_code_password">请输入验证码</string>
+    <string name="send_code">获取验证码</string>
+    <string name="input_new_password">请输入新密码</string>
+    <string name="complete">完成</string>
+    <string name="quick_register_account">快速注册</string>
+    <string name="set_password">设置登录密码</string>
+    <string name="account_management">帐号管理</string>
+    <string name="mine_dinner">我的饭局</string>
+    <string name="check_all_dinner_party">查看全部饭局</string>
+    <string name="wait_pay">待支付</string>
+    <string name="wait_open_seat">待开席</string>
+    <string name="wait_evaluate">待评价</string>
+    <string name="after_sale">退款/售后</string>
+    <string name="mine_property">我的资产</string>
+    <string name="accounts_balance">帐号余额</string>
+    <string name="accounts_integral">积分</string>
+    <string name="accounts_meal_ticket">饭票</string>
+    <string name="accounts_coupon">优惠券</string>
+    <string name="mine_focus">我的关注</string>
+    <string name="login_register">登录/注册</string>
+    <string name="fragment_home_title">蹭出家的味道与故事</string>
+    <string name="fragment_home_search_hint">搜索厨神主题,饭局</string>
+    <string name="nearby_kitchen">附近厨房</string>
+    <string name="quick_search_kitchen">快捷找厨</string>
+    <string name="fragment_home_sentiment_coffee">情调咖啡馆</string>
+    <string name="fragment_home_sentiment_coffee_content">细品香醋时光</string>
+    <string name="fragment_home_evaluating_ambassador">餐厅评测大使</string>
+    <string name="fragment_home_evaluating_ambassador_content">得50元优惠红包</string>
+    <string name="major_suit_low_price">大牌低价</string>
+    <string name="fragment_home_major_suit_low_price_content">独家优惠五折起</string>
+    <string name="invite_politeness">邀请有礼</string>
+    <string name="invite_politeness_content">最高得1500奖励</string>
+    <string name="advertisement">足不出户\n尝遍世界顶级美食</string>
+    <string name="recommended_dinner">推荐饭局</string>
+    <string name="selection_share">精选分享</string>
+    <string name="release_party">发起饭局</string>
+    <string name="recommend">推荐</string>
+    <string name="area">区域</string>
+    <string name="time">时间</string>
+    <string name="state">状态</string>
+    <string name="invite_friend">邀请好友</string>
+    <string name="about_us">关于我们</string>
+    <string name="comment">评论</string>
+    <string name="recruit_kitchener">厨神招募</string>
+    <string name="release_dinner_party">发布饭局</string>
+    <string name="publish_text_hint">跟大家说说饭局的内容吧!</string>
+    <string name="tvnum_tips">还需%1$s个字，即可发表</string>
+    <string name="contact_phone">联络手机号</string>
+    <string name="base_on_invite_password">凭邀请码参加</string>
+    <string name="invite_password">请填写四位数字邀请码</string>
+    <string name="nextstep">下一步</string>
+    <string name="dinner_party_invite_number">饭局邀请人数</string>
+    <string name="dinner_party_time">饭局时间</string>
+    <string name="please_select">请选择</string>
+    <string name="dinner_party_location">饭局地址</string>
+    <string name="street_detailed_address">街道详细地址</string>
+    <string name="submit_posting">提交发布</string>
+    <string name="sponsor_success">发起成功</string>
+    <string name="release_success_tips">恭喜你，饭局发起成功！</string>
+    <string name="your_dinner_party_password">你的饭局邀请码 :</string>
+    <string name="dinner_party_details">饭局详情</string>
+    <string name="invite_friends_ceng_rice">邀请好友来蹭饭</string>
+    <string name="details">详情</string>
+    <string name="goback">返回</string>
+    <string name="dinner_party_details_content">没有想到第一次发帖得到这么多人的鼓励和建议，真是非常感谢，很多建议我都会记下来了 ，但还是要一步一步来慢慢布置，先从干净整洁开始！女汉子练成第一步，先从桌子收纳开始吧，虽然现在还不好看，但是因为一个简单的架子有了纵向空间的收纳，桌面瞬间干净清爽多了。</string>
+    <string name="number_people_assigned_allowed">名额：</string>
+    <string name="open_seats">开席：</string>
+    <string name="location">地址: </string>
+    <string name="dinner_party_details_location_test">东莞市南城区莞太路创意园2栋3A</string>
+    <string name="click_add_more">点击加载更多评论</string>
+    <string name="revert">回复</string>
+    <string name="want_understand_more">我想了解更多...</string>
+    <string name="release">发表</string>
+    <string name="want_sign_up">我要报名</string>
+    <string name="wait_pay_dinner_party">待支付饭局</string>
+    <string name="wait_for_pay_time_tips">订单超过10分钟未支付将自动取消</string>
+    <string name="dinner_party_serial_number">饭局编号：</string>
+    <string name="dinner_party_order_number">订单编码：</string>
+    <string name="open_seats_time">开席时间：</string>
+    <string name="navigation_destination">导航去厨神家</string>
+    <string name="order_nformation">订单信息</string>
+    <string name="pay_way">支付方式：</string>
+    <string name="place_order_time">下单时间：</string>
+    <string name="place_order_phone_number">下单手机号：</string>
+    <string name="pay_for_ammout_sheets">付款张数：</string>
+    <string name="purchase_notes">购买须知</string>
+    <string name="purchase_notes_tips_1">1.预订后，无法退款或改期；</string>
+    <string name="purchase_notes_tips_2">2.参与人数无法新增，不得临时加人；</string>
+    <string name="total_how_much">（共 %1$s 位）</string>
+    <string name="total">合计：</string>
+    <string name="total_how_many_pieces">%1$s张饭票</string>
+    <string name="pay_now">立即支付</string>
+    <string name="cancelled_dinner_party">已取消饭局</string>
+    <string name="order_cancelled">订单已取消</string>.
+    <string name="trading_closed">交易关闭</string>
+    <string name="canceled">已取消</string>
+    <string name="wait_open_seats">待开席饭局</string>
+    <string name="day">天</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="second">秒</string>
+    <string name="wait_open_seats_time_tips">待开席倒计时</string>
+    <string name="wait_open_seats_order_auth_code">订单验证码：</string>
+    <string name="wait_open_seats_order_auth_code_tips_text">到店后请主动出示验证码进行消费</string>
+    <string name="wait_open_seats_text">待开席</string>
+    <string name="wait_open_seats_total_pay">付款金额：</string>
+    <string name="completed_dinner_party">已完成饭局</string>
+    <string name="completed_order">订单已完成</string>
+    <string name="wait_assess">待评价</string>
+    <string name="immediately_assessment">立即评价</string>
+    <string name="switchover_city">切换城市</string>
+    <string name="location_city">GPS定位城市</string>
+    <string name="opened_city">已开通城市服务</string>
+    <string name="city_open_more">更多城市正在快马加鞭开启中，敬请期待</string>
+    <string name="search_dinner_party_hint">搜索厨房，饭局</string>
+    <string name="search_nearby">搜索附近</string>
+    <string name="hot_label">热门标签</string>
+    <string name="pattern">格局</string>
+    <string name="style_dish">菜式</string>
+    <string name="cantonese_cuisine">粤菜</string>
+    <string name="hunan_cuisine">湘菜</string>
+    <string name="sichuan_cuisine">川菜</string>
+    <string name="anhui_cuisine">徽菜</string>
+    <string name="shandong_cuisine">鲁菜</string>
+    <string name="jiangsu_cuisine">苏菜</string>
+    <string name="fujian_cuisine">闽菜</string>
+    <string name="zhejiang_cuisine">浙菜</string>
+    <string name="dinner_party_number_people">饭局人数</string>
+    <string name="price">价格</string>
+    <string name="house_type">房型</string>
+    <string name="can_ordering_meal_date">可订餐日期</string>
+    <string name="recommend_reason">推荐理由</string>
+    <string name="kitchen_set_meal_a">A套餐(%1$s元/位)</string>
+    <string name="setting">设置</string>
+    <string name="person_data">个人资料</string>
+    <string name="exit_login">退出登录</string>
+    <string name="account_safe">账户与安全</string>
+    <string name="new_notifications">新消息提醒</string>
+    <string name="clean_cache">清除缓存</string>
+    <string name="about_app">关于蹭范趣</string>
+    <string name="personal_data">个人资料</string>
+    <string name="head_portrait">头像</string>
+    <string name="nick_name">昵称</string>
+    <string name="sex">性别</string>
+    <string name="birthday">生日</string>
+    <string name="data_area">地区</string>
+    <string name="QRCode_identity">二维码名片</string>
+    <string name="upload_picture">上传头像</string>
+    <string name="take_picture_update">拍照上传</string>
+    <string name="photo_album">相册选取</string>
+    <string name="personal_data_nicename">修改昵称</string>
+    <string name="date_nickname_tips">2-8个字符，可由中英，数字组成</string>
+
+
+
+
+
+
+
+
+
+    <string name="province_and_city">
+        "北京!!东城区!西城区!崇文区!宣武区!朝阳区!丰台区!石景山区!海淀区!门头沟区!房山区!通州区!顺义区!昌平区!大兴区!怀柔区!平谷区!密云县!延庆县!!!天津!!和平区!河东区!河西区!南开区!河北区!红桥区!塘沽区!汉沽区!大港区!东丽区!西青区!津南区!北辰区!武清区!宝坻区!宁河县!静海县!蓟县!!!河北!!石家庄!唐山!秦皇岛!邯郸!邢台!保定!张家口!承德!沧州!廊坊!衡水!!!山西!!太原!大同!阳泉!长治!晋城!朔州!晋中!运城!忻州!临汾!吕梁!!!内蒙古!!呼和浩特!包头!乌海!赤峰!通辽!鄂尔多斯!呼伦贝尔!兴安盟!锡林郭勒盟!乌兰察布盟!巴彦淖尔盟!阿拉善盟!!!辽宁!!沈阳!大连!鞍山!抚顺!本溪!丹东!锦州!营口!阜新!辽阳!盘锦!铁岭!朝阳!葫芦岛!!!吉林!!长春!吉林!四平!辽源!通化!白山!松原!白城!延边朝鲜族自治州!!!黑龙江!!哈尔滨!齐齐哈尔!鸡西!鹤岗!双鸭山!大庆!伊春!佳木斯!七台河!牡丹江!黑河!绥化!大兴安岭!!!上海!!黄浦区!卢湾区!徐汇区!长宁区!静安区!普陀区!闸北区!虹口区!杨浦区!闵行区!宝山区!嘉定区!浦东新区!金山区!松江区!青浦区!南汇区!奉贤区!崇明县!!!江苏!!南京!无锡!徐州!常州!苏州!南通!连云港!淮安!盐城!扬州!镇江!泰州!宿迁!!!浙江!!杭州!宁波!温州!嘉兴!湖州!绍兴!金华!衢州!舟山!台州!丽水!!!安徽!!合肥!芜湖!蚌埠!淮南!马鞍山!淮北!铜陵!安庆!黄山!滁州!阜阳!宿州!巢湖!六安!亳州!池州!宣城!!!福建!!福州!厦门!莆田!三明!泉州!漳州!南平!龙岩!宁德!!!江西!!南昌!景德镇!萍乡!九江!新余!鹰潭!赣州!吉安!宜春!抚州!上饶!!!山东!!济南!青岛!淄博!枣庄!东营!烟台!潍坊!济宁!泰安!威海!日照!莱芜!临沂!德州!聊城!滨州!菏泽!!!河南!!郑州!开封!洛阳!平顶山!安阳!鹤壁!新乡!焦作!濮阳!许昌!漯河!三门峡!南阳!商丘!信阳!周口!驻马店!!!湖北!!武汉!黄石!十堰!宜昌!襄樊!鄂州!荆门!孝感!荆州!黄冈!咸宁!随州!恩施土家族苗族自治州!!!湖南!!长沙!株洲!湘潭!衡阳!邵阳!岳阳!常德!张家界!益阳!郴州!永州!怀化!娄底!湘西土家族苗族自治州!!!广东!!广州!韶关!深圳!珠海!汕头!佛山!江门!湛江!茂名!肇庆!惠州!梅州!汕尾!河源!阳江!清远!东莞!中山!潮州!揭阳!云浮!!!广西!!南宁!柳州!桂林!梧州!北海!防城港!钦州!贵港!玉林!百色!贺州!河池!南宁!柳州!!!海南!!海口!三亚!其他!!!重庆!!万州区!涪陵区!渝中区!大渡口区!江北区!沙坪坝区!九龙坡区!南岸区!北碚区!万盛区!双桥区!渝北区!巴南区!黔江区!长寿区!綦江县!潼南县!铜梁县!大足县!荣昌县!璧山县!梁平县!城口县!丰都县!垫江县!武隆县!忠县!开县!云阳县!奉节县!巫山县!巫溪县!石柱土家族自治县!秀山土家族苗族自治县!酉阳土家族苗族自治县!彭水苗族土家族自治县!江津市!合川市!永川区!南川市!!!四川!!成都!自贡!攀枝花!泸州!德阳!绵阳!广元!遂宁!内江!乐山!南充!眉山!宜宾!广安!达州!雅安!巴中!资阳!阿坝!甘孜!凉山!!!贵州!!贵阳!六盘水!遵义!安顺!铜仁!黔西南!毕节!黔东南!黔南!!!云南!!昆明!曲靖!玉溪!保山!昭通!楚雄!红河!文山!思茅!西双版纳!大理!德宏!丽江!怒江!迪庆!临沧!!!西藏!!拉萨!昌都!山南!日喀则!那曲!阿里!林芝!!!陕西!!西安!铜川!宝鸡!咸阳!渭南!延安!汉中!榆林!安康!商洛!!!甘肃!!兰州!嘉峪关!金昌!白银!天水!武威!张掖!平凉!酒泉!庆阳!定西!陇南!临夏!甘南!!!青海!!西宁!海东!海北!黄南!海南!果洛!玉树!海西!!!宁夏!!银川!石嘴山!吴忠!固原!!!新疆!!乌鲁木齐!克拉玛依!吐鲁番!哈密!昌吉!博尔塔拉!巴音郭楞!阿克苏!克孜勒苏!喀什!和田!伊犁!塔城!阿勒泰!!!台湾!!台北!高雄!其他!!!香港!!香港!!!澳门!!澳门!!!海外!!美国!英国!法国!俄罗斯!加拿大!巴西!澳大利亚!印尼!泰国!马来西亚!新加坡!菲律宾!越南!印度!日本!其他"
+    </string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="personalized_signature">个性签名</string>
+    <string name="taste_preference">口味偏好</string>
+    <string name="select_birth_date">选择出生日期</string>
+    <string name="personal_qrcode_business">我的二维码名片</string>
+    <string name="personal_qrcode_business_tips_1">可通过扫一扫上面的二维码图案,</string>
+    <string name="personal_qrcode_business_tips_2">接受我的邀请</string>
+    <string name="submit">提交</string>
+    <string name="fragment_person_edit_signature_tips">用一段话介绍自己</string>
+    <string name="select_taste_preference">选择你的口味与偏好</string>
+    <string name="custom">自定义</string>
+    <string name="mine_taste_preference">我的口味偏好:</string>
+    <string name="personal_account_safe">账户与安全</string>
+    <string name="password_safety">密码与安全</string>
+    <string name="password">密码</string>
+    <string name="modification">修改</string>
+    <string name="bound_mobile_phone">绑定手机号</string>
+    <string name="social_contact_accounts_bound">社交帐号绑定</string>
+    <string name="wechat">微信</string>
+    <string name="is_binding">已绑定</string>
+    <string name="binding">绑  定</string>
+    <string name="change_password">修改密码</string>
+    <string name="current_password">当前密码：</string>
+    <string name="new_password">新密码：</string>
+    <string name="change_phone_number">更换手机号</string>
+    <string name="bound_mobile_pone_number">当前绑定的手机号：</string>
+    <string name="please_enter_security_code">请输入验证码</string>
+    <string name="send_security_code">发送验证码</string>
+    <string name="bound_new_pone_number">输入新手机号</string>
+    <string name="please_import_new_phone_number">请输入新的手机号码</string>
+    <string name="real_name_authentication">实名认证</string>
+    <!--云信部分-->
+    <string name="delete_tip">删除提示</string>
+    <string name="delete_system_message">删除该条系统消息？</string>
+    <string name="delete_success">删除成功</string>
+    <string name="agree">同意</string>
+    <string name="reject">拒绝</string>
+    <string name="location_navigate">导航</string>
+    <string name="format_mylocation">我的位置：%s</string>
+    <string name="location_address_unkown">该位置信息暂无</string>
+    <string name="location_loading">正在定位</string>
+    <string name="location_map">正在定位</string>
+    <string name="location_address_fail">获取位置信息失败</string>
+    <string name="tools_selected">选择工具</string>
+    <string name="friends_map_navigation_web">在网页中打开</string>
+    <string name="location_open_map_error">打开地图出错</string>
+    <string name="my_location">我的位置</string>
+    <string name="chat_room">个人</string>
+    <string name="attention">关注</string>
+    <string name="information">咨询</string>
+    <string name="immediately_reserve">立即预订</string>
+    <string name="no_certification_tips">请填写您的真实信息，一经通过无法修改</string>
+    <string name="real_name">真实姓名</string>
+    <string name="identity_card">身份证号码</string>
+    <string name="uploading_identity_card_tips">请上传本人身份证正反面照片</string>
+    <string name="identity_card_full_face_photo">身份证正面照片</string>
+    <string name="identity_card_reverse_side_photo">身份证反面照片</string>
+    <string name="please_take_identity_card">请拍摄身份证原件：</string>
+    <string name="check_take_picture_demand">查看拍照要求</string>
+    <string name="affirm_uploading">确认上传</string>
+    <string name="identity_card_take_picture_demand">身份证件拍照要求</string>
+    <string name="identity_card_take_picture_demand_text">1.请上传清晰彩色，完整的原件扫描件或照片。\n
+    2.身份证各项信息及头像清晰可见，容易识别。\n
+    3.证件必须真实拍摄，不能使用复印件。\n
+    4.建议横屏拍摄，以满足照片上传效果。\n
+    5.手持照需免冠、五官可见，完整露出手臂耳朵。
+
+    </string>
+    <string name="information_auditing">信息审核中</string>
+    <string name="information_auditing_tips">结果将在七个工作日内通知您</string>
+    <string name="finish">完成</string>
+    <string name="regrettably">很遗憾</string>
+    <string name="authentication_failure">身份认证失败</string>
+    <string name="again_authentication">重新认证</string>
+    <string name="fanqu">蹭范趣</string>
+    <string name="version_name">v</string>
+    <string name="feedback">意见反馈</string>
+    <string name="aosika_us">了解我们</string>
+    <string name="service_hotline">服务热线</string>
+    <string name="Give_us_encourage">给我们鼓励</string>
+    <string name="feed_back_notice_tips">感谢您使用蹭范趣！欢迎您向我们反馈使用中的任何意见和建议！</string>
+    <string name="hotline_tips">工作时间：每天9：00-22：00</string>
+    <string name="hotline">呼叫：400-000-1234</string>
+    <string name="partner">合伙人</string>
+    <string name="super_foodie">超级吃货</string>
+    <string name="mine_member">我的会员</string>
+    <string name="log_out">退出登录</string>
+    <string name="ok">确定</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="search">搜索</string>
+    <!--口味偏好默认的stringarray集合-->
+    <string-array name="taste_preference_string_array">
+        <item>清淡</item>
+        <item>无辣不欢</item>
+        <item>咸鲜</item>
+        <item>酸甜</item>
+        <item>苦辣</item>
+        <item>素食主义</item>
+        <item>海鲜过敏</item>
+        <item>果味</item>
+        <item>不吃辣</item>
+
+    </string-array>
 </resources>

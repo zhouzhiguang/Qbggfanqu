@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_personal_account_safe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/personal_account_safe"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_50px"
+            android:text="@string/password_safety"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_50px" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/personal_account_safe_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_170px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="密码"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/password"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_55px" />
+
+            <TextView
+                android:id="@+id/personal_data_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/personal_account_safe_password"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/dimen_30px"
+                android:layout_marginRight="@dimen/dimen_120px"
+                android:text="@string/modification"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_45px" />
+
+            <View
+                android:id="@+id/personal_data_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_below="@id/personal_account_safe_password"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:background="@color/wait_for_pay_line_color"></View>
+
+            <TextView
+                android:id="@+id/personal_account_safe_bound_mobile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_170px"
+                android:layout_below="@id/personal_data_line"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="绑定手机号"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/bound_mobile_phone"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_55px" />
+
+            <TextView
+                android:id="@+id/personal_account_safe_bound_mobile_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/personal_account_safe_bound_mobile_phone"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/dimen_30px"
+                android:layout_marginRight="@dimen/dimen_120px"
+                android:text="18100000000"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_45px" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_50px"
+            android:text="@string/social_contact_accounts_bound"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_50px" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/dimen_40px">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/personal_account_safe_WeChat"
+                android:layout_width="@dimen/dimen_200px"
+                android:layout_height="@dimen/dimen_200px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:src="@mipmap/ic_wechat_bound" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200px"
+                android:layout_above="@+id/personal_account_safe_line"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:layout_toRightOf="@id/personal_account_safe_WeChat"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/dimen_100px"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/personal_account_safe_WeChat_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginBottom="@dimen/dimen_30px"
+                        android:text="@string/wechat"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_50px" />
+
+                    <TextView
+                        android:id="@+id/personal_account_safe_WeChat_nicename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="@dimen/dimen_10px"
+                        android:paddingBottom="@dimen/dimen_30px"
+                        android:text="王大锤"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_40px" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/personal_account_safe_WeChat_bound_state"
+                    android:layout_width="@dimen/dimen_280px"
+                    android:layout_height="@dimen/dimen_100px"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dimen_80px"
+                    android:background="@drawable/personal_account_safe_select"
+                    android:contentDescription="微信 绑定状态"
+                    android:drawableLeft="@mipmap/ic_bound"
+                    android:drawablePadding="@dimen/dimen_20px"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:text="@string/is_binding"
+                    android:textColor="@color/textGrayLight"
+                    android:textSize="@dimen/dimen_50px" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/personal_account_safe_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_10px"
+                android:layout_below="@id/personal_account_safe_WeChat"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@color/color_F1F1F1"></View>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/personal_account_safe_QQ"
+                android:layout_width="@dimen/dimen_200px"
+                android:layout_height="@dimen/dimen_200px"
+                android:layout_below="@id/personal_account_safe_line"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:src="@mipmap/ic_qq_no_bound" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200px"
+                android:layout_above="@id/personal_account_safe_line"
+                android:layout_alignBottom="@id/personal_account_safe_QQ"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:layout_toRightOf="@id/personal_account_safe_QQ"
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/personal_account_safe_QQ_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginBottom="@dimen/dimen_30px"
+                        android:text="@string/qq_name"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_50px" />
+
+                    <TextView
+                        android:id="@+id/personal_account_safe_QQ_nicename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/personal_account_safe_QQ_text"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="@dimen/dimen_10px"
+                        android:paddingBottom="@dimen/dimen_30px"
+                        android:text="王大锤"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_40px" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/personal_account_safe_QQ_bound_state"
+                    android:layout_width="@dimen/dimen_280px"
+                    android:layout_height="@dimen/dimen_100px"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dimen_80px"
+                    android:background="@drawable/personal_account_safe_select"
+                    android:contentDescription="QQ绑定状态"
+                    android:drawableLeft="@mipmap/ic_plus"
+                    android:drawablePadding="@dimen/dimen_20px"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:text="@string/binding"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_50px" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

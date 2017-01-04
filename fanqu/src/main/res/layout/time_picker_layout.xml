@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <com.qbgg.cenglaicengqu.main.widget.WheelView
+        android:id="@+id/year"
+        android:layout_width="@dimen/dimen_250px"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        app:itemNumber="5"
+        app:lineColor="@color/white"
+        app:lineHeight="@dimen/dimen_3px"
+        app:maskHeight="@dimen/dimen_150px"
+        app:noEmpty="true"
+        app:normalTextColor="@color/color_A6A6A6"
+        app:normalTextSize="@dimen/dimen_50px"
+        app:selectedTextColor="@color/textGrayDeep"
+        app:selectedTextSize="@dimen/dimen_60px"
+        app:unitHeight="@dimen/dimen_100px" />
+
+
+    <com.qbgg.cenglaicengqu.main.widget.WheelView
+        android:id="@+id/month"
+        android:layout_width="@dimen/dimen_250px"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        app:itemNumber="5"
+        app:lineColor="@color/white"
+        app:lineHeight="@dimen/dimen_3px"
+        app:maskHeight="@dimen/dimen_150px"
+        app:noEmpty="true"
+        app:normalTextColor="@color/dinner_party_details_edit_hint_color"
+        app:normalTextSize="@dimen/dimen_50px"
+        app:selectedTextColor="@color/textGrayMiddle"
+        app:selectedTextSize="@dimen/dimen_60px"
+        app:unitHeight="@dimen/dimen_100px" />
+
+
+    <com.qbgg.cenglaicengqu.main.widget.WheelView
+        android:id="@+id/day"
+        android:layout_width="@dimen/dimen_250px"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        app:itemNumber="5"
+        app:lineColor="@color/white"
+        app:lineHeight="@dimen/dimen_3px"
+        app:maskHeight="@dimen/dimen_150px"
+        app:noEmpty="true"
+        app:normalTextColor="@color/dinner_party_details_edit_hint_color"
+        app:normalTextSize="@dimen/dimen_50px"
+        app:selectedTextColor="@color/textGrayMiddle"
+        app:selectedTextSize="@dimen/dimen_60px"
+        app:unitHeight="@dimen/dimen_100px" />
+
+
+</LinearLayout>

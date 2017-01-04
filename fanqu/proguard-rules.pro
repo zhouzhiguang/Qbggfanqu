@@ -15,3 +15,27 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-dontwarn com.yolanda.nohttp.**
+-keep class com.yolanda.nohttp.**{*;}
+-dontwarn com.netease.**
+-dontwarn io.netty.**
+-keep class com.netease.** {*;}
+-dontwarn net.poemcode.**
+-dontwarn android.support.**
+
+-dontwarn org.apache.http.**
+-dontwarn com.amap.**
+-dontwarn com.alibaba.**
+-dontwarn com.netease.**
+-dontwarn io.netty.**
+-dontwarn com.autonavi.amap.**
+-keep class com.dou361.** {
+*;
+}
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+-ignorewarning

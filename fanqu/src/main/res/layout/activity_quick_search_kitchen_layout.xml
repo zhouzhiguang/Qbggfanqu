@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_quick_search_kitchen_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_50px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/quick_search_kitchen"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+        android:id="@+id/quick_search_kitchen_swiperefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        app:loadmore_enable="false"
+        app:pull_refresh_enable="false">
+
+        <com.scu.miomin.shswiperefresh.view.ShareScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_30px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_450px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_40px"
+                        android:text="@string/hot_label"
+                        android:textColor="@color/color_7B7B7B"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <RelativeLayout
+                        android:id="@+id/search_dinner_party_hot_lable_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dimen_30px"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:tag="1"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="文化艺术"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_label_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="2"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="文化艺术"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_label_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="文化艺术"
+                            android:tag="3"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_label_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/search_dinner_party_label"
+                            android:layout_below="@id/search_dinner_party_label"
+                            android:layout_marginTop="@dimen/dimen_40px"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:tag="4"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="金碧辉煌"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_label_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/search_dinner_party_label_2"
+                            android:layout_below="@id/search_dinner_party_label_2"
+                            android:layout_marginTop="@dimen/dimen_40px"
+                            android:tag="5"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="金碧辉煌"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_label_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="6"
+                            android:layout_alignLeft="@id/search_dinner_party_label_3"
+                            android:layout_below="@id/search_dinner_party_label_3"
+                            android:layout_marginTop="@dimen/dimen_40px"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="金碧辉煌"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_50px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_450px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_40px"
+                        android:text="@string/pattern"
+                        android:textColor="@color/color_7B7B7B"
+                        android:textSize="@dimen/dimen_55px" />
+
+                    <RelativeLayout
+                        android:id="@+id/search_dinner_party_pattern_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/dimen_30px"
+                        android:layout_marginTop="@dimen/dimen_30px"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_pattern_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:tag="1"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="月色间"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_pattern_label_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:tag="2"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="空中花园"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_pattern_label_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/dimen_50px"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:tag="3"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="名居"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_pattern_label_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/search_dinner_party_pattern_label"
+                            android:layout_below="@id/search_dinner_party_pattern_label"
+                            android:layout_marginTop="@dimen/dimen_40px"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:tag="4"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="楼房"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_pattern_label_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="5"
+                            android:layout_alignLeft="@id/search_dinner_party_pattern_label_2"
+                            android:layout_below="@id/search_dinner_party_pattern_label_2"
+                            android:layout_marginTop="@dimen/dimen_40px"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_80px"
+                            android:text="户外阳台"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/search_dinner_party_pattern_label_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/search_dinner_party_pattern_label_3"
+                            android:layout_alignTop="@id/search_dinner_party_pattern_label_5"
+                            android:layout_below="@id/search_dinner_party_pattern_label_3"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:padding="@dimen/dimen_30px"
+                            android:tag="6"
+                            android:paddingLeft="@dimen/dimen_80px"
+                            android:paddingRight="@dimen/dimen_60px"
+                            android:text="菜园式"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <TextView
+                    android:id="@+id/quick_search_kitchen_style_dish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:contentDescription="菜式打开按钮"
+                    android:drawableRight="@mipmap/ic_up_arrows"
+                    android:padding="@dimen/dimen_40px"
+                    android:text="@string/style_dish"
+                    android:textColor="@color/color_7B7B7B"
+                    android:textSize="@dimen/dimen_55px" />
+
+                <LinearLayout
+                    android:id="@+id/quick_search_kitchen_style_dish_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_400px"
+                    android:background="@color/red"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/quick_search_kitchen_style_dish_layout_child1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0px"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_cantonese_cuisine"
+                            android:layout_width="@dimen/dimen_120px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_40px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="粤菜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:clickable="true"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/cantonese_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_hunan_cuisine"
+                            android:layout_width="@dimen/dimen_120px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:clickable="true"
+                            android:layout_weight="1"
+                            android:layerType="software"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="湘菜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/hunan_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_sichuan_cuisine"
+                            android:layout_width="@dimen/dimen_120px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="川菜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/sichuan_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_anhui_cuisine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_40px"
+                            android:clickable="true"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="徽菜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/anhui_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/quick_search_kitchen_style_dish_layout_child2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0px"
+                        android:layout_weight="1"
+                        android:background="@color/color_yellow_796413">
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_shandong_cuisine"
+                            android:layout_width="@dimen/dimen_120px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_40px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="鲁菜"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/shandong_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_jiangsu_cuisine"
+                            android:layout_width="@dimen/dimen_120px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="苏菜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:clickable="true"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/jiangsu_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_fujian_cuisine"
+                            android:layout_width="@dimen/dimen_120px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="闽菜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:clickable="true"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/fujian_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_zhejiang_cuisine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_40px"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="浙菜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_25px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:paddingTop="@dimen/dimen_25px"
+                            android:text="@string/zhejiang_cuisine"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <TextView
+                    android:id="@+id/quick_search_kitchen_dinner_party_number_people"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:contentDescription="饭局人数"
+                    android:padding="@dimen/dimen_40px"
+                    android:text="@string/dinner_party_number_people"
+                    android:textColor="@color/color_7B7B7B"
+                    android:textSize="@dimen/dimen_55px" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/red"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/quick_search_kitchen_dinner_party_number_people_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_three"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_30px"
+                            android:layout_marginRight="@dimen/dimen_30px"
+                            android:layout_weight="0"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="三个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_10px"
+                            android:tag="3"
+                            android:text="3人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_four"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="四个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:tag="4"
+                            android:text="4人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_five"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="五个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:tag="5"
+                            android:text="5人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_six"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="六个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:tag="6"
+                            android:text="6人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_seven"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="7个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:tag="7"
+                            android:text="7人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_eight"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="8个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:tag="8"
+                            android:text="8人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_nine"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="9个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_30px"
+                            android:paddingRight="@dimen/dimen_30px"
+                            android:tag="9"
+                            android:text="9人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+                        <TextView
+                            android:id="@+id/quick_search_kitchen_ten"
+                            android:layout_width="@dimen/dimen_150px"
+                            android:layout_height="@dimen/dimen_100px"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_weight="1"
+                            android:background="@drawable/search_dinner_party_label_select"
+                            android:contentDescription="10个人"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_20px"
+                            android:paddingRight="@dimen/dimen_20px"
+                            android:tag="10"
+                            android:text="10人"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_50px" />
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <TextView
+                    android:id="@+id/quick_search_kitchen_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:contentDescription="区域"
+                    android:padding="@dimen/dimen_40px"
+                    android:text="@string/area"
+                    android:textColor="@color/color_7B7B7B"
+                    android:textSize="@dimen/dimen_55px" />
+
+                <TextView
+                    android:id="@+id/quick_search_kitchen_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_135px"
+                    android:layout_marginBottom="@dimen/dimen_30px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:background="@drawable/publish_add_nextstep_selector"
+                    android:clickable="true"
+                    android:contentDescription="搜索"
+                    android:gravity="center"
+                    android:text="@string/search"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_55px" />
+            </LinearLayout>
+        </com.scu.miomin.shswiperefresh.view.ShareScrollView>
+    </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_personal_qrcode_business_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/taste_preference"
+            android:textColor="@color/color_423A59"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_60px"
+            android:layout_marginTop="@dimen/dimen_60px"
+            android:gravity="center"
+            android:text="@string/select_taste_preference"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_60px" />
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/taste_preference_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.zhy.view.flowlayout.TagFlowLayout>
+
+        <TextView
+            android:id="@+id/taste_preference_custom"
+            android:layout_width="@dimen/dimen_250px"
+            android:layout_height="@dimen/dimen_95px"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/dimen_10px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@drawable/shape_item_lable_bg"
+            android:drawableLeft="@mipmap/ic_custom"
+            android:gravity="center"
+            android:padding="@dimen/dimen_10px"
+            android:paddingBottom="@dimen/dimen_30px"
+            android:paddingTop="@dimen/dimen_30px"
+            android:text="@string/custom"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_50px" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_70px"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:text="@string/mine_taste_preference"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_60px" />
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/taste_preference_select_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_20px">
+
+            </com.zhy.view.flowlayout.TagFlowLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/taste_preference_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_80px"
+            android:background="@drawable/taste_preference_confirm_select"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_60px" />
+    </LinearLayout>
+</LinearLayout>
