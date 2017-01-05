@@ -1,82 +1,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgColor"
+    android:background="@color/fragment_person_bg"
     android:gravity="center_horizontal"
     android:orientation="vertical">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginTop="@dimen/dimen_50px"
-        android:background="@color/white"
-        android:gravity="right"
-        android:minWidth="?attr/actionBarSize"
-        app:titleTextAppearance="@style/Toolbar.TitleText">
-
-        <TextView
-            android:id="@+id/login_layout_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/login"
-            android:textColor="@color/layout_title"
-            android:textSize="@dimen/dimen_60px" />
-
-    </android.support.v7.widget.Toolbar>
-    <!--
-
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/phone_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:paddingLeft="18dp"
-        android:layout_marginTop="10dp"
-        android:singleLine="true"
-        android:textSize="17sp"
-        android:textColor="@color/textGrayDeep"
-        android:hint="@string/prompt_phone"
-        android:background="@drawable/edit_text_rect_border"/>
-
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/password_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:paddingLeft="18dp"
-        android:textSize="17sp"
-        android:textColor="@color/textGrayDeep"
-        android:inputType="textPassword"
-        android:hint="@string/prompt_password"
-        android:background="@drawable/edit_text_rect_border"/>
-
--->
 
     <LinearLayout
         android:id="@+id/login_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical">
 
         <android.support.v7.widget.AppCompatEditText
-
             android:id="@+id/phone_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_200px"
-            android:layout_marginTop="@dimen/dimen_30px"
-            android:background="@drawable/edit_text_rect_border"
+            android:layout_height="@dimen/dimen_180px"
+            android:background="@null"
             android:drawableLeft="@mipmap/ic_phone_username"
             android:drawablePadding="@dimen/dimen_13px"
             android:hint="@string/prompt_phone"
             android:inputType="number"
             android:maxLength="16"
+            android:maxLines="1"
             android:paddingLeft="@dimen/dimen_13px"
-            android:singleLine="true"
             android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_50px" />
+            android:textSize="@dimen/dimen_54px" />
         />
 
         <View
@@ -86,7 +37,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_200px">
+            android:layout_height="@dimen/dimen_180px">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/user_pass"
@@ -99,12 +50,12 @@
                 android:imeOptions="actionDone"
                 android:inputType="text"
                 android:maxLength="12"
+                android:maxLines="1"
                 android:paddingLeft="@dimen/dimen_13px"
                 android:paddingRight="@dimen/dimen_23px"
                 android:password="true"
-                android:singleLine="true"
                 android:textColor="@color/textGrayDeep"
-                android:textSize="@dimen/dimen_50px" />
+                android:textSize="@dimen/dimen_54px" />
 
             <TextView
                 android:id="@+id/forgin_pass"
@@ -115,10 +66,10 @@
                 android:layout_marginRight="@dimen/dimen_20px"
                 android:clickable="true"
                 android:gravity="center"
-                android:visibility="visible"
-                android:textColor="@color/textGrayDeep"
                 android:text="@string/forgin_password"
-                android:textSize="@dimen/dimen_50px"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_54px"
+                android:visibility="visible"
 
                 />
 
@@ -141,123 +92,24 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/login_btn"
-        android:layout_width="@dimen/dimen_1000px"
-        android:layout_height="@dimen/dimen_150px"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/login_btn_bg"
-        android:gravity="center"
-        android:text="@string/login"
-        android:clickable="true"
-        android:textColor="@color/white"
-        android:textSize="@dimen/dimen_50px" />
-
-    <FrameLayout
-        android:layout_width="@dimen/dimen_1000px"
-        android:layout_height="@dimen/dimen_150px"
-        android:layout_marginTop="@dimen/dimen_30px">
-
-
-        <TextView
-            android:id="@+id/register_btn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:background="@drawable/register_account"
-            android:gravity="center"
-            android:clickable="true"
-            android:padding="5dp"
-            android:text="@string/register_account"
-            android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_50px" />
-
-    </FrameLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dimen_200px"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@color/borderDeep" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/third_login"
-                android:textColor="@color/textGrayMiddle" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@color/borderDeep" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="19dp"
-            android:layout_marginTop="19dp"
+            android:layout_height="@dimen/dimen_150px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:background="@drawable/login_btn_bg"
+            android:clickable="true"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/wechat_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
-                android:drawableTop="@mipmap/share_from_html_weixing"
-                android:gravity="center"
-                android:text="@string/wechat_name"
-                android:textColor="@color/textGrayMiddle"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/qq_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="39dp"
-                android:drawablePadding="10dp"
-                android:drawableTop="@mipmap/share_from_html_qq_friends"
-                android:gravity="center"
-                android:text="@string/qq_name"
-                android:textColor="@color/textGrayMiddle"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/weibo_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="39dp"
-                android:drawablePadding="10dp"
-                android:drawableTop="@mipmap/share_from_html_sina"
-                android:gravity="center"
-                android:text="@string/weibo_name"
-                android:textColor="@color/textGrayMiddle"
-                android:textSize="17sp" />
-
-        </LinearLayout>
-
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_60px" />
     </LinearLayout>
 
 </LinearLayout>

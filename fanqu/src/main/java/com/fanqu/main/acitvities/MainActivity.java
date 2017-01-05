@@ -15,6 +15,7 @@ import com.fanqu.dinner.fragment.DinnerFragment;
 import com.fanqu.framework.SystemBarTintManager;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
+import com.fanqu.framework.main.util.ThemUtils;
 import com.fanqu.homepage.fragment.HomeFragment;
 import com.fanqu.like.fragment.LikeFragment;
 import com.fanqu.main.widget.MainNavigateTabBar;
@@ -89,26 +90,27 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onTabSelected(MainNavigateTabBar.ViewHolder holder) {
                 int tabIndex = holder.tabIndex;
-                if (tabIndex == 4) {
+                if (tabIndex == 3) {
                     //设置颜色
                     //Color.parseColor("#D81D24");
                     //StatusBarUtil.setTransparent(MainActivity.this);
                     // StatusBarUtil.setColor(MainActivity.this, Color.BLACK);
                     //initStatusbar(MainActivity.this,R.color.red_bg);
-                    initthem(R.color.red_bg);
+                    //initthem(R.color.red_bg);
+                    ThemUtils.initthem(MainActivity.this,R.color.red_bg);
                     // initStatusbar(MainActivity.this, R.color.red_bg);
                 } else if (tabIndex == 0) {
                     //透明的状态栏了
                     //  initthem(R.color.black);
                     // initStatusbar(MainActivity.this, R.color.transparent);
-                    initthem(R.color.black);
-
+                    //initthem(R.color.black);
+                    ThemUtils.initthem(MainActivity.this,R.color.black);
                     // StatusBarUtil.setTransparent(MainActivity.this);
                     // StatusBarUtil.setColor(MainActivity.this,R.color.white);
                 } else {
                     //透明的状态栏了
                     // StatusBarUtil.setTransparent(MainActivity.this);
-                    initthem(R.color.white);
+                    ThemUtils.initthem(MainActivity.this,R.color.white);
                 }
             }
         });

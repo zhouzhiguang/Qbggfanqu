@@ -8,6 +8,7 @@ import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.data.UserManager;
 import com.fanqu.framework.main.util.ThemUtils;
+import com.fanqu.main.login.LoginRegisteredActivity;
 
 import cn.sharesdk.framework.ShareSDK;
 
@@ -26,7 +27,7 @@ public class SpalshActivity extends BaseActivity {
         if (islogined) {
 
         } else {
-            Intent intent = new Intent(SpalshActivity.this, MainActivity.class);
+            Intent intent = new Intent(SpalshActivity.this, LoginRegisteredActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
             finish();

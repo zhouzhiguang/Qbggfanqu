@@ -166,7 +166,7 @@
                 android:textColor="@color/textGrayDeep"
                 android:textSize="@dimen/dimen_54px" />
 
-            <com.qbgg.cenglaicengqu.main.widget.SwitchButton
+            <com.fanqu.main.widget.SwitchButton
                 android:id="@+id/seting_person_new_notifications_swithch"
                 android:layout_width="@dimen/dimen_140px"
                 android:layout_height="@dimen/dimen_80px"

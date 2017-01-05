@@ -14,7 +14,7 @@
     <com.fanqu.main.widget.MainNavigateTabBar
         android:id="@+id/main_navigate_TabBar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_180px"
+        android:layout_height="@dimen/dimen_175px"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
         app:containerId="@+id/main_container"

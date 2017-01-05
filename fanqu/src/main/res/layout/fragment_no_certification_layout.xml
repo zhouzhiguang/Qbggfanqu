@@ -24,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.qbgg.cenglaicengqu.main.widget.ExpendStepView
+                <com.fanqu.main.widget.ExpendStepView
                     android:id="@+id/certification_stepview"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_360px"

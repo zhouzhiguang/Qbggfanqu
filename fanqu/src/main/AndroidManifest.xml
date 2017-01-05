@@ -117,16 +117,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/SplashEntranceActionBarTheme"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity
-            android:name=".main.login.RegisteredActivity"
-            android:label="注册"
+            android:name=".main.login.LoginRegisteredActivity"
+            android:label="登录注册一起来"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" />
@@ -136,6 +132,106 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.SetingActivity"
+            android:label="设置"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.PersonalDataActivity"
+            android:label="个人资料"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.RealNameAuthenticationActivity"
+            android:label="实名认证"
+            android:largeHeap="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".personcentre.activities.DateNicknameActivity"
+            android:label="个人昵称"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.PersonalizedSignatureActivity"
+            android:label="个性签名"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.PersonalQRcodeBusinessActivity"
+            android:label="二维码名片"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.TastePreferenceActivity"
+            android:label="口味偏好"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.PersonalAccountSafeActivity"
+            android:label="账户安全"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.ChangePasswordActivity"
+            android:label="修改密码"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.BoundMobilePoneActivity"
+            android:label="绑定手机号码"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.BoundPoneNewNumberActivity"
+            android:label="输入新手机号"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.TakePictureDemandActivity"
+            android:label="拍照要求"
+            android:largeHeap="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.AboutFanquActivity"
+            android:largeHeap="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.FeedBackActivity"
+            android:largeHeap="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.MinePropertyActivity"
+            android:label="我的钱包"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

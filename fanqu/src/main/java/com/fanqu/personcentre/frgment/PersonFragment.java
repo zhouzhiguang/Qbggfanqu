@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.fanqu.R;
 import com.fanqu.framework.fragment.BaseFragment;
+import com.fanqu.personcentre.activities.MinePropertyActivity;
 import com.fanqu.personcentre.activities.SetingActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -111,6 +112,8 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
      */
     private void initListener() {
         fragment_person_seting.setOnClickListener(this);
+        //我的资产
+        fragmentPersonMineProperty.setOnClickListener(this);
     }
 
 
@@ -120,6 +123,10 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
             case R.id.fragment_person_seting:
                 jumpactivity(SetingActivity.class);
 
+                break;
+            case R.id.fragment_person_mine_property:
+                //我的钱包
+                jumpactivity(MinePropertyActivity.class);
                 break;
             default:
                 break;

@@ -32,7 +32,7 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
-        AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
+      //  AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
         setContentView(R.layout.activity_seting_layout);
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();

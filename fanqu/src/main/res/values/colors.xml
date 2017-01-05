@@ -63,6 +63,7 @@
     <color name="color_ACACAD">#ACACAD</color>
     <color name="color_D6D6D6">#D6D6D6</color>
     <color name="color_b3b3b3">#b3b3b3</color>
+    <color name="color_FFF4F4">#FFF4F4</color>
     <color name="trans">#00000000</color>
     <color name="black">#000000</color>
     <color name="alertdialog_line">#c6c6c6</color>
@@ -80,7 +81,7 @@
     <color name="color_FF7117">#FF7117</color>
     <color name="color_black_B8B8B8">#B8B8B8</color>
     <color name="color_yellow_796413">#796413</color>
-
+    <color name="color_FFEFEB">#FFEFEB</color>
 
 
 </resources>
