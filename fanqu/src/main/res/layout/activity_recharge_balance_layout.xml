@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_seting_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/recharge"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_180px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:contentDescription="余额"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/balance"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+
+            <TextView
+                android:id="@+id/mine_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:text="￥ 100"
+                android:textColor="@color/red_bg"
+                android:textSize="@dimen/dimen_54px" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:background="@color/white"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:text="@string/recharge_tips"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_45px" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/money_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dimen_40px"
+            android:paddingTop="@dimen/dimen_40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selling_price"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+
+            <TextView
+                android:id="@+id/selling_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0元"
+                android:textColor="@color/red_bg"
+                android:textSize="@dimen/dimen_54px" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150px"
+            android:background="@color/white"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/dimen_40px"
+            android:text="@string/pay_mode"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_45px" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:background="@color/wait_for_pay_line_color"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_400px"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/pay_weixin_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_20px"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_pay_weixin"
+                    android:drawablePadding="@dimen/dimen_20px"
+                    android:gravity="center_vertical"
+                    android:text="@string/pay_weixin"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_50px" />
+
+                <com.fanqu.main.widget.SmoothCheckBox
+                    android:id="@+id/pay_weixin_checkbox"
+                    android:layout_width="@dimen/dimen_60px"
+                    android:layout_height="@dimen/dimen_60px"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_margin="@dimen/dimen_20px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    app:color_checked="@color/red_bg" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:background="@color/wait_for_pay_line_color"></View>
+
+            <LinearLayout
+                android:id="@+id/pay_alipay_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_20px"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_pay_alipay"
+                    android:drawablePadding="@dimen/dimen_20px"
+                    android:gravity="center_vertical"
+                    android:text="@string/pay_alipay"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_50px" />
+
+                <com.fanqu.main.widget.SmoothCheckBox
+                    android:id="@+id/pay_alipay_checkbox"
+                    android:layout_width="@dimen/dimen_60px"
+                    android:layout_height="@dimen/dimen_60px"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_margin="@dimen/dimen_20px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    app:color_checked="@color/red_bg" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/recharge_balance"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_148px"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:background="@drawable/taste_preference_confirm_select"
+            android:clickable="true"
+            android:contentDescription="立即充值"
+            android:gravity="center"
+            android:text="@string/immediately_recharge"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_60px" />
+    </LinearLayout>
+</LinearLayout>

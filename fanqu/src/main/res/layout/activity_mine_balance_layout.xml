@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_seting_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/mine_balance"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_300px"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="￥"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_50px" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="100.00"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_101px" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mine_membership_card_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:contentDescription="会员卡余额"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/icon_right_arrows_gray"
+                android:text="@string/membership_card_balance"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_47px" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20px"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_20px"
+            android:text="@string/membership_card_balance_used_hint"
+            android:textColor="@color/textGrayLight"
+            android:textSize="@dimen/dimen_40px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_500px"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="￥"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_50px" />
+
+                <TextView
+                    android:id="@+id/mine_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:contentDescription="我的余额"
+                    android:text="100.00"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_101px" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:text="@string/recharge_balance"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_47px" />
+
+            <TextView
+                android:id="@+id/recharge_balance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_148px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@drawable/taste_preference_confirm_select"
+                android:clickable="true"
+                android:contentDescription="充值"
+                android:gravity="center"
+                android:text="@string/recharge"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_60px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_180px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/mine_balance_TouchBalance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="余额明细"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/TouchBalance"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_360px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mine_balance_set_Traders_Password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="设置交易密码"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/Traders_Password"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_60px"
+                android:layout_marginRight="@dimen/dimen_60px"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:background="@color/wait_for_pay_line_color"></View>
+
+            <TextView
+                android:id="@+id/mine_balance_explain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_160px"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="1"
+                android:background="@drawable/fragment_person_mine_dinner_select"
+                android:clickable="true"
+                android:contentDescription="余额说明"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_right_large_arrows"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dimen_20px"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px"
+                android:paddingTop="@dimen/dimen_20px"
+                android:text="@string/balance_explain"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_54px" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.fanqu.framework.SystemBarTintManager;
+import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.fragment.BaseFragment;
 import com.fanqu.framework.model.ToolBarOptions;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
@@ -39,8 +40,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		ShareSDK.initSDK(this);
-
-		// AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+		 AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
 		initthem();
 		if (getLayoutId() != 0) {
 			setContentView(getLayoutId());

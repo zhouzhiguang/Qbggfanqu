@@ -276,6 +276,23 @@
     <string name="cancel">取消</string>
     <string name="search">搜索</string>
     <string name="mine_wallet">我的钱包</string>
+    <string name="balance">余额</string>
+    <string name="bank_card">银行卡</string>
+    <string name="integral">积分</string>
+    <string name="mine_balance">我的余额</string>
+    <string name="membership_card_balance">会员卡余额</string>
+    <string name="membership_card_balance_used_hint">注：用户消费时 默认以会员卡余额支付为第一选择</string>
+    <string name="recharge_balance">充值余额</string>
+    <string name="recharge">充值</string>
+    <string name="TouchBalance">余额明细</string>
+    <string name="Traders_Password">设置交易密码</string>
+    <string name="balance_explain">余额说明</string>
+    <string name="recharge_tips">选择充值面额：</string>
+    <string name="selling_price">售价：</string>
+    <string name="pay_mode">支付方式</string>
+    <string name="pay_weixin">微信安全支付（推荐）</string>
+    <string name="pay_alipay">支付宝</string>
+    <string name="immediately_recharge">立即充值</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

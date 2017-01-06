@@ -6,6 +6,7 @@ import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 
 import com.fanqu.framework.data.UserManager;
+import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.PreferenceUitl;
 import com.qbgg.network.request.nohttp.NohttpClient;
 import com.qbgg.network.request.update.UpdateConfig;

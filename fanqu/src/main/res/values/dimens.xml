@@ -167,5 +167,11 @@
     <dimen name="dimen_57px">57px</dimen>
     <dimen name="dimen_175px">175px</dimen>
     <dimen name="dimen_168px">168px</dimen>
+    <dimen name="dimen_315px">315px</dimen>
+    <dimen name="dimen_101px">101px</dimen>
+    <dimen name="dimen_514px">514px</dimen>
+    <dimen name="dimen_148px">148px</dimen>
+    <dimen name="dimen_182px">182px</dimen>
+    <dimen name="dimen_366px">366px</dimen>
 
 </resources>
