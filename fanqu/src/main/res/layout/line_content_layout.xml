@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_1000px"
+    android:layout_marginBottom="@dimen/dimen_400px"
+    android:layout_marginTop="@dimen/dimen_400px"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_220px"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dimen_40px"
+        android:paddingRight="@dimen/dimen_40px">
+
+        <TextView
+            android:id="@+id/tvSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:text="+20.00" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@+id/imageView1"
+            android:text="今天12:23" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvDateTime"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:text="转出到银行卡" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/tvSum"
+            android:layout_below="@+id/tvSum"
+            android:text="交易成功" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_3px"
+        android:layout_gravity="bottom"
+        android:background="@color/wait_for_pay_line_color"></View>
+
+</LinearLayout>

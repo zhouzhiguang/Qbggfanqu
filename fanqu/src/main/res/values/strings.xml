@@ -293,6 +293,22 @@
     <string name="pay_weixin">微信安全支付（推荐）</string>
     <string name="pay_alipay">支付宝</string>
     <string name="immediately_recharge">立即充值</string>
+    <string name="recharge_balance_pay_way">请选择充值支付方式</string>
+    <string name="has_no_consume">未消费</string>
+    <string name="unit">(元)</string>
+    <string name="consume_deadline">消费期限：</string>
+    <string name="has_consume">已消费</string>
+    <string name="membership_card_consume_remind">消费满1000元即可领取文交所申请码！</string>
+    <string name="balance_detail">余额明细</string>
+    <string name="listview_plus_header_hint_normal">下拉刷新</string>
+    <string name="listview_plus_header_hint_ready">松开刷新数据</string>
+    <string name="listview_plus_header_hint_loading">正在加载...</string>
+    <string name="listview_plus_header_last_time">上次更新时间：</string>
+    <string name="listview_plus_footer_hint_normal">查看更多</string>
+    <string name="listview_plus_footer_hint_ready">松开载入更多</string>
+    <string name="set_traders_password">交易密码</string>
+    <string name="set_traders_password_tips">发现您从未设置过“交易密码”、为了安全，请设置交易密码</string>
+    <string name="please_import_phone_number">请输入手机号码</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

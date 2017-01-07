@@ -232,6 +232,24 @@
             android:label="充值余额"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.MembershipCardBalanceActivity"
+            android:label="会员卡余额"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.TransactionRecordActivity"
+            android:label="我的余额明细"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".personcentre.activities.SetTradersPasswordActivity"
+            android:label="设置交易密码"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_seting_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/membership_card_balance"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragment_person_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_400px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_60px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/has_no_consume"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_47px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_40px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="："
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_47px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_60px" />
+
+                <TextView
+                    android:id="@+id/membership_card_balance_has_no_consume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10.00"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_100px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/consume_deadline"
+                    android:textColor="@color/textGrayMiddle"
+                    android:textSize="@dimen/dimen_44px" />
+
+                <TextView
+                    android:id="@+id/membership_card_balance_consume_deadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textGrayMiddle"
+                    android:textSize="@dimen/dimen_44px" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_400px"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_60px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/has_consume"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_47px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_40px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="："
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_47px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_60px" />
+
+                <TextView
+                    android:id="@+id/membership_card_balance_has_consume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="已经消费"
+                    android:text="990.00"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_100px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/membership_card_consume_remind"
+                    android:textColor="@color/textGrayMiddle"
+                    android:textSize="@dimen/dimen_44px" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textGrayMiddle"
+                    android:textSize="@dimen/dimen_44px" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

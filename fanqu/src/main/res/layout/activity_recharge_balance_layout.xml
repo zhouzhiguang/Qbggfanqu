@@ -156,6 +156,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/fragment_person_mine_dinner_select"
                 android:clickable="true"
+                android:descendantFocusability="blocksDescendants"
                 android:orientation="horizontal">
 
                 <TextView
@@ -178,6 +179,7 @@
                     android:layout_gravity="right|center_vertical"
                     android:layout_margin="@dimen/dimen_20px"
                     android:layout_marginRight="@dimen/dimen_40px"
+
                     app:color_checked="@color/red_bg" />
             </LinearLayout>
 
@@ -197,6 +199,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/fragment_person_mine_dinner_select"
                 android:clickable="true"
+                android:descendantFocusability="blocksDescendants"
                 android:orientation="horizontal">
 
                 <TextView
@@ -225,20 +228,28 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/recharge_balance"
+        <LinearLayout
+            android:id="@+id/recharge_balance_layout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_148px"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/dimen_40px"
-            android:layout_marginRight="@dimen/dimen_40px"
-            android:layout_marginTop="@dimen/dimen_40px"
-            android:background="@drawable/taste_preference_confirm_select"
-            android:clickable="true"
-            android:contentDescription="立即充值"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:descendantFocusability="beforeDescendants"
             android:gravity="center"
-            android:text="@string/immediately_recharge"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dimen_60px" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recharge_balance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_148px"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:background="@drawable/recharge_balance_select"
+                android:contentDescription="立即充值"
+                android:gravity="center"
+                android:text="@string/immediately_recharge"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_60px" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
