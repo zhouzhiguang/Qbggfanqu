@@ -18,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import com.fanqu.R;
 import com.fanqu.framework.SystemBarTintManager;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.fragment.BaseFragment;
@@ -281,5 +282,13 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 
 	public void onNavigateUpClicked() {
 		onBackPressed();
+	}
+	/**
+	 * @param clazz 跳转
+	 */
+	protected void jumpActivity(Class clazz) {
+		Intent intent = new Intent(this, clazz);
+		startActivity(intent);
+		overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
 	}
 }

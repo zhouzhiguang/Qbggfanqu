@@ -309,6 +309,12 @@
     <string name="set_traders_password">交易密码</string>
     <string name="set_traders_password_tips">发现您从未设置过“交易密码”、为了安全，请设置交易密码</string>
     <string name="please_import_phone_number">请输入手机号码</string>
+    <string name="please_input_traders_password">请输入6位交易密码（不能和登录密码相同）</string>
+    <string name="please_ensure_input_traders_password">确认输入交易密码</string>
+    <string name="modification_traders_password">修改交易密码</string>
+    <string name="ok_modification">确认修改</string>
+    <string name="mine_integral">我的积分</string>
+    <string name="integration_rule">积分规则</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

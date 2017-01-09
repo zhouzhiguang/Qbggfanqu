@@ -1,6 +1,5 @@
 package com.fanqu.personcentre.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -107,12 +106,12 @@ public class SetingActivity extends BaseActivity implements View.OnClickListener
         }
     }
 
-    /**
-     * @param clazz 跳转
-     */
-    private void jumpActivity(Class clazz) {
-        Intent intent = new Intent(this, clazz);
-        startActivity(intent);
-        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
-    }
+//    /**
+//     * @param clazz 跳转
+//     */
+//    private void jumpActivity(Class clazz) {
+//        Intent intent = new Intent(this, clazz);
+//        startActivity(intent);
+//        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+//    }
 }

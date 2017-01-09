@@ -172,4 +172,13 @@
         <attr name="color_unchecked" format="color"/>
         <attr name="color_unchecked_stroke" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="PayEditPassword">
+        <attr name="VerifyBorderWidth" format="dimension" />
+        <attr name="VerifyBorderColor" format="color" />
+        <attr name="VerifyBorderRadius" format="dimension" />
+        <attr name="VerifyCodeTextSize" format="dimension" />
+        <attr name="VerifyCodeTextColor" format="color" />
+        <attr name="VerifyCodeLength" format="integer" />
+    </declare-styleable>
 </resources>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fanqu.R;
@@ -15,12 +16,16 @@ import com.fanqu.framework.model.ToolBarOptions;
 import com.fanqu.main.widget.PayEditPasswordText;
 
 /**
- * 设置交易密码
+ * 修改交易密码
  */
-public class SetTradersPasswordActivity extends BaseActivity implements View.OnClickListener {
-    private TextView send_code;
-    private PayEditPasswordText traders_password_PayEditText_pay, traders_password_ensure_PayEditText_pay;
-    private AppCompatEditText set_traders_password_phone_number, send_code_user_pass;
+public class ModificationTradersPasswordActivity extends BaseActivity implements View.OnClickListener {
+    private LinearLayout activitySetingLayout;
+    private Toolbar toolbar;
+    private AppCompatEditText modificationTradersPasswordPhoneNumber;
+    private AppCompatEditText sendCodeUserPass;
+    private TextView sendCode;
+    private PayEditPasswordText modificationTradersPasswordPayEditTextPay;
+    private PayEditPasswordText modificationTradersPasswordensurePayEditTextPay;
     private TextView confirm;
 
 
@@ -28,8 +33,8 @@ public class SetTradersPasswordActivity extends BaseActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
-       // AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
-        setContentView(R.layout.activity_set_traders_password_layout);
+        //AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
+        setContentView(R.layout.activity_modification_traders_password_layout);
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();
         options.isNeedNavigate = true;
@@ -50,25 +55,24 @@ public class SetTradersPasswordActivity extends BaseActivity implements View.OnC
     }
 
     private void initView() {
-        //手机号码
+        activitySetingLayout = findView(R.id.activity_seting_layout);
 
-        set_traders_password_phone_number = findView(R.id.set_traders_password_phone_number);
-        //验证码
-        send_code_user_pass = findView(R.id.send_code_user_pass);
-        send_code = findView(R.id.send_code);
-        traders_password_PayEditText_pay = findView(R.id.traders_password_PayEditText_pay);
-        traders_password_ensure_PayEditText_pay = findView(R.id.traders_password_ensure_PayEditText_pay);
+        modificationTradersPasswordPhoneNumber = findView(R.id.modification_traders_password_phone_number);
+        sendCodeUserPass = findView(R.id.send_code_user_pass);
+        sendCode = findView(R.id.send_code);
+        modificationTradersPasswordPayEditTextPay = findView(R.id.modification_traders_password_PayEditText_pay);
+        modificationTradersPasswordensurePayEditTextPay = findView(R.id.modification_traders_passwordensure_PayEditText_pay);
         confirm = findView(R.id.confirm);
+
     }
 
     private void initDate() {
 
-
     }
 
     private void initListener() {
-        send_code.setOnClickListener(this);
         confirm.setOnClickListener(this);
+        sendCode.setOnClickListener(this);
 
     }
 
@@ -81,7 +85,7 @@ public class SetTradersPasswordActivity extends BaseActivity implements View.OnC
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.confirm:
-                //确定交易密码
+                //确认修改
                 break;
             case R.id.send_code:
                 getauthcode();
@@ -92,7 +96,7 @@ public class SetTradersPasswordActivity extends BaseActivity implements View.OnC
     }
 
     private void getauthcode() {
-        CountDownTimerUtils countDownTimerUtils = new CountDownTimerUtils(send_code, 30000, 1000);
+        CountDownTimerUtils countDownTimerUtils = new CountDownTimerUtils(sendCode, 30000, 1000);
         countDownTimerUtils.start();
 
     }

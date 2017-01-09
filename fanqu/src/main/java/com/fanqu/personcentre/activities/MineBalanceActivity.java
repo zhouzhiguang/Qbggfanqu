@@ -1,6 +1,5 @@
 package com.fanqu.personcentre.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -34,7 +33,7 @@ public class MineBalanceActivity extends BaseActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
-        AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
+        //AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
         setContentView(R.layout.activity_mine_balance_layout);
         AutoUtils.auto(this);
         ToolBarOptions options = new ToolBarOptions();
@@ -81,6 +80,7 @@ public class MineBalanceActivity extends BaseActivity implements View.OnClickLis
         mine_membership_card_balance_layout.setOnClickListener(this);
         mine_membership_card_balance.setOnClickListener(this);
         mine_balance_set_Traders_Password.setOnClickListener(this);
+        mineBalanceExplain.setOnClickListener(this);
 
     }
 
@@ -107,18 +107,24 @@ public class MineBalanceActivity extends BaseActivity implements View.OnClickLis
             case R.id.mine_balance_set_Traders_Password:
                 //设置交易密码
                 jumpActivity(SetTradersPasswordActivity.class);
+                //还有可能是更改交易密码
+                // jumpActivity(ModificationTradersPasswordActivity.class);
+                break;
+            case R.id.mine_balance_explain:
+                //余额说明
+                jumpActivity(MineBalanceExplainActivity.class);
                 break;
             default:
                 break;
         }
     }
 
-    /**
-     * @param clazz 跳转
-     */
-    private void jumpActivity(Class clazz) {
-        Intent intent = new Intent(this, clazz);
-        startActivity(intent);
-        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
-    }
+//    /**
+//     * @param clazz 跳转
+//     */
+//    private void jumpActivity(Class clazz) {
+//        Intent intent = new Intent(this, clazz);
+//        startActivity(intent);
+//        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+//    }
 }

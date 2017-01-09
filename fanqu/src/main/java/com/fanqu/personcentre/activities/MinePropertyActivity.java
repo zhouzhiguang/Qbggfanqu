@@ -1,6 +1,5 @@
 package com.fanqu.personcentre.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -80,6 +79,12 @@ public class MinePropertyActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void initDate() {
+
+//        Drawable drawable = ContextCompat.getDrawable(this, R.mipmap.ic_real_name_no_authentication);
+//        //还未实名认证设置
+//        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+//        mine_property_identity.setCompoundDrawables(drawable, null, null, null);
+
     }
 
     private void initListener() {
@@ -113,17 +118,25 @@ public class MinePropertyActivity extends BaseActivity implements View.OnClickLi
             case R.id.mine_property_nice_name:
             case R.id.mine_property_identity:
             case R.id.nice_name:
-                Intent intent = new Intent(this, PersonalDataActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                jumpActivity(PersonalDataActivity.class);
                 break;
             case R.id.mine_property_balance_image:
             case R.id.mine_property_balance_text:
-            case R.id.mine_property_balance_amount:
+            case R.id.mine_property_integral_amount:
                 //余额
-                Intent it = new Intent(this, MineBalanceActivity.class);
-                startActivity(it);
-                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                jumpActivity(MineBalanceActivity.class);
+//                Intent it = new Intent(this, MineBalanceActivity.class);
+//                startActivity(it);
+//                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                break;
+            case R.id.mine_property_integral_image:
+            case R.id.mine_property_integral_text:
+            case R.id.mine_property_balance_amount:
+                //积分
+                jumpActivity(MineIntegralActivity.class);
+//                Intent it = new Intent(this, MineBalanceActivity.class);
+//                startActivity(it);
+//                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                 break;
 
             default:

@@ -220,7 +220,8 @@
             android:label="我的钱包"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+        </activity>
         <activity
             android:name=".personcentre.activities.MineBalanceActivity"
             android:label="我的余额"
@@ -244,13 +245,32 @@
             android:label="我的余额明细"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".personcentre.activities.SetTradersPasswordActivity"
             android:label="设置交易密码"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".personcentre.activities.ModificationTradersPasswordActivity"
+            android:label="修改交易密码"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.MineBalanceExplainActivity"
+            android:label="我的余额说明"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".personcentre.activities.MineIntegralActivity"
+            android:label="我的积分"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

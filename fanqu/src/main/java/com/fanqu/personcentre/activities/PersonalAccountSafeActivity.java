@@ -1,6 +1,5 @@
 package com.fanqu.personcentre.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
@@ -107,11 +106,11 @@ public class PersonalAccountSafeActivity extends BaseActivity implements View.On
         }
     }
 
-    private void jumpActivity(Class clazz) {
-        Intent intent = new Intent(this, clazz);
-        startActivity(intent);
-        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
-    }
+//    private void jumpActivity(Class clazz) {
+//        Intent intent = new Intent(this, clazz);
+//        startActivity(intent);
+//        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+//    }
 
     /**
      * 设置微信绑定状态
