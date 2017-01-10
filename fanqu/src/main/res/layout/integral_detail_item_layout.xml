@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_220px"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_220px"
+        android:paddingLeft="@dimen/dimen_40px"
+        android:paddingRight="@dimen/dimen_40px">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/integral_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10px"
+                android:text="签到"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_48px" />
+
+            <TextView
+                android:id="@+id/integral_detail_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10px"
+                android:text="01-10 17：00"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_40px" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/integral_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="+5"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+
+        <View
+            android:id="@+id/integral_detail_item_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_4px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/edit_publis_line_color"></View>
+    </RelativeLayout>
+</LinearLayout>

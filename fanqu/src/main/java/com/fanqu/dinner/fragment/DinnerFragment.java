@@ -56,7 +56,7 @@ public class DinnerFragment extends BaseFragment {
         manager.setOrientation(LinearLayoutManager.VERTICAL);
 
         List<DinnerBean> dates = new ArrayList<DinnerBean>();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 10; i++) {
             DinnerBean bean = new DinnerBean();
             dates.add(bean);
         }

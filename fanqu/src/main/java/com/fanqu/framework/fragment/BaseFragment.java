@@ -18,14 +18,16 @@ import com.trello.rxlifecycle.FragmentEvent;
 import com.trello.rxlifecycle.FragmentLifecycleProvider;
 import com.trello.rxlifecycle.RxLifecycle;
 
+import java.lang.reflect.Field;
+
 import rx.Observable;
 import rx.subjects.BehaviorSubject;
 
 /**
- * Created by Administrator on 2017/1/4.
+ *
  */
 
-public abstract  class  BaseFragment extends Fragment implements FragmentLifecycleProvider {
+public abstract class BaseFragment extends Fragment implements FragmentLifecycleProvider {
     //是否可见状态
     private boolean isVisible;
     //View已经初始化完成
@@ -37,6 +39,8 @@ public abstract  class  BaseFragment extends Fragment implements FragmentLifecyc
     private BaseActivity mActivity;
     private CustomApplication mApp;
     private int containerId;
+    protected LayoutInflater inflater;
+
     public BaseFragment() {
 
     }
@@ -56,7 +60,7 @@ public abstract  class  BaseFragment extends Fragment implements FragmentLifecyc
 
         mActivity = (BaseActivity) activity;
         mApp = (CustomApplication) activity.getApplication();
-
+        inflater = mActivity.getLayoutInflater();
     }
 
     @Override
@@ -70,24 +74,40 @@ public abstract  class  BaseFragment extends Fragment implements FragmentLifecyc
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // 避免多次从xml中加载布局文件
+        onCreateView(savedInstanceState);
         if (mContentView == null) {
             initView(savedInstanceState);
             setListener();
             processLogic(savedInstanceState);
+           // return super.onCreateView(inflater, container, savedInstanceState);
         } else {
             ViewGroup parent = (ViewGroup) mContentView.getParent();
             if (parent != null) {
                 parent.removeView(mContentView);
             }
+
         }
         return mContentView;
     }
 
-    protected void setContentView(@LayoutRes int layoutResID) {
-        mContentView =mActivity.getLayoutInflater().inflate(layoutResID, null);
+    protected void onCreateView(Bundle savedInstanceState) {
+
+    }
+
+    public void setContentView(View view) {
+        mContentView = view;
         AutoUtils.auto(mContentView);
     }
 
+
+    protected void setContentView(@LayoutRes int layoutResID) {
+        mContentView = inflater.inflate(layoutResID, null);
+        AutoUtils.auto(mContentView);
+    }
+    public View getContentView() {
+
+        return mContentView;
+    }
     /**
      * 初始化View控件
      */
@@ -122,7 +142,7 @@ public abstract  class  BaseFragment extends Fragment implements FragmentLifecyc
     }
 
     protected void showToast(String text) {
-        ToastUtils.showToast(mActivity,text);
+        ToastUtils.showToast(mActivity, text);
     }
 
 
@@ -197,11 +217,21 @@ public abstract  class  BaseFragment extends Fragment implements FragmentLifecyc
         super.onDestroy();
     }
 
+
     @Override
     public void onDetach() {
         lifecycleSubject.onNext(FragmentEvent.DETACH);
         super.onDetach();
+        super.onDetach();
+        try {
+            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
+            childFragmentManager.setAccessible(true);
+            childFragmentManager.set(this, null);
+
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
-
-
 }

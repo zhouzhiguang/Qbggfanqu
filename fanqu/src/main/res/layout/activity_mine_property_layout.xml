@@ -85,7 +85,7 @@
                         android:layout_gravity="left"
                         android:layout_marginTop="@dimen/dimen_30px"
                         android:contentDescription="身份标志"
-                        android:drawableLeft="@mipmap/ic_real_name_authentication"
+                        android:drawableLeft="@mipmap/ic_real_name_authentication_small"
                         android:drawablePadding="@dimen/dimen_20px"
                         android:gravity="center"
                         android:text="实名用户"

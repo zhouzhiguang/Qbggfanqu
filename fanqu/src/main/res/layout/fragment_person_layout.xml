@@ -401,7 +401,7 @@
                 android:background="@drawable/fragment_person_mine_dinner_select"
                 android:clickable="true"
                 android:contentDescription="实名认证"
-                android:drawableLeft="@mipmap/ic_real_name_authentication"
+                android:drawableLeft="@mipmap/real_name_authentication"
                 android:drawablePadding="@dimen/dimen_20px"
                 android:drawableRight="@mipmap/ic_right_large_arrows"
                 android:gravity="center_vertical"

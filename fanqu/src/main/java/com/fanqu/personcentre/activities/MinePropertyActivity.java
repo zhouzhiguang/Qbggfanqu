@@ -122,7 +122,7 @@ public class MinePropertyActivity extends BaseActivity implements View.OnClickLi
                 break;
             case R.id.mine_property_balance_image:
             case R.id.mine_property_balance_text:
-            case R.id.mine_property_integral_amount:
+            case R.id.mine_property_balance_amount:
                 //余额
                 jumpActivity(MineBalanceActivity.class);
 //                Intent it = new Intent(this, MineBalanceActivity.class);
@@ -131,12 +131,19 @@ public class MinePropertyActivity extends BaseActivity implements View.OnClickLi
                 break;
             case R.id.mine_property_integral_image:
             case R.id.mine_property_integral_text:
-            case R.id.mine_property_balance_amount:
+            case R.id.mine_property_integral_amount:
                 //积分
                 jumpActivity(MineIntegralActivity.class);
 //                Intent it = new Intent(this, MineBalanceActivity.class);
 //                startActivity(it);
 //                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                break;
+            case R.id.mine_property_coupon_image:
+            case R.id.mine_property_coupon_text:
+            case R.id.mine_property_coupon_amount:
+                //优惠卷
+                jumpActivity(MineCouponActivity.class);
+
                 break;
 
             default:

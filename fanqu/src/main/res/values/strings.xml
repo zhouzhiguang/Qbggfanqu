@@ -315,6 +315,12 @@
     <string name="ok_modification">确认修改</string>
     <string name="mine_integral">我的积分</string>
     <string name="integration_rule">积分规则</string>
+    <string name="all">全部</string>
+    <string name="income">收入</string>
+    <string name="expend">支出</string>
+    <string name="mine_coupon">我的优惠券</string>
+    <string name="please_input_coupon_exchange_code">请输入优惠券兑换码</string>
+    <string name="add">添加</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>
