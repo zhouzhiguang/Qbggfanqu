@@ -8,6 +8,8 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.view.ViewGroup.LayoutParams;
 
+import com.fanqu.framework.autolayout.AutoUtils;
+
 public class LazyFragment extends BaseFragment {
 
 
@@ -157,6 +159,7 @@ public class LazyFragment extends BaseFragment {
         if (isLazyLoad && getContentView() != null && getContentView().getParent() != null) {
             layout.removeAllViews();
             View view = inflater.inflate(layoutResID, layout, false);
+            AutoUtils.auto(view);
             layout.addView(view);
         } else {
             super.setContentView(layoutResID);

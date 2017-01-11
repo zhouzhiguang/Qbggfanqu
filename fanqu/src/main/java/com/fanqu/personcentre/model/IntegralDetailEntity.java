@@ -8,12 +8,21 @@ import android.os.Parcelable;
  */
 
 public class IntegralDetailEntity implements Parcelable {
+    private String integralid;//id
     private String integraldetailtitle;//积分产生的标题
     private String integraldate;//日期
     private String integralcount;//多少积分
     private int revenueexpenditure_mark;//收入支出标志 1标识收入 -1标志支出
 
     public IntegralDetailEntity() {
+    }
+
+    public String getIntegralid() {
+        return integralid;
+    }
+
+    public void setIntegralid(String integralid) {
+        this.integralid = integralid;
     }
 
     public int getRevenueexpenditure_mark() {
@@ -24,10 +33,12 @@ public class IntegralDetailEntity implements Parcelable {
         this.revenueexpenditure_mark = revenueexpenditure_mark;
     }
 
-    public IntegralDetailEntity(String integraldate, String integralcount, String integraldetailtitle) {
-        this.integraldate = integraldate;
+    public IntegralDetailEntity(int revenueexpenditure_mark, String integralcount, String integraldate, String integraldetailtitle, String integralid) {
+        this.revenueexpenditure_mark = revenueexpenditure_mark;
         this.integralcount = integralcount;
+        this.integraldate = integraldate;
         this.integraldetailtitle = integraldetailtitle;
+        this.integralid = integralid;
     }
 
     public String getIntegraldetailtitle() {
@@ -61,6 +72,7 @@ public class IntegralDetailEntity implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.integralid);
         dest.writeString(this.integraldetailtitle);
         dest.writeString(this.integraldate);
         dest.writeString(this.integralcount);
@@ -68,6 +80,7 @@ public class IntegralDetailEntity implements Parcelable {
     }
 
     protected IntegralDetailEntity(Parcel in) {
+        this.integralid = in.readString();
         this.integraldetailtitle = in.readString();
         this.integraldate = in.readString();
         this.integralcount = in.readString();

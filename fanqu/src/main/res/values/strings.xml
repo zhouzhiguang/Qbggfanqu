@@ -321,6 +321,16 @@
     <string name="mine_coupon">我的优惠券</string>
     <string name="please_input_coupon_exchange_code">请输入优惠券兑换码</string>
     <string name="add">添加</string>
+    <string name="unused">未使用</string>
+    <string name="already_used">已使用</string>
+    <string name="out_date">已过期</string>
+    <string name="coupon_unlimited">无金额门槛</string>
+    <string name="coupon_consumption_unlimited">无门槛</string>
+    <string name="detailed_information">详细信息</string>
+    <string name="coupon_exceed_how_much">满%1$s元使用</string>
+    <string name="coupon_exceed_minus">满  减</string>
+    <string name="more_coupon_goto_coupon_centre">跟多好券，去领券中心看看</string>
+    <string name="get_coupon_centre">领券中心</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

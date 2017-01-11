@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_20px"
+    android:layout_marginLeft="@dimen/dimen_40px"
+    android:layout_marginRight="@dimen/dimen_40px"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_380px"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/coupon_layout"
+            android:layout_width="@dimen/dimen_400px"
+            android:layout_height="match_parent"
+            android:background="@color/color_FF7676"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/coupon_money"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dimen_10px"
+                android:layout_toLeftOf="@+id/coupon_money"
+                android:paddingBottom="@dimen/dimen_25px"
+                android:text="￥"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_40px" />
+
+            <TextView
+                android:id="@+id/coupon_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/dimen_10px"
+                android:text="10"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_80px" />
+
+            <TextView
+                android:id="@+id/coupon_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coupon_money"
+                android:layout_centerHorizontal="true"
+                android:gravity="bottom"
+                android:text="@string/coupon_unlimited"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_60px" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/coupon_limit"
+                android:layout_width="@dimen/dimen_150px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:layout_marginTop="@dimen/dimen_20px"
+                android:background="@drawable/coupon_limit_shape"
+                android:contentDescription="两个状态默认的是无门槛"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dimen_10px"
+                android:paddingTop="@dimen/dimen_10px"
+                android:text="@string/coupon_consumption_unlimited"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_40px" />
+
+            <TextView
+                android:id="@+id/coupon_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="@+id/coupon_limit"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:maxLines="2"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingTop="@dimen/dimen_30px"
+                android:text="             全品类（特价商品除外）全品类价商品"
+                android:textColor="@color/textGrayDeep"
+                android:textSize="@dimen/dimen_50px" />
+
+            <TextView
+                android:id="@+id/coupon_detailed_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dimen_20px"
+                android:drawableRight="@mipmap/ic_detailed_information"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_40px"
+                android:text="@string/detailed_information"
+                android:textColor="@color/textGrayMiddle"
+                android:textSize="@dimen/dimen_45px" />
+
+            <View
+                android:id="@+id/coupon_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_above="@id/coupon_detailed_information"
+                android:layout_marginBottom="@dimen/dimen_20px"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:layout_marginRight="@dimen/dimen_20px"
+                android:background="@color/edit_publis_line_color"></View>
+
+            <TextView
+                android:id="@+id/coupon_us_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/coupon_line"
+                android:layout_marginBottom="@dimen/dimen_20px"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:text="2017.01.10 - 2017.03.10"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_45px" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/coupon_us_state"
+                android:layout_width="@dimen/dimen_200px"
+                android:layout_height="@dimen/dimen_200px"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/dimen_20px"
+                android:src="@mipmap/ic_has_been_used" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

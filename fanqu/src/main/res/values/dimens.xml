@@ -174,5 +174,6 @@
     <dimen name="dimen_182px">182px</dimen>
     <dimen name="dimen_366px">366px</dimen>
     <dimen name="dimen_145px">145px</dimen>
+    <dimen name="text_margin">16dp</dimen>
 
 </resources>

@@ -17,7 +17,7 @@ import com.fanqu.personcentre.frgment.IntegralDetailFragment;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
 /**
- * view page 指示器
+ * view page我的积分 指示器
  */
 
 public class ViewPageIndicatorAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter {
