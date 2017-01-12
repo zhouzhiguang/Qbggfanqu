@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_seting_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_D6DBE3"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/color_D6DBE3"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/couponl_detail"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+        android:id="@+id/shswipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:loadmore_enable="false"
+        app:pull_refresh_enable="false">
+
+        <com.scu.miomin.shswiperefresh.view.ShareScrollView
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/couponl_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_80px"
+                        android:gravity="center"
+                        android:text="￥100"
+                        android:textColor="@color/red_bg"
+                        android:textSize="@dimen/dimen_120px" />
+
+                    <TextView
+                        android:id="@+id/couponl_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_80px"
+                        android:layout_marginTop="@dimen/dimen_20px"
+                        android:gravity="center"
+                        android:text="限购[蹭范趣]指定商品"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_54px" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:contentDescription="圆在右边"
+                            android:src="@mipmap/ic_right_semicirle" />
+
+                        <com.fang.dashview.DashView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="@dimen/dimen_80px"
+                            android:layout_marginRight="@dimen/dimen_80px"
+                            app:dashOrientation="0"
+                            app:dashWidth="@dimen/dimen_18px"
+                            app:lineColor="@color/edit_publis_line_color"
+                            app:lineHeight="@dimen/dimen_6px"
+                            app:lineWidth="@dimen/dimen_20px" />
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:contentDescription="圆在左边"
+                            android:src="@mipmap/ic_left_semicirle" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/couponl_effective_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_70px"
+                        android:gravity="center"
+                        android:text="有效日期：2017-01-10至2017-03-10"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_48px" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_70px"
+                        android:gravity="center"
+                        android:text="@string/promotion_code"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_48px" />
+
+                    <TextView
+                        android:id="@+id/couponl_promotion_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_20px"
+                        android:gravity="center"
+                        android:text="24115678"
+                        android:textColor="@color/red_bg"
+                        android:textSize="@dimen/dimen_70px" />
+
+                    <ImageView
+                        android:id="@+id/couponl_qrcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_20px"
+                        android:layout_marginBottom="@dimen/dimen_40px"
+                        android:src="@mipmap/ic_qrcode_business" />
+
+
+                    <TextView
+                        android:id="@+id/couponl_detail_use"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_148px"
+                        android:layout_marginBottom="@dimen/dimen_102px"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_marginRight="@dimen/dimen_40px"
+                        android:background="@drawable/recharge_balance_select"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:text="@string/ensure_use"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_60px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_40px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:layout_marginTop="@dimen/dimen_40px"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_marginTop="@dimen/dimen_40px"
+                        android:text="@string/couponl_instructions"
+                        android:textColor="@color/color_000000"
+                        android:textSize="@dimen/dimen_54px" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_40px"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_marginRight="@dimen/dimen_40px"
+                        android:layout_marginTop="@dimen/dimen_40px"
+                        android:lineSpacingMultiplier="1.5"
+                        android:text="@string/couponl_instructions_content"
+                        android:textColor="@color/color_000000"
+                        android:textSize="@dimen/dimen_43px" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.scu.miomin.shswiperefresh.view.ShareScrollView>
+    </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+</LinearLayout>

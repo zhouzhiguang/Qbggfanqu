@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/dimen_20px"
@@ -9,7 +10,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_380px"
         android:orientation="horizontal">
@@ -57,10 +58,12 @@
 
         </RelativeLayout>
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white">
+            android:layout_toRightOf="@id/coupon_layout"
+            android:background="@drawable/fragment_person_mine_dinner_select">
 
             <TextView
                 android:id="@+id/coupon_limit"
@@ -83,8 +86,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="@+id/coupon_limit"
                 android:layout_marginLeft="@dimen/dimen_20px"
-                android:maxLines="2"
                 android:lineSpacingMultiplier="1.2"
+                android:maxLines="2"
                 android:paddingTop="@dimen/dimen_30px"
                 android:text="             全品类（特价商品除外）全品类价商品"
                 android:textColor="@color/textGrayDeep"
@@ -104,15 +107,19 @@
                 android:textColor="@color/textGrayMiddle"
                 android:textSize="@dimen/dimen_45px" />
 
-            <View
+            <com.fang.dashview.DashView
                 android:id="@+id/coupon_line"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_3px"
+                android:layout_height="wrap_content"
                 android:layout_above="@id/coupon_detailed_information"
                 android:layout_marginBottom="@dimen/dimen_20px"
                 android:layout_marginLeft="@dimen/dimen_20px"
                 android:layout_marginRight="@dimen/dimen_20px"
-                android:background="@color/edit_publis_line_color"></View>
+                app:dashOrientation="0"
+                app:dashWidth="@dimen/dimen_6px"
+                app:lineColor="@color/edit_publis_line_color"
+                app:lineHeight="@dimen/dimen_3px"
+                app:lineWidth="@dimen/dimen_12px" />
 
             <TextView
                 android:id="@+id/coupon_us_date"
@@ -133,5 +140,19 @@
                 android:layout_marginTop="@dimen/dimen_20px"
                 android:src="@mipmap/ic_has_been_used" />
         </RelativeLayout>
-    </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dimen_360px"
+            android:src="@mipmap/ic_up_semicirle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/dimen_360px"
+            android:src="@mipmap/ic_down_semicirle" />
+    </RelativeLayout>
 </LinearLayout>

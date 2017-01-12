@@ -118,9 +118,10 @@ public class MineCouponActivity extends BaseActivity {
                 entity.setCouponstate(1);
                 entity.setGetcoupondate("2017.01-10");
                 entity.setOverduedate("2017.03-10");
+                entity.setPromotioncode(String.valueOf(getRandomInt(25554669, 99999999)));
                 //满一百元可用
                 entity.setCouponcondition(getRandomInt(100, 800));
-                entity.setCouponmoney("10");
+                entity.setCouponmoney(String.valueOf(getRandomInt(10, 100)));
             } else {
                 entity.setCouponids(String.valueOf(541651465 + i));
                 entity.setCoupontitle("全品类（特价商品除外）");

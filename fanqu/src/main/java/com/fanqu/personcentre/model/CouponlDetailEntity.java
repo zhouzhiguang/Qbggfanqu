@@ -17,13 +17,17 @@ public class CouponlDetailEntity implements Parcelable {
     private String couponmoney;//优惠卷金额也是抵扣金额
     private int couponcondition;//优惠券抵扣条件 0代表无门槛消费 数字代表满多少能使用
     private String couponusablerange;//预留一个优惠券使用范围
+    private String quickcodeurl;//优惠券二维码地址
+    private String promotioncode;//优惠码
 
 
     public CouponlDetailEntity() {
     }
 
-    public CouponlDetailEntity(String couponids, String couponusablerange, int couponcondition, String couponmoney, String couponurl, String overduedate, String getcoupondate, String coupontitle, int couponstate) {
+    public CouponlDetailEntity(String couponids, String promotioncode, String quickcodeurl, String couponusablerange, int couponcondition, String couponmoney, String couponurl, String overduedate, String getcoupondate, String coupontitle, int couponstate) {
         this.couponids = couponids;
+        this.promotioncode = promotioncode;
+        this.quickcodeurl = quickcodeurl;
         this.couponusablerange = couponusablerange;
         this.couponcondition = couponcondition;
         this.couponmoney = couponmoney;
@@ -32,6 +36,51 @@ public class CouponlDetailEntity implements Parcelable {
         this.getcoupondate = getcoupondate;
         this.coupontitle = coupontitle;
         this.couponstate = couponstate;
+    }
+
+    public static final Creator<CouponlDetailEntity> CREATOR = new Creator<CouponlDetailEntity>() {
+        @Override
+        public CouponlDetailEntity createFromParcel(Parcel in) {
+            return new CouponlDetailEntity(in);
+        }
+
+        @Override
+        public CouponlDetailEntity[] newArray(int size) {
+            return new CouponlDetailEntity[size];
+        }
+    };
+
+    @Override
+    public String toString() {
+        return "CouponlDetailEntity{" +
+                "couponids='" + couponids + '\'' +
+                ", couponstate=" + couponstate +
+                ", coupontitle='" + coupontitle + '\'' +
+                ", getcoupondate='" + getcoupondate + '\'' +
+                ", overduedate='" + overduedate + '\'' +
+                ", couponurl='" + couponurl + '\'' +
+                ", couponmoney='" + couponmoney + '\'' +
+                ", couponcondition=" + couponcondition +
+                ", couponusablerange='" + couponusablerange + '\'' +
+                ", quickcodeurl='" + quickcodeurl + '\'' +
+                ", promotioncode='" + promotioncode + '\'' +
+                '}';
+    }
+
+    public String getQuickcodeurl() {
+        return quickcodeurl;
+    }
+
+    public void setQuickcodeurl(String quickcodeurl) {
+        this.quickcodeurl = quickcodeurl;
+    }
+
+    public String getPromotioncode() {
+        return promotioncode;
+    }
+
+    public void setPromotioncode(String promotioncode) {
+        this.promotioncode = promotioncode;
     }
 
     public String getCouponusablerange() {
@@ -122,6 +171,8 @@ public class CouponlDetailEntity implements Parcelable {
         dest.writeString(this.couponmoney);
         dest.writeInt(this.couponcondition);
         dest.writeString(this.couponusablerange);
+        dest.writeString(this.quickcodeurl);
+        dest.writeString(this.promotioncode);
     }
 
     protected CouponlDetailEntity(Parcel in) {
@@ -134,15 +185,8 @@ public class CouponlDetailEntity implements Parcelable {
         this.couponmoney = in.readString();
         this.couponcondition = in.readInt();
         this.couponusablerange = in.readString();
+        this.quickcodeurl = in.readString();
+        this.promotioncode = in.readString();
     }
 
-    public static final Creator<CouponlDetailEntity> CREATOR = new Creator<CouponlDetailEntity>() {
-        public CouponlDetailEntity createFromParcel(Parcel source) {
-            return new CouponlDetailEntity(source);
-        }
-
-        public CouponlDetailEntity[] newArray(int size) {
-            return new CouponlDetailEntity[size];
-        }
-    };
 }

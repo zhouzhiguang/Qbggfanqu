@@ -10,7 +10,10 @@ package com.fanqu.framework;
 public class Constants {
 	//正式地址
 	public static final String LOADING_CURRENT_URL = "http://cengfan7.cn/wap.php";
-
+	//帐号
+	public static final String KEY_USER_ACCOUNT = "account";
+	//加密的密码
+	public static final String KEY_USER_TOKEN = "token";
 	public static final String FRIST_START_APP = "frist_start_app";
 	public static final String NAME_APP_PARAMS = "appParams";// 存储app的参数
 	// 配置自动更新
@@ -71,5 +74,6 @@ public class Constants {
 	public static final String ALIPAY_RUSULT_RECHARGE_NOTIFY_URL = "http://cengfan7.com/wap.php?m=Wap&c=Balance&a=recharge_success&id=";
 	//支付宝微信购买商品结果页
 	public static final String AILYPAY_RUSULT_NOTIFY_URL = "http://cengfan7.com/wap.php?m=Wap&c=Order&a=pay_complete&id=";
+	public static final String COUPONL_DETAIL_ENTITY = "coupinldetailentity";
 }
 

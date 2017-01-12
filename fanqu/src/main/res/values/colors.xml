@@ -85,6 +85,10 @@
     <color name="color_FF7676">#FF7676</color>
     <color name="color_76B6FF">#76B6FF</color>
     <color name="color_C2C2C2">#C2C2C2</color>
+    <color name="color_D6DBE3">#D6DBE3</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_353535">#353535</color>
+    <color name="color_F35757">#F35757</color>
 
 
 </resources>

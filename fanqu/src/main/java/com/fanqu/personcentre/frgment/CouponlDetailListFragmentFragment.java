@@ -11,13 +11,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fanqu.R;
+import com.fanqu.framework.Constants;
 import com.fanqu.framework.CustomApplication;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.fragment.LazyFragment;
 import com.fanqu.framework.main.util.ViewHolder;
+import com.fanqu.personcentre.activities.CouponlDetailActivity;
 import com.fanqu.personcentre.activities.GetCouponCentreActivity;
 import com.fanqu.personcentre.adapter.CouponlListAdapter;
 import com.fanqu.personcentre.model.CouponlDetailEntity;
+import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.wrapper.HeaderAndFooterWrapper;
 import com.zhy.adapter.recyclerview.wrapper.LoadMoreWrapper;
 
@@ -54,13 +57,11 @@ public class CouponlDetailListFragmentFragment extends LazyFragment implements V
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
         inflater = getLayoutInflater(savedInstanceState);
-
         setContentView(R.layout.fragment_couponl_detail_list_layout);
-
         recylcerview = findView(R.id.couponl_list_recyclerview);
         dates = getArguments().getParcelableArrayList(ARG_COLUMN_COUNT);
         manager = new LinearLayoutManager(getActivity());
-        CouponlListAdapter adapter = new CouponlListAdapter(getActivity(), R.layout.couponl_recyclerview_item_layout, dates);
+        final CouponlListAdapter adapter = new CouponlListAdapter(getActivity(), R.layout.couponl_recyclerview_item_layout, dates);
         recylcerview.setLayoutManager(manager);
         HeaderAndFooterWrapper mHeaderAndFooterWrapper = new HeaderAndFooterWrapper(adapter);
         View layouy = inflater.inflate(R.layout.couponl_recyclerview_footview_go_getcouponl_centre_layout, null);
@@ -75,6 +76,20 @@ public class CouponlDetailListFragmentFragment extends LazyFragment implements V
         goto_coupon_centre_layout.setLayoutParams(params);
         TextView goto_coupon_centre = ViewHolder.get(layouy, R.id.goto_coupon_centre);
         goto_coupon_centre.setOnClickListener(this);
+        adapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                CouponlDetailEntity entity = dates.get(position);
+                Intent intent = new Intent(getContext(), CouponlDetailActivity.class);
+                intent.putExtra(Constants.COUPONL_DETAIL_ENTITY, entity);
+                CouponlDetailListFragmentFragment.this.startActivity(intent);
+            }
+
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
+            }
+        });
     }
 
 

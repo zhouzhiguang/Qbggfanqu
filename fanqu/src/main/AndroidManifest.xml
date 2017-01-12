@@ -275,6 +275,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
+
+        </activity>
+        <activity
+            android:name=".personcentre.activities.GetCouponCentreActivity"
+            android:label="领券中心"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -283,11 +291,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".personcentre.activities.GetCouponCentreActivity"
-            android:label="领券中心"
+            android:name=".personcentre.activities.CouponlDetailActivity"
+            android:label="优惠券详情页面"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
     </application>
 
 </manifest>

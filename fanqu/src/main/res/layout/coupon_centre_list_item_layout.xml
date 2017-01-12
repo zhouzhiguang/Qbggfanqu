@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/dimen_40px"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_380px"
+        android:layout_marginLeft="@dimen/dimen_40px"
+        android:layout_marginRight="@dimen/dimen_40px"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/coupon_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_weight="0"
+                android:gravity="left"
+                android:text="全品类（特价商品除外)"
+                android:textColor="@color/color_353535"
+                android:textSize="@dimen/dimen_43px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:gravity="left|bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textColor="@color/color_F35757"
+                    android:textSize="@dimen/dimen_64px" />
+
+                <TextView
+                    android:id="@+id/coupon_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="@color/color_F35757"
+                    android:textSize="@dimen/dimen_148px" />
+
+                <TextView
+                    android:id="@+id/coupon_service_conditions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:text="无金额门槛"
+                    android:textColor="@color/color_F35757"
+                    android:textSize="@dimen/dimen_40px" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/coupon_layout"
+            android:layout_width="@dimen/dimen_400px"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@color/color_FF7676"
+            android:orientation="vertical">
+            <com.fanqu.main.widget.CircleProgressBar
+                android:id="@+id/circle_progress_bar_4"
+                android:layout_width="@dimen/dimen_100px"
+                android:layout_centerInParent="true"
+
+                android:layout_height="@dimen/dimen_100px"
+                app:circle_color="#000"
+                app:circle_width="2dp"
+                app:progress_color1="#f00"
+                app:progress_width="2dp"
+                app:start_arc="0"
+
+                />
+                />
+                <!--app:circle_color="#0f0"-->
+                <!--app:circle_width="@dimen/dimen_20px"-->
+                <!--app:progress_color1="#FFFF00"-->
+                <!--app:progress_color2="#008000"-->
+                <!--app:progress_color3="#FFA500"-->
+                <!--app:progress_width="@dimen/dimen_20px"-->
+                <!--app:start_arc="135"-->
+                <!--app:max_progress="100"-->
+                <!--app:current_progress="100"-->
+                <!--app:is_set_top_title="false"-->
+                <!--app:top_title="您的等级超越全国"-->
+                <!--app:top_title_text_size="10sp"-->
+                <!--app:top_title_color="#000"-->
+                <!--app:is_set_mid_content="true"-->
+                <!--app:mid_progress_color="#f00"-->
+                <!--app:is_set_bottom_content="true"-->
+                <!--app:bottom_content="万的用户"-->
+                <!--app:bottom_content_text_size="10sp"/>-->
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
