@@ -338,6 +338,7 @@
     <string name="couponl_instructions_content">1.可以在订单支付的时使用；\n2.无法转赠他人，仅限本账号使用；\n3.单笔交易仅使用1张，若交易失败，则自动退回；</string>
     <string name="effective_date">有效日期：</string>
     <string name="until">至</string>
+    <string name="immediately_get_coupont">立即领取</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>
