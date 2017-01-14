@@ -9,10 +9,12 @@ import android.view.View;
 import com.fanqu.R;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
+import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.ThemUtils;
 import com.fanqu.framework.model.ToolBarOptions;
 import com.fanqu.personcentre.adapter.CouponCentreListAdapter;
 import com.fanqu.personcentre.model.CouponCentreDetailEntity;
+import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,8 @@ import java.util.List;
  */
 public class GetCouponCentreActivity extends BaseActivity {
     private RecyclerView recyclerView;
+    private CouponCentreListAdapter adapter;
+    private List<CouponCentreDetailEntity> datas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +68,10 @@ public class GetCouponCentreActivity extends BaseActivity {
     }
 
     private void initDate() {
-        List<CouponCentreDetailEntity> datas = new ArrayList<>();
+        datas = new ArrayList<>();
         // datas.add(new CouponCentreDetailEntity());
         initDatas(datas);
-        CouponCentreListAdapter adapter = new CouponCentreListAdapter(this, R.layout.coupon_centre_list_item_layout, datas);
+        adapter = new CouponCentreListAdapter(this, R.layout.coupon_centre_list_item_layout, datas);
         recyclerView.setAdapter(adapter);
     }
 
@@ -93,9 +97,8 @@ public class GetCouponCentreActivity extends BaseActivity {
                     entity.setGetcoupondate("2017.01-10");
                     entity.setOverduedate("2017.03-10");
                     entity.setPromotioncode(String.valueOf(getRandomInt(25554669, 99999999)));
-
                     entity.setCouponmoney(String.valueOf(getRandomInt(10, 100)));
-                    entity.setAlreadygetcouponnumberpeople("50%");
+                    entity.setAlreadygetcouponnumberpeople(String.valueOf(getRandomInt(20, 100)) + "%");
                     //三个状态 1 还未领取 0 已经领取 -1 标识 已经卖完了抢光了
                     entity.setCouponcentrestate(1);
                     datas.add(entity);
@@ -117,7 +120,6 @@ public class GetCouponCentreActivity extends BaseActivity {
                     entity.setGetcoupondate("2017.01-10");
                     entity.setOverduedate("2017.03-10");
                     entity.setPromotioncode(String.valueOf(getRandomInt(25554669, 99999999)));
-
                     entity.setCouponmoney(String.valueOf(getRandomInt(10, 100)));
                     entity.setAlreadygetcouponnumberpeople("60%");
                     //三个状态 1 还未领取 0 已经领取 -1 标识 已经卖完了抢光了
@@ -141,7 +143,6 @@ public class GetCouponCentreActivity extends BaseActivity {
                     entity.setGetcoupondate("2017.01-10");
                     entity.setOverduedate("2017.03-10");
                     entity.setPromotioncode(String.valueOf(getRandomInt(25554669, 99999999)));
-
                     entity.setCouponmoney(String.valueOf(getRandomInt(10, 100)));
                     entity.setAlreadygetcouponnumberpeople("60%");
                     //三个状态 1 还未领取 0 已经领取 -1 标识 已经卖完了抢光了
@@ -156,6 +157,27 @@ public class GetCouponCentreActivity extends BaseActivity {
 
 
     private void initListener() {
+
+        adapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                CouponCentreDetailEntity entity = datas.get(position);
+                int couponcondition = entity.getCouponcondition();
+                //三个状态 1 还未领取 0 已经领取 -1 标识 已经卖完了抢光了
+                int couponcentrestate = entity.getCouponcentrestate();
+                if (couponcentrestate == 1) {
+                    entity.setCouponcentrestate(0);
+                    //adapter.notifyDataSetChanged();
+                    adapter.notifyItemChanged(position, entity);
+                    LogUtil.e("已经领取了");
+                }
+            }
+
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
+            }
+        });
 
     }
 

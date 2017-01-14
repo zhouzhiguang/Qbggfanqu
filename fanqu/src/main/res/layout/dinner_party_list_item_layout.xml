@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/fragment_person_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dimen_40px">
+
+    <LinearLayout
+        android:id="@+id/dinner_party_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1000px"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dimen_40px"
+        android:layout_marginRight="@dimen/dimen_40px"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/dinner_party_headimage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_675px"
+            android:background="@mipmap/ic_theme_test_image">
+
+            <ImageView
+                android:id="@+id/dinner_party_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dimen_50px"
+                android:layout_marginTop="@dimen/dimen_45px"
+                android:src="@mipmap/ic_love_solid_read" />
+
+            <RelativeLayout
+                android:id="@+id/dinner_party_rest_layout"
+                android:layout_width="@dimen/dimen_500px"
+                android:layout_height="@dimen/dimen_500px"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.5"
+                    android:src="@mipmap/ic_circle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableBottom="@mipmap/dinner_party_rest"
+                    android:text="@string/rest"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_100px" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dinner_party_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_40px"
+            android:contentDescription="主题"
+            android:maxLines="1"
+            android:text="老妈饼~母亲的味道，是家的味道"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_54px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_marginTop="@dimen/dimen_40px">
+
+            <TextView
+                android:id="@+id/dinner_party_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/ic_location_grey"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:text="义乌市赤岸镇"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_43px" />
+
+            <TextView
+                android:id="@+id/dinner_party_galleryful"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:contentDescription="饭局可接待人数"
+                android:drawableLeft="@mipmap/ic_galleryful"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:text="6-10人"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_43px" />
+
+            <TextView
+                android:id="@+id/dinner_party_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:contentDescription="饭局距离"
+                android:drawableLeft="@mipmap/ic_distance"
+                android:drawablePadding="@dimen/dimen_20px"
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:text="10.51km"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_43px" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_40px"
+            android:layout_marginRight="@dimen/dimen_40px">
+
+            <TextView
+                android:id="@+id/dinner_party_feature1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@drawable/dinner_party_feature_shape"
+                android:paddingBottom="@dimen/dimen_8px"
+                android:paddingLeft="@dimen/dimen_22px"
+                android:paddingRight="@dimen/dimen_22px"
+                android:paddingTop="@dimen/dimen_8px"
+                android:text="家常菜"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_37px"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/dinner_party_feature2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_toRightOf="@id/dinner_party_feature1"
+                android:background="@drawable/dinner_party_feature_shape"
+                android:paddingBottom="@dimen/dimen_8px"
+                android:paddingLeft="@dimen/dimen_22px"
+                android:paddingRight="@dimen/dimen_22px"
+                android:paddingTop="@dimen/dimen_8px"
+                android:text="特色小吃"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_37px"
+
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/dinner_party_feature3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_toRightOf="@id/dinner_party_feature2"
+                android:background="@drawable/dinner_party_feature_shape"
+                android:paddingBottom="@dimen/dimen_8px"
+                android:paddingLeft="@dimen/dimen_22px"
+                android:paddingRight="@dimen/dimen_22px"
+                android:paddingTop="@dimen/dimen_8px"
+                android:text="特色健康"
+                android:textColor="@color/textGrayLight"
+                android:textSize="@dimen/dimen_37px"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_90px"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/dinner_party_money_layout_select"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dimen_20px"
+                android:paddingRight="@dimen/dimen_20px">
+
+                <TextView
+                    android:id="@+id/dollar_sign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dimen_10px"
+                    android:gravity="center"
+                    android:text="￥"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_53px" />
+
+                <TextView
+                    android:id="@+id/dinner_party_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/dollar_sign"
+                    android:layout_marginLeft="@dimen/dimen_5px"
+                    android:layout_marginRight="@dimen/dimen_5px"
+                    android:layout_toRightOf="@id/dollar_sign"
+                    android:gravity="center"
+                    android:text="88"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_48px" />
+
+                <TextView
+                    android:id="@+id/rise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/dinner_party_money"
+                    android:layout_marginRight="@dimen/dimen_10px"
+                    android:layout_toRightOf="@id/dinner_party_money"
+                    android:gravity="top"
+                    android:text="@string/rise"
+                    android:textColor="@color/red_bg"
+                    android:textSize="@dimen/dimen_34px" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

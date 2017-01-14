@@ -9,20 +9,20 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/coupon_centre_root_content_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_380px"
         android:layout_marginLeft="@dimen/dimen_40px"
         android:layout_marginRight="@dimen/dimen_40px"
         android:background="@drawable/fragment_person_mine_dinner_select"
-        android:clickable="true"
         android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/head_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_toLeftOf="@+id/coupon_layout"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -82,6 +82,7 @@
             </LinearLayout>
         </RelativeLayout>
 
+
         <RelativeLayout
             android:id="@+id/coupon_layout"
             android:layout_width="@dimen/dimen_400px"
@@ -113,7 +114,6 @@
                     app:progressBarBackgroundColor="@color/red_bg"
                     app:progressBarColor="@color/white"
                     app:startAngle="145"
-
                     app:textSize="@dimen/dimen_40px" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -148,5 +148,24 @@
                 android:contentDescription="已经抢光了"
                 android:src="@mipmap/ic_has_over" />
         </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/coupon_centre_top_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignTop="@id/coupon_layout"
+            android:layout_marginRight="@dimen/dimen_372px"
+            android:src="@mipmap/ic_down_semicirle" />
+
+        <ImageView
+            android:id="@+id/coupon_centre_bottom_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen_372px"
+            android:src="@mipmap/ic_up_semicirle" />
     </RelativeLayout>
 </LinearLayout>

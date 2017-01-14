@@ -5,6 +5,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -37,7 +38,8 @@ public class CouponCentreListAdapter extends CommonAdapter<CouponCentreDetailEnt
 
     private final int bottom;
     private final int top;
-
+    private int marginRigh, marginbottom;
+    private int imagewidth;
 
     public CouponCentreListAdapter(Activity activity, int layoutId, List<CouponCentreDetailEntity> datas) {
         super(activity, layoutId, datas);
@@ -55,6 +57,9 @@ public class CouponCentreListAdapter extends CommonAdapter<CouponCentreDetailEnt
 
     @Override
     protected void convert(ViewHolder holder, CouponCentreDetailEntity entity, int position) {
+        RelativeLayout coupon_centre_root_content_layout = holder.getView(R.id.coupon_centre_root_content_layout);
+        ImageView coupon_centre_top_image = holder.getView(R.id.coupon_centre_top_image);
+        ImageView coupon_centre_bottom_image = holder.getView(R.id.coupon_centre_bottom_image);
         LinearLayout coupon_centre_root_layout = holder.getView(R.id.coupon_centre_root_layout);
         //领取进度
         CircleProgressBar circleProgressBar = holder.getView(R.id.coupon_get_amount);
@@ -68,11 +73,53 @@ public class CouponCentreListAdapter extends CommonAdapter<CouponCentreDetailEnt
         TextView coupon_centre_immediately_get = holder.getView(R.id.coupon_centre_immediately_get);
         //已经抢光了
         CircleImageView coupon_centre_over = holder.getView(R.id.coupon_centre_over);
+//        if (marginRigh == 0) {
+//            int w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+//            int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+//            coupon_centre_top_image.measure(w, h);
+//            int height = coupon_centre_top_image.getMeasuredHeight();
+//            int width = coupon_centre_top_image.getMeasuredWidth();
+//            coupon_centre_top_image.measure(width, height);
+//            int referencemargrigh = (int) activity.getResources().getDimension(R.dimen.dimen_400px);
+//            imagewidth = width;
+//            marginRigh = referencemargrigh - width / 2;
+//        }
+//        if (marginbottom == 0) {
+//            int w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+//            int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+//            coupon_centre_root_content_layout.measure(w, h);
+//            int height = coupon_centre_root_content_layout.getMeasuredHeight();
+//            int width = coupon_centre_root_content_layout.getMeasuredWidth();
+//            coupon_centre_root_content_layout.measure(width, height);
+//            marginbottom = height;
+//        }
+     //   LogUtil.e("jjj", imagewidth + "----56----------");
+//        RelativeLayout.LayoutParams imageparams = (RelativeLayout.LayoutParams) coupon_centre_top_image.getLayoutParams();
+//        imageparams.width = imagewidth;
+//        imageparams.height = imagewidth;
+//        imageparams.addRule(RelativeLayout.CENTER_IN_PARENT);
+//        imageparams.alignWithParent=true;
+//        imageparams.setMargins(0, 0, marginRigh, marginbottom - imagewidth);
+//        coupon_centre_top_image.setScaleType(ImageView.ScaleType.FIT_XY);
+//        coupon_centre_top_image.setLayoutParams(imageparams);
+//        imageparams.setMargins(0, marginbottom - imagewidth, marginRigh, 0);
+//        coupon_centre_bottom_image.setLayoutParams(imageparams);
         ////优惠券抵扣条件 0代表无门槛消费 数字代表满多少能使用
         int couponcondition = entity.getCouponcondition();
         int couponcentrestate = entity.getCouponcentrestate();
         String coupontitle = entity.getCoupontitle();
         String coupontmoney = entity.getCouponmoney();
+        String Alreadygetcouponnumberpeople = entity.getAlreadygetcouponnumberpeople();
+        //关联circleProgressBar
+        if (!TextUtils.isEmpty(Alreadygetcouponnumberpeople)) {
+            String progress = Alreadygetcouponnumberpeople.substring(0, Alreadygetcouponnumberpeople.length() - 1);
+            circleProgressBar.setProgress(Float.valueOf(progress));
+            StringBuffer buffer = new StringBuffer();
+            buffer.append(activity.getString(R.string.has_get));
+            buffer.append("\n");
+            buffer.append(Alreadygetcouponnumberpeople);
+            circleProgressBar.setText(buffer.toString());
+        }
         ////优惠券状态  1未使用0已经使用-1已经过期
         int couponstate = entity.getCouponstate();
 
@@ -118,7 +165,6 @@ public class CouponCentreListAdapter extends CommonAdapter<CouponCentreDetailEnt
             coupon_centre_has_get.setVisibility(View.GONE);
             coupon_centre_immediately_get.setText(activity.getString(R.string.immediately_get_coupont));
             coupon_centre_over.setVisibility(View.GONE);
-            circleProgressBar.setText("已经领了");
         } else {
             //已经领取完了
             coupon_centre_layout.setVisibility(View.GONE);
@@ -144,6 +190,7 @@ public class CouponCentreListAdapter extends CommonAdapter<CouponCentreDetailEnt
             coupon_centre_root_layout.setLayoutParams(params);
             // oldPosition = position;
         }
+
 
     }
 

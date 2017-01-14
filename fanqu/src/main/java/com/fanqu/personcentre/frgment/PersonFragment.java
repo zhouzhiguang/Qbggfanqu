@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.fanqu.R;
 import com.fanqu.framework.fragment.BaseFragment;
+import com.fanqu.personcentre.activities.LikeDinnerPartyActivity;
 import com.fanqu.personcentre.activities.MinePropertyActivity;
 import com.fanqu.personcentre.activities.SetingActivity;
 
@@ -114,6 +115,8 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         fragment_person_seting.setOnClickListener(this);
         //我的资产
         fragmentPersonMineProperty.setOnClickListener(this);
+        //我的关注
+        mineFocus.setOnClickListener(this);
     }
 
 
@@ -127,6 +130,10 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
             case R.id.fragment_person_mine_property:
                 //我的钱包
                 jumpactivity(MinePropertyActivity.class);
+                break;
+            case R.id.mine_focus:
+                // 我的关注 也是我收藏的饭局
+                jumpactivity(LikeDinnerPartyActivity.class);
                 break;
             default:
                 break;
