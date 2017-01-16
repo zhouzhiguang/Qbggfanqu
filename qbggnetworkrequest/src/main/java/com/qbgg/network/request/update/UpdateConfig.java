@@ -69,6 +69,7 @@ public class UpdateConfig {
                         /**可填：此apk包是否为强制更新*/
                         update.setForce(updateBean.isForce());
                         //update=new Update();
+                        update=null;
                         return update;
                     }
                 });
