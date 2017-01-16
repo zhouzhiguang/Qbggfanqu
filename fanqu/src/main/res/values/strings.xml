@@ -86,7 +86,7 @@
     <string name="dinner_party_details_content">没有想到第一次发帖得到这么多人的鼓励和建议，真是非常感谢，很多建议我都会记下来了 ，但还是要一步一步来慢慢布置，先从干净整洁开始！女汉子练成第一步，先从桌子收纳开始吧，虽然现在还不好看，但是因为一个简单的架子有了纵向空间的收纳，桌面瞬间干净清爽多了。</string>
     <string name="number_people_assigned_allowed">名额：</string>
     <string name="open_seats">开席：</string>
-    <string name="location">地址: </string>
+    <string name="location">地址:</string>
     <string name="dinner_party_details_location_test">东莞市南城区莞太路创意园2栋3A</string>
     <string name="click_add_more">点击加载更多评论</string>
     <string name="revert">回复</string>
@@ -343,6 +343,8 @@
     <string name="mine_attention_dinner_party">我的关注</string>
     <string name="rest">休息中</string>
     <string name="rise">起</string>
+    <string name="date">日期： </string>
+    <string name="menu">菜单</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

@@ -21,9 +21,9 @@
             <ImageView
                 android:id="@+id/kitchen_details_share_image"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_600px"
+                android:layout_height="@dimen/dimen_734px"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_share_image"
+                android:src="@mipmap/ic_theme_test_image"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed" />
@@ -84,55 +84,57 @@
                 android:layout_marginTop="@dimen/dimen_30px"
                 android:maxLines="1"
                 android:text="雅致小包厢英式乡村式花园"
-                android:textColor="@color/layout_title"
+                android:textColor="@color/textGrayDeep"
                 android:textSize="@dimen/dimen_60px" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dimen_10px">
+                android:paddingTop="@dimen/dimen_20px">
 
                 <TextView
                     android:id="@+id/kitchen_details_number_people"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:text="3-10人"
                     android:textColor="@color/red_bg"
-                    android:textSize="@dimen/dimen_55px" />
+                    android:textSize="@dimen/dimen_54px" />
 
                 <TextView
                     android:id="@+id/kitchen_details_accommodate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/kitchen_details_number_people"
+                    android:layout_alignBaseline="@id/kitchen_details_number_people"
                     android:layout_toRightOf="@id/kitchen_details_number_people"
                     android:text="容纳"
-                    android:textColor="@color/color_CCCCCC"
-                    android:textSize="@dimen/dimen_45px" />
+                    android:textColor="@color/textGrayLight"
+                    android:textSize="@dimen/dimen_37px" />
 
                 <View
                     android:id="@+id/kitchen_details_liner"
                     android:layout_width="@dimen/dimen_3px"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/dimen_40px"
                     android:layout_alignBottom="@id/kitchen_details_accommodate"
+                    android:layout_alignTop="@id/kitchen_details_accommodate"
+                    android:layout_marginBottom="@dimen/dimen_5px"
                     android:layout_marginLeft="@dimen/dimen_30px"
                     android:layout_marginRight="@dimen/dimen_30px"
                     android:layout_toRightOf="@id/kitchen_details_accommodate"
-                    android:background="@color/color_CCCCCC" />
+                    android:background="@color/red_bg" />
 
                 <TextView
                     android:id="@+id/kitchen_details_how_many_people_like"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/dimen_60px"
                     android:layout_alignBottom="@id/kitchen_details_number_people"
                     android:layout_toRightOf="@id/kitchen_details_liner"
                     android:drawableLeft="@mipmap/ic_like_solid"
                     android:drawablePadding="@dimen/dimen_20px"
+                    android:gravity="bottom"
                     android:text="500人喜欢"
-                    android:textColor="@color/color_CCCCCC"
-                    android:textSize="@dimen/dimen_45px" />
+                    android:textColor="@color/textGrayLight"
+                    android:textSize="@dimen/dimen_37px" />
             </RelativeLayout>
 
             <LinearLayout
@@ -148,8 +150,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/search_dinner_party_label_shape"
-                    android:padding="@dimen/dimen_20px"
+                    android:layout_marginLeft="@dimen/dimen_30px"
+                    android:background="@drawable/dinner_party_feature_shape"
+                    android:paddingBottom="@dimen/dimen_15px"
+                    android:paddingLeft="@dimen/dimen_20px"
+                    android:paddingRight="@dimen/dimen_20px"
+                    android:paddingTop="@dimen/dimen_15px"
                     android:text="文化艺术"
                     android:textColor="@color/color_7B7B7B"
                     android:textSize="@dimen/dimen_45px" />
@@ -159,10 +165,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/dimen_60px"
-                    android:layout_marginRight="@dimen/dimen_60px"
-                    android:background="@drawable/search_dinner_party_label_shape"
-                    android:padding="@dimen/dimen_20px"
+                    android:layout_marginLeft="@dimen/dimen_30px"
+                    android:layout_marginRight="@dimen/dimen_30px"
+                    android:background="@drawable/dinner_party_feature_shape"
+                    android:paddingBottom="@dimen/dimen_15px"
+                    android:paddingLeft="@dimen/dimen_20px"
+                    android:paddingRight="@dimen/dimen_20px"
+                    android:paddingTop="@dimen/dimen_15px"
                     android:text="带花园"
                     android:textColor="@color/color_7B7B7B"
                     android:textSize="@dimen/dimen_45px" />
@@ -172,8 +181,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/search_dinner_party_label_shape"
-                    android:padding="@dimen/dimen_20px"
+                    android:layout_marginLeft="@dimen/dimen_30px"
+                    android:background="@drawable/dinner_party_feature_shape"
+                    android:paddingBottom="@dimen/dimen_15px"
+                    android:paddingLeft="@dimen/dimen_20px"
+                    android:paddingRight="@dimen/dimen_20px"
+                    android:paddingTop="@dimen/dimen_15px"
                     android:text="户外探险"
                     android:textColor="@color/color_7B7B7B"
                     android:textSize="@dimen/dimen_45px" />
@@ -182,55 +195,94 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_10px"
+                android:layout_height="@dimen/dimen_5px"
                 android:layout_marginLeft="@dimen/dimen_40px"
                 android:layout_marginRight="@dimen/dimen_40px"
-                android:layout_marginTop="@dimen/dimen_20px"
-                android:background="@color/bgColor"></View>
+                android:layout_marginTop="@dimen/dimen_30px"
+                android:background="@color/inner_party_details_line_color"></View>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_300px"
+                android:layout_height="@dimen/dimen_380px"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/kitchen_details_can_ordering_meal_date"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:layout_marginTop="@dimen/dimen_10px"
+                    android:layout_weight="1"
                     android:background="@drawable/fragment_person_mine_dinner_select"
-                    android:clickable="true"
-                    android:drawableLeft="@mipmap/ic_chef_cap"
-                    android:drawablePadding="@dimen/dimen_20px"
-                    android:drawableRight="@mipmap/ic_date"
-                    android:gravity="center_vertical|bottom"
-                    android:paddingBottom="@dimen/dimen_20px"
-                    android:paddingLeft="@dimen/dimen_40px"
-                    android:paddingRight="@dimen/dimen_40px"
-                    android:paddingTop="@dimen/dimen_20px"
-                    android:text="@string/can_ordering_meal_date"
-                    android:textColor="@color/textGrayMiddle"
-                    android:textSize="@dimen/dimen_55px" />
+                    android:clickable="true">
 
-                <TextView
-                    android:id="@+id/kitchen_details_location_navigation"
+                    <TextView
+                        android:id="@+id/dinner_party_detail_date_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/date"
+                        android:textColor="@color/textGrayMiddle"
+                        android:textSize="@dimen/dimen_48px" />
+
+                    <TextView
+                        android:id="@+id/dinner_party_detail_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/dinner_party_detail_date_text"
+                        android:contentDescription="@string/can_ordering_meal_date"
+                        android:drawablePadding="@dimen/dimen_20px"
+                        android:drawableRight="@mipmap/ic_date"
+                        android:gravity="center|left"
+                        android:text="2017年1月18日-2月18日"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_48px" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_5px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:background="@color/inner_party_details_line_color"></View>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:layout_marginTop="@dimen/dimen_10px"
+                    android:layout_weight="1"
                     android:background="@drawable/fragment_person_mine_dinner_select"
-                    android:clickable="true"
-                    android:drawableLeft="@mipmap/ic_position"
-                    android:drawablePadding="@dimen/dimen_20px"
-                    android:drawableRight="@mipmap/ic_navigation"
-                    android:gravity="center_vertical"
-                    android:maxLines="1"
-                    android:paddingBottom="@dimen/dimen_20px"
-                    android:paddingLeft="@dimen/dimen_40px"
-                    android:paddingRight="@dimen/dimen_40px"
-                    android:paddingTop="@dimen/dimen_20px"
-                    android:text="广州市广州大道中288号289艺术park2栋201"
-                    android:textColor="@color/color_7A737B"
-                    android:textSize="@dimen/dimen_45px" />
+                    android:clickable="true">
 
+                    <TextView
+                        android:id="@+id/dinner_party_detail_location_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/location"
+                        android:textColor="@color/textGrayMiddle"
+                        android:textSize="@dimen/dimen_48px" />
+
+                    <TextView
+                        android:id="@+id/dinner_party_detail_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_30px"
+                        android:layout_toRightOf="@id/dinner_party_detail_location_text"
+                        android:drawableRight="@mipmap/ic_location"
+                        android:gravity="center|left"
+                        android:maxLines="1"
+                        android:text="广州市广州大道中288号289艺术park2栋"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_48px" />
+                </RelativeLayout>
             </LinearLayout>
 
             <View
@@ -241,62 +293,121 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_300px">
+                android:layout_height="@dimen/dimen_2650px">
 
-                <com.netease.nim.uikit.common.ui.imageview.CircleImageView
-                    android:id="@+id/kitchen_details_kitchen_headimage"
-                    android:layout_width="@dimen/dimen_200px"
-                    android:layout_height="@dimen/dimen_200px"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/kitchen_headimage"
+                    android:layout_width="@dimen/dimen_185px"
+                    android:layout_height="@dimen/dimen_185px"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/dimen_60px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:contentDescription="厨神头像"
                     android:src="@mipmap/ic_default_avatar" />
 
                 <ImageView
-                    android:id="@+id/kitchen_details_kitchen_phone"
+                    android:id="@+id/dinner_party_detail_kitchen_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/dimen_30px"
+                    android:layout_marginRight="@dimen/dimen_40px"
                     android:background="@drawable/kitchen_details_kitchen_phone_selector"
-                    android:clickable="true" />
+                    android:clickable="true"
+                    android:contentDescription="电话号码"
+                    android:paddingBottom="@dimen/dimen_20px"
+                    android:paddingLeft="@dimen/dimen_30px"
+                    android:paddingRight="@dimen/dimen_30px"
+                    android:paddingTop="@dimen/dimen_20px" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginLeft="@dimen/dimen_30px"
-                    android:layout_toLeftOf="@id/kitchen_details_kitchen_phone"
-                    android:layout_toRightOf="@id/kitchen_details_kitchen_headimage"
+                    android:layout_marginLeft="@dimen/dimen_20px"
+                    android:layout_toLeftOf="@id/dinner_party_detail_kitchen_phone"
+                    android:layout_toRightOf="@id/kitchen_headimage"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/kitchen_details_kitchen_nicename"
+                        android:id="@+id/kitchen_nicename"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:maxLines="1"
                         android:text="包子朱爱玲"
                         android:textColor="@color/textGrayDeep"
-                        android:textSize="@dimen/dimen_50px" />
+                        android:textSize="@dimen/dimen_54px" />
 
-                    <TextView
-                        android:id="@+id/kitchen_details_kitchen_dinner_party_explain"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_10px"
-                        android:maxLines="1"
-                        android:text="接待30个饭局"
-                        android:textColor="@color/color_BCBCBC"
-                        android:textSize="@dimen/dimen_50px" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                        <com.fanqu.main.widget.StarRatingView
+                            android:id="@+id/star_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            app:ratable="false"
+                            app:star_padding="@dimen/dimen_5px"
+                            app:stat_off="@mipmap/ic_star_off_holo_light"
+                            app:stat_on="@mipmap/ic_star_holo_light">
+
+
+                        </com.fanqu.main.widget.StarRatingView>
+
+                        <com.fanqu.main.widget.StarView
+                            android:id="@+id/starview"
+                            android:layout_width="@dimen/dimen_100px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:starBackground="@mipmap/ic_star_off_holo_light"
+                            app:starClickable="false"
+                            app:starDistance="@dimen/dimen_10px"
+                            app:starDrawBackground="@mipmap/ic_star_holo_light"
+                            app:starHeight="@dimen/dimen_43px"
+                            app:starWidth="@dimen/dimen_43px"
+                            app:starsNum="5" />
+
+                        <TextView
+                            android:id="@+id/star_grade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_marginTop="@dimen/dimen_5px"
+                            android:maxLines="1"
+                            android:text="4.5分"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:id="@+id/reception_dinner_party_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dimen_50px"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:contentDescription="接待饭局数量"
+                            android:drawableLeft="@mipmap/ic_rice_bowl"
+                            android:drawablePadding="@dimen/dimen_20px"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/dimen_10px"
+                            android:text="10桌"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_40px" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_20px"
+                android:layout_height="@dimen/dimen_5px"
                 android:layout_marginTop="@dimen/dimen_20px"
-                android:background="@color/bgColor"></View>
+                android:background="@color/inner_party_details_line_color"></View>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -311,46 +422,25 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/dimen_30px"
-                    android:drawableLeft="@mipmap/ic_recommend"
                     android:drawablePadding="@dimen/dimen_40px"
                     android:gravity="center"
                     android:text="@string/recommend_reason"
-                    android:textColor="@color/color_8a8a8b"
-                    android:textSize="@dimen/dimen_60px" />
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
 
                 <TextView
-                    android:id="@+id/kitchen_details_kitchen_recommend_text1"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/dinner_party_recommend"
+                    android:layout_width="@dimen/dimen_800px"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginTop="@dimen/dimen_20px"
                     android:contentDescription="饭局推荐理由"
                     android:gravity="center"
-                    android:text="创意工作室甜蜜少女心爆棚"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="创意工作室甜蜜少女心爆棚sdfsdfsdfdasfaksdf\njlasdfkjlasdfjljas"
                     android:textColor="@color/dinner_recyclerview_attention_color"
-                    android:textSize="@dimen/dimen_50px" />
+                    android:textSize="@dimen/dimen_45px" />
 
-                <TextView
-                    android:id="@+id/kitchen_details_kitchen_recommend_text2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_20px"
-                    android:contentDescription="饭局推荐理由"
-                    android:gravity="center"
-                    android:text="创意工作室甜蜜少女心爆棚"
-                    android:textColor="@color/dinner_recyclerview_attention_color"
-                    android:textSize="@dimen/dimen_50px" />
-
-                <TextView
-                    android:id="@+id/kitchen_details_kitchen_recommend_text3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_30px"
-                    android:layout_marginTop="@dimen/dimen_20px"
-                    android:contentDescription="饭局推荐理由"
-                    android:gravity="center"
-                    android:text="内设超大烘培室 见证精美甜点的诞生"
-                    android:textColor="@color/dinner_recyclerview_attention_color"
-                    android:textSize="@dimen/dimen_50px" />
 
             </LinearLayout>
 
@@ -359,25 +449,15 @@
                 android:layout_height="@dimen/dimen_30px"
                 android:background="@color/bgColor"></View>
 
-            <FrameLayout
+
+            <ImageView
+                android:id="@+id/dinner_party_detail_image"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_500px"
-                android:paddingBottom="@dimen/dimen_40px">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_450px"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/dimen_60px"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/ic_invite_politeness_image" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:src="@mipmap/ic_set_meal" />
-            </FrameLayout>
+                android:layout_height="@dimen/dimen_720px"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dimen_60px"
+                android:scaleType="fitXY"
+                android:src="@mipmap/dinner_party_detail_default_image" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -385,16 +465,37 @@
                 android:background="@color/white"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/kitchen_details_a_set_meal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:contentDescription="A套餐"
-                    android:text="@string/kitchen_set_meal_a"
-                    android:textColor="@color/color_E2666A"
-                    android:textSize="@dimen/dimen_60px" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/dimen_300px"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/textGrayLight"></View>
+
+                    <TextView
+                        android:id="@+id/kitchen_details_a_set_meal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="菜单"
+                        android:drawableLeft="@mipmap/ic_dot"
+                        android:drawablePadding="@dimen/dimen_40px"
+                        android:drawableRight="@mipmap/ic_dot"
+                        android:gravity="center_vertical"
+                        android:text="@string/menu"
+                        android:textColor="@color/textGrayMiddle"
+                        android:textSize="@dimen/dimen_54px" />
+
+                    <View
+                        android:layout_width="@dimen/dimen_300px"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/textGrayLight"></View>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

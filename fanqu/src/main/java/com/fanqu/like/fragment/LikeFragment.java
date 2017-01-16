@@ -1,14 +1,19 @@
 package com.fanqu.like.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.fanqu.R;
+import com.fanqu.dinner.activity.DinnerPartyDetailActivity;
 import com.fanqu.dinner.adapter.DinnerPartyListAdapter;
 import com.fanqu.dinner.modle.DinnerPartyEntity;
+import com.fanqu.framework.Constants;
 import com.fanqu.framework.fragment.BaseFragment;
+import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +23,9 @@ import java.util.List;
  */
 public class LikeFragment extends BaseFragment {
     private RecyclerView recyclerview;
+    private DinnerPartyEntity entity;
+    private DinnerPartyListAdapter adapter;
+    private List<DinnerPartyEntity> dates;
 
 
     @Override
@@ -29,7 +37,7 @@ public class LikeFragment extends BaseFragment {
 
         List<DinnerPartyEntity> dates = new ArrayList<DinnerPartyEntity>();
         initTestList(dates);
-        DinnerPartyListAdapter adapter = new DinnerPartyListAdapter(getActivity(), R.layout.dinner_party_list_item_layout, dates);
+        adapter = new DinnerPartyListAdapter(getActivity(), R.layout.dinner_party_list_item_layout, dates);
         recyclerview.setAdapter(adapter);
     }
 
@@ -38,7 +46,7 @@ public class LikeFragment extends BaseFragment {
             for (int i = 0; i < 8; i++) {
                 int result = i % 3;
 
-                DinnerPartyEntity entity = new DinnerPartyEntity();
+                entity = new DinnerPartyEntity();
                 if (result == 2) {
                     entity.setAtrest(true);
                 }
@@ -64,7 +72,8 @@ public class LikeFragment extends BaseFragment {
                 }
                 entity.setDinnerpartyfeature(feature);
                 entity.setDinnerpartymoney(String.valueOf(getRandomInt(10, 100)));
-                dates.add(entity);
+                this.dates = dates;
+                this.dates.add(entity);
             }
         }
     }
@@ -72,7 +81,21 @@ public class LikeFragment extends BaseFragment {
 
     @Override
     protected void setListener() {
+        adapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                DinnerPartyEntity entity = dates.get(position);
+                //饭局详情
+                Intent intent = new Intent(getContext(), DinnerPartyDetailActivity.class);
+                intent.putExtra(Constants.DINNER_PARTY_DETAIL_ENTITY,entity);
+                LikeFragment.this.startActivity(intent);
+            }
 
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
+            }
+        });
     }
 
     @Override

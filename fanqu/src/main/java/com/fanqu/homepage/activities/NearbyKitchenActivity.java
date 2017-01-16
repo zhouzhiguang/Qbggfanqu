@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.fanqu.R;
+import com.fanqu.dinner.activity.DinnerPartyDetailActivity;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.main.util.ThemUtils;
@@ -83,7 +84,7 @@ public class NearbyKitchenActivity extends BaseActivity implements View.OnClickL
 
                 ToastUtils.showCenterToast(getApplicationContext(),"位置"+position);
                 //点击进入饭局详情页面
-                 Intent intent =new Intent(NearbyKitchenActivity.this,KitchenDetailsActivity.class);
+                 Intent intent =new Intent(NearbyKitchenActivity.this,DinnerPartyDetailActivity.class);
                  startActivity(intent);
                  //finish();
                  overridePendingTransition(R.anim.activity_in,R.anim.activity_out);

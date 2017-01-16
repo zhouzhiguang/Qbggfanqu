@@ -53,8 +53,8 @@
         <attr name="editable" format="boolean" />
         <attr name="buttonWidth" format="dimension" />
         <attr name="textWidth" format="dimension" />
-        <attr name="textColor"  />
-        <attr name="textSize"  />
+        <attr name="textColor" />
+        <attr name="textSize" />
     </declare-styleable>
 
     <declare-styleable name="PileLayout">
@@ -152,7 +152,6 @@
     </declare-styleable>
 
 
-
     <attr name="visible_tab_count" format="integer" />
 
     <declare-styleable name="ViewPagerIndicator">
@@ -197,7 +196,37 @@
         <attr name="textColor" />
         <attr name="textSize" />
     </declare-styleable>
+    <!--评分星星-->
+    <declare-styleable name="StarRatingView">
+        <!--星星点亮-->
+        <attr name="stat_on" format="reference"></attr>
+        <!--星星关闭-->
+        <attr name="stat_off" format="reference"></attr>
+        <!--半颗星星-->
+        <attr name="stat_half" format="reference"></attr>
+        <!--是否可以点击滑动评分-->
+        <attr name="ratable" format="boolean"></attr>
+        <!--星星之间间距-->
+        <attr name="star_padding" format="dimension"></attr>
+    </declare-styleable>
+    <!-- 自定义星星属性 -->
+    <declare-styleable name="star">
+        //星星数量
+        <attr format="integer" name="starsNum"></attr>
+        //星星宽度
+        <attr format="dimension" name="starWidth"></attr>
+        //星星高度
+        <attr format="dimension" name="starHeight"></attr>
+        //星星间距
+        <attr format="dimension" name="starDistance"></attr>
+        //星星背景
+        <attr format="reference" name="starBackground"></attr>
+        //星星变化背景
+        <attr format="reference" name="starDrawBackground"></attr>
+        //控件是否可以点击
+        <attr format="boolean" name="starClickable"></attr>
 
+    </declare-styleable>
     <attr name="textColor" format="color|reference" />
     <attr name="textSize" format="dimension|reference" />
 </resources>

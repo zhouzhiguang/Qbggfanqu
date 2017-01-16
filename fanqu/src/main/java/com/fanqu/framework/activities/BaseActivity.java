@@ -23,6 +23,7 @@ import com.fanqu.framework.SystemBarTintManager;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.fragment.BaseFragment;
 import com.fanqu.framework.model.ToolBarOptions;
+import com.jaeger.library.StatusBarUtil;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import cn.sharesdk.framework.ShareSDK;
@@ -40,12 +41,16 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		setStatusBar();
 		ShareSDK.initSDK(this);
 		 AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
 		initthem();
 		if (getLayoutId() != 0) {
 			setContentView(getLayoutId());
 		}
+	}
+	protected void setStatusBar() {
+		StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
 	}
 
 	protected <T extends View> T findView(int resId) {
