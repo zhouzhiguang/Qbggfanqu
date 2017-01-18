@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dimen_40px"
+        android:layout_marginRight="@dimen/dimen_40px"
+        android:orientation="horizontal">
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+
+            android:paddingTop="@dimen/dimen_40px">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/head_image"
+                android:layout_width="@dimen/dimen_200px"
+                android:layout_height="@dimen/dimen_200px"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_default_avatar" />
+
+            <ImageView
+                android:id="@+id/identity_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/dimen_6px"
+                android:layout_marginRight="@dimen/dimen_6px"
+                android:background="@drawable/circle_background"
+                android:contentDescription="会员身份标识"
+                android:gravity="center"
+                android:padding="@dimen/dimen_5px"
+                android:src="@mipmap/ic_identity_sign" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimen_40px">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200px"
+                android:layout_gravity="center_vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dimen_20px"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/comment_person_nicename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:text="时光的背后"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_48px" />
+
+                    <android.support.v4.widget.Space
+                        android:id="@+id/comment_space"
+                        android:layout_width="@dimen/dimen_40px"
+                        android:layout_height="@dimen/dimen_20px" />
+
+                    <TextView
+                        android:id="@+id/comment_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:contentDescription="评论时间"
+                        android:text="2017-01-20 12:00"
+                        android:textColor="@color/textGrayLight"
+                        android:textSize="@dimen/dimen_38px" />
+                </LinearLayout>
+
+                <com.fanqu.main.widget.StarView
+                    android:id="@+id/starview"
+                    android:layout_width="@dimen/dimen_100px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    app:starBackground="@mipmap/ic_star_off_holo_light"
+                    app:starClickable="false"
+                    app:starDistance="@dimen/dimen_10px"
+                    app:starDrawBackground="@mipmap/ic_star_holo_light"
+                    app:starHeight="@dimen/dimen_54px"
+                    app:starWidth="@dimen/dimen_54px"
+                    app:starsNum="5" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20px"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_40px">
+
+                <TextView
+                    android:id="@+id/comment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="厨神给人感觉很好，环境也很棒，让人很放松"
+                    android:textColor="@color/textGrayLight"
+                    android:textSize="@dimen/dimen_48px" />
+
+                <RelativeLayout
+                    android:id="@+id/comment_image_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_40px">
+
+                    <ImageView
+                        android:id="@+id/comment_image1"
+                        android:layout_width="@dimen/dimen_205px"
+                        android:layout_height="@dimen/dimen_205px"
+                        android:layout_marginRight="@dimen/dimen_20px"
+                        android:src="@mipmap/ic_comment_image" />
+
+                    <ImageView
+                        android:id="@+id/comment_image2"
+                        android:layout_width="@dimen/dimen_205px"
+                        android:layout_height="@dimen/dimen_205px"
+                        android:layout_marginLeft="@dimen/dimen_20px"
+                        android:layout_marginRight="@dimen/dimen_20px"
+                        android:layout_toRightOf="@id/comment_image1"
+                        android:src="@mipmap/ic_comment_image" />
+
+                    <ImageView
+                        android:id="@+id/comment_image3"
+                        android:layout_width="@dimen/dimen_205px"
+                        android:layout_height="@dimen/dimen_205px"
+                        android:layout_marginLeft="@dimen/dimen_20px"
+                        android:layout_toRightOf="@id/comment_image2"
+                        android:src="@mipmap/ic_comment_image" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/dimen_40px">
+
+                    <TextView
+                        android:id="@+id/comment_set_meal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="评论的套餐"
+                        android:text="A套餐"
+                        android:textColor="@color/textGrayLight"
+                        android:textSize="@dimen/dimen_40px" />
+
+                    <TextView
+                        android:id="@+id/comment_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="@dimen/dimen_20px"
+                        android:text="2017-01-20 12:00"
+                        android:textColor="@color/textGrayLight"
+                        android:textSize="@dimen/dimen_40px" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_3px"
+        android:layout_marginLeft="@dimen/dimen_40px"
+        android:layout_marginRight="@dimen/dimen_40px"
+        android:background="@color/edit_publis_line_color">
+
+    </View>
+</LinearLayout>

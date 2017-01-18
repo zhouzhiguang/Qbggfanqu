@@ -3,14 +3,20 @@ package com.fanqu.dinner.activity;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.fanqu.R;
+import com.fanqu.dinner.adapter.DishesListAdapter;
 import com.fanqu.dinner.listener.AppBarStateChangeListener;
 import com.fanqu.dinner.listener.State;
+import com.fanqu.dinner.modle.DishesEntity;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.main.util.ThemUtils;
@@ -18,11 +24,14 @@ import com.fanqu.framework.main.util.ToastUtils;
 import com.fanqu.framework.model.ToolBarOptions;
 import com.fanqu.main.widget.StarView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * 饭局详情1.3版本
  */
-public class DinnerPartyDetailActivity extends BaseActivity {
+public class DinnerPartyDetailActivity extends BaseActivity implements View.OnClickListener {
 
     private AppBarLayout kitchen_details_app_bar_layout;
     private ImageView kitchen_details_share_image, kitchen_details_like, kitchen_details_share;
@@ -30,9 +39,13 @@ public class DinnerPartyDetailActivity extends BaseActivity {
     private TextView kitchen_details_a_set_meal;
     private TextView kitchen_details_information;
     private CollapsingToolbarLayout kitchen_details_collapsing;
-
+    private TextView set_meal_how_much_a, set_meal_how_much_b, set_meal_how_much_c;
     private StarView starView;
-
+    private RelativeLayout a_set_meal_container;
+    private RecyclerView a_set_meal_recyclerview, b_set_meal_recyclerview, c_set_meal_recyclerview;//abc 三个套餐的recyclerview
+    private List<DishesEntity> menu_a, menu_b, menu_c;
+    private LinearLayout a_set_meal_layout, b_set_meal_layout, c_set_meal_layout;
+    private TextView examine_more_comment;//查看更多饭局
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +69,43 @@ public class DinnerPartyDetailActivity extends BaseActivity {
     }
 
     private void initDate() {
+        String how_much_1 = getResources().getString(R.string.set_meal_how_much);
+        set_meal_how_much_a.setText(String.format(how_much_1, "20"));
+
+        menu_a = new ArrayList<>();
+        String[] a_set_meal_dishes = new String[]{
+                "红烧猪蹄", "剁椒鱼头", "义乌包子"};
+
+        for (int i = 0; i < a_set_meal_dishes.length; i++) {
+            DishesEntity entity = new DishesEntity();
+            entity.setDish_name(a_set_meal_dishes[i]);
+            if (i % a_set_meal_dishes.length == 0) {
+                entity.setIsspecialty(true);
+            }
+            menu_a.add(entity);
+
+        }
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        DishesListAdapter adapter = new DishesListAdapter(this, R.layout.memu_a_list_item_layout, menu_a);
+        a_set_meal_recyclerview.setLayoutManager(manager);
+        a_set_meal_recyclerview.setAdapter(adapter);
+        b_set_meal_layout.setVisibility(View.GONE);
+        c_set_meal_layout.setVisibility(View.GONE);
     }
 
     private void initView() {
+        //查看跟多评论
+        examine_more_comment = findView(R.id.examine_more_comment);
+        c_set_meal_recyclerview = findView(R.id.c_set_meal_recyclerview);
+        set_meal_how_much_c = findView(R.id.set_meal_how_much_c);
+        b_set_meal_recyclerview = findView(R.id.a_set_meal_recyclerview);
+        set_meal_how_much_b = findView(R.id.set_meal_how_much_b);
+        a_set_meal_recyclerview = findView(R.id.a_set_meal_recyclerview);
+        set_meal_how_much_a = findView(R.id.set_meal_how_much_a);
+        a_set_meal_layout = findView(R.id.a_set_meal_layout);
+        b_set_meal_layout = findView(R.id.b_set_meal_layout);
+        c_set_meal_layout = findView(R.id.c_set_meal_layout);
         starView = findView(R.id.starview);
         starView.setMark(4.5f);
         starView.setEnabled(false);
@@ -117,11 +164,26 @@ public class DinnerPartyDetailActivity extends BaseActivity {
                 }
             }
         });
+
+        examine_more_comment.setOnClickListener(this);
     }
 
     @Override
     protected int getLayoutId() {
+
         return 0;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.examine_more_comment:
+                //查看跟多评论
+                jumpActivity(MoreCommentActivity.class);
+                break;
+            default:
+                break;
+        }
     }
 
     private class NavigationOnClickListener implements View.OnClickListener {

@@ -345,6 +345,27 @@
     <string name="rise">起</string>
     <string name="date">日期： </string>
     <string name="menu">菜单</string>
+    <string name="a_set_meal">A套餐</string>
+    <string name="b_set_meal">B套餐</string>
+    <string name="c_set_meal">C套餐</string>
+    <string name="set_meal_how_much">（%1$s元/位）</string>
+    <string name="shop_sign">招牌</string>
+    <string name="menu_explain">实际菜单以当日菜品为准\n依食材采购以及用餐人数而情况可能略有调整</string>
+    <string name="dining_room_facility">餐厅设施</string>
+    <string name="wifi">WI - FI</string>
+    <string name="box">包厢</string>
+    <string name="fete">宴请</string>
+    <string name="business_district">商圈</string>
+    <string name="more">更多</string>
+    <string name="dining_room_evaluate">餐厅评价（%1$s条）</string>
+    <string name="composite_score_method">综合评分：</string>
+    <string name="reasonable_collocation">搭配合理  %1$s</string>
+    <string name="service_enthusiasm">服务热情  %1$s</string>
+    <string name="food_material_fresh">食材新鲜  %1$s</string>
+    <string name="serving_slow">上菜慢  %1$s</string>
+    <string name="click_examine_more_comment">点击查看更多</string>
+    <string name="more_comment">更多评论</string>
+    <string name="evaluate">评价  （%1$s）</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>
