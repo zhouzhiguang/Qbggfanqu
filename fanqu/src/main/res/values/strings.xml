@@ -366,6 +366,17 @@
     <string name="click_examine_more_comment">点击查看更多</string>
     <string name="more_comment">更多评论</string>
     <string name="evaluate">评价  （%1$s）</string>
+    <string name="loadcomplete">已经全部加载完毕</string>
+    <string name="reserve_explain">预定须知</string>
+    <string name="reserve_explain_details">1.预订后。无法退款或改期;\n2.您支付的订餐费用由平台代收，饭局结束后与主厨统 \t 一结算;\n3.预订后，参与人数无法新增不得临时加入；\n4.携带7岁以上孩童赴局，需单独购买。\n5.如有其他需求，请致电客服。</string>
+    <string name="already_have_dinner_party">现成饭局</string>
+    <string name="already_have_dinner_party_explain">此厨神有以下现成饭局，点击即可前往预定</string>
+    <string name="dinner_party_reserve_state">总人数%1$s人，已订%1$s人</string>
+    <string name="unit_price">元/位</string>
+    <string name="like">喜欢</string>
+    <string name="service_tel">客服电话：</string>
+    <string name="personage_kitchen_homepage">个人主页</string>
+
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

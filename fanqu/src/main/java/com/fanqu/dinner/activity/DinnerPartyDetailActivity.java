@@ -13,9 +13,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.fanqu.R;
+import com.fanqu.dinner.adapter.CommentAdapter;
 import com.fanqu.dinner.adapter.DishesListAdapter;
 import com.fanqu.dinner.listener.AppBarStateChangeListener;
 import com.fanqu.dinner.listener.State;
+import com.fanqu.dinner.modle.CommentEntity;
 import com.fanqu.dinner.modle.DishesEntity;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
@@ -46,6 +48,9 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
     private List<DishesEntity> menu_a, menu_b, menu_c;
     private LinearLayout a_set_meal_layout, b_set_meal_layout, c_set_meal_layout;
     private TextView examine_more_comment;//查看更多饭局
+    private RecyclerView comment_recyclerview;//评论的recycler
+    private TextView message;
+    private LinearLayout kitchen_introduce_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,7 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
         ThemUtils.initthem(this, R.color.transparent);
         AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         setContentView(R.layout.activity_dinner_party_detail_layout);
-        // StatusBarUtil.setColor(DinnerPartyDetailActivity.this, Color.BLACK);
+        //StatusBarUtil.setTranslucent(DinnerPartyDetailActivity.this);
         AutoUtils.auto(this);
         options = new ToolBarOptions();
         options.titleString = "";
@@ -92,9 +97,22 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
         a_set_meal_recyclerview.setAdapter(adapter);
         b_set_meal_layout.setVisibility(View.GONE);
         c_set_meal_layout.setVisibility(View.GONE);
+
+        List<CommentEntity> datas = new ArrayList<>();
+        datas.add(new CommentEntity());
+        datas.add(new CommentEntity());
+        datas.add(new CommentEntity());
+        CommentAdapter commentAdapter = new CommentAdapter(this, R.layout.comment_list_item_layout, datas);
+        manager = new LinearLayoutManager(this);
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        comment_recyclerview.setLayoutManager(manager);
+        comment_recyclerview.setAdapter(commentAdapter);
     }
 
     private void initView() {
+        //厨神主页
+        kitchen_introduce_layout = findView(R.id.kitchen_introduce_layout);
+        comment_recyclerview = findView(R.id.comment_recyclerview);
         //查看跟多评论
         examine_more_comment = findView(R.id.examine_more_comment);
         c_set_meal_recyclerview = findView(R.id.c_set_meal_recyclerview);
@@ -114,7 +132,7 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
         kitchen_details_like = findView(R.id.kitchen_details_like);
         kitchen_details_share = findView(R.id.kitchen_details_share);
         kitchen_details_a_set_meal = findView(R.id.kitchen_details_a_set_meal);
-        kitchen_details_information = findView(R.id.kitchen_details_information);
+        message = findView(R.id.message);
     }
 
 
@@ -134,9 +152,9 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
                     kitchen_details_like.setImageResource(R.mipmap.ic_like_white);
                     kitchen_details_share.setImageResource(R.mipmap.ic_share_white);
                     //StatusBarUtil.setColor(DinnerPartyDetailActivity.this, Color.BLACK);
-//                    ThemUtils.initthem(this, R.color.white);
+                    ThemUtils.initthem(DinnerPartyDetailActivity.this, R.color.transparent);
                     // StatusBarUtil.setTranslucent(DinnerPartyDetailActivity.this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
-
+                    //StatusBarUtil.setColor(DinnerPartyDetailActivity.this, ContextCompat.getColor(DinnerPartyDetailActivity.this, R.color.black));
                     ToastUtils.showCenterToast(DinnerPartyDetailActivity.this, "展开状态");
                     if (getSupportActionBar() != null) {
                         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -152,10 +170,11 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
                     kitchen_details_like.setImageResource(R.mipmap.ic_like);
                     kitchen_details_share.setImageResource(R.mipmap.ic_share_black);
                     //折叠状态
-                    //StatusBarUtil.setTranslucent(DinnerPartyDetailActivity.this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+                    //StatusBarUtil.setColor(DinnerPartyDetailActivity.this, ContextCompat.getColor(DinnerPartyDetailActivity.this, R.color.black));
                     if (getSupportActionBar() != null) {
                         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                     }
+                    ThemUtils.initthem(DinnerPartyDetailActivity.this, R.color.black);
                 } else {
 
                     //中间状态
@@ -166,6 +185,7 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
         });
 
         examine_more_comment.setOnClickListener(this);
+        kitchen_introduce_layout.setOnClickListener(this);
     }
 
     @Override
@@ -180,6 +200,9 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
             case R.id.examine_more_comment:
                 //查看跟多评论
                 jumpActivity(MoreCommentActivity.class);
+                break;
+            case R.id.kitchen_introduce_layout:
+                jumpActivity(KitchenhomepageActivity.class);
                 break;
             default:
                 break;

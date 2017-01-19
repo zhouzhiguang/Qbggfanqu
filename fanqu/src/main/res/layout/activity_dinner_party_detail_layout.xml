@@ -57,8 +57,15 @@
                     android:layout_marginRight="@dimen/dimen_40px"
                     android:clickable="true"
                     android:src="@mipmap/ic_share_white" />
+
             </android.support.v7.widget.Toolbar>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:background="@color/dinner_party_details_line_color"></View>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -73,9 +80,9 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-
             android:background="@color/white"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_180px">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -150,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/dimen_30px"
+                    android:layout_marginRight="@dimen/dimen_15px"
                     android:background="@drawable/dinner_party_feature_shape"
                     android:paddingBottom="@dimen/dimen_15px"
                     android:paddingLeft="@dimen/dimen_20px"
@@ -165,8 +172,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/dimen_30px"
-                    android:layout_marginRight="@dimen/dimen_30px"
+                    android:layout_marginLeft="@dimen/dimen_15px"
+                    android:layout_marginRight="@dimen/dimen_15px"
                     android:background="@drawable/dinner_party_feature_shape"
                     android:paddingBottom="@dimen/dimen_15px"
                     android:paddingLeft="@dimen/dimen_20px"
@@ -181,7 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/dimen_30px"
+                    android:layout_marginLeft="@dimen/dimen_15px"
                     android:background="@drawable/dinner_party_feature_shape"
                     android:paddingBottom="@dimen/dimen_15px"
                     android:paddingLeft="@dimen/dimen_20px"
@@ -321,10 +328,12 @@
                     android:paddingTop="@dimen/dimen_20px" />
 
                 <LinearLayout
+                    android:id="@+id/kitchen_introduce_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginLeft="@dimen/dimen_20px"
+
                     android:layout_toLeftOf="@id/dinner_party_detail_kitchen_phone"
                     android:layout_toRightOf="@id/kitchen_headimage"
                     android:orientation="vertical">
@@ -465,7 +474,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/dimen_220px">
+                android:paddingBottom="@dimen/dimen_40px">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -989,8 +998,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_1670px"
-                    android:layout_marginBottom="@dimen/dimen_300px"
+                    android:layout_height="wrap_content"
+
                     android:orientation="vertical">
 
                     <android.support.v7.widget.RecyclerView
@@ -1001,11 +1010,18 @@
                         android:overScrollMode="never"
                         android:scrollbars="none" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/edit_publis_line_color"></View>
+
                     <TextView
                         android:id="@+id/examine_more_comment"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/dimen_145px"
                         android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="@dimen/dimen_12px"
+                        android:layout_marginTop="@dimen/dimen_12px"
                         android:layout_weight="0"
                         android:background="@drawable/fragment_person_mine_dinner_select"
                         android:clickable="true"
@@ -1019,60 +1035,563 @@
                         android:textColor="@color/textGrayMiddle"
                         android:textSize="@dimen/dimen_40px" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40px"
+                    android:background="@color/fragment_home_bg"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_150px"
+                    android:gravity="center"
+                    android:text="@string/reserve_explain"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:background="@color/fragment_home_bg"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:layout_marginTop="@dimen/dimen_80px"
+                    android:lineSpacingMultiplier="1.2"
+                    android:paddingLeft="@dimen/dimen_10px"
+                    android:text="@string/reserve_explain_details"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_43px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_120px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:layout_marginRight="@dimen/dimen_40px"
+                    android:layout_marginTop="@dimen/dimen_10px"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dimen_10px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/service_tel"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_43px" />
+
+                    <TextView
+                        android:id="@+id/service_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="400-888-8888"
+                        android:textColor="@color/textGrayDeep"
+                        android:textSize="@dimen/dimen_43px" />
+
+                </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40px"
+                android:background="@color/fragment_home_bg"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_230px"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dimen_10px"
+                    android:text="@string/already_have_dinner_party"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen_10px"
+                    android:text="@string/already_have_dinner_party_explain"
+                    android:textColor="@color/textGrayLight"
+                    android:textSize="@dimen/dimen_40px" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_3px"
+                android:background="@color/fragment_home_bg"></View>
+
+            <LinearLayout
+                android:id="@+id/a_set_meal_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_40px"
+                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="@dimen/dimen_40px"
+                android:contentDescription="a套餐预览"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/a_set_meal_state_layout"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="@dimen/dimen_420px"
+                    android:layout_marginTop="@dimen/dimen_40px">
+
+                    <ImageView
+                        android:id="@+id/a_set_meal_image"
+                        android:layout_width="@dimen/dimen_385px"
+                        android:layout_height="@dimen/dimen_256px"
+                        android:src="@mipmap/ic_set_meal_default" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/a_set_meal_image"
+                        android:layout_alignTop="@id/a_set_meal_image"
+                        android:layout_toRightOf="@id/a_set_meal_image"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dinner_party_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_12px"
+                            android:maxLines="2"
+                            android:text="雅致小包厢欢乐满堂红空中花园"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_48px" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_12px"
+                            android:layout_marginTop="@dimen/dimen_12px"
+                            android:gravity="left|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/open_seats_time"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+
+                            <TextView
+                                android:id="@+id/open_seats_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/dimen_20px"
+                                android:text="@string/open_seats_time"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/dinner_party_reserve_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_12px"
+                            android:gravity="left|center_vertical"
+                            android:text="@string/dinner_party_reserve_state"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_40px" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignLeft="@id/a_set_meal_image"
+                        android:layout_alignRight="@id/a_set_meal_image"
+                        android:layout_below="@id/a_set_meal_image"
+
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/set_meal_name_a"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="A套餐"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_40px" />
+
+                            <TextView
+                                android:id="@+id/a_set_meal_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="40"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_54px" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_price"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_40px" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_home_bg"></View>
+
+                <RelativeLayout
+                    android:id="@+id/b_set_meal_state_layout"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="@dimen/dimen_420px"
+                    android:layout_marginTop="@dimen/dimen_40px">
+
+                    <ImageView
+                        android:id="@+id/b_set_meal_image"
+                        android:layout_width="@dimen/dimen_385px"
+                        android:layout_height="@dimen/dimen_256px"
+                        android:src="@mipmap/ic_set_meal_default" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/b_set_meal_image"
+                        android:layout_alignTop="@id/b_set_meal_image"
+                        android:layout_toRightOf="@id/b_set_meal_image"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/b_dinner_party_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_12px"
+                            android:maxLines="2"
+                            android:text="雅致小包厢欢乐满堂红空中花园"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_48px" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_12px"
+                            android:layout_marginTop="@dimen/dimen_12px"
+                            android:gravity="left|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/open_seats_time"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+
+                            <TextView
+                                android:id="@+id/b_open_seats_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/dimen_20px"
+                                android:text="@string/open_seats_time"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/b_dinner_party_reserve_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_12px"
+                            android:gravity="left|center_vertical"
+                            android:text="@string/dinner_party_reserve_state"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_40px" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignLeft="@id/b_set_meal_image"
+                        android:layout_alignRight="@id/b_set_meal_image"
+                        android:layout_below="@id/b_set_meal_image"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/set_meal_name_b"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="B套餐"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_40px" />
+
+                            <TextView
+                                android:id="@+id/b_set_meal_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="40"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_54px" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_price"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_40px" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_home_bg"></View>
+
+                <RelativeLayout
+                    android:id="@+id/c_set_meal_state_layout"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="@dimen/dimen_420px"
+                    android:layout_marginTop="@dimen/dimen_40px">
+
+                    <ImageView
+                        android:id="@+id/c_set_meal_image"
+                        android:layout_width="@dimen/dimen_385px"
+                        android:layout_height="@dimen/dimen_256px"
+                        android:src="@mipmap/ic_set_meal_default" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@id/c_set_meal_image"
+                        android:layout_alignTop="@id/c_set_meal_image"
+                        android:layout_toRightOf="@id/c_set_meal_image"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/c_dinner_party_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_12px"
+                            android:maxLines="2"
+                            android:text="雅致小包厢欢乐满堂红空中花园"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_48px" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_12px"
+                            android:layout_marginTop="@dimen/dimen_12px"
+                            android:gravity="left|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/open_seats_time"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+
+                            <TextView
+                                android:id="@+id/c_open_seats_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/dimen_20px"
+                                android:text="@string/open_seats_time"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/c_dinner_party_reserve_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_12px"
+                            android:gravity="left|center_vertical"
+                            android:text="@string/dinner_party_reserve_state"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_40px" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignLeft="@id/c_set_meal_image"
+                        android:layout_alignRight="@id/c_set_meal_image"
+                        android:layout_below="@id/c_set_meal_image"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/set_meal_name_c"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="C套餐"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_40px" />
+
+                            <TextView
+                                android:id="@+id/c_set_meal_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="40"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_54px" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_price"
+                                android:textColor="@color/red_bg"
+                                android:textSize="@dimen/dimen_40px" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40px"
+                android:background="@color/fragment_home_bg"></View>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_180px"
+        android:layout_height="@dimen/dimen_160px"
         android:layout_gravity="bottom"
-        android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/kitchen_details_attention"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="2"
-            android:background="@drawable/fragment_person_mine_dinner_select"
-            android:clickable="true"
-            android:contentDescription="关注"
-            android:drawablePadding="@dimen/dimen_20px"
-            android:drawableTop="@mipmap/ic_attention"
-            android:gravity="center"
-            android:text="@string/attention"
-            android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_50px" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:background="@color/dinner_party_details_line_color"></View>
 
-        <TextView
-            android:id="@+id/kitchen_details_information"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="2"
-            android:background="@drawable/fragment_person_mine_dinner_select"
-            android:clickable="true"
-            android:contentDescription="咨询"
-            android:drawablePadding="@dimen/dimen_20px"
-            android:drawableTop="@mipmap/ic_information"
-            android:gravity="center"
-            android:text="@string/information"
-            android:textColor="@color/textGrayDeep"
-            android:textSize="@dimen/dimen_50px" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
 
-        <TextView
-            android:id="@+id/kitchen_details_immediately_reserve"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dimen_150px"
-            android:layout_weight="5"
-            android:background="@drawable/taste_preference_confirm_select"
-            android:clickable="true"
-            android:gravity="center"
-            android:text="@string/immediately_reserve"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dimen_50px" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/immediately_reserve"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:contentDescription="喜欢"
+                    android:drawableLeft="@mipmap/ic_like_grey"
+                    android:drawablePadding="@dimen/dimen_15px"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_40px"
+                    android:text="@string/like"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
+
+                <TextView
+                    android:id="@+id/message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:contentDescription="消息"
+                    android:drawableLeft="@mipmap/ic_information"
+                    android:drawablePadding="@dimen/dimen_15px"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_40px"
+                    android:text="@string/message"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/immediately_reserve"
+                android:layout_width="@dimen/dimen_470px"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/immediately_reserve_selector"
+                android:clickable="true"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/ic_buy"
+                    android:drawablePadding="@dimen/dimen_20px"
+                    android:gravity="center"
+                    android:text="@string/immediately_reserve"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_54px" />
+            </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

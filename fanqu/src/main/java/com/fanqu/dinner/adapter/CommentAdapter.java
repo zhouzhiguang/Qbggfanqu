@@ -28,10 +28,12 @@ public class CommentAdapter extends CommonAdapter<CommentEntity> {
 
     private String[] commentimageurl;
     private Activity activity;
+    private List<CommentEntity> datas;
 
     public CommentAdapter(Activity activity, int layoutId, List<CommentEntity> datas) {
         super(activity, layoutId, datas);
         this.activity = activity;
+        this.datas = datas;
     }
 
     @Override
@@ -49,12 +51,18 @@ public class CommentAdapter extends CommonAdapter<CommentEntity> {
         ImageView comment_image3 = holder.getView(R.id.comment_image3);
         TextView comment_set_meal = holder.getView(R.id.comment_set_meal);
         TextView comment_date = holder.getView(R.id.comment_date);
+        View line = holder.getView(R.id.line);
         String nicemane = entity.getCommentpersonnicemane();
         String headimageurl = entity.getCommentpersonheadimageurl();
         String dinnerpartygrade = entity.getDinnerpartygrade();
         String commenttext = entity.getCommenttext();
         String commentdate = entity.getCommentdate();
         String commentsetmeal = entity.getCommentsetmeal();
+        if (position == datas.size() - 1) {
+            line.setVisibility(View.GONE);
+        } else {
+            line.setVisibility(View.VISIBLE);
+        }
         if (!TextUtils.isEmpty(commentsetmeal)) {
             comment_set_meal.setText(commentsetmeal);
         }

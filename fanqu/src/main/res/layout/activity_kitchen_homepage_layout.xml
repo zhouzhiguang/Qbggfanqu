@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_quick_search_kitchen_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/dimen_80px"
+        android:background="@color/white"
+        android:gravity="right"
+        android:minWidth="?attr/actionBarSize"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/personage_kitchen_homepage"
+            android:textColor="@color/textGrayDeep"
+            android:textSize="@dimen/dimen_60px" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/fragment_person_mine_dinner_select"
+            android:clickable="true"
+            android:paddingBottom="@dimen/dimen_30px"
+            android:paddingLeft="@dimen/dimen_60px"
+            android:paddingRight="@dimen/dimen_60px"
+            android:paddingTop="@dimen/dimen_30px"
+            android:src="@mipmap/ic_share_black" />
+    </android.support.v7.widget.Toolbar>
+
+    <com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout
+        android:id="@+id/swiperefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        app:loadmore_enable="false"
+        app:pull_refresh_enable="false">
+
+        <com.scu.miomin.shswiperefresh.view.ShareScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fragment_person_bg"
+                android:orientation="vertical"></LinearLayout>
+        </com.scu.miomin.shswiperefresh.view.ShareScrollView>
+    </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+</RelativeLayout>
