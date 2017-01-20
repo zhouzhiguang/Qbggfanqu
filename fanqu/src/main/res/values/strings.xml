@@ -362,7 +362,7 @@
     <string name="reasonable_collocation">搭配合理  %1$s</string>
     <string name="service_enthusiasm">服务热情  %1$s</string>
     <string name="food_material_fresh">食材新鲜  %1$s</string>
-    <string name="serving_slow">上菜慢  %1$s</string>
+    <string name="serving_slow">出菜慢  %1$s</string>
     <string name="click_examine_more_comment">点击查看更多</string>
     <string name="more_comment">更多评论</string>
     <string name="evaluate">评价  （%1$s）</string>
@@ -376,6 +376,19 @@
     <string name="like">喜欢</string>
     <string name="service_tel">客服电话：</string>
     <string name="personage_kitchen_homepage">个人主页</string>
+    <string name="times">次</string>
+    <string name="eaten">吃过</string>
+    <string name="individual">个</string>
+    <string name="fans">粉丝</string>
+    <string name="attestation_state">认证状态</string>
+    <string name="authenticated">已认证</string>
+    <string name="authenticated_explain">身份信息经公安机关备案</string>
+    <string name="alipay_authenticated_explain">已通过支付宝安全支付认证</string>
+    <string name="super_foodie_authentication">超级吃货</string>
+    <string name="unauthenticated">未认证</string>
+    <string name="super_foodie_authenticated_explain">已购买超级吃货认证</string>
+    <string name="he_evaluate">TA的评价  （%1$s）</string>
+    <string name="pay_authentication">支付认证</string>
 
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">

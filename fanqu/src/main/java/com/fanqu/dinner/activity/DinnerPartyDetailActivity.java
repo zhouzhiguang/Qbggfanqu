@@ -50,7 +50,8 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
     private TextView examine_more_comment;//查看更多饭局
     private RecyclerView comment_recyclerview;//评论的recycler
     private TextView message;
-    private LinearLayout kitchen_introduce_layout;
+    private LinearLayout kitchen_introduce_layout, immediately_reserve;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +111,8 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
     }
 
     private void initView() {
+        //立即预定
+        immediately_reserve = findView(R.id.immediately_reserve);
         //厨神主页
         kitchen_introduce_layout = findView(R.id.kitchen_introduce_layout);
         comment_recyclerview = findView(R.id.comment_recyclerview);
@@ -186,6 +189,7 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
 
         examine_more_comment.setOnClickListener(this);
         kitchen_introduce_layout.setOnClickListener(this);
+        immediately_reserve.setOnClickListener(this);
     }
 
     @Override
@@ -202,6 +206,9 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
                 jumpActivity(MoreCommentActivity.class);
                 break;
             case R.id.kitchen_introduce_layout:
+                jumpActivity(KitchenhomepageActivity.class);
+                break;
+            case R.id.immediately_reserve:
                 jumpActivity(KitchenhomepageActivity.class);
                 break;
             default:

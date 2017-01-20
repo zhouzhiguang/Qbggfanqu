@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_quick_search_kitchen_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -21,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/personage_kitchen_homepage"
+            android:text="@string/more_comment"
             android:textColor="@color/textGrayDeep"
             android:textSize="@dimen/dimen_60px" />
 
@@ -54,8 +53,755 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/fragment_person_bg"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_160px">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/dislike_color"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/information_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_540px"
+                        android:alpha="0.5"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/dinner_party_detail_default_image" />
+
+                    <LinearLayout
+                        android:id="@+id/information_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/dimen_10px">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/head_image"
+                                android:layout_width="@dimen/dimen_240px"
+                                android:layout_height="@dimen/dimen_240px"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/ic_default_avatar" />
+
+                            <ImageView
+                                android:id="@+id/identity_sign"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|right"
+                                android:layout_marginBottom="@dimen/dimen_6px"
+                                android:layout_marginRight="@dimen/dimen_6px"
+                                android:background="@drawable/circle_background"
+                                android:contentDescription="会员身份标识"
+                                android:gravity="center"
+                                android:padding="@dimen/dimen_5px"
+                                android:src="@mipmap/ic_identity_sign" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/nice_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimen_10px"
+                            android:text="王大锤"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_60px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/dimen_40px">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/composite_score_method"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <com.fanqu.main.widget.StarView
+                            android:id="@+id/starview"
+                            android:layout_width="@dimen/dimen_100px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:starBackground="@mipmap/ic_star_off_holo_light"
+                            app:starClickable="false"
+                            app:starDistance="@dimen/dimen_10px"
+                            app:starDrawBackground="@mipmap/ic_star_holo_light"
+                            app:starHeight="@dimen/dimen_47px"
+                            app:starWidth="@dimen/dimen_47px"
+                            app:starsNum="5" />
+
+                        <TextView
+                            android:id="@+id/composite_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimen_10px"
+                            android:text="4.8分"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_40px" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_220px"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:id="@+id/eaten_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/eaten_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="80"
+                                    android:textColor="@color/textGrayMiddle"
+                                    android:textSize="@dimen/dimen_68px" />
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/times"
+                                    android:textColor="@color/textGrayLight"
+                                    android:textSize="@dimen/dimen_40px" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/eaten"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="@dimen/dimen_30px"
+                            android:layout_toLeftOf="@id/eaten_layout"
+                            android:src="@mipmap/ic_rice_bowl_gray" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="@dimen/dimen_3px"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/dimen_40px"
+                        android:layout_marginTop="@dimen/dimen_40px"
+                        android:background="@color/edit_publis_line_color"></View>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:id="@+id/fans_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/fans_number_people"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="20"
+                                    android:textColor="@color/textGrayMiddle"
+                                    android:textSize="@dimen/dimen_68px" />
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/individual"
+                                    android:textColor="@color/textGrayLight"
+                                    android:textSize="@dimen/dimen_40px" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/fans"
+                                android:textColor="@color/textGrayLight"
+                                android:textSize="@dimen/dimen_40px" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="@dimen/dimen_30px"
+                            android:layout_toLeftOf="@id/fans_layout"
+                            android:src="@mipmap/ic_like_solid_grey" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_32px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_148px"
+                    android:layout_marginLeft="@dimen/dimen_40px"
+                    android:gravity="center"
+                    android:text="@string/attestation_state"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_225px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_40px">
+
+                    <ImageView
+                        android:id="@+id/real_name_authentication_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:background="@drawable/real_name_authentication_shape"
+                        android:padding="@dimen/dimen_30px"
+                        android:src="@mipmap/ic_real_name_authentication" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_toRightOf="@id/real_name_authentication_image">
+
+                        <TextView
+                            android:id="@+id/real_name_authentication_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:gravity="bottom"
+                            android:paddingBottom="@dimen/dimen_50px"
+
+                            android:text="@string/real_name_authentication"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_48px" />
+
+                        <TextView
+                            android:id="@+id/real_name_authentication_text_sign"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@id/real_name_authentication_text"
+                            android:layout_marginBottom="@dimen/dimen_60px"
+                            android:layout_marginLeft="@dimen/dimen_40px"
+                            android:layout_toRightOf="@id/real_name_authentication_text"
+                            android:background="@drawable/authenticated_state_shape"
+                            android:paddingBottom="@dimen/dimen_10px"
+                            android:paddingLeft="@dimen/dimen_20px"
+                            android:paddingRight="@dimen/dimen_20px"
+                            android:paddingTop="@dimen/dimen_10px"
+                            android:text="@string/authenticated"
+                            android:textColor="@color/color_00a752"
+                            android:textSize="@dimen/dimen_34px" />
+
+                        <TextView
+                            android:id="@+id/authenticated_explain_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:paddingTop="@dimen/dimen_60px"
+                            android:text="@string/authenticated_explain"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_40px" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/icon_right_arrows_gray" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_225px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_40px">
+
+                    <ImageView
+                        android:id="@+id/alipay_authentication_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:background="@drawable/real_name_authentication_shape"
+                        android:padding="@dimen/dimen_30px"
+                        android:src="@mipmap/ic_alipay_authentication" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_toRightOf="@id/alipay_authentication_image">
+
+                        <TextView
+                            android:id="@+id/alipay_authentication_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:gravity="bottom"
+                            android:paddingBottom="@dimen/dimen_50px"
+                            android:text="@string/pay_authentication"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_48px" />
+
+                        <TextView
+                            android:id="@+id/alipay_authentication_text_sign"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@id/alipay_authentication_text"
+                            android:layout_marginBottom="@dimen/dimen_60px"
+                            android:layout_marginLeft="@dimen/dimen_40px"
+                            android:layout_toRightOf="@id/alipay_authentication_text"
+                            android:background="@drawable/authenticated_state_shape"
+                            android:paddingBottom="@dimen/dimen_10px"
+                            android:paddingLeft="@dimen/dimen_20px"
+                            android:paddingRight="@dimen/dimen_20px"
+                            android:paddingTop="@dimen/dimen_10px"
+                            android:text="@string/authenticated"
+                            android:textColor="@color/color_00a752"
+                            android:textSize="@dimen/dimen_34px" />
+
+                        <TextView
+                            android:id="@+id/alipay_authenticated_explain_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:paddingTop="@dimen/dimen_60px"
+                            android:text="@string/alipay_authenticated_explain"
+                            android:textColor="@color/textGrayLight"
+                            android:textSize="@dimen/dimen_40px" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/icon_right_arrows_gray" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_225px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_40px">
+
+                    <ImageView
+                        android:id="@+id/super_foodie_authentication_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:background="@drawable/real_name_authentication_shape"
+                        android:padding="@dimen/dimen_30px"
+                        android:src="@mipmap/ic_super_foodie_authentication" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_40px"
+                        android:layout_toRightOf="@id/super_foodie_authentication_image">
+
+                        <TextView
+                            android:id="@+id/super_foodie_authentication_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:gravity="bottom"
+                            android:paddingBottom="@dimen/dimen_50px"
+                            android:text="@string/super_foodie_authentication"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_48px" />
+
+                        <TextView
+                            android:id="@+id/super_foodie_authentication_text_sign"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@id/super_foodie_authentication_text"
+                            android:layout_marginBottom="@dimen/dimen_60px"
+                            android:layout_marginLeft="@dimen/dimen_40px"
+                            android:layout_toRightOf="@id/super_foodie_authentication_text"
+                            android:background="@drawable/unautherized_state_shape"
+                            android:paddingBottom="@dimen/dimen_10px"
+                            android:paddingLeft="@dimen/dimen_20px"
+                            android:paddingRight="@dimen/dimen_20px"
+                            android:paddingTop="@dimen/dimen_10px"
+                            android:text="@string/unauthenticated"
+                            android:textColor="@color/color_FF7117"
+                            android:textSize="@dimen/dimen_34px" />
+
+                        <TextView
+                            android:id="@+id/super_foodie_authenticated_explain_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:paddingTop="@dimen/dimen_60px"
+                            android:text="@string/super_foodie_authenticated_explain"
+                            android:textColor="@color/color_FF7117"
+                            android:textSize="@dimen/dimen_40px" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/icon_right_arrows_gray" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_45px"
+                    android:background="@color/fragment_person_bg"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/fragment_person_bg"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_140px"
+                        android:layout_marginTop="@dimen/dimen_20px"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/evaluate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dimen_40px"
+                            android:text="@string/he_evaluate"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_54px" />
+
+                        <TextView
+                            android:id="@+id/evaluate_score_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dimen_40px"
+                            android:text="4.0分"
+                            android:textColor="@color/textGrayDeep"
+                            android:textSize="@dimen/dimen_54px" />
+
+                        <com.fanqu.main.widget.StarView
+                            android:id="@+id/evaluate_score"
+                            android:layout_width="@dimen/dimen_100px"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/evaluate_score_text"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_toLeftOf="@id/evaluate_score_text"
+                            android:contentDescription="评论得分"
+                            app:starBackground="@mipmap/ic_star_off_holo_light"
+                            app:starClickable="false"
+                            app:starDistance="@dimen/dimen_10px"
+                            app:starDrawBackground="@mipmap/ic_star_holo_light"
+                            app:starHeight="@dimen/dimen_47px"
+                            app:starWidth="@dimen/dimen_47px"
+                            app:starsNum="5" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_3px"
+                        android:background="@color/edit_publis_line_color" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_375px"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/reasonable_collocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_80px"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_marginTop="@dimen/dimen_80px"
+                            android:background="@drawable/dinner_party_feature_shape"
+                            android:contentDescription="搭配合理"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_25px"
+                            android:paddingRight="@dimen/dimen_25px"
+                            android:paddingTop="@dimen/dimen_20px"
+                            android:text="@string/reasonable_collocation"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:id="@+id/service_enthusiasm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/reasonable_collocation"
+                            android:layout_alignTop="@id/reasonable_collocation"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_toRightOf="@id/reasonable_collocation"
+                            android:background="@drawable/dinner_party_feature_shape"
+                            android:contentDescription="服务热情"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_25px"
+                            android:paddingRight="@dimen/dimen_25px"
+                            android:paddingTop="@dimen/dimen_20px"
+                            android:text="@string/service_enthusiasm"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:id="@+id/food_material_fresh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/reasonable_collocation"
+                            android:layout_below="@id/reasonable_collocation"
+                            android:layout_marginRight="@dimen/dimen_20px"
+                            android:layout_marginTop="@dimen/dimen_40px"
+                            android:background="@drawable/dinner_party_feature_shape"
+                            android:contentDescription="食材新鲜"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_25px"
+                            android:paddingRight="@dimen/dimen_25px"
+                            android:paddingTop="@dimen/dimen_20px"
+                            android:text="@string/food_material_fresh"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:id="@+id/reasonable_collocation1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/food_material_fresh"
+                            android:layout_alignTop="@id/food_material_fresh"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_toRightOf="@id/food_material_fresh"
+                            android:background="@drawable/dinner_party_feature_shape"
+                            android:contentDescription="搭配合理2"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_25px"
+                            android:paddingRight="@dimen/dimen_25px"
+                            android:paddingTop="@dimen/dimen_20px"
+                            android:text="@string/reasonable_collocation"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_40px" />
+
+                        <TextView
+                            android:id="@+id/serving_slow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/food_material_fresh"
+                            android:layout_alignTop="@id/food_material_fresh"
+                            android:layout_marginLeft="@dimen/dimen_20px"
+                            android:layout_toRightOf="@id/reasonable_collocation1"
+                            android:background="@drawable/dinner_party_feature_shape"
+                            android:contentDescription="上菜慢"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/dimen_20px"
+                            android:paddingLeft="@dimen/dimen_25px"
+                            android:paddingRight="@dimen/dimen_25px"
+                            android:paddingTop="@dimen/dimen_20px"
+                            android:text="@string/serving_slow"
+                            android:textColor="@color/textGrayMiddle"
+                            android:textSize="@dimen/dimen_40px" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_3px"
+                    android:background="@color/edit_publis_line_color" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/comment_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
+            </LinearLayout>
+
         </com.scu.miomin.shswiperefresh.view.ShareScrollView>
+
     </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_160px"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_3px"
+            android:background="@color/dinner_party_details_line_color"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/immediately_reserve"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dimen_80px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:contentDescription="喜欢"
+                    android:drawableLeft="@mipmap/ic_like_grey"
+                    android:drawablePadding="@dimen/dimen_15px"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_40px"
+                    android:text="@string/like"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
+
+                <View
+                    android:layout_width="@dimen/dimen_3px"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dimen_40px"
+                    android:layout_marginTop="@dimen/dimen_40px"
+                    android:background="@color/dinner_party_details_line_color"></View>
+
+                <TextView
+                    android:id="@+id/message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                     android:layout_marginLeft="@dimen/dimen_80px"
+                    android:background="@drawable/fragment_person_mine_dinner_select"
+                    android:clickable="true"
+                    android:contentDescription="消息"
+                    android:drawableLeft="@mipmap/ic_information"
+                    android:drawablePadding="@dimen/dimen_15px"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_40px"
+                    android:text="@string/message"
+                    android:textColor="@color/textGrayDeep"
+                    android:textSize="@dimen/dimen_54px" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
 </RelativeLayout>
