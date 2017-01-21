@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.fanqu.R;
 import com.fanqu.dinner.adapter.CommentAdapter;
 import com.fanqu.dinner.adapter.DishesListAdapter;
+import com.fanqu.dinner.dialog.SelectSetMealDialog;
 import com.fanqu.dinner.listener.AppBarStateChangeListener;
 import com.fanqu.dinner.listener.State;
 import com.fanqu.dinner.modle.CommentEntity;
@@ -190,6 +191,7 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
         examine_more_comment.setOnClickListener(this);
         kitchen_introduce_layout.setOnClickListener(this);
         immediately_reserve.setOnClickListener(this);
+
     }
 
     @Override
@@ -209,7 +211,12 @@ public class DinnerPartyDetailActivity extends BaseActivity implements View.OnCl
                 jumpActivity(KitchenhomepageActivity.class);
                 break;
             case R.id.immediately_reserve:
-                jumpActivity(KitchenhomepageActivity.class);
+                //跳转到支付dialog
+//                jumpActivity(KitchenhomepageActivity.class);
+                SelectSetMealDialog dialog = new SelectSetMealDialog(DinnerPartyDetailActivity.this, R.style.select_setmeal_dialog);
+                if (!dialog.isShowing()) {
+                    dialog.show();
+                }
                 break;
             default:
                 break;

@@ -53,6 +53,7 @@ public class MoreCommentActivity extends BaseActivity {
 
     private void initView() {
         recyclerview = findView(R.id.comment_recyclerview);
+
         swiperefreshLayout = findView(R.id.swiperefreshLayout);
         swiperefreshLayout.setRefreshEnable(false);
         swiperefreshLayout.setLoadmoreEnable(false);

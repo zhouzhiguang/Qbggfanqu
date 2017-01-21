@@ -389,6 +389,8 @@
     <string name="super_foodie_authenticated_explain">已购买超级吃货认证</string>
     <string name="he_evaluate">TA的评价  （%1$s）</string>
     <string name="pay_authentication">支付认证</string>
+    <string name="can_around_slide">（可左右滑动）</string>
+    <string name="set_meal_selector">套餐选择</string>
 
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
