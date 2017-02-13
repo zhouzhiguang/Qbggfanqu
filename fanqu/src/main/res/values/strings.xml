@@ -391,7 +391,10 @@
     <string name="pay_authentication">支付认证</string>
     <string name="can_around_slide">（可左右滑动）</string>
     <string name="set_meal_selector">套餐选择</string>
-
+    <string name="a_set_meal_price">A餐：%1$s/位</string>
+    <string name="b_set_meal_price">B餐：%1$s/位</string>
+    <string name="c_set_meal_price">C餐：%1$s/位</string>
+    <string name="people">人</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

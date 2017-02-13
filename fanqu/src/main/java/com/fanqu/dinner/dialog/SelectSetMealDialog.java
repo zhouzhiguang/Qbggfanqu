@@ -4,6 +4,7 @@ package com.fanqu.dinner.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,15 +12,18 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.fanqu.R;
+import com.fanqu.dinner.adapter.NumberPeopleAdapter;
 import com.fanqu.framework.CustomApplication;
 import com.fanqu.framework.autolayout.AutoUtils;
+import com.fanqu.framework.main.util.ViewHolder;
 
 /**
  * 选择套餐的dialog
  */
 
-public class SelectSetMealDialog extends Dialog {
+public class SelectSetMealDialog extends Dialog implements View.OnClickListener {
     private Context context;
+    private ViewPager number_people;
 
     public SelectSetMealDialog(Context context) {
         super(context);
@@ -64,5 +68,21 @@ public class SelectSetMealDialog extends Dialog {
         setCanceledOnTouchOutside(false);
         setContentView(view);
         AutoUtils.auto(view);
+        number_people = ViewHolder.get(view, R.id.number_people);
+        initDate();
+        NumberPeopleAdapter adapter=new NumberPeopleAdapter(10,context);
+        number_people.setAdapter(adapter);
+    }
+
+    private void initDate() {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            default:
+                break;
+        }
     }
 }
