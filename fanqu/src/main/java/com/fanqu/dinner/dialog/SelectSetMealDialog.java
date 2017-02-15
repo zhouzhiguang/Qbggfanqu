@@ -4,7 +4,8 @@ package com.fanqu.dinner.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +18,16 @@ import com.fanqu.framework.CustomApplication;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.main.util.ViewHolder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 选择套餐的dialog
  */
 
 public class SelectSetMealDialog extends Dialog implements View.OnClickListener {
     private Context context;
-    private ViewPager number_people;
+    private RecyclerView number_people_recyclerview;
 
     public SelectSetMealDialog(Context context) {
         super(context);
@@ -68,14 +72,36 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
         setCanceledOnTouchOutside(false);
         setContentView(view);
         AutoUtils.auto(view);
-        number_people = ViewHolder.get(view, R.id.number_people);
-        initDate();
-        NumberPeopleAdapter adapter=new NumberPeopleAdapter(10,context);
-        number_people.setAdapter(adapter);
+        number_people_recyclerview = ViewHolder.get(view, R.id.number_people_recyclerview);
+        LinearLayoutManager manager = new LinearLayoutManager(context);
+        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        number_people_recyclerview.setLayoutManager(manager);
+        List<String> datas = new ArrayList<>();
+        //默认最多招待人数
+        int maxnumberpeople = 12;
+        datas = initDate(datas, maxnumberpeople);
+        NumberPeopleAdapter adapter = new NumberPeopleAdapter(context, R.layout.number_people_recyclerview_item_layout, datas);
+        number_people_recyclerview.setAdapter(adapter);
+//        number_people = ViewHolder.get(view, R.id.number_people);
+//        initDate();
+//        NumberPeopleAdapter adapter=new NumberPeopleAdapter(10,context);
+//        number_people.setAdapter(adapter);
+//        RecyclerView recyclerView;
+//        recyclerView.smoothScrollToPosition(88);
+
     }
 
-    private void initDate() {
-
+    private List<String> initDate(List<String> datas, int max) {
+        if (datas != null) {
+            String people = context.getString(R.string.people);
+            StringBuffer buffer = new StringBuffer();
+            buffer.append(people);
+            for (int i = 1; i < max; i++) {
+                buffer.append(i);
+                datas.add(buffer.toString());
+            }
+        }
+        return datas;
     }
 
     @Override

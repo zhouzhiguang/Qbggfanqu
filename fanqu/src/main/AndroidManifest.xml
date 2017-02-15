@@ -313,7 +313,9 @@
             android:label="更多评论"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
         <activity
             android:name=".dinner.activity.KitchenhomepageActivity"
             android:label="个人主页"

@@ -122,10 +122,10 @@
         android:layout_marginTop="@dimen/dimen_40px"
         android:text="@string/dinner_party_number_people"
         android:textColor="@color/textGrayDeep" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/number_people"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/number_people_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_500px" />
-
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
 </LinearLayout>

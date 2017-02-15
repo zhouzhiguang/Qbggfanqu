@@ -62,7 +62,7 @@ public class MoreCommentActivity extends BaseActivity {
 
 
     private void initDate() {
-        LinearLayoutManager manager = new LinearLayoutManager(this);
+        final LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerview.setLayoutManager(manager);
         datas = new ArrayList<>();
@@ -78,11 +78,28 @@ public class MoreCommentActivity extends BaseActivity {
         mHeaderAndFooterWrapper.addFootView(layout);
         LoadMoreWrapper mLoadMoreWrapper = new LoadMoreWrapper(mHeaderAndFooterWrapper);
         recyclerview.setAdapter(mLoadMoreWrapper);
+//        HorizontalScrollView horizontalScrollView;
+//        ListView listView;
+//        listView.setpo;
+//
+//        horizontalScrollView.s
+//        Handler handler=new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                ToastUtils.showCenterToast(MoreCommentActivity.this,"测试---");
+////                manager.scrollToPositionWithOffset(6,0);
+//                recyclerview.scrollToPosition(16);
+//                manager.scrollToPositionWithOffset(16, 0);
+//
+//            }
+//        }, 3000);
+
 
     }
 
     private void initDatas(List<CommentEntity> datas) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             CommentEntity entity = new CommentEntity();
             datas.add(entity);
         }
