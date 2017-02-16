@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dimen_40px"
+    android:layout_marginRight="@dimen/dimen_40px"
+    android:layout_marginTop="@dimen/dimen_40px"
+    android:id="@+id/number_people_layout"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -10,11 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_95px"
         android:layout_gravity="center"
-        android:background="@drawable/select_set_meal_selector"
+        android:background="@drawable/number_people_selector"
+        android:gravity="center"
         android:paddingLeft="@dimen/dimen_30px"
         android:paddingRight="@dimen/dimen_30px"
         android:text="1人"
-        android:gravity="center"
         android:textColor="@color/textGrayMiddle"
         android:textSize="@dimen/dimen_48px" />
 </LinearLayout>

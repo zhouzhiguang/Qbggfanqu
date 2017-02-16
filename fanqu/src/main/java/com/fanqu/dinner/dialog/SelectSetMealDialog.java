@@ -11,12 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.fanqu.R;
 import com.fanqu.dinner.adapter.NumberPeopleAdapter;
 import com.fanqu.framework.CustomApplication;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.main.util.ViewHolder;
+import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +29,10 @@ import java.util.List;
 
 public class SelectSetMealDialog extends Dialog implements View.OnClickListener {
     private Context context;
-    private RecyclerView number_people_recyclerview;
+    private RecyclerView number_people_recyclerview, dinner_time_recyclerview;
+    private NumberPeopleAdapter adapter;
+    private int temposition;
+    private TextView last_number_people;
 
     public SelectSetMealDialog(Context context) {
         super(context);
@@ -72,31 +77,71 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
         setCanceledOnTouchOutside(false);
         setContentView(view);
         AutoUtils.auto(view);
+        dinner_time_recyclerview = ViewHolder.get(view, R.id.dinner_time_recyclerview);
         number_people_recyclerview = ViewHolder.get(view, R.id.number_people_recyclerview);
         LinearLayoutManager manager = new LinearLayoutManager(context);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         number_people_recyclerview.setLayoutManager(manager);
+        manager=new LinearLayoutManager(context);
+        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        dinner_time_recyclerview.setLayoutManager(manager);
         List<String> datas = new ArrayList<>();
         //默认最多招待人数
         int maxnumberpeople = 12;
         datas = initDate(datas, maxnumberpeople);
-        NumberPeopleAdapter adapter = new NumberPeopleAdapter(context, R.layout.number_people_recyclerview_item_layout, datas);
+        adapter = new NumberPeopleAdapter(context, R.layout.number_people_recyclerview_item_layout, datas);
         number_people_recyclerview.setAdapter(adapter);
+//        DinnerTimeAdapter timeadapter=new DinnerTimeAdapter
+//        dinner_time_recyclerview.setAdapter(timeadapter);
 //        number_people = ViewHolder.get(view, R.id.number_people);
 //        initDate();
 //        NumberPeopleAdapter adapter=new NumberPeopleAdapter(10,context);
 //        number_people.setAdapter(adapter);
 //        RecyclerView recyclerView;
 //        recyclerView.smoothScrollToPosition(88);
+        initListener();
 
+    }
+
+    private void initListener() {
+        adapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                TextView number_people = ViewHolder.get(view, R.id.number_people);
+
+                if (!number_people.isSelected()) {
+                    number_people.setSelected(true);
+                    if (last_number_people != null) {
+                        if (temposition != position && last_number_people.isSelected()) {
+                            last_number_people.setSelected(false);
+                        }
+
+                    }
+                    last_number_people = number_people;
+                    temposition = position;
+                    adapter.setOnItemSelect(position);
+                } else {
+                    number_people.setSelected(false);
+                }
+
+
+                //adapter.notifyItemChanged(position);
+            }
+
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
+            }
+        });
     }
 
     private List<String> initDate(List<String> datas, int max) {
         if (datas != null) {
             String people = context.getString(R.string.people);
-            StringBuffer buffer = new StringBuffer();
-            buffer.append(people);
-            for (int i = 1; i < max; i++) {
+            StringBuffer buffer;
+            for (int i = 1; i < max + 1; i++) {
+                buffer = new StringBuffer();
+                buffer.append(people);
                 buffer.append(i);
                 datas.add(buffer.toString());
             }
