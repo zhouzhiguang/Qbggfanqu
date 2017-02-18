@@ -395,6 +395,11 @@
     <string name="b_set_meal_price">B餐：%1$s/位</string>
     <string name="c_set_meal_price">C餐：%1$s/位</string>
     <string name="people">人</string>
+    <string name="week">周</string>
+    <string name="meal_time">用餐时间</string>
+    <string name="lunch_time">中餐 11:00-13:00</string>
+    <string name="dinner_time">晚餐17:00-20:00</string>
+    <string name="select_set_meal_tips">仅售30天内饭局，请提前两小时预定</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

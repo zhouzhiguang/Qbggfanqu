@@ -11,17 +11,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.fanqu.R;
+import com.fanqu.dinner.adapter.DinnerTimeAdapter;
 import com.fanqu.dinner.adapter.NumberPeopleAdapter;
+import com.fanqu.dinner.date.DateUtill;
 import com.fanqu.framework.CustomApplication;
 import com.fanqu.framework.autolayout.AutoUtils;
+import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.ViewHolder;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.fanqu.R.id.close;
+import static com.fanqu.R.id.ensure;
 
 /**
  * 选择套餐的dialog
@@ -31,8 +40,15 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
     private Context context;
     private RecyclerView number_people_recyclerview, dinner_time_recyclerview;
     private NumberPeopleAdapter adapter;
-    private int temposition;
-    private TextView last_number_people;
+    private int temposition, timeposition;
+    private TextView last_number_people, last_time_item;
+    private DinnerTimeAdapter timeAdapte;
+    private RadioGroup meal_price_radiogroup;
+    private RadioButton a_set_meal_price;
+    private RadioButton b_set_meal_price;
+    private int onItemSelect;
+    private RadioGroup have_dinner_group;
+    private RadioButton lunch_time, dinner_time;
 
     public SelectSetMealDialog(Context context) {
         super(context);
@@ -64,7 +80,7 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
                 null);
         //AutoUtils.auto(view);
         int height = (int) context.getResources().getDimension(
-                R.dimen.dimen_330px);// AutoUtils.getDisplayHeightValue(R.dimen.dimen_198dp);
+                R.dimen.dimen_500px);// AutoUtils.getDisplayHeightValue(R.dimen.dimen_198dp);
         // int sCREEN_WIDTH = CustomApplication.SCREEN_WIDTH;
         // System.out.println(sCREEN_WIDTH + "寬是：");
         //DisplayMetrics display = context.getResources().getDisplayMetrics();
@@ -77,12 +93,21 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
         setCanceledOnTouchOutside(false);
         setContentView(view);
         AutoUtils.auto(view);
+        lunch_time = ViewHolder.get(view, R.id.lunch_time);
+        dinner_time = ViewHolder.get(view, R.id.dinner_time);
+        have_dinner_group = ViewHolder.get(view, R.id.have_dinner_group);
+        TextView ensure = ViewHolder.get(view, R.id.ensure);
+        //ensure.setEnabled(false);
+        meal_price_radiogroup = ViewHolder.get(view, R.id.meal_price_radiogroup);
+        a_set_meal_price = ViewHolder.get(view, R.id.a_set_meal_price);
+        b_set_meal_price = ViewHolder.get(view, R.id.b_set_meal_price);
+        ImageView close = ViewHolder.get(view, R.id.close);
         dinner_time_recyclerview = ViewHolder.get(view, R.id.dinner_time_recyclerview);
         number_people_recyclerview = ViewHolder.get(view, R.id.number_people_recyclerview);
         LinearLayoutManager manager = new LinearLayoutManager(context);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         number_people_recyclerview.setLayoutManager(manager);
-        manager=new LinearLayoutManager(context);
+        manager = new LinearLayoutManager(context);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         dinner_time_recyclerview.setLayoutManager(manager);
         List<String> datas = new ArrayList<>();
@@ -91,6 +116,11 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
         datas = initDate(datas, maxnumberpeople);
         adapter = new NumberPeopleAdapter(context, R.layout.number_people_recyclerview_item_layout, datas);
         number_people_recyclerview.setAdapter(adapter);
+        List<String> timedatas = new ArrayList<>();
+        timedatas = getDinnerTimeDatas(timedatas, 10);
+        timeAdapte = new DinnerTimeAdapter(context, R.layout.dinner_time_recyclerview_item_layout, timedatas);
+        dinner_time_recyclerview.setAdapter(timeAdapte);
+
 //        DinnerTimeAdapter timeadapter=new DinnerTimeAdapter
 //        dinner_time_recyclerview.setAdapter(timeadapter);
 //        number_people = ViewHolder.get(view, R.id.number_people);
@@ -100,7 +130,35 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
 //        RecyclerView recyclerView;
 //        recyclerView.smoothScrollToPosition(88);
         initListener();
+        close.setOnClickListener(this);
+        ensure.setOnClickListener(this);
+    }
 
+    //可订餐日期 当前日期后面多少天
+    private List<String> getDinnerTimeDatas(List<String> timedatas, int future) {
+        String date = DateUtill.getcurrentDate();
+        String[] da = DateUtill.formartString(date, future);
+        StringBuffer buffer;
+        if (da != null) {
+            for (int i = 0; i < da.length; i++) {
+                String result = da[i];
+                if (0 < result.length() && result.length() > 11) {
+                    //2017年02月27日 星期一
+                    buffer = new StringBuffer();
+                    String datestrign = result.substring(8, 11);
+                    buffer.append(datestrign);
+                    String week = context.getString(R.string.week);
+                    buffer.append(week);
+                    String weekdate = result.substring(result.length() - 1, result.length());
+                    buffer.append(weekdate);
+                    if (timedatas != null) {
+                        timedatas.add(buffer.toString());
+                    }
+                }
+            }
+        }
+
+        return timedatas;
     }
 
     private void initListener() {
@@ -122,6 +180,7 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
                     adapter.setOnItemSelect(position);
                 } else {
                     number_people.setSelected(false);
+                    adapter.setOnItemSelect(-1);
                 }
 
 
@@ -131,6 +190,57 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
             @Override
             public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
                 return false;
+            }
+        });
+
+        timeAdapte.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                TextView time = ViewHolder.get(view, R.id.time);
+                if (!time.isSelected()) {
+                    time.setSelected(true);
+                    if (last_time_item != null) {
+                        if (timeposition != position && last_time_item.isSelected()) {
+                            last_time_item.setSelected(false);
+                        }
+
+                    }
+                    last_time_item = time;
+                    timeposition = position;
+                    timeAdapte.setOnItemSelect(position);
+                } else {
+                    time.setSelected(false);
+                    timeAdapte.setOnItemSelect(-1);
+                }
+            }
+
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
+            }
+        });
+        meal_price_radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                if (checkedId == a_set_meal_price.getId()) {
+                    //A 套餐
+                } else if (checkedId == b_set_meal_price.getId()) {
+                    // B 套餐
+                } else {
+                    // C 套餐
+                }
+            }
+        });
+        have_dinner_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                if (checkedId == lunch_time.getId()) {
+                    //中餐
+                } else if (checkedId == dinner_time.getId()) {
+                    // 晚餐
+                } else {
+
+                }
             }
         });
     }
@@ -152,6 +262,14 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case close:
+                dismiss();
+                break;
+            case ensure:
+                int onItemSelect = adapter.getOnItemSelect();
+                int time = timeAdapte.getOnItemSelect();
+                LogUtil.e("测试点击的是那个", String.valueOf(time));
+                break;
             default:
                 break;
         }

@@ -39,8 +39,9 @@ public class NumberPeopleAdapter extends CommonAdapter<String> {
         }
         if (position == 0) {
             RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) number_people_layout.getLayoutParams();
-            int top= (int) context.getResources().getDimension(R.dimen.dimen_40px);
-            params.setMargins(0, top, 0, 0);
+            int top = (int) context.getResources().getDimension(R.dimen.dimen_40px);
+            int right = (int) context.getResources().getDimension(R.dimen.dimen_80px);
+            params.setMargins(0, top, right, 0);
             number_people_layout.setLayoutParams(params);
         }
         if (position == onItemSelect) {
@@ -60,4 +61,9 @@ public class NumberPeopleAdapter extends CommonAdapter<String> {
     public void setOnItemSelect(int onItemSelect) {
         this.onItemSelect = onItemSelect;
     }
+
+    public int getOnItemSelect() {
+        return onItemSelect;
+    }
+
 }
