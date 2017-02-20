@@ -5,19 +5,19 @@ package com.fanqu.framework.model;
  */
 
 public class User {
-    private String user_id;//用户id
-    private String user_token;
+    private String uid;//用户id
+    private String user_token;//绘画
     private String avatar;
 
     public User() {
     }
 
     public String getUser_id() {
-        return user_id;
+        return uid;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUser_id(String uid) {
+        this.uid = uid;
     }
 
     public String getUser_token() {

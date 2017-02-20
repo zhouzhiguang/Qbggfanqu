@@ -22,7 +22,7 @@
             android:drawablePadding="@dimen/dimen_13px"
             android:hint="@string/prompt_phone"
             android:inputType="number"
-            android:maxLength="16"
+            android:maxLength="11"
             android:paddingLeft="@dimen/dimen_13px"
             android:singleLine="true"
             android:textColor="@color/textGrayDeep"
@@ -41,6 +41,7 @@
             android:clickable="true"
             android:contentDescription="@null"
             android:padding="@dimen/dimen_8px"
+            android:visibility="gone"
             android:src="@drawable/selector_clear_pass" />
 
     </RelativeLayout>

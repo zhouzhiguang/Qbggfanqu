@@ -20,7 +20,7 @@
     <string name="recovered_password">找回密码</string>
     <string name="input_register_phone">请输入注册手机号码</string>
     <string name="input_send_code_password">请输入验证码</string>
-    <string name="send_code">获取验证码</string>
+    <string name="send_code">发送验证码</string>
     <string name="input_new_password">请输入新密码</string>
     <string name="complete">完成</string>
     <string name="quick_register_account">快速注册</string>
@@ -400,6 +400,21 @@
     <string name="lunch_time">中餐 11:00-13:00</string>
     <string name="dinner_time">晚餐17:00-20:00</string>
     <string name="select_set_meal_tips">仅售30天内饭局，请提前两小时预定</string>
+    <string name="set_meal">套餐：</string>
+    <string name="set_meal_unit">元/位</string>
+    <string name="number_people">人数：</string>
+    <string name="date_time">时间：</string>
+    <string name="buy_number_people">购买人数</string>
+    <string name="orders_phone_number">下单手机号</string>
+    <string name="user_discount_coupon">使用优惠券</string>
+    <string name="give_business_leave_message">选填：给商家留言（30字以内）</string>
+    <string name="money_details">金额详情</string>
+    <string name="total_amount">总金额</string>
+    <string name="favorable">优惠</string>
+    <string name="submit_order">提交订单</string>
+    <string name="total_number_people">(共%1$s位)</string>
+    <string name="available_discount_coupon">可用优惠券</string>
+    <string name="invalid_phone_number">请输入正确的11位手机号码</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

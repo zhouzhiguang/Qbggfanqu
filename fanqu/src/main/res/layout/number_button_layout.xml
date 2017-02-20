@@ -51,7 +51,7 @@
         android:paddingRight="@dimen/dimen_8px"
         android:paddingTop="@dimen/dimen_5px"
         android:text="555"
-        android:textSize="@dimen/dimen_50px"
+        android:textSize="@dimen/dimen_60px"
         android:textColor="@color/textGrayDeep"
         android:textCursorDrawable="@null"/>
 
@@ -66,7 +66,7 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:text="+"
-        android:textColor="@color/red_bg"
+        android:textColor="@color/textGrayDeep"
         android:textSize="@dimen/dimen_80px"/>
     <ImageView
         android:id="@+id/button_add_image"

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 饭局主fragment
+ * 饭局主fragment  还需要该动
  */
 public class DinnerFragment extends BaseFragment {
 

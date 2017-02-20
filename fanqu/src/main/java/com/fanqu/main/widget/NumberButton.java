@@ -26,6 +26,9 @@ public class NumberButton extends LinearLayout implements View.OnClickListener, 
     private int mBuyMax = Integer.MAX_VALUE;
     private EditText mCount;
     private OnWarnListener mOnWarnListener;
+    private TextView addButton;
+    private TextView subButton;
+    private int color;
 
     public NumberButton(Context context) {
         this(context, null);
@@ -35,20 +38,22 @@ public class NumberButton extends LinearLayout implements View.OnClickListener, 
         super(context, attrs);
         init(context, attrs);
     }
-//
-//    public NumberButton(Context context, AttributeSet attrs, int defStyleAttr) {
-//        super(context, attrs, defStyleAttr);
-//    }
+
+    //
+    public NumberButton(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
 
     private void init(Context context, AttributeSet attrs) {
         LayoutInflater.from(context).inflate(R.layout.number_button_layout, this);
 
-        TextView addButton = (TextView) findViewById(R.id.button_add);
-        ImageView addbuttonimage= (ImageView) findViewById(R.id.button_add_image);
+        addButton = (TextView) findViewById(R.id.button_add);
+        ImageView addbuttonimage = (ImageView) findViewById(R.id.button_add_image);
         addButton.setOnClickListener(this);
         addbuttonimage.setOnClickListener(this);
-        TextView subButton = (TextView) findViewById(R.id.button_sub);
-        ImageView button_minus_image= (ImageView) findViewById(R.id.button_minus_image);
+        subButton = (TextView) findViewById(R.id.button_sub);
+        ImageView button_minus_image = (ImageView) findViewById(R.id.button_minus_image);
         subButton.setOnClickListener(this);
         button_minus_image.setOnClickListener(this);
 
@@ -67,7 +72,7 @@ public class NumberButton extends LinearLayout implements View.OnClickListener, 
 
         setEditable(editable);
         mCount.setTextColor(textColor);
-        subButton.setTextColor(textColor);
+        //subButton.setTextColor(textColor);
         //addButton.setTextColor(textColor);
 
         if (textSize > 0)
@@ -81,6 +86,10 @@ public class NumberButton extends LinearLayout implements View.OnClickListener, 
         if (textWidth > 0) {
             LayoutParams textParams = new LayoutParams(textWidth, LayoutParams.MATCH_PARENT);
             mCount.setLayoutParams(textParams);
+        }
+        if (color != 0) {
+            addButton.setTextColor(color);
+            subButton.setTextColor(color);
         }
     }
 
@@ -213,6 +222,14 @@ public class NumberButton extends LinearLayout implements View.OnClickListener, 
     @Override
     public void afterTextChanged(Editable s) {
 
+    }
+
+    public void setaddButtonColor(int color) {
+        this.color = color;
+        if (color != 0) {
+            addButton.setTextColor(color);
+            subButton.setTextColor(color);
+        }
     }
 
     public interface OnWarnListener {

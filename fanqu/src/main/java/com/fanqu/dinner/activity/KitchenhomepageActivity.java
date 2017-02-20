@@ -77,7 +77,7 @@ public class KitchenhomepageActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemUtils.initthem(this, R.color.white);
-        AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
+        //AutoUtils.setSize(this, false, 1080, 1920);// 没有状态栏,设计尺寸的宽高
         setContentView(R.layout.activity_kitchen_homepage_layout);
         //StatusBarUtil.setTranslucent(DinnerPartyDetailActivity.this);
         AutoUtils.auto(this);

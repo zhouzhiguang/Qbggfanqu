@@ -1,8 +1,10 @@
 package com.fanqu.dinner.dialog;
 
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,12 +19,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.fanqu.R;
+import com.fanqu.dinner.activity.ConfirmOrderActivity;
 import com.fanqu.dinner.adapter.DinnerTimeAdapter;
 import com.fanqu.dinner.adapter.NumberPeopleAdapter;
 import com.fanqu.dinner.date.DateUtill;
 import com.fanqu.framework.CustomApplication;
 import com.fanqu.framework.autolayout.AutoUtils;
-import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.ViewHolder;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
@@ -49,20 +51,24 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
     private int onItemSelect;
     private RadioGroup have_dinner_group;
     private RadioButton lunch_time, dinner_time;
+    private Activity activity;
 
-    public SelectSetMealDialog(Context context) {
-        super(context);
-        this.context = context;
+    public SelectSetMealDialog(Activity activity) {
+        super(activity);
+        this.context = activity.getApplicationContext();
+        this.activity = activity;
     }
 
-    protected SelectSetMealDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
-        super(context, cancelable, cancelListener);
-        this.context = context;
+    protected SelectSetMealDialog(Activity activity, boolean cancelable, OnCancelListener cancelListener) {
+        super(activity, cancelable, cancelListener);
+        this.context = activity.getApplicationContext();
+        this.activity = activity;
     }
 
-    public SelectSetMealDialog(Context context, int themeResId) {
-        super(context, themeResId);
-        this.context = context;
+    public SelectSetMealDialog(Activity activity, int themeResId) {
+        super(activity, themeResId);
+        this.context = activity.getApplicationContext();
+        this.activity = activity;
     }
 
     @Override
@@ -268,7 +274,12 @@ public class SelectSetMealDialog extends Dialog implements View.OnClickListener 
             case ensure:
                 int onItemSelect = adapter.getOnItemSelect();
                 int time = timeAdapte.getOnItemSelect();
-                LogUtil.e("测试点击的是那个", String.valueOf(time));
+                dismiss();
+                //这里穿过去订单详情
+                Intent intent = new Intent(context, ConfirmOrderActivity.class);
+                activity.startActivity(intent);
+                activity.overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+
                 break;
             default:
                 break;
