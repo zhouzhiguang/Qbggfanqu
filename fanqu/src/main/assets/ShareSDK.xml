@@ -63,11 +63,23 @@
 
     <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
 
-    <SinaWeibo AppKey="2812928966" AppSecret="5e1c06e5a28cd6cdc6dfb0515c32ddd9" Enable="true" Id="1"
-        RedirectUrl="http://cengfan7.com/" ShareByAppClient="true" SortId="1" />
+    <SinaWeibo
+        AppKey="2812928966"
+        AppSecret="5e1c06e5a28cd6cdc6dfb0515c32ddd9"
+        Enable="true"
+        Id="1"
+        RedirectUrl="http://cengfan7.com/"
+        ShareByAppClient="true"
+        SortId="1" />
 
-    <TencentWeibo AppKey="987300973" AppSecret="f5009bec31823d163556c3bb89ea0bdf" Enable="true"
-        Id="2" RedirectUri="http://baidu.com" SortId="2" />
+    <TencentWeibo
+        AppKey="987300973"
+        AppSecret="f5009bec31823d163556c3bb89ea0bdf"
+        Enable="true"
+        Id="2"
+        RedirectUri="http://baidu.com"
+        SortId="2" />
+
 
 
     <!--
@@ -84,29 +96,62 @@
 
     -->
 
-    <Wechat AppId="wxf4b380c63e351996" AppSecret="7ae9114d788eee72ea1bd8549f39b9a6"
-        BypassApproval="false" Enable="true" Id="4" SortId="4" />
+    <Wechat
+        AppId="wxf4b380c63e351996"
+        AppSecret="7ae9114d788eee72ea1bd8549f39b9a6"
+        BypassApproval="false"
+        Enable="true"
+        Id="4"
+        SortId="4" />
 
-    <WechatMoments AppId="wx9ec2ec0486313de5" AppSecret="2ec8423c0c8c896bb696978b37bb6d2f"
-        BypassApproval="false" Enable="true" Id="5" SortId="5" />
+    <WechatMoments
+        AppId="wxf4b380c63e351996"
+        AppSecret="7ae9114d788eee72ea1bd8549f39b9a6"
+        BypassApproval="false"
+        Enable="true"
+        Id="5"
+        SortId="5" />
 
 
     <!-- ShareByAppClient标识是否使用微博客户端分享，1105570013默认是false -->
 
-    <QQ AppId="1105198067" AppKey="36jzXkPlTiZzm4xJ" Enable="true" Id="7" ShareByAppClient="true"
+    <QQ
+        AppId="1105198067"
+        AppKey="36jzXkPlTiZzm4xJ"
+        Enable="true"
+        Id="7"
+        ShareByAppClient="true"
         SortId="7" />
 
-    <QZone AppId="1105198067" AppKey="36jzXkPlTiZzm4xJ" Enable="true" Id="3" SortId="3" />
+    <QZone
+        AppId="1105198067"
+        AppKey="36jzXkPlTiZzm4xJ"
+        Enable="true"
+        Id="3"
+        SortId="3" />
 
 
-    <Dropbox AppKey="i5vw2mex1zcgjcj" AppSecret="3i9xifsgb4omr0s" Enable="true" Id="26"
-        RedirectUri="https://www.sharesdk.cn" SortId="26" />
+    <Dropbox
+        AppKey="i5vw2mex1zcgjcj"
+        AppSecret="3i9xifsgb4omr0s"
+        Enable="true"
+        Id="26"
+        RedirectUri="https://www.sharesdk.cn"
+        SortId="26" />
 
-    <VKontakte ApplicationId="3921561" Enable="true" Id="27" SortId="27" />
+    <VKontakte
+        ApplicationId="3921561"
+        Enable="true"
+        Id="27"
+        SortId="27" />
 
-    <Instagram ClientId="ff68e3216b4f4f989121aa1c2962d058"
-        ClientSecret="1b2e82f110264869b3505c3fe34e31a1" Enable="true" Id="28"
-        RedirectUri="http://sharesdk.cn" SortId="28" />
+    <Instagram
+        ClientId="ff68e3216b4f4f989121aa1c2962d058"
+        ClientSecret="1b2e82f110264869b3505c3fe34e31a1"
+        Enable="true"
+        Id="28"
+        RedirectUri="http://sharesdk.cn"
+        SortId="28" />
 
     <!--
     	Yixin易信和YixinMoments易信朋友圈的appid是一样的；
@@ -122,33 +167,78 @@
 
     -->
 
-    <Yixin AppId="yx0d9a9f9088ea44d78680f3274da1765f" BypassApproval="true" Enable="true" Id="29"
+    <Yixin
+        AppId="yx0d9a9f9088ea44d78680f3274da1765f"
+        BypassApproval="true"
+        Enable="true"
+        Id="29"
         SortId="29" />
 
-    <YixinMoments AppId="yx0d9a9f9088ea44d78680f3274da1765f" BypassApproval="true" Enable="true"
-        Id="30" SortId="30" />
+    <YixinMoments
+        AppId="yx0d9a9f9088ea44d78680f3274da1765f"
+        BypassApproval="true"
+        Enable="true"
+        Id="30"
+        SortId="30" />
 
-    <Mingdao AppKey="EEEE9578D1D431D3215D8C21BF5357E3" AppSecret="5EDE59F37B3EFA8F65EEFB9976A4E933"
-        Enable="true" Id="31" RedirectUri="http://sharesdk.cn" SortId="31" />
+    <Mingdao
+        AppKey="EEEE9578D1D431D3215D8C21BF5357E3"
+        AppSecret="5EDE59F37B3EFA8F65EEFB9976A4E933"
+        Enable="true"
+        Id="31"
+        RedirectUri="http://sharesdk.cn"
+        SortId="31" />
 
-    <Line Enable="true" Id="32" SortId="32" />
+    <Line
+        Enable="true"
+        Id="32"
+        SortId="32" />
 
-    <KakaoTalk AppKey="48d3f524e4a636b08d81b3ceb50f1003" Enable="true" Id="33" SortId="33" />
+    <KakaoTalk
+        AppKey="48d3f524e4a636b08d81b3ceb50f1003"
+        Enable="true"
+        Id="33"
+        SortId="33" />
 
-    <KakaoStory AppKey="48d3f524e4a636b08d81b3ceb50f1003" Enable="true" Id="34" SortId="34" />
+    <KakaoStory
+        AppKey="48d3f524e4a636b08d81b3ceb50f1003"
+        Enable="true"
+        Id="34"
+        SortId="34" />
 
-    <WhatsApp Enable="true" Id="35" SortId="35" />
+    <WhatsApp
+        Enable="true"
+        Id="35"
+        SortId="35" />
 
-    <Bluetooth Enable="true" Id="36" SortId="36" />
+    <Bluetooth
+        Enable="true"
+        Id="36"
+        SortId="36" />
 
-    <Pocket ConsumerKey="32741-389c565043c49947ba7edf05" Enable="true" Id="37" SortId="37" />
+    <Pocket
+        ConsumerKey="32741-389c565043c49947ba7edf05"
+        Enable="true"
+        Id="37"
+        SortId="37" />
 
-    <Instapaper ConsumerKey="4rDJORmcOcSAZL1YpqGHRI605xUvrLbOhkJ07yO0wWrYrc61FA"
-        ConsumerSecret="GNr1GespOQbrm8nvd7rlUsyRQsIo3boIbMguAl9gfpdL0aKZWe" Enable="true" Id="38"
+    <Instapaper
+        ConsumerKey="4rDJORmcOcSAZL1YpqGHRI605xUvrLbOhkJ07yO0wWrYrc61FA"
+        ConsumerSecret="GNr1GespOQbrm8nvd7rlUsyRQsIo3boIbMguAl9gfpdL0aKZWe"
+        Enable="true"
+        Id="38"
         SortId="38" />
 
-    <FacebookMessenger AppId="107704292745179" Enable="true" Id="39" SortId="39" />
+    <FacebookMessenger
+        AppId="107704292745179"
+        Enable="true"
+        Id="39"
+        SortId="39" />
 
-    <Alipay AppId="2015072400185895" Enable="true" Id="52" SortId="52" />
+    <Alipay
+        AppId="2015072400185895"
+        Enable="true"
+        Id="52"
+        SortId="52" />
 
 </DevInfor>

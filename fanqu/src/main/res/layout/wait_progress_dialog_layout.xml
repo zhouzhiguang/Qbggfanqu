@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/alert_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dimen_100px"
+    android:paddingLeft="@dimen/dimen_200px"
+    android:paddingRight="@dimen/dimen_200px"
+    android:paddingTop="@dimen/dimen_100px">
+
+    <com.fanqu.main.widget.CircularProgress
+        android:layout_width="@dimen/dimen_180px"
+        android:layout_height="@dimen/dimen_180px"
+        app:borderWidth="@dimen/dimen_10px" />
+
+    <TextView
+        android:id="@+id/id_tv_loadingmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/dimen_40px"
+        android:textColor="@color/textGrayDeep"
+        android:textSize="@dimen/dimen_48px" />
+
+</LinearLayout>

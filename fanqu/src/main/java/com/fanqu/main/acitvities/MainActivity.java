@@ -3,24 +3,33 @@ package com.fanqu.main.acitvities;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.dou361.update.UpdateHelper;
-import com.dou361.update.type.UpdateType;
 import com.fanqu.R;
 import com.fanqu.dinner.fragment.DinnerFragment;
+import com.fanqu.framework.Constants;
 import com.fanqu.framework.SystemBarTintManager;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.main.util.ThemUtils;
+import com.fanqu.framework.rxbus.RxBus;
 import com.fanqu.homepage.fragment.HomeFragment;
 import com.fanqu.like.fragment.LikeFragment;
 import com.fanqu.main.widget.MainNavigateTabBar;
 import com.fanqu.personcentre.frgment.PersonFragment;
 
+import java.util.concurrent.TimeUnit;
+
+import cn.hugeterry.updatefun.UpdateFunGO;
+import cn.hugeterry.updatefun.config.UpdateKey;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 /**
  * 主页
@@ -34,34 +43,69 @@ public class MainActivity extends BaseActivity {
     private String TAG_PAGE_LIKE = "喜欢";
     private String TAG_PAGE_PERSON = "我的";
     private MainNavigateTabBar mNavigateTabBar;
+    private long cheakuptime = 8 * 1000;
     //状态栏沉浸模式使用
     /*statusbar view*/
     private ViewGroup view;
     /*沉浸颜色*/
     private TextView textView;
+    private long mFirstClickTime;
+    private RxBus _rxBus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
+        //AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
         setContentView(R.layout.activity_main_layout);
         AutoUtils.auto(this);
+        _rxBus = getRxBusSingleton();
         // StatusBarUtil.setColorNoTranslucent(MainActivity.this,R.color.red_bg);
         mNavigateTabBar = findView(R.id.main_navigate_TabBar);
         if (savedInstanceState != null) {
             mNavigateTabBar.onRestoreInstanceState(savedInstanceState);
         }
         initdate();
+        checkupAppUpdate();
+    }
+
+    /**
+     * 检查应用跟新了8秒后执行
+     */
+    private void checkupAppUpdate() {
+        Observable.timer(cheakuptime, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(this.<Long>bindToLifecycle())
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+
+                        UpdateKey.API_TOKEN = Constants.UPDATEKEY_API_TOKEN;
+                        UpdateKey.APP_ID = Constants.UPDATEKEY_API_ID;
+                        // 如果你想通过Dialog来进行下载，可以如下设置
+                        UpdateKey.DialogOrNotification = UpdateKey.WITH_NOTIFITION;
+                        //UpdateFunGO.init(MainActivity.this);
+
+                    }
+                });
     }
 
 
     @Override
+    protected void onStop() {
+        // TODO Auto-generated method stub
+        super.onStop();
+        UpdateFunGO.onStop(this);
+
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
+        UpdateFunGO.onResume(this);
         //默认是自动检测更新
-        UpdateHelper.getInstance()
-                .setUpdateType(UpdateType.autoupdate)
-                .check(MainActivity.this);
+//        UpdateHelper.getInstance()
+//                .setUpdateType(UpdateType.autoupdate)
+//                .check(MainActivity.this);
 
 //        String url = "http://api.fir.im/apps/latest/" + "57d3a808ca87a87e01000834"
 //                + "?api_token=" + "8e1bb6d08a1dda6bb1f4f196fe5e8e35";
@@ -97,20 +141,21 @@ public class MainActivity extends BaseActivity {
                     // StatusBarUtil.setColor(MainActivity.this, Color.BLACK);
                     //initStatusbar(MainActivity.this,R.color.red_bg);
                     //initthem(R.color.red_bg);
-                    ThemUtils.initthem(MainActivity.this,R.color.red_bg);
+                    ThemUtils.initthem(MainActivity.this, R.color.red_bg);
                     // initStatusbar(MainActivity.this, R.color.red_bg);
                 } else if (tabIndex == 0) {
                     //透明的状态栏了
                     //  initthem(R.color.black);
                     // initStatusbar(MainActivity.this, R.color.transparent);
                     //initthem(R.color.black);
-                    ThemUtils.initthem(MainActivity.this,R.color.black);
+                    ThemUtils.initthem(MainActivity.this, R.color.black);
+                    //ThemUtils.initthem(MainActivity.this, R.color.transparent);
                     // StatusBarUtil.setTransparent(MainActivity.this);
                     // StatusBarUtil.setColor(MainActivity.this,R.color.white);
                 } else {
                     //透明的状态栏了
                     // StatusBarUtil.setTransparent(MainActivity.this);
-                    ThemUtils.initthem(MainActivity.this,R.color.white);
+                    ThemUtils.initthem(MainActivity.this, R.color.white);
                 }
             }
         });
@@ -118,6 +163,7 @@ public class MainActivity extends BaseActivity {
         mNavigateTabBar.showTabFragment(0);
 
     }
+
     /**
      * 初始化沉浸式狀態欄
      */
@@ -155,5 +201,37 @@ public class MainActivity extends BaseActivity {
             }
             win.setAttributes(winParams);
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
+
+            long currentTime = System.currentTimeMillis();
+            if (mFirstClickTime == 0
+                    || currentTime - mFirstClickTime > 2000) {
+                mFirstClickTime = currentTime;
+                Toast.makeText(MainActivity.this,
+                        R.string.tip_exist_application,
+                        Toast.LENGTH_SHORT).show();
+
+            } else {
+
+                if (_rxBus.hasObservers()) {    //是否有观察者，有，则发送一个事件
+                    _rxBus.send(new ExitEvent());
+                } else {
+
+                }
+//                        System.exit(0);// 退出程序的代码
+                return true;
+            }
+        }
+
+
+        return true;
+
+
     }
 }

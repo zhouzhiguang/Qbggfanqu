@@ -110,6 +110,19 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind" />
+
+        <activity
+            android:name="cn.hugeterry.updatefun.view.UpdateDialog"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:theme="@style/MyDialogStyle" />
+        <activity
+            android:name="cn.hugeterry.updatefun.view.DownLoadDialog"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:theme="@style/MyDialogStyle" />
         <activity
             android:name=".main.acitvities.SpalshActivity"
             android:hardwareAccelerated="true"
@@ -305,7 +318,7 @@
             android:label="饭局详情"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".dinner.activity.MoreCommentActivity"
             android:label="更多评论"
@@ -323,12 +336,22 @@
             android:label="确认订单"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".dinner.activity.AvailableDiscountCouponActivity"
             android:label="可用优惠券"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".main.acitvities.RecoveredPasswordAcitivty"
+            android:label="找回密码"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".main.acitvities.BindingMobilePhoneNumberActivity"
+            android:label="第三方登录绑定手机号码"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" />

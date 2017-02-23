@@ -34,6 +34,7 @@ public class CommonUtil {
     public static final int BUFFER_SIZE = 4096;
     public static final int MAX_STRING_LENGTH = 1024000;
     private static final double EARTH_RADIUS = 6378137;
+    private static long lastClickTime;
 
     /**
      * @param str
@@ -228,5 +229,16 @@ public class CommonUtil {
             return null;
         }
     }
+
+    public static boolean isFastDoubleClick() {
+        long time = System.currentTimeMillis();
+        long timeD = time - lastClickTime;
+        if ( 0 < timeD && timeD < 1500) {
+            return true;
+        }
+        lastClickTime = time;
+        return false;
+    }
+
 }
 

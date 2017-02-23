@@ -91,6 +91,10 @@
     <color name="color_F35757">#F35757</color>
     <color name="color_DBDBDB">#DBDBDB</color>
     <color name="color_00a752">#00a752</color>
+    <color name="textColor">#404040</color>
+    <color name="light_gray_">#e4eaf2</color>
+    <color name="green">#ff4f8c0b</color>
+    <color name="blue">#00bff3</color>
 
 
 </resources>

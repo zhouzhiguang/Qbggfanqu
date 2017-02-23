@@ -2,37 +2,42 @@ package com.fanqu.homepage.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.AppBarLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fanqu.R;
-import com.fanqu.framework.fragment.BaseFragment;
-import com.fanqu.homepage.activities.NearbyKitchenActivity;
-import com.fanqu.homepage.activities.QuickSearchKitchenActivity;
-import com.fanqu.homepage.activities.SearchDinnerPartyActivity;
-import com.fanqu.homepage.activities.SwitchoverCityActivity;
+import com.fanqu.dinner.listener.AppBarStateChangeListener;
+import com.fanqu.dinner.listener.State;
+import com.fanqu.framework.fragment.LazyFragment;
+import com.fanqu.framework.main.util.ToastUtils;
+import com.fanqu.framework.model.ToolBarOptions;
 import com.fanqu.homepage.adapter.RecommendedDinnerAdapter;
 import com.fanqu.homepage.adapter.SelectionShareAdapter;
 import com.fanqu.homepage.model.RecommendedDinnerBean;
 import com.fanqu.homepage.model.SelectShareBean;
 import com.fanqu.main.acitvities.MainActivity;
-import com.fanqu.main.widget.SearchBarLayout;
+import com.fanqu.main.location.LoginRegisteredFactory;
+import com.fanqu.main.model.ThirdLoginEntity;
 import com.qbgg.network.request.nohttp.NohttpConfig;
 import com.qbgg.network.request.nohttp.protocol.BeanRequestProtocol;
-import com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout;
 import com.yolanda.nohttp.RequestMethod;
 import com.zhy.adapter.recyclerview.wrapper.HeaderAndFooterWrapper;
 import com.zhy.adapter.recyclerview.wrapper.LoadMoreWrapper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.bingoogolapple.bgabanner.BGABanner;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -40,29 +45,23 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 
-import static com.fanqu.R.id.fragment_home_city;
-
 
 /**
 
  */
-public class HomeFragment extends BaseFragment implements View.OnClickListener {
+public class HomeFragment extends LazyFragment implements View.OnClickListener {
     private MainActivity activity;
 
     // 标志位，标志已经初始化完成。
     private boolean isPrepared;
     private View view;
     private TextView textView;
-    private BGABanner banner_main_default;
-    private SHSwipeRefreshLayout fragment_home_shswipeRefreshLayout;
+
     private RecyclerView fragment_person_recommended_dinner_recyclerView, fragment_person_selection_share_recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private SelectionShareAdapter selectionShareAdapter;//精选分享
-
     private BGABanner bannerMainDefault;
-    private ImageView fragmentHomeMessage;//主页消息
-    private TextView fragmentHomeCity;//主页切换城市
-    private SearchBarLayout fragmentHomeSearch;//主页搜索附近主题饭局
+
     private TextView fragmentHomeNearbyKitchen;//附近的厨房
     private TextView fragmentHomeQuickSearchKitchen;//快捷找厨
     private TextView fragmentHomeLaiqu;//蹭来蹭去
@@ -83,31 +82,27 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     private TextView fragmentPersonSelectionShare;//精选分享下面有推荐饭局下面有recycleview展示
     private TextView fragment_home_title;//主页主题
-
+    private AppBarLayout kitchen_details_app_bar_layout;
+    private ToolBarOptions options;
+    private Toolbar toolbar;
+    private TextView home_page, city;
+    private int whitecolour, textGrayDeep;
+    private Drawable downtwhiteDrawable, downblackDrawable;
 
     @Override
-    protected void initView(Bundle savedInstanceState) {
+    protected void onCreateViewLazy(Bundle savedInstanceState) {
+        super.onCreateViewLazy(savedInstanceState);
         setContentView(R.layout.fragment_home_layout);
+        toolbar = findView(R.id.toolbar);
+        whitecolour = ContextCompat.getColor(activity, R.color.white);
+        textGrayDeep = ContextCompat.getColor(activity, R.color.textGrayDeep);
+        downtwhiteDrawable = ContextCompat.getDrawable(activity, R.mipmap.ic_down_arrows_white);
+        downblackDrawable = ContextCompat.getDrawable(activity, R.mipmap.ic_down_arrows_black);
         assignViews();
-
-    }
-
-    @Override
-    protected void setListener() {
-
         initLitener();
 
     }
 
-    @Override
-    protected void processLogic(Bundle savedInstanceState) {
-
-    }
-
-    @Override
-    protected void onUserVisible() {
-
-    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -117,40 +112,47 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-//        activity = (MainActivity) getActivity();
-        linearLayoutManager = new LinearLayoutManager(activity);
-        banner_main_default = findView(R.id.banner_main_default);
-        fragment_person_recommended_dinner_recyclerView = findView(R.id.fragment_person_recommended_dinner_recyclerView);
-        fragment_person_selection_share_recyclerView = findView(R.id.fragment_person_selection_share_recyclerView);
-        fragment_home_shswipeRefreshLayout = findView(R.id.fragment_home_shswipeRefreshLayout);
-        //关闭下拉刷新这里是主Refresh 布局
-        fragment_home_shswipeRefreshLayout.setLoadmoreEnable(false);
-        fragment_home_shswipeRefreshLayout.setRefreshEnable(false);
-        initLoadView();
-        initDate();
-
-    }
-
 
     /**
      * 初始化监听事件
      */
     private void initLitener() {
-        fragmentHomeMessage.setOnClickListener(this);
-        fragmentHomeCity.setOnClickListener(this);
-        fragmentHomeSearch.setOnClickListener(this);
         fragmentHomeQuickSearchKitchen.setOnClickListener(this);
         fragmentHomeNearbyKitchen.setOnClickListener(this);
+        kitchen_details_app_bar_layout.addOnOffsetChangedListener(new AppBarStateChangeListener() {
+            @Override
+            public void onStateChanged(AppBarLayout appBarLayout, State state) {
+
+                if (state == State.EXPANDED) {
+                    city.setTextColor(whitecolour);
+                    home_page.setVisibility(View.GONE);
+                    ToastUtils.showCenterToast(activity, "展开状态");
+                    downtwhiteDrawable.setBounds(0, 0, downtwhiteDrawable.getMinimumWidth(), downtwhiteDrawable.getMinimumHeight());
+                    city.setCompoundDrawables(null, null, downtwhiteDrawable, null);
+                } else if (state == State.COLLAPSED) {
+                    home_page.setVisibility(View.VISIBLE);
+                    city.setTextColor(textGrayDeep);
+                    downblackDrawable.setBounds(0, 0, downblackDrawable.getMinimumWidth(), downblackDrawable.getMinimumHeight());
+                    city.setCompoundDrawables(null, null, downblackDrawable, null);
+
+                } else {
+
+
+                }
+            }
+
+        });
     }
 
     private void assignViews() {
-        fragment_home_title = findView(R.id.fragment_home_title);
-        fragmentHomeMessage = findView(R.id.fragment_home_message);
-        fragmentHomeCity = findView(fragment_home_city);
-        fragmentHomeSearch = findView(R.id.fragment_home_search);
+        city = findView(R.id.city);
+        home_page = findView(R.id.home_page);
+        kitchen_details_app_bar_layout = findView(R.id.kitchen_details_app_bar_layout);
+        bannerMainDefault = findView(R.id.banner_main_default);
+        linearLayoutManager = new LinearLayoutManager(activity);
+        fragment_person_recommended_dinner_recyclerView = findView(R.id.fragment_person_recommended_dinner_recyclerView);
+        fragment_person_selection_share_recyclerView = findView(R.id.fragment_person_selection_share_recyclerView);
+
         fragmentHomeNearbyKitchen = findView(R.id.fragment_home_nearby_kitchen);
         fragmentHomeQuickSearchKitchen = findView(R.id.fragment_home_quick_search_kitchen);
         fragmentHomeLaiqu = findView(R.id.fragment_home_laiqu);
@@ -169,6 +171,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         fragmentHomeInvitePolitenessContent = findView(R.id.fragment_home_invite_politeness_content);
         fragmentPersonRecommendedDinner = findView(R.id.fragment_person_recommended_dinner);
         fragmentPersonSelectionShare = findView(R.id.fragment_person_selection_share);
+        initLoadView();
+        initDate();
     }
 
 
@@ -257,6 +261,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     protected void initDate() {
 
+        InitShwonDate();
         final List<SelectShareBean> dates = new ArrayList<SelectShareBean>();
         for (int i = 0; i < 6; i++) {
             SelectShareBean bean = new SelectShareBean();
@@ -287,17 +292,52 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             }
         });
 
-//        selectionShareAdapter.setDates(dates);
-//        selectionShareAdapter.notifyDataSetChanged();
+        selectionShareAdapter.setDates(dates);
+        selectionShareAdapter.notifyDataSetChanged();
         fragment_person_selection_share_recyclerView.setAdapter(mLoadMoreWrapper);
-//        SelectionShareAdapter selectionShareAdapter=new SelectionShareAdapter(activity,R.layout.home_selectionshare_recyclview_item_layout,dates);
-//        fragment_person_selection_share_recyclerView.setAdapter(selectionShareAdapter);
+        SelectionShareAdapter selectionShareAdapter = new SelectionShareAdapter(activity, R.layout.home_selectionshare_recyclview_item_layout, dates);
+        fragment_person_selection_share_recyclerView.setAdapter(selectionShareAdapter);
+
+    }
+
+    /**
+     * 初始化首页数据了
+     */
+    private void InitShwonDate() {
+        BeanRequestProtocol baseStringProtocol = new BeanRequestProtocol();
+        String URL = LoginRegisteredFactory.getWeChatLoginUrl();
+        Map<String, String> params=new HashMap<>();
+        params.put("city_id","305");
+        Observable<ThirdLoginEntity> observable = baseStringProtocol.createObservable(URL, params, RequestMethod.POST, NohttpConfig.NOHTTP_CACHEMODE_NETWORK_FAILED_READ_CACHE,ThirdLoginEntity.class);
+        observable.compose(HomeFragment.this.<ThirdLoginEntity>bindToLifecycle())    //  (2)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<ThirdLoginEntity>() {
+                               @Override
+                               public void onCompleted() {
+
+
+                               }
+
+                               @Override
+                               public void onError(Throwable e) {
+                                   // textView.setText(e.getMessage().toString());
+
+                               }
+
+                               @Override
+                               public void onNext(ThirdLoginEntity entity) {
+
+
+                               }
+                           }
+
+                );
 
     }
 
     private void initLoadView() {
-        banner_main_default.setData(Arrays.asList(R.mipmap.ic_theme_activity, R.mipmap.ic_cheaper_meal, R.mipmap.ic_chef_in_civil), null);
-        banner_main_default.setAdapter(new BGABanner.Adapter() {
+        bannerMainDefault.setData(Arrays.asList(R.mipmap.ic_theme_activity, R.mipmap.ic_cheaper_meal, R.mipmap.ic_chef_in_civil), null);
+        bannerMainDefault.setAdapter(new BGABanner.Adapter() {
 
             @Override
             public void fillBannerItem(BGABanner banner, View view, Object model, int position) {
@@ -307,7 +347,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
         });
 
-        banner_main_default.setOnItemClickListener(new BGABanner.OnItemClickListener() {
+        bannerMainDefault.setOnItemClickListener(new BGABanner.OnItemClickListener() {
 
             @Override
             public void onBannerItemClick(BGABanner banner, View view, Object model, int position) {
@@ -345,28 +385,28 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         Intent intent;
         switch (view.getId()) {
 
-            case fragment_home_city:
-                //切换城市
-                Toast.makeText(activity, "+++", Toast.LENGTH_SHORT).show();
-                intent = new Intent(activity, SwitchoverCityActivity.class);
-                JumpActivity(intent);
-                break;
-            case R.id.fragment_home_message:
-                //销售
-                break;
-            case R.id.fragment_home_search:
-                intent = new Intent(activity, SearchDinnerPartyActivity.class);
-                JumpActivity(intent);
-                break;
-            case R.id.fragment_home_quick_search_kitchen:
-                intent = new Intent(activity, QuickSearchKitchenActivity.class);
-                JumpActivity(intent);
-                break;
-            case R.id.fragment_home_nearby_kitchen:
-                //附近的厨房
-                intent = new Intent(activity, NearbyKitchenActivity.class);
-                JumpActivity(intent);
-                break;
+//            case fragment_home_city:
+//                //切换城市
+//                Toast.makeText(activity, "+++", Toast.LENGTH_SHORT).show();
+//                intent = new Intent(activity, SwitchoverCityActivity.class);
+//                JumpActivity(intent);
+//                break;
+//            case R.id.fragment_home_message:
+//                //销售
+//                break;
+//            case R.id.fragment_home_search:
+//                intent = new Intent(activity, SearchDinnerPartyActivity.class);
+//                JumpActivity(intent);
+//                break;
+//            case R.id.fragment_home_quick_search_kitchen:
+//                intent = new Intent(activity, QuickSearchKitchenActivity.class);
+//                JumpActivity(intent);
+//                break;
+//            case R.id.fragment_home_nearby_kitchen:
+//                //附近的厨房
+//                intent = new Intent(activity, NearbyKitchenActivity.class);
+//                JumpActivity(intent);
+//                break;
             default:
                 break;
         }

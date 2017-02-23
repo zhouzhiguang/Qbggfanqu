@@ -150,6 +150,7 @@ public abstract class BaseFragment extends Fragment implements FragmentLifecycle
 
     @Override
     public final Observable<FragmentEvent> lifecycle() {
+
         return lifecycleSubject.asObservable();
     }
 

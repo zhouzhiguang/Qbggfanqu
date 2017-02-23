@@ -8,6 +8,9 @@ package com.fanqu.framework;
  * @author Administrator
  */
 public class Constants {
+    public static final String USER_ID = "user_id";
+    public static final String USER_TOKEN = "user_token";
+    public static final String PROFILE = "user_profile";
     //正式地址
     public static final String LOADING_CURRENT_URL = "http://cengfan7.cn/wap.php";
     //帐号

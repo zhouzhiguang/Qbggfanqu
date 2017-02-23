@@ -100,6 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
+                    android:padding="@dimen/dimen_80px"
                     android:drawableTop="@mipmap/ic_share_from_html_weixing"
                     android:gravity="center"
                     android:text="@string/wechat_name"
@@ -115,6 +116,7 @@
                     android:drawableTop="@mipmap/ic_share_from_html_qq_friends"
                     android:gravity="center"
                     android:text="@string/qq_name"
+                    android:padding="@dimen/dimen_80px"
                     android:textColor="@color/textGrayMiddle"
                     android:textSize="@dimen/dimen_40px" />
 

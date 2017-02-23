@@ -6,7 +6,7 @@ package com.fanqu.framework.model;
 
 public class User {
     private String uid;//用户id
-    private String user_token;//绘画
+    private String user_token;//回话
     private String avatar;
 
     public User() {

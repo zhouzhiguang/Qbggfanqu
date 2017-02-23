@@ -9,7 +9,6 @@ import com.fanqu.R;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.data.UserManager;
-import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.ThemUtils;
 import com.fanqu.main.location.BaseUrlFactory;
 import com.fanqu.main.login.LoginRegisteredActivity;
@@ -33,9 +32,9 @@ public class SpalshActivity extends BaseActivity {
         //判断当前登录状态 不管什么都跳转到主页
         interfaceBaseUrl = BaseUrlFactory.getInterfaceBaseUrl();
         //http://test-skapi-v1-3.cengfan7.com/Session
-        LogUtil.e("测试一下", interfaceBaseUrl);
         if (islogined) {
-
+            jumpActivity(MainActivity.class);
+            finish();
         } else {
             jumpActivity(LoginRegisteredActivity.class);
             finish();
