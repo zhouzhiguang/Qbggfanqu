@@ -50,4 +50,12 @@ public class UserManager {
         }
         return sInstance;
     }
+
+    public User getUser() {
+        if (isLogined()) {
+            return user;
+        } else {
+            return null;
+        }
+    }
 }

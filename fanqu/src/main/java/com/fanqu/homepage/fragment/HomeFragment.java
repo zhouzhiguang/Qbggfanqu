@@ -17,16 +17,19 @@ import android.widget.TextView;
 import com.fanqu.R;
 import com.fanqu.dinner.listener.AppBarStateChangeListener;
 import com.fanqu.dinner.listener.State;
+import com.fanqu.framework.data.UserManager;
 import com.fanqu.framework.fragment.LazyFragment;
+import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.ToastUtils;
 import com.fanqu.framework.model.ToolBarOptions;
+import com.fanqu.framework.model.User;
 import com.fanqu.homepage.adapter.RecommendedDinnerAdapter;
 import com.fanqu.homepage.adapter.SelectionShareAdapter;
+import com.fanqu.homepage.location.HomePageFactory;
 import com.fanqu.homepage.model.RecommendedDinnerBean;
 import com.fanqu.homepage.model.SelectShareBean;
 import com.fanqu.main.acitvities.MainActivity;
-import com.fanqu.main.location.LoginRegisteredFactory;
-import com.fanqu.main.model.ThirdLoginEntity;
+import com.fanqu.main.model.HomePageEntity;
 import com.qbgg.network.request.nohttp.NohttpConfig;
 import com.qbgg.network.request.nohttp.protocol.BeanRequestProtocol;
 import com.yolanda.nohttp.RequestMethod;
@@ -88,11 +91,19 @@ public class HomeFragment extends LazyFragment implements View.OnClickListener {
     private TextView home_page, city;
     private int whitecolour, textGrayDeep;
     private Drawable downtwhiteDrawable, downblackDrawable;
+    private User user;
+    private UserManager usermanager;
+    private boolean islogin;
 
     @Override
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
         setContentView(R.layout.fragment_home_layout);
+        usermanager = UserManager.getInstance(activity);
+        islogin = usermanager.isLogined();
+        if (islogin) {
+            user = usermanager.getUser();
+        }
         toolbar = findView(R.id.toolbar);
         whitecolour = ContextCompat.getColor(activity, R.color.white);
         textGrayDeep = ContextCompat.getColor(activity, R.color.textGrayDeep);
@@ -126,7 +137,6 @@ public class HomeFragment extends LazyFragment implements View.OnClickListener {
                 if (state == State.EXPANDED) {
                     city.setTextColor(whitecolour);
                     home_page.setVisibility(View.GONE);
-                    ToastUtils.showCenterToast(activity, "展开状态");
                     downtwhiteDrawable.setBounds(0, 0, downtwhiteDrawable.getMinimumWidth(), downtwhiteDrawable.getMinimumHeight());
                     city.setCompoundDrawables(null, null, downtwhiteDrawable, null);
                 } else if (state == State.COLLAPSED) {
@@ -305,13 +315,16 @@ public class HomeFragment extends LazyFragment implements View.OnClickListener {
      */
     private void InitShwonDate() {
         BeanRequestProtocol baseStringProtocol = new BeanRequestProtocol();
-        String URL = LoginRegisteredFactory.getWeChatLoginUrl();
-        Map<String, String> params=new HashMap<>();
-        params.put("city_id","305");
-        Observable<ThirdLoginEntity> observable = baseStringProtocol.createObservable(URL, params, RequestMethod.POST, NohttpConfig.NOHTTP_CACHEMODE_NETWORK_FAILED_READ_CACHE,ThirdLoginEntity.class);
-        observable.compose(HomeFragment.this.<ThirdLoginEntity>bindToLifecycle())    //  (2)
+        String URL = HomePageFactory.getHomepageDateurl();
+        Map<String, String> params = new HashMap<>();
+        if (islogin) {
+            params.put("token", user.getUser_token());
+        }
+        params.put("city_id", "305");
+        Observable<HomePageEntity> observable = baseStringProtocol.createObservable(URL, params, RequestMethod.GET, NohttpConfig.NOHTTP_CACHEMODE_NETWORK_FAILED_READ_CACHE, HomePageEntity.class);
+        observable.compose(HomeFragment.this.<HomePageEntity>bindToLifecycle())    //  (2)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<ThirdLoginEntity>() {
+                .subscribe(new Subscriber<HomePageEntity>() {
                                @Override
                                public void onCompleted() {
 
@@ -325,9 +338,13 @@ public class HomeFragment extends LazyFragment implements View.OnClickListener {
                                }
 
                                @Override
-                               public void onNext(ThirdLoginEntity entity) {
-
-
+                               public void onNext(HomePageEntity entity) {
+                                   HomePageEntity.DataBean date = entity.getData();
+                                   List<HomePageEntity.DataBean.TopicBean> tipiclist = date.getTopic();
+                                   if (tipiclist!=null && tipiclist.size()>0)
+                                   ToastUtils.showToast(activity, date.getTopic().toString());
+                                   LogUtil.e("测试", date.getShare().toString() + "***分享的数据是*********");
+                                   LogUtil.e("测试", date.getAdv().toString() + "************");
                                }
                            }
 

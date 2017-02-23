@@ -49,4 +49,6 @@ public class LoginRegisteredFactory extends BaseUrlFactory {
         builder.append("/Session/reg");
         return builder.toString();
     }
+
+
 }
