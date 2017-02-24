@@ -16,18 +16,30 @@ import com.fanqu.framework.Constants;
 import com.fanqu.framework.SystemBarTintManager;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
+import com.fanqu.framework.data.UserManager;
+import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.ThemUtils;
+import com.fanqu.framework.main.util.ToastUtils;
+import com.fanqu.framework.model.User;
 import com.fanqu.framework.rxbus.RxBus;
 import com.fanqu.homepage.fragment.HomeFragment;
+import com.fanqu.homepage.location.HomePageFactory;
 import com.fanqu.like.fragment.LikeFragment;
+import com.fanqu.main.model.HomePageEntity;
 import com.fanqu.main.widget.MainNavigateTabBar;
 import com.fanqu.personcentre.frgment.PersonFragment;
+import com.qbgg.network.request.nohttp.NohttpConfig;
+import com.qbgg.network.request.nohttp.protocol.BeanRequestProtocol;
+import com.yolanda.nohttp.RequestMethod;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import cn.hugeterry.updatefun.UpdateFunGO;
 import cn.hugeterry.updatefun.config.UpdateKey;
 import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
@@ -51,6 +63,10 @@ public class MainActivity extends BaseActivity {
     private TextView textView;
     private long mFirstClickTime;
     private RxBus _rxBus;
+    private UserManager userManager;
+    private boolean islogin = false;
+    private User user;
+    private HomePageEntity date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +74,42 @@ public class MainActivity extends BaseActivity {
         //AutoUtils.setSize(this, false, 1080, 1812);// 没有状态栏,设计尺寸的宽高1.6875倍
         setContentView(R.layout.activity_main_layout);
         AutoUtils.auto(this);
+
+        userManager = UserManager.getInstance(this);
+        islogin = userManager.isLogined();
+        if (islogin) {
+            user = userManager.getUser();
+        }
         _rxBus = getRxBusSingleton();
+        InitShwonDate();
         // StatusBarUtil.setColorNoTranslucent(MainActivity.this,R.color.red_bg);
         mNavigateTabBar = findView(R.id.main_navigate_TabBar);
         if (savedInstanceState != null) {
             mNavigateTabBar.onRestoreInstanceState(savedInstanceState);
         }
-        initdate();
         checkupAppUpdate();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        UpdateFunGO.onResume(this);
+        //默认是自动检测更新
+//        UpdateHelper.getInstance()
+//                .setUpdateType(UpdateType.autoupdate)
+//                .check(MainActivity.this);
+
+//        String url = "http://api.fir.im/apps/latest/" + "57d3a808ca87a87e01000834"
+//                + "?api_token=" + "8e1bb6d08a1dda6bb1f4f196fe5e8e35";
+//        LogUtil.e("地址",url);
+    }
+
+    @Override
+    protected void onStop() {
+        // TODO Auto-generated method stub
+        super.onStop();
+        UpdateFunGO.onStop(this);
+
     }
 
     /**
@@ -91,28 +135,6 @@ public class MainActivity extends BaseActivity {
 
 
     @Override
-    protected void onStop() {
-        // TODO Auto-generated method stub
-        super.onStop();
-        UpdateFunGO.onStop(this);
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        UpdateFunGO.onResume(this);
-        //默认是自动检测更新
-//        UpdateHelper.getInstance()
-//                .setUpdateType(UpdateType.autoupdate)
-//                .check(MainActivity.this);
-
-//        String url = "http://api.fir.im/apps/latest/" + "57d3a808ca87a87e01000834"
-//                + "?api_token=" + "8e1bb6d08a1dda6bb1f4f196fe5e8e35";
-//        LogUtil.e("地址",url);
-    }
-
-    @Override
     protected int getLayoutId() {
         return 0;
     }
@@ -122,46 +144,50 @@ public class MainActivity extends BaseActivity {
      */
     private void initdate() {
 
-        mNavigateTabBar.addTab(new HomeFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_home, R.mipmap.comui_tab_home_selected, TAG_PAGE_HOME));
-        mNavigateTabBar.addTab(new DinnerFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_dinner, R.mipmap.comui_tab_dinner_select, TAG_PAGE_DINNER));
+
+        if (date != null) {
+            mNavigateTabBar.addTab(new HomeFragment(date), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_home, R.mipmap.comui_tab_home_selected, TAG_PAGE_HOME));
+            mNavigateTabBar.addTab(new DinnerFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_dinner, R.mipmap.comui_tab_dinner_select, TAG_PAGE_DINNER));
 //        mNavigateTabBar.addTab(new PublishFragment(), new MainNavigateTabBar.TabParam(0, 0, TAG_PAGE_PUBLISH));
 //        mNavigateTabBar.addTab(new InformationFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_message, R.mipmap.comui_tab_message_selected, TAG_PAGE_MESSAGE));
-        mNavigateTabBar.addTab(new LikeFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_like, R.mipmap.comui_tab_like_select, TAG_PAGE_LIKE));
-        mNavigateTabBar.addTab(new PersonFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_person, R.mipmap.comui_tab_person_selected, TAG_PAGE_PERSON));
+            mNavigateTabBar.addTab(new LikeFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_like, R.mipmap.comui_tab_like_select, TAG_PAGE_LIKE));
+            mNavigateTabBar.addTab(new PersonFragment(), new MainNavigateTabBar.TabParam(R.mipmap.comui_tab_person, R.mipmap.comui_tab_person_selected, TAG_PAGE_PERSON));
 
-        mNavigateTabBar.setTabSelectListener(new MainNavigateTabBar.OnTabSelectedListener() {
+            mNavigateTabBar.setTabSelectListener(new MainNavigateTabBar.OnTabSelectedListener() {
 
-            @Override
-            public void onTabSelected(MainNavigateTabBar.ViewHolder holder) {
-                int tabIndex = holder.tabIndex;
-                if (tabIndex == 3) {
-                    //设置颜色
-                    //Color.parseColor("#D81D24");
-                    //StatusBarUtil.setTransparent(MainActivity.this);
-                    // StatusBarUtil.setColor(MainActivity.this, Color.BLACK);
-                    //initStatusbar(MainActivity.this,R.color.red_bg);
-                    //initthem(R.color.red_bg);
-                    ThemUtils.initthem(MainActivity.this, R.color.red_bg);
-                    // initStatusbar(MainActivity.this, R.color.red_bg);
-                } else if (tabIndex == 0) {
-                    //透明的状态栏了
-                    //  initthem(R.color.black);
-                    // initStatusbar(MainActivity.this, R.color.transparent);
-                    //initthem(R.color.black);
-                    ThemUtils.initthem(MainActivity.this, R.color.black);
-                    //ThemUtils.initthem(MainActivity.this, R.color.transparent);
-                    // StatusBarUtil.setTransparent(MainActivity.this);
-                    // StatusBarUtil.setColor(MainActivity.this,R.color.white);
-                } else {
-                    //透明的状态栏了
-                    // StatusBarUtil.setTransparent(MainActivity.this);
-                    ThemUtils.initthem(MainActivity.this, R.color.white);
+                @Override
+                public void onTabSelected(MainNavigateTabBar.ViewHolder holder) {
+                    int tabIndex = holder.tabIndex;
+                    if (tabIndex == 3) {
+                        //设置颜色
+                        //Color.parseColor("#D81D24");
+                        //StatusBarUtil.setTransparent(MainActivity.this);
+                        // StatusBarUtil.setColor(MainActivity.this, Color.BLACK);
+                        //initStatusbar(MainActivity.this,R.color.red_bg);
+                        //initthem(R.color.red_bg);
+                        ThemUtils.initthem(MainActivity.this, R.color.red_bg);
+                        // initStatusbar(MainActivity.this, R.color.red_bg);
+                    } else if (tabIndex == 0) {
+                        //透明的状态栏了
+                        //  initthem(R.color.black);
+                        // initStatusbar(MainActivity.this, R.color.transparent);
+                        //initthem(R.color.black);
+                        ThemUtils.initthem(MainActivity.this, R.color.black);
+                        //ThemUtils.initthem(MainActivity.this, R.color.transparent);
+                        // StatusBarUtil.setTransparent(MainActivity.this);
+                        // StatusBarUtil.setColor(MainActivity.this,R.color.white);
+                    } else {
+                        //透明的状态栏了
+                        // StatusBarUtil.setTransparent(MainActivity.this);
+                        ThemUtils.initthem(MainActivity.this, R.color.white);
+                    }
                 }
-            }
-        });
-        //默认第一个首页显示
-        mNavigateTabBar.showTabFragment(0);
-
+            });
+            //默认第一个首页显示
+            mNavigateTabBar.showTabFragment(0);
+        } else {
+            ToastUtils.showToast(this, "date为空了--");
+        }
     }
 
     /**
@@ -233,5 +259,50 @@ public class MainActivity extends BaseActivity {
         return true;
 
 
+    }
+
+    /**
+     * 初始化首页数据了
+     */
+    private void InitShwonDate() {
+        BeanRequestProtocol stringProtocol = new BeanRequestProtocol();
+        String URL = HomePageFactory.getHomepageDateurl();
+        Map<String, String> params = new HashMap<>();
+        if (islogin) {
+            params.put("token", user.getUser_token());
+        }
+        params.put("city_id", "305");
+        Observable<HomePageEntity> observable = stringProtocol.createObservable(URL, params, RequestMethod.GET, NohttpConfig.NOHTTP_CACHEMODE_NETWORK_FAILED_READ_CACHE, HomePageEntity.class);
+        observable.compose(MainActivity.this.<HomePageEntity>bindToLifecycle())    //  (2)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<HomePageEntity>() {
+                    @Override
+                    public void onCompleted() {
+
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        // textView.setText(e.getMessage().toString());
+
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onNext(HomePageEntity result) {
+                        if (result != null) {
+                            date = result;
+                            if (date != null) {
+                                initdate();
+                                LogUtil.e("主页HomePageEntity请求", date.getErrorId() + "***********");
+                            }
+                        } else {
+                            LogUtil.e("主页请求", "entity-----------");
+                        }
+                    }
+
+
+                });
     }
 }

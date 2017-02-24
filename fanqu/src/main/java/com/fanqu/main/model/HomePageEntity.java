@@ -1,7 +1,6 @@
 package com.fanqu.main.model;
 
 import com.fanqu.framework.model.BaseData;
-import com.fanqu.framework.model.ShareBean;
 
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class HomePageEntity extends BaseData{
 
 
     /**
-     * Data : {"adv":[{"id":"1","province_id":"0","city_id":"0","category":null,"title":"儿时的味道","intro":"细品香醇时光细品香醇时","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-29_586469070acdd.jpg","picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_5824366146a7e.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=article&id=17","sort":"1","end_time":"0","status":"1","create_time":"1478155357","modify_time":"1478156653"},{"id":"2","province_id":"0","city_id":"0","category":null,"title":"澳洲龙虾主题餐馆","intro":"得50元优惠礼包","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-29_58646992033d4.jpg","picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_58243530ad802.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=kitchen_intr&id=4","sort":"2","end_time":"0","status":"1","create_time":"1478156804","modify_time":"0"},{"id":"4","province_id":"0","city_id":"0","category":null,"title":"元气早餐","intro":"\n带你走进这些温柔的店里，完美的一天才要刚刚开始","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-28_58635d8c120dd.png","picture":"http://o8uz2td92.bkt.clouddn.com/2016-12-28_58635dfa75e60.png","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=article&id=17","sort":"3","end_time":"0","status":"1","create_time":"1478766047","modify_time":"1482908045"},{"id":"5","province_id":"0","city_id":"0","category":null,"title":"暖暖火锅季","intro":"寒秋的美食慰藉","thumb":null,"picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_582432677fa85.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=kitchen_intr&id=7","sort":"4","end_time":"0","status":"1","create_time":"1478767218","modify_time":"0"}],"slider":[{"id":"72","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Kitchen&a=detail&id=39","picture":"http://o8uz2td92.bkt.clouddn.com/2016-12-21_585a23b117d41.png","status":"1","end_time":"0","city_id":"0","sort":"2"}],"topic":[{"id":"13","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-24_585de89373369.jpg","up_time":"1484202508"}],"share":{"title":"蹭范趣o","desc":"饿了别叫么，就来蹭范趣o","link":"","cover":"http://o8uz2td92.bkt.clouddn.com/2016-12-23_585c865841c86.png"}}
+     * Data : {"adv":[{"id":"1","province_id":"0","city_id":"0","category":null,"title":"儿时的味道","intro":"细品香醇时光细品香醇时","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-29_586469070acdd.jpg","picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_5824366146a7e.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=article&id=17","sort":"1","end_time":"0","status":"1","create_time":"1478155357","modify_time":"1478156653"},{"id":"2","province_id":"0","city_id":"0","category":null,"title":"澳洲龙虾主题餐馆","intro":"得50元优惠礼包","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-29_58646992033d4.jpg","picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_58243530ad802.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=kitchen_intr&id=4","sort":"2","end_time":"0","status":"1","create_time":"1478156804","modify_time":"0"},{"id":"4","province_id":"0","city_id":"0","category":null,"title":"元气早餐","intro":"\n带你走进这些温柔的店里，完美的一天才要刚刚开始","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-28_58635d8c120dd.png","picture":"http://o8uz2td92.bkt.clouddn.com/2016-12-28_58635dfa75e60.png","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=article&id=17","sort":"3","end_time":"0","status":"1","create_time":"1478766047","modify_time":"1482908045"},{"id":"5","province_id":"0","city_id":"0","category":null,"title":"暖暖火锅季","intro":"寒秋的美食慰藉","thumb":null,"picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_582432677fa85.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=kitchen_intr&id=7","sort":"4","end_time":"0","status":"1","create_time":"1478767218","modify_time":"0"}],"slider":[{"id":"72","link":"http://test.cengfan7.cn/wap.php?m=Wap&amp;c=Kitchen&amp;a=detail&amp;id=39","picture":"http://o8uz2td92.bkt.clouddn.com/2016-12-21_585a23b117d41.png","status":"1","end_time":"0","city_id":"0","sort":"2"}],"topic":[{"id":"13","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-24_585de89373369.jpg","up_time":"1484202508"}],"share":{"title":"蹭范趣o","desc":"饿了别叫么，就来蹭范趣o","link":"","cover":"http://o8uz2td92.bkt.clouddn.com/2016-12-23_585c865841c86.png"}}
      */
 
     private DataBean Data;
@@ -29,7 +28,7 @@ public class HomePageEntity extends BaseData{
     public static class DataBean {
         /**
          * adv : [{"id":"1","province_id":"0","city_id":"0","category":null,"title":"儿时的味道","intro":"细品香醇时光细品香醇时","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-29_586469070acdd.jpg","picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_5824366146a7e.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=article&id=17","sort":"1","end_time":"0","status":"1","create_time":"1478155357","modify_time":"1478156653"},{"id":"2","province_id":"0","city_id":"0","category":null,"title":"澳洲龙虾主题餐馆","intro":"得50元优惠礼包","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-29_58646992033d4.jpg","picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_58243530ad802.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=kitchen_intr&id=4","sort":"2","end_time":"0","status":"1","create_time":"1478156804","modify_time":"0"},{"id":"4","province_id":"0","city_id":"0","category":null,"title":"元气早餐","intro":"\n带你走进这些温柔的店里，完美的一天才要刚刚开始","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-28_58635d8c120dd.png","picture":"http://o8uz2td92.bkt.clouddn.com/2016-12-28_58635dfa75e60.png","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=article&id=17","sort":"3","end_time":"0","status":"1","create_time":"1478766047","modify_time":"1482908045"},{"id":"5","province_id":"0","city_id":"0","category":null,"title":"暖暖火锅季","intro":"寒秋的美食慰藉","thumb":null,"picture":"http://o8uz2td92.bkt.clouddn.com/2016-11-10_582432677fa85.jpg","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Index&a=kitchen_intr&id=7","sort":"4","end_time":"0","status":"1","create_time":"1478767218","modify_time":"0"}]
-         * slider : [{"id":"72","link":"http://test.cengfan7.cn/wap.php?m=Wap&c=Kitchen&a=detail&id=39","picture":"http://o8uz2td92.bkt.clouddn.com/2016-12-21_585a23b117d41.png","status":"1","end_time":"0","city_id":"0","sort":"2"}]
+         * slider : [{"id":"72","link":"http://test.cengfan7.cn/wap.php?m=Wap&amp;c=Kitchen&amp;a=detail&amp;id=39","picture":"http://o8uz2td92.bkt.clouddn.com/2016-12-21_585a23b117d41.png","status":"1","end_time":"0","city_id":"0","sort":"2"}]
          * topic : [{"id":"13","thumb":"http://o8uz2td92.bkt.clouddn.com/2016-12-24_585de89373369.jpg","up_time":"1484202508"}]
          * share : {"title":"蹭范趣o","desc":"饿了别叫么，就来蹭范趣o","link":"","cover":"http://o8uz2td92.bkt.clouddn.com/2016-12-23_585c865841c86.png"}
          */
@@ -71,7 +70,51 @@ public class HomePageEntity extends BaseData{
             return topic;
         }
 
+        public static class ShareBean {
+            /**
+             * title : 蹭范趣o
+             * desc : 饿了别叫么，就来蹭范趣o
+             * link :
+             * cover : http://o8uz2td92.bkt.clouddn.com/2016-12-23_585c865841c86.png
+             */
 
+            private String title;
+            private String desc;
+            private String link;
+            private String cover;
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+
+            public void setDesc(String desc) {
+                this.desc = desc;
+            }
+
+            public void setLink(String link) {
+                this.link = link;
+            }
+
+            public void setCover(String cover) {
+                this.cover = cover;
+            }
+
+            public String getTitle() {
+                return title;
+            }
+
+            public String getDesc() {
+                return desc;
+            }
+
+            public String getLink() {
+                return link;
+            }
+
+            public String getCover() {
+                return cover;
+            }
+        }
 
         public static class AdvBean {
             /**
@@ -183,7 +226,7 @@ public class HomePageEntity extends BaseData{
             }
 
             public String getIntro() {
-                return intro;
+                return intro.replaceAll("\n","");
             }
 
             public String getThumb() {
@@ -222,7 +265,7 @@ public class HomePageEntity extends BaseData{
         public static class SliderBean {
             /**
              * id : 72
-             * link : http://test.cengfan7.cn/wap.php?m=Wap&c=Kitchen&a=detail&id=39
+             * link : http://test.cengfan7.cn/wap.php?m=Wap&amp;c=Kitchen&amp;a=detail&amp;id=39
              * picture : http://o8uz2td92.bkt.clouddn.com/2016-12-21_585a23b117d41.png
              * status : 1
              * end_time : 0

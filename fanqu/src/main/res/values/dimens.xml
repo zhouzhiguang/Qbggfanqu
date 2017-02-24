@@ -194,5 +194,6 @@
     <dimen name="dimen_540px">540px</dimen>
     <dimen name="dimen_760px">760px</dimen>
     <dimen name="dimen_68px">68px</dimen>
+    <dimen name="dimen_178px">178px</dimen>
 
 </resources>
