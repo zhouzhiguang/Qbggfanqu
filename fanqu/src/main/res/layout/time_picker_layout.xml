@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="horizontal">
 
-    <com.qbgg.cenglaicengqu.main.widget.WheelView
+    <com.fanqu.main.widget.WheelView
         android:id="@+id/year"
         android:layout_width="@dimen/dimen_250px"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         app:unitHeight="@dimen/dimen_100px" />
 
 
-    <com.qbgg.cenglaicengqu.main.widget.WheelView
+    <com.fanqu.main.widget.WheelView
         android:id="@+id/month"
         android:layout_width="@dimen/dimen_250px"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
         app:unitHeight="@dimen/dimen_100px" />
 
 
-    <com.qbgg.cenglaicengqu.main.widget.WheelView
+    <com.fanqu.main.widget.WheelView
         android:id="@+id/day"
         android:layout_width="@dimen/dimen_250px"
         android:layout_height="wrap_content"

@@ -422,6 +422,11 @@
     <string name="binding_mobile_phone_number">绑定手机号码</string>
     <string name="mport_phone_number_error">手机号码不能为空</string>
     <string name="tip_exist_application">在按一次退出应用</string>
+    <string name="set_login_password">设置登录密码</string>
+    <string name="affirm_password">确认密码</string>
+    <string name="phone_number_empty">手机号码不能为空</string>
+    <string name="twice_import_password_unlike">两次输入的新密码不一致</string>
+    <string name="reset_succeed">修改密码成功</string>
     <!--口味偏好默认的stringarray集合-->
     <string-array name="taste_preference_string_array">
         <item>清淡</item>

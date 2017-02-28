@@ -17,7 +17,6 @@ import com.fanqu.framework.SystemBarTintManager;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.data.UserManager;
-import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.ThemUtils;
 import com.fanqu.framework.main.util.ToastUtils;
 import com.fanqu.framework.model.User;
@@ -295,10 +294,8 @@ public class MainActivity extends BaseActivity {
                             date = result;
                             if (date != null) {
                                 initdate();
-                                LogUtil.e("主页HomePageEntity请求", date.getErrorId() + "***********");
+
                             }
-                        } else {
-                            LogUtil.e("主页请求", "entity-----------");
                         }
                     }
 

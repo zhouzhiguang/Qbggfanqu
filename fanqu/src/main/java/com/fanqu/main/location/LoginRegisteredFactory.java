@@ -49,6 +49,24 @@ public class LoginRegisteredFactory extends BaseUrlFactory {
         builder.append("/Session/reg");
         return builder.toString();
     }
+    public static String getResetPwdMessageAuthenticationCodeUrl() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(getInterfaceBaseUrl());
+        builder.append("/Sms/reset_pwd");
+        return builder.toString();
+    }
 
+    public static String getResetPassUrl() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(getInterfaceBaseUrl());
+        builder.append("/Session/reset_pass");
+        return builder.toString();
+    }
 
+    public static String getUsinfoUrl() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(getInterfaceBaseUrl());
+        builder.append("/user/info");
+        return builder.toString();
+    }
 }

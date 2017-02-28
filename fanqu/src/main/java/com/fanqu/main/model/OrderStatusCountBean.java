@@ -1,10 +1,13 @@
 package com.fanqu.main.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * 订单状态实体类
  */
 
-public class OrderStatusCountBean {
+public class OrderStatusCountBean implements Parcelable {
     /**
      * wait_pay : 0
      * wait_eat : 7
@@ -51,4 +54,34 @@ public class OrderStatusCountBean {
     public String getRefund_count() {
         return refund_count;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.wait_pay);
+        dest.writeString(this.wait_eat);
+        dest.writeString(this.wait_comment);
+        dest.writeString(this.refund_count);
+    }
+
+    protected OrderStatusCountBean(Parcel in) {
+        this.wait_pay = in.readString();
+        this.wait_eat = in.readString();
+        this.wait_comment = in.readString();
+        this.refund_count = in.readString();
+    }
+
+    public static final Parcelable.Creator<OrderStatusCountBean> CREATOR = new Parcelable.Creator<OrderStatusCountBean>() {
+        public OrderStatusCountBean createFromParcel(Parcel source) {
+            return new OrderStatusCountBean(source);
+        }
+
+        public OrderStatusCountBean[] newArray(int size) {
+            return new OrderStatusCountBean[size];
+        }
+    };
 }

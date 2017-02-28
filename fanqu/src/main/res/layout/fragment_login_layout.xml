@@ -9,13 +9,14 @@
         android:layout_width="match_parent"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:background="@color/white"
         android:layout_height="@dimen/dimen_180px">
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/phone_edit_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_rect_border"
+            android:background="@null"
             android:drawableLeft="@mipmap/ic_password"
             android:drawablePadding="@dimen/dimen_13px"
             android:hint="@string/prompt_phone"

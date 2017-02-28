@@ -327,7 +327,7 @@ public class HomeFragment extends LazyFragment implements View.OnClickListener {
 
             initSlder(slider);
         }
-        Observable.timer(800 , TimeUnit.MILLISECONDS)
+        Observable.timer(500 , TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(this.<Long>bindToLifecycle())
                 .subscribe(new Action1<Long>() {
@@ -439,88 +439,94 @@ public class HomeFragment extends LazyFragment implements View.OnClickListener {
     private void initadvDate(List<HomePageEntity.DataBean.AdvBean> advBeanList) {
 
         if (advBeanList.size() == 1) {
-            HomePageEntity.DataBean.AdvBean advbean = advBeanList.get(0);
             fragment_home_page_adv_1.setVisibility(View.VISIBLE);
-            Glide.with(HomeFragment.this).load(advbean.getPicture()).into(fragmentHomeSentimentCoffeeImage);
-            String title = advbean.getTitle();
-            String intro = advbean.getIntro();
-            if (!TextUtils.isEmpty(intro)) {
-                fragmentHomeSentimentCoffeeContent.setText(intro);
-            }
-            if (!TextUtils.isEmpty(title)) {
-                fragmentHomeSentimentCoffeeTile.setText(title);
-            }
             fragment_home_page_adv_2.setVisibility(View.GONE);
             fragment_home_page_adv_3.setVisibility(View.GONE);
             fragment_home_page_adv_4.setVisibility(View.GONE);
+            HomePageEntity.DataBean.AdvBean advbean1 = advBeanList.get(0);
+            Glide.with(HomeFragment.this).load(advbean1.getPicture()).into(fragmentHomeSentimentCoffeeImage);
+            String title = advbean1.getTitle();
+            String intro = advbean1.getIntro();
+            if (!TextUtils.isEmpty(intro)) {
+                //intro.replaceAll("[\\pP‘’“”]", "");
+                fragmentHomeSentimentCoffeeContent.setText(intro);
+            }
+            if (!TextUtils.isEmpty(title)) {
+                fragmentHomeSentimentCoffeeTile.setText(title);
+            }
+
         } else if (advBeanList.size() == 2) {
             fragment_home_page_adv_1.setVisibility(View.VISIBLE);
-
             fragment_home_page_adv_2.setVisibility(View.VISIBLE);
             fragment_home_page_adv_3.setVisibility(View.GONE);
             fragment_home_page_adv_4.setVisibility(View.GONE);
-            HomePageEntity.DataBean.AdvBean advbean = advBeanList.get(0);
-
-            Glide.with(HomeFragment.this).load(advbean.getPicture()).into(fragmentHomeSentimentCoffeeImage);
-            String title = advbean.getTitle();
-            String intro = advbean.getIntro();
+            HomePageEntity.DataBean.AdvBean advbean1 = advBeanList.get(0);
+            HomePageEntity.DataBean.AdvBean advbean2 = advBeanList.get(1);
+            Glide.with(HomeFragment.this).load(advbean1.getPicture()).into(fragmentHomeSentimentCoffeeImage);
+            String title = advbean1.getTitle();
+            String intro = advbean1.getIntro();
             if (!TextUtils.isEmpty(intro)) {
+                //intro.replaceAll("[\\pP‘’“”]", "");
                 fragmentHomeSentimentCoffeeContent.setText(intro);
             }
             if (!TextUtils.isEmpty(title)) {
                 fragmentHomeSentimentCoffeeTile.setText(title);
             }
-            advbean = advBeanList.get(1);
-            title = advbean.getTitle();
-            intro = advbean.getIntro();
-            Glide.with(HomeFragment.this).load(advbean.getPicture()).into(fragmentHomeEvaluatingAmbassadorImage);
+            title = advbean2.getTitle();
+            intro = advbean2.getIntro();
+            Glide.with(HomeFragment.this).load(advbean2.getPicture()).into(fragmentHomeEvaluatingAmbassadorImage);
             if (!TextUtils.isEmpty(intro)) {
+                //intro.replaceAll("[\\pP‘’“”]", "");
                 fragmentHomeEvaluatingAmbassadorContent.setText(intro);
             }
             if (!TextUtils.isEmpty(title)) {
                 fragmentHomeEvaluatingAmbassadorTile.setText(title);
             }
+
+
         } else if (advBeanList.size() == 3) {
             fragment_home_page_adv_1.setVisibility(View.VISIBLE);
-
             fragment_home_page_adv_2.setVisibility(View.VISIBLE);
             fragment_home_page_adv_3.setVisibility(View.VISIBLE);
             fragment_home_page_adv_4.setVisibility(View.GONE);
-            HomePageEntity.DataBean.AdvBean advbean = advBeanList.get(0);
-
-            Glide.with(HomeFragment.this).load(advbean.getPicture()).into(fragmentHomeSentimentCoffeeImage);
-            String title = advbean.getTitle();
-            String intro = advbean.getIntro();
+            HomePageEntity.DataBean.AdvBean advbean1 = advBeanList.get(0);
+            HomePageEntity.DataBean.AdvBean advbean2 = advBeanList.get(1);
+            HomePageEntity.DataBean.AdvBean advbean3 = advBeanList.get(2);
+            Glide.with(HomeFragment.this).load(advbean1.getPicture()).into(fragmentHomeSentimentCoffeeImage);
+            String title = advbean1.getTitle();
+            String intro = advbean1.getIntro();
             if (!TextUtils.isEmpty(intro)) {
+                //intro.replaceAll("[\\pP‘’“”]", "");
                 fragmentHomeSentimentCoffeeContent.setText(intro);
             }
             if (!TextUtils.isEmpty(title)) {
                 fragmentHomeSentimentCoffeeTile.setText(title);
             }
-            advbean = advBeanList.get(1);
-            title = advbean.getTitle();
-            intro = advbean.getIntro();
-            Glide.with(HomeFragment.this).load(advbean.getPicture()).into(fragmentHomeEvaluatingAmbassadorImage);
+            title = advbean2.getTitle();
+            intro = advbean2.getIntro();
+            Glide.with(HomeFragment.this).load(advbean2.getPicture()).into(fragmentHomeEvaluatingAmbassadorImage);
             if (!TextUtils.isEmpty(intro)) {
+                //intro.replaceAll("[\\pP‘’“”]", "");
                 fragmentHomeEvaluatingAmbassadorContent.setText(intro);
             }
             if (!TextUtils.isEmpty(title)) {
                 fragmentHomeEvaluatingAmbassadorTile.setText(title);
             }
-            advbean = advBeanList.get(2);
-            title = advbean.getTitle();
-            intro = advbean.getIntro();
-            Glide.with(HomeFragment.this).load(advbean.getPicture()).into(fragmentHomeMajorSuitLowPriceImage);
-            if (!TextUtils.isEmpty(intro)) {
 
-                if (intro.contains("，")) {
-                    intro.replaceAll("[\\pP‘’“”]", "");
-                }
+            title = advbean3.getTitle();
+            intro = advbean3.getIntro();
+            Glide.with(HomeFragment.this).load(advbean3.getPicture()).into(fragmentHomeMajorSuitLowPriceImage);
+            if (!TextUtils.isEmpty(intro)) {
+//                if (intro.contains("\n")) {
+//                    //intro.replaceAll("[\\pP‘’“”]", "");
+//                    intro.replaceAll("\n", "");
+//                }
                 fragmentHomeMajorSuitLowPriceContent.setText(intro);
             }
             if (!TextUtils.isEmpty(title)) {
                 fragmentHomeMajorSuitLowPriceTile.setText(title);
             }
+
         } else if (advBeanList.size() == 4) {
             fragment_home_page_adv_1.setVisibility(View.VISIBLE);
             fragment_home_page_adv_2.setVisibility(View.VISIBLE);
@@ -574,7 +580,6 @@ public class HomeFragment extends LazyFragment implements View.OnClickListener {
             if (!TextUtils.isEmpty(title)) {
                 fragmentHomeInvitePolitenessTile.setText(title);
             }
-            LogUtil.e("测试initadvDate数据", advbean4.toString() + "");
         }
 
 

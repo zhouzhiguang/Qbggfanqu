@@ -24,7 +24,7 @@
         unitHeight	item unit height 每个item单元的高度-->
 
 
-        <com.qbgg.cenglaicengqu.main.widget.WheelView
+        <com.fanqu.main.widget.WheelView
             android:id="@+id/province_wv"
             android:layout_width="@dimen/dimen_400px"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             app:selectedTextSize="@dimen/dimen_60px"
             app:unitHeight="@dimen/dimen_100px" />
 
-        <com.qbgg.cenglaicengqu.main.widget.WheelView
+        <com.fanqu.main.widget.WheelView
             android:id="@+id/city_wv"
             android:layout_width="@dimen/dimen_400px"
             android:layout_height="wrap_content"

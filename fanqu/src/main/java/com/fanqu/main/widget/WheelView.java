@@ -25,7 +25,6 @@ import java.util.List;
 /**
  * WheelView滚轮
  *
- * @author JiangPing
  */
 public class WheelView extends View {
     /**

@@ -1,10 +1,13 @@
 package com.fanqu.main.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * 我的资产类
  */
 
-public class AssetBean {
+public class AssetBean implements Parcelable {
     /**
      * balance : 6788.850
      * buy_balance : 0.000
@@ -61,4 +64,36 @@ public class AssetBean {
     public void setCommission_balance(String commission_balance) {
         this.commission_balance = commission_balance;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.balance);
+        dest.writeString(this.buy_balance);
+        dest.writeString(this.commission_balance);
+        dest.writeString(this.total_score);
+        dest.writeString(this.expend_srcoe);
+    }
+
+    protected AssetBean(Parcel in) {
+        this.balance = in.readString();
+        this.buy_balance = in.readString();
+        this.commission_balance = in.readString();
+        this.total_score = in.readString();
+        this.expend_srcoe = in.readString();
+    }
+
+    public static final Parcelable.Creator<AssetBean> CREATOR = new Parcelable.Creator<AssetBean>() {
+        public AssetBean createFromParcel(Parcel source) {
+            return new AssetBean(source);
+        }
+
+        public AssetBean[] newArray(int size) {
+            return new AssetBean[size];
+        }
+    };
 }

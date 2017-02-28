@@ -190,15 +190,19 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener,
         switch (view.getId()) {
             case R.id.forgin_pass:
                 // restitem(ForginpasswordActivity.class);
-                if (!CommonUtil.isFastDoubleClick()) {
+                if (CommonUtil.isFastDoubleClick()) {
+                    return;
+                } else {
                     Intent intent=new Intent(activity, RecoveredPasswordAcitivty.class);
                     LoginFragment.this.startActivity(intent);
                 }
+
                 break;
             case R.id.login_btn:
                 //跳转到主页上面
-
-                if (!CommonUtil.isFastDoubleClick()) {
+                if (CommonUtil.isFastDoubleClick()) {
+                    return;
+                } else {
                     Dologining();
                 }
 

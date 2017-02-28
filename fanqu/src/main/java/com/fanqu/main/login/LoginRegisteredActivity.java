@@ -16,11 +16,13 @@ import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fanqu.R;
 import com.fanqu.framework.Constants;
+import com.fanqu.framework.CustomApplication;
 import com.fanqu.framework.activities.BaseActivity;
 import com.fanqu.framework.autolayout.AutoUtils;
 import com.fanqu.framework.main.util.CommonUtil;
@@ -29,14 +31,17 @@ import com.fanqu.framework.main.util.PreferenceUitl;
 import com.fanqu.framework.main.util.ThemUtils;
 import com.fanqu.framework.main.util.ToastUtils;
 import com.fanqu.framework.model.Login;
+import com.fanqu.framework.model.UserInfoBean;
 import com.fanqu.framework.rxbus.RxBus;
 import com.fanqu.main.acitvities.BindingMobilePhoneNumberActivity;
 import com.fanqu.main.acitvities.MainActivity;
+import com.fanqu.main.acitvities.SpalshActivity;
 import com.fanqu.main.frgment.LoginFragment;
 import com.fanqu.main.frgment.RegisteredFragment;
 import com.fanqu.main.location.LoginRegisteredFactory;
 import com.fanqu.main.model.LoginEntity;
 import com.fanqu.main.model.ThirdLoginEntity;
+import com.fanqu.main.model.UserInfoEntity;
 import com.fanqu.main.widget.ImitateIosAlertDialog;
 import com.fanqu.main.widget.ViewPagerIndicator;
 import com.fanqu.main.widget.WaitProgressDialog;
@@ -61,6 +66,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.observables.ConnectableObservable;
 
+import static com.alipay.sdk.app.statistic.c.C;
 import static com.fanqu.R.string.login;
 
 
@@ -86,7 +92,9 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
     private boolean isbindingmobilephone = false;//是否已经绑定手机号码
     private Map<String, String> map;
     private RxBus _rxBus;
-
+    private LinearLayout.LayoutParams layoutParams;
+    private int height0, height1;
+    private CustomApplication application;
     @Override
     protected int getLayoutId() {
 
@@ -101,6 +109,7 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
         setContentView(R.layout.activity_login_register_layout);
         AutoUtils.auto(this);
         _rxBus = getRxBusSingleton();
+        application=CustomApplication.getInstance();
         dialog = WaitProgressDialog.getInstance(LoginRegisteredActivity.this);
         iosdialog = new ImitateIosAlertDialog(this);
 
@@ -112,9 +121,11 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
     private void initview() {
         wechat_login = findView(R.id.wechat_login);
         mViewPager = (ViewPager) findViewById(R.id.id_vp);
-
         mIndicator = (ViewPagerIndicator) findViewById(R.id.id_indicator);
         //getSupportFragmentManager().beginTransaction().add(R.id.fragment_login, new LoginFragment()).commit();
+        layoutParams = (LinearLayout.LayoutParams) mViewPager.getLayoutParams();
+        height0 = (int) getResources().getDimension(R.dimen.dimen_800px);
+        height1 = (int) getResources().getDimension(R.dimen.dimen_600px);
         initListener();
         initDatas();
         mIndicator.setTabItemTitles(mDatas);
@@ -124,6 +135,28 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
     }
 
     private void initListener() {
+        mIndicator.setOnPageChangeListener(new ViewPagerIndicator.PageOnchangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 1) {
+                    layoutParams.height = height0;
+                    mViewPager.setLayoutParams(layoutParams);
+                } else {
+                    layoutParams.height = height1;
+                    mViewPager.setLayoutParams(layoutParams);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         wechat_login.setOnClickListener(this);
         //订阅者
         mReuseSubscriber = new Observer<Object>() {
@@ -198,7 +231,7 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
                     @Override
                     public void onNext(LoginEntity entity) {
                         if (entity != null) {
-                            dialog.disMiss();
+
                             requestsuccessfully = true;
                             int ErrorId = entity.getErrorId();
                             String ErrorDes = entity.getErrorDes();
@@ -211,8 +244,11 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
                                     //保存当前登录的信息
                                     PreferenceUitl.getInstance(LoginRegisteredActivity.this).saveString(Constants.USER_ID, uid);
                                     PreferenceUitl.getInstance(LoginRegisteredActivity.this).saveString(Constants.USER_TOKEN, token);
-                                    jumpActivity(MainActivity.class);
-                                    finish();
+                                    getUsinfoRequest(token,uid);
+//                                    jumpActivity(MainActivity.class);
+//                                    dialog.disMiss();
+//                                    finish();
+//                                    overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
                                 }
 
                             } else {
@@ -221,7 +257,7 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
                                 }
                             }
                         }
-
+                        dialog.disMiss();
                     }
                 });
 
@@ -351,8 +387,7 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
     }
 
     /**
-     * @param
-     * 执行第三方登录了
+     * @param 执行第三方登录了
      */
 
     private void executethirdpartyLogin(Map<String, String> params) {
@@ -391,8 +426,11 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
                                            //保存当前登录的信息
                                            PreferenceUitl.getInstance(LoginRegisteredActivity.this).saveString(Constants.USER_ID, uid);
                                            PreferenceUitl.getInstance(LoginRegisteredActivity.this).saveString(Constants.USER_TOKEN, uid);
+                                           getUsinfoRequest(token,uid);
                                            jumpActivity(MainActivity.class);
+                                           dialog.disMiss();
                                            finish();
+                                           overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
 
                                        } else {
                                            ThirdLoginEntity.DataBean data = entity.getData();
@@ -565,5 +603,47 @@ public class LoginRegisteredActivity extends BaseActivity implements Handler.Cal
      * 手机绑定成功后结束当前登录的activity
      */
     public static class CloseEvent {
+    }
+
+    /**
+     * D登录了获取当前
+     */
+    private void getUsinfoRequest(String token,String uid) {
+        BeanRequestProtocol baseStringProtocol = new BeanRequestProtocol();
+        String URL = LoginRegisteredFactory.getUsinfoUrl();
+        Map<String, String> params = new HashMap<>();
+        params.put("token", token);
+        Observable<UserInfoEntity> observable = baseStringProtocol.createObservable(URL, params, RequestMethod.GET, NohttpConfig.NOHTTP_CACHEMODE_NETWORK_FAILED_READ_CACHE, UserInfoEntity.class);
+        observable.compose(LoginRegisteredActivity.this.<UserInfoEntity>bindToLifecycle())    //  (2)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<UserInfoEntity>() {
+                               @Override
+                               public void onCompleted() {
+                                   LogUtil.e("测onCompleted试", "'==");
+                                   //dialog.disMiss();
+                               }
+
+                               @Override
+                               public void onError(Throwable e) {
+                                   LogUtil.e("测onError试", e.toString());
+                                   CustomApplication.getInstance().setUserInfoBean(null);
+                               }
+
+                               @Override
+                               public void onNext(UserInfoEntity entity) {
+                                   LogUtil.e("测onNext试", entity.toString());
+                                   if (entity != null) {
+                                       UserInfoBean bean = entity.getData();
+                                       application.setUserInfoBean(bean);
+                                       LogUtil.e("测试", entity.getData().getBind_phone() + entity.getData().getNickname());
+                                       //application.setUserInfoBean(entity);
+                                   }
+
+
+                               }
+                           }
+
+                );
+
     }
 }

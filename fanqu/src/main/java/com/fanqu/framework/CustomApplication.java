@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import com.fanqu.framework.data.UserManager;
 import com.fanqu.framework.main.util.LogUtil;
 import com.fanqu.framework.main.util.PreferenceUitl;
+import com.fanqu.framework.model.UserInfoBean;
 import com.qbgg.network.request.nohttp.NohttpClient;
 import com.qbgg.network.request.update.UpdateConfig;
 
@@ -54,6 +55,16 @@ public class CustomApplication extends Application {
     public static int DEFAULT_PAGE_SIZE = 10;
 
     public static boolean isPad = false;
+
+    public UserInfoBean getUserInfoBean() {
+        return userInfoBean;
+    }
+
+    public void setUserInfoBean(UserInfoBean userInfoBean) {
+        this.userInfoBean = userInfoBean;
+    }
+
+    private UserInfoBean userInfoBean;
     private static CustomApplication mApplication;
 
     public static CustomApplication getInstance() {

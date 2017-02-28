@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_FFEFEB"
+    android:background="@color/fragment_person_bg"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -42,8 +42,8 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/id_vp"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_550px"
-        android:layout_weight="1">
+        android:layout_height="@dimen/dimen_600px"
+        android:layout_weight="0">
 
     </android.support.v4.view.ViewPager>
 
@@ -51,6 +51,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dimen_10px"
         android:background="@color/fragment_person_bg">
 
         <LinearLayout
@@ -90,8 +92,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="19dp"
-                android:layout_marginTop="19dp"
+                android:layout_marginBottom="@dimen/dimen_20px"
+                android:layout_marginTop="@dimen/dimen_20px"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -100,7 +102,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
-                    android:padding="@dimen/dimen_80px"
+                    android:padding="@dimen/dimen_20px"
+                    android:paddingLeft="@dimen/dimen_400px"
+                    android:paddingRight="@dimen/dimen_40px"
                     android:drawableTop="@mipmap/ic_share_from_html_weixing"
                     android:gravity="center"
                     android:text="@string/wechat_name"
@@ -113,10 +117,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="39dp"
                     android:drawablePadding="10dp"
+                    android:paddingLeft="@dimen/dimen_40px"
+                    android:paddingRight="@dimen/dimen_400px"
                     android:drawableTop="@mipmap/ic_share_from_html_qq_friends"
                     android:gravity="center"
                     android:text="@string/qq_name"
-                    android:padding="@dimen/dimen_80px"
+                    android:padding="@dimen/dimen_20px"
                     android:textColor="@color/textGrayMiddle"
                     android:textSize="@dimen/dimen_40px" />
 

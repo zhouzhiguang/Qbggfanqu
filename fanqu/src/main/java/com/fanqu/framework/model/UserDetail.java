@@ -3,9 +3,6 @@ package com.fanqu.framework.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 用户详细信息实体类
  */
@@ -55,7 +52,7 @@ public class UserDetail extends User implements Parcelable {
     private String address;
     private String marriage;
     private String nickname;
-    private Object birthday;
+    private String birthday;
     private String bind_phone;
     private String is_bind;
     private String u_type_str;
@@ -64,13 +61,6 @@ public class UserDetail extends User implements Parcelable {
     public UserDetail() {
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     public String getUsername() {
         return username;
@@ -78,6 +68,14 @@ public class UserDetail extends User implements Parcelable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -120,20 +118,20 @@ public class UserDetail extends User implements Parcelable {
         this.pid = pid;
     }
 
-    public String getReal_name_cert() {
-        return real_name_cert;
-    }
-
-    public void setReal_name_cert(String real_name_cert) {
-        this.real_name_cert = real_name_cert;
-    }
-
     public String getVip() {
         return vip;
     }
 
     public void setVip(String vip) {
         this.vip = vip;
+    }
+
+    public String getReal_name_cert() {
+        return real_name_cert;
+    }
+
+    public void setReal_name_cert(String real_name_cert) {
+        this.real_name_cert = real_name_cert;
     }
 
     @Override
@@ -194,11 +192,11 @@ public class UserDetail extends User implements Parcelable {
         this.nickname = nickname;
     }
 
-    public Object getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Object birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -233,4 +231,70 @@ public class UserDetail extends User implements Parcelable {
     public void setMembership(String membership) {
         this.membership = membership;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.username);
+        dest.writeString(this.phone);
+        dest.writeString(this.email);
+        dest.writeString(this.uid);
+        dest.writeString(this.reg_time);
+        dest.writeString(this.u_type);
+        dest.writeString(this.pid);
+        dest.writeString(this.real_name_cert);
+        dest.writeString(this.vip);
+        dest.writeString(this.avatar);
+        dest.writeString(this.gender);
+        dest.writeString(this.age);
+        dest.writeString(this.signature);
+        dest.writeString(this.address);
+        dest.writeString(this.marriage);
+        dest.writeString(this.nickname);
+        dest.writeString(this.birthday);
+        dest.writeString(this.bind_phone);
+        dest.writeString(this.is_bind);
+        dest.writeString(this.u_type_str);
+        dest.writeString(this.membership);
+    }
+
+    protected UserDetail(Parcel in) {
+        super(in);
+        this.username = in.readString();
+        this.phone = in.readString();
+        this.email = in.readString();
+        this.uid = in.readString();
+        this.reg_time = in.readString();
+        this.u_type = in.readString();
+        this.pid = in.readString();
+        this.real_name_cert = in.readString();
+        this.vip = in.readString();
+        this.avatar = in.readString();
+        this.gender = in.readString();
+        this.age = in.readString();
+        this.signature = in.readString();
+        this.address = in.readString();
+        this.marriage = in.readString();
+        this.nickname = in.readString();
+        this.birthday = in.readString();
+        this.bind_phone = in.readString();
+        this.is_bind = in.readString();
+        this.u_type_str = in.readString();
+        this.membership = in.readString();
+    }
+
+    public static final Creator<UserDetail> CREATOR = new Creator<UserDetail>() {
+        public UserDetail createFromParcel(Parcel source) {
+            return new UserDetail(source);
+        }
+
+        public UserDetail[] newArray(int size) {
+            return new UserDetail[size];
+        }
+    };
 }

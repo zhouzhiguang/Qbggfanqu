@@ -55,7 +55,7 @@
 
         </LinearLayout>
 
-        <com.qbgg.cenglaicengqu.main.widget.CityPickerLayout
+        <com.fanqu.main.widget.CityPickerLayout
             android:id="@+id/city_picker_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
